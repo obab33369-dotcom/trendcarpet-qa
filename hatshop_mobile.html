@@ -1287,7 +1287,10 @@
     <!-- Top Bar -->
     <header class="mobile-header">
       <div class="brand-wrap">
-        <div class="brand-badge">POCKET QA</div>
+        <div class="brand-badge" style="display: inline-flex; align-items: center; gap: 5px;">
+          POCKET QA
+          <span id="mHubStatusDot" style="width: 6px; height: 6px; border-radius: 50%; background: #10b981; box-shadow: 0 0 5px #10b981;" title="Online"></span>
+        </div>
         <select id="mobileBatchSelect" class="batch-select-mobile" onchange="switchBatch(this.value)">
           <!-- Loaded dynamically -->
         </select>
@@ -1725,9 +1728,37 @@
           select.value = targetBatch;
           await loadBatch(targetBatch);
         }
+        startMobileHeartbeat();
       } catch (err) {
         console.error('Kunde inte ladda mappar:', err);
       }
+    }
+
+    let mHeartbeatTimer = null;
+    function startMobileHeartbeat() {
+      if (mHeartbeatTimer) clearInterval(mHeartbeatTimer);
+      mHeartbeatTimer = setInterval(async () => {
+        const dot = document.getElementById('mHubStatusDot');
+        if (!dot) return;
+        try {
+          const res = await fetch(`/api/batches?reviewer=${encodeURIComponent(state.reviewer || '')}`, { cache: 'no-store' });
+          if (res.ok) {
+            dot.style.background = '#10b981';
+            dot.style.boxShadow = '0 0 5px #10b981';
+          } else {
+            throw new Error('Status ' + res.status);
+          }
+        } catch (e) {
+          dot.style.background = '#ef4444';
+          dot.style.boxShadow = '0 0 5px #ef4444';
+          if (window.location.hostname.includes('trycloudflare.com')) {
+            showToast('⚠️ Återansluter till permanent länk...', 2000);
+            setTimeout(() => {
+              window.location.href = 'https://trendcarpet-qa.vercel.app/mobile' + window.location.search;
+            }, 1500);
+          }
+        }
+      }, 20000);
     }
 
     async function switchBatch(batchId) {

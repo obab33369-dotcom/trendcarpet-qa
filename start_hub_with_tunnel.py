@@ -90,8 +90,13 @@ def main():
     print(f" >>> {PERMANENT_VERCEL_URL} <<<")
     print("="*66 + "\n")
 
-    proc = None
-    if os.path.exists(CLOUDFLARED_EXE):
+    proc_container = {"proc": None}
+
+    def start_tunnel():
+        if not os.path.exists(CLOUDFLARED_EXE):
+            print(f"[!] cloudflared.exe hittades inte pa: {CLOUDFLARED_EXE}")
+            return
+
         print("[*] Startar Cloudflare-tunnel (obegransad gratis bandbredd)...")
         proc = subprocess.Popen(
             [CLOUDFLARED_EXE, "tunnel", "--url", f"http://localhost:{PORT}"],
@@ -102,6 +107,7 @@ def main():
             errors="replace",
             bufsize=1
         )
+        proc_container["proc"] = proc
 
         def monitor_cloudflare(p):
             tunnel_found = False
@@ -112,32 +118,63 @@ def main():
                     tunnel_found = True
                     print(f"\n[✓] Cloudflare aktiv: {tunnel_url}")
                     update_vercel_config(tunnel_url)
-                    print(f"[✓] Alla kollegor anvander alltid den fasta lanken: {PERMANENT_VERCEL_URL}\n")
+                    print(f"[✓] Alla kollegor anvander alltid den fasta lanken: {PERMANENT_VERCEL_URL}\n", flush=True)
 
         t = threading.Thread(target=monitor_cloudflare, args=(proc,), daemon=True)
         t.start()
-    else:
-        print(f"[!] cloudflared.exe hittades inte pa: {CLOUDFLARED_EXE}")
+
+    start_tunnel()
+
+    def watchdog_loop():
+        time.sleep(20) # Allow initial tunnel and Vercel setup
+        failures = 0
+        import urllib.request
+        while True:
+            time.sleep(25)
+            try:
+                req = urllib.request.Request(
+                    f"{PERMANENT_VERCEL_URL}/api/batches?reviewer=watchdog",
+                    headers={"User-Agent": "Trendcarpet-Watchdog/1.0"}
+                )
+                with urllib.request.urlopen(req, timeout=12) as resp:
+                    if resp.status == 200:
+                        failures = 0
+                        # Periodic heartbeats
+                        # print(f"[{time.strftime('%H:%M:%S')}] [♥] Uptime Watchdog: Online (200 OK)", flush=True)
+                    else:
+                        failures += 1
+                        print(f"[{time.strftime('%H:%M:%S')}] [!] Watchdog: Ovantad status {resp.status} (fel {failures}/2)", flush=True)
+            except Exception as e:
+                failures += 1
+                print(f"[{time.strftime('%H:%M:%S')}] [!] Watchdog: Ping misslyckades: {e} (fel {failures}/2)", flush=True)
+
+            if failures >= 2:
+                print(f"[{time.strftime('%H:%M:%S')}] [⚠️] WATCHDOG: Sajten svarar inte! Startar om tunnel automatiskt...", flush=True)
+                p = proc_container.get("proc")
+                if p:
+                    try:
+                        p.terminate()
+                        p.wait(timeout=3)
+                    except Exception:
+                        pass
+                start_tunnel()
+                failures = 0
+                time.sleep(15)
+
+    watchdog_thread = threading.Thread(target=watchdog_loop, daemon=True)
+    watchdog_thread.start()
 
     try:
         while True:
-            time.sleep(2)
-            if proc and proc.poll() is not None:
-                print("[!] Tunnel process avslutades, startar om automatiskt...")
-                proc = subprocess.Popen(
-                    [CLOUDFLARED_EXE, "tunnel", "--url", f"http://localhost:{PORT}"],
-                    stdout=subprocess.PIPE,
-                    stderr=subprocess.PIPE,
-                    text=True,
-                    encoding="utf-8",
-                    errors="replace",
-                    bufsize=1
-                )
-                t = threading.Thread(target=monitor_cloudflare, args=(proc,), daemon=True)
-                t.start()
+            time.sleep(3)
+            p = proc_container.get("proc")
+            if p and p.poll() is not None:
+                print("[!] Tunnel process avslutades, startar om automatiskt...", flush=True)
+                start_tunnel()
     except KeyboardInterrupt:
-        if proc:
-            proc.terminate()
+        p = proc_container.get("proc")
+        if p:
+            p.terminate()
         print("\nStanger ner Photo Review Hub...")
 
 if __name__ == "__main__":

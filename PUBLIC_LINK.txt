@@ -1,1 +1,1 @@
-https://runaround-goldfish-exemplify.ngrok-free.dev
+https://trendcarpet-qa.vercel.app
