@@ -1,11 +1,10 @@
 {
   "name": "trendcarpet-qa",
   "cleanUrls": true,
-  "redirects": [
+  "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "https://nowhere-auctions-drain-dust.trycloudflare.com/$1",
-      "permanent": false
+      "destination": "https://nowhere-auctions-drain-dust.trycloudflare.com/$1"
     }
   ]
 }
