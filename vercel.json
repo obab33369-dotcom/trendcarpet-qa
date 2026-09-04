@@ -4,7 +4,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "https://nowhere-auctions-drain-dust.trycloudflare.com/$1"
+      "destination": "https://bunny-pics-arrives-despite.trycloudflare.com/$1"
     }
   ]
 }
