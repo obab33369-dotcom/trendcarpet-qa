@@ -2925,7 +2925,7 @@
           </div>
 
           <div class="cap-card-body" onclick="openLightbox('${shot01.url || ''}', '${prod.model} (${prod.color}) - Bild 01', '${prod.id}', 0)">
-            <img class="cap-card-img" src="${shot01.thumb_url || shot01.url || ''}" alt="${prod.model}" loading="lazy" onerror="handleImageError(this)">
+            <img class="cap-card-img" src="${shot01.url || ''}" alt="${prod.model}" loading="lazy" onerror="handleImageError(this)">
 
             <div class="alignment-guides-overlay" style="display: ${state.showGuides ? 'block' : 'none'};">
               <div class="guide-line guide-h guide-crown" style="top: ${state.guideCrownY}%;"></div>

@@ -2193,7 +2193,7 @@
         card.onclick = () => openProductFromGrid(idx);
         card.innerHTML = `
           <div class="m-card-thumb-wrap">
-            <img src="${shot01.thumb_url || shot01.url || ''}" alt="${escapeHtml(prod.model)}" loading="lazy" onerror="handleImageError(this)" />
+            <img src="${shot01.url || ''}" alt="${escapeHtml(prod.model)}" loading="lazy" onerror="handleImageError(this)" />
             <div class="m-card-status-badge">${statusBadge}</div>
             <div class="mobile-guide-overlay m-grid-guide-overlay" style="display: ${state.mobileGridGuides ? 'block' : 'none'};">
               <div class="guide-line-crown"></div>
