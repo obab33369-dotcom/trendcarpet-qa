@@ -1489,8 +1489,14 @@
   <div class="name-modal" id="nameModal">
     <div class="name-modal-card">
       <h3 style="font-size: 15px; font-weight: 700; color: #fff;">Vem granskar?</h3>
-      <p style="font-size: 12px; color: var(--text-muted);">Ange ditt förnamn så att teamet ser vem som har godkänt eller skrivit kommentarer.</p>
-      <input type="text" id="mNameInput" class="m-textarea" style="height: 38px;" placeholder="Ditt förnamn (t.ex. Andro)" />
+      <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 8px;">Välj ditt namn med ett klick eller skriv in det nedan:</p>
+      <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px;">
+        <button type="button" class="m-chip-btn" style="flex: 1; min-width: 70px; padding: 8px 4px; background: rgba(56, 189, 248, 0.15); border: 1px solid var(--accent-blue); border-radius: 8px; color: #fff; font-size: 13px; font-weight: 600; cursor: pointer;" onclick="selectQuickMobileReviewer('Andro')">👤 Andro</button>
+        <button type="button" class="m-chip-btn" style="flex: 1; min-width: 70px; padding: 8px 4px; background: rgba(56, 189, 248, 0.15); border: 1px solid var(--accent-blue); border-radius: 8px; color: #fff; font-size: 13px; font-weight: 600; cursor: pointer;" onclick="selectQuickMobileReviewer('Jesper')">👤 Jesper</button>
+        <button type="button" class="m-chip-btn" style="flex: 1; min-width: 70px; padding: 8px 4px; background: rgba(56, 189, 248, 0.15); border: 1px solid var(--accent-blue); border-radius: 8px; color: #fff; font-size: 13px; font-weight: 600; cursor: pointer;" onclick="selectQuickMobileReviewer('Amalia')">👤 Amalia</button>
+        <button type="button" class="m-chip-btn" style="flex: 1; min-width: 70px; padding: 8px 4px; background: rgba(56, 189, 248, 0.15); border: 1px solid var(--accent-blue); border-radius: 8px; color: #fff; font-size: 13px; font-weight: 600; cursor: pointer;" onclick="selectQuickMobileReviewer('Anton')">👤 Anton</button>
+      </div>
+      <input type="text" id="mNameInput" class="m-textarea" style="height: 38px; margin-bottom: 8px;" placeholder="Eller skriv förnamn..." />
       <button class="m-send-btn" style="height: 38px; width: 100%;" onclick="saveReviewerName()">Spara namn</button>
     </div>
   </div>
@@ -1667,6 +1673,17 @@
       showToast(`Välkommen ${name}!`);
     }
 
+    function selectQuickMobileReviewer(name) {
+      state.reviewer = name;
+      localStorage.setItem('hatshop_reviewer', name);
+      updateReviewerDisplay();
+      document.getElementById('nameModal').classList.remove('active');
+      if (history.state?.modal === 'name') {
+        history.back();
+      }
+      showToast(`Välkommen ${name}!`);
+    }
+
     async function initBatches() {
       try {
         const res = await fetch('/api/batches');
@@ -1681,7 +1698,17 @@
           select.appendChild(opt);
         });
 
+        // Check if URL has ?user= or ?reviewer= parameter
         const urlParams = new URLSearchParams(window.location.search);
+        const paramUser = urlParams.get('user') || urlParams.get('reviewer');
+        if (paramUser) {
+          state.reviewer = paramUser.trim();
+          localStorage.setItem('hatshop_reviewer', state.reviewer);
+          updateReviewerDisplay();
+          const nameModal = document.getElementById('nameModal');
+          if (nameModal) nameModal.classList.remove('active');
+        }
+
         const paramBatch = urlParams.get('batch');
         const targetBatch = (paramBatch && state.batches.some(b => b.id === paramBatch))
           ? paramBatch

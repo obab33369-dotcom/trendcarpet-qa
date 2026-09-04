@@ -3,7 +3,8 @@ import threading
 import time
 import os
 import sys
-import webbrowser
+import re
+import json
 import hatshop_server
 
 # Ensure UTF-8 output on Windows console
@@ -16,43 +17,85 @@ if sys.platform == "win32":
 
 PORT = 8092
 WORKSPACE_DIR = os.path.dirname(os.path.abspath(__file__))
-NGROK_EXE = r"C:\Users\AndronikLindgren\AppData\Local\Microsoft\WinGet\Packages\Ngrok.Ngrok_Microsoft.Winget.Source_8wekyb3d8bbwe\ngrok.exe"
+CLOUDFLARED_EXE = os.path.join(WORKSPACE_DIR, "cloudflared.exe")
+VERCEL_JSON = os.path.join(WORKSPACE_DIR, "vercel.json")
 LINK_FILE = os.path.join(WORKSPACE_DIR, "PUBLIC_LINK.txt")
 
-# 100% PERMANENT STATIC NGROK DOMAIN (NEVER CHANGES)
-STATIC_DOMAIN = "runaround-goldfish-exemplify.ngrok-free.dev"
-PERMANENT_URL = f"https://{STATIC_DOMAIN}"
+PERMANENT_VERCEL_URL = "https://trendcarpet-qa.vercel.app"
 
 def run_server():
     hatshop_server.start_server(PORT)
 
+def update_vercel_config(new_tunnel_url):
+    try:
+        current_dest = None
+        if os.path.exists(VERCEL_JSON):
+            with open(VERCEL_JSON, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                redirects = data.get("redirects", [])
+                if redirects:
+                    current_dest = redirects[0].get("destination", "")
+
+        expected_dest = f"{new_tunnel_url}/$1"
+        if current_dest == expected_dest:
+            print("[*] Vercel-bryggan pekar redan pa ratt tunneladress.")
+            return
+
+        print(f"[*] Uppdaterar Vercel-bryggan till: {new_tunnel_url}...")
+        config = {
+            "name": "trendcarpet-qa",
+            "cleanUrls": True,
+            "redirects": [
+                {
+                    "source": "/(.*)",
+                    "destination": expected_dest,
+                    "permanent": False
+                }
+            ]
+        }
+        with open(VERCEL_JSON, "w", encoding="utf-8") as f:
+            json.dump(config, f, indent=2)
+
+        def push_git():
+            try:
+                subprocess.run(["git", "add", "vercel.json"], cwd=WORKSPACE_DIR, capture_output=True)
+                subprocess.run(["git", "commit", "-m", f"Update tunnel destination: {new_tunnel_url}"], cwd=WORKSPACE_DIR, capture_output=True)
+                res = subprocess.run(["git", "push", "origin", "main"], cwd=WORKSPACE_DIR, capture_output=True, text=True)
+                if res.returncode == 0:
+                    print("[✓] Vercel-bryggan synkad via GitHub (aktiv om ~10 sekunder).")
+                else:
+                    print("[!] Kunde inte pusha till GitHub:", res.stderr.strip())
+            except Exception as e:
+                print("[!] Fel vid git-synk:", e)
+
+        threading.Thread(target=push_git, daemon=True).start()
+    except Exception as e:
+        print("[!] Fel vid uppdatering av vercel.json:", e)
+
 def main():
     print("==================================================================")
-    print(" QA FOTO- & RETUSCH-HUBB (PERMANENT STATISK DOMAN)")
+    print(" QA FOTO- & RETUSCH-HUBB (PERMANENT VERCEL-LANK)")
     print("==================================================================")
 
-    # 1. Start Python HTTP server in thread
     server_thread = threading.Thread(target=run_server, daemon=True)
     server_thread.start()
     time.sleep(1)
     print(f"[*] Lokal server kors pa: http://localhost:{PORT}")
     print(f"[*] Kontorsnatverk (Wi-Fi): http://192.168.2.33:{PORT}")
 
-    # Write permanent static link to file
     with open(LINK_FILE, "w", encoding="utf-8") as f:
-        f.write(PERMANENT_URL)
+        f.write(PERMANENT_VERCEL_URL)
 
     print("\n" + "="*66)
-    print(" FAST PERMANENT ADRESS FOR TEAMET & MICROSOFT TEAMS:")
-    print(f" >>> {PERMANENT_URL} <<<")
+    print(" FAST PERMANENT ADRESS FOR TEAMET (VERCEL):")
+    print(f" >>> {PERMANENT_VERCEL_URL} <<<")
     print("="*66 + "\n")
 
-    # 2. Start ngrok daemon with permanent static domain
     proc = None
-    if os.path.exists(NGROK_EXE):
-        print(f"[*] Startar ngrok med fast doman: {STATIC_DOMAIN}...")
+    if os.path.exists(CLOUDFLARED_EXE):
+        print("[*] Startar Cloudflare-tunnel (obegransad gratis bandbredd)...")
         proc = subprocess.Popen(
-            [NGROK_EXE, "http", str(PORT), f"--url={STATIC_DOMAIN}", "--log=stdout"],
+            [CLOUDFLARED_EXE, "tunnel", "--url", f"http://localhost:{PORT}"],
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             text=True,
@@ -61,24 +104,29 @@ def main():
             bufsize=1
         )
 
-        def monitor_ngrok():
-            for line in proc.stdout:
-                if "client session established" in line or "tunnel session started" in line:
-                    print(f"[*] Tunnel aktiv pa: {PERMANENT_URL}")
+        def monitor_cloudflare(p):
+            tunnel_found = False
+            for line in p.stderr:
+                match = re.search(r"https://[a-zA-Z0-9-]+\.trycloudflare\.com", line)
+                if match and not tunnel_found:
+                    tunnel_url = match.group(0)
+                    tunnel_found = True
+                    print(f"\n[✓] Cloudflare aktiv: {tunnel_url}")
+                    update_vercel_config(tunnel_url)
+                    print(f"[✓] Alla kollegor anvander alltid den fasta lanken: {PERMANENT_VERCEL_URL}\n")
 
-        t = threading.Thread(target=monitor_ngrok, daemon=True)
+        t = threading.Thread(target=monitor_cloudflare, args=(proc,), daemon=True)
         t.start()
     else:
-        print(f"[!] ngrok.exe hittades inte pa: {NGROK_EXE}")
+        print(f"[!] cloudflared.exe hittades inte pa: {CLOUDFLARED_EXE}")
 
-    # Keep main process alive forever
     try:
         while True:
             time.sleep(2)
             if proc and proc.poll() is not None:
                 print("[!] Tunnel process avslutades, startar om automatiskt...")
                 proc = subprocess.Popen(
-                    [NGROK_EXE, "http", str(PORT), f"--url={STATIC_DOMAIN}", "--log=stdout"],
+                    [CLOUDFLARED_EXE, "tunnel", "--url", f"http://localhost:{PORT}"],
                     stdout=subprocess.PIPE,
                     stderr=subprocess.PIPE,
                     text=True,
@@ -86,6 +134,8 @@ def main():
                     errors="replace",
                     bufsize=1
                 )
+                t = threading.Thread(target=monitor_cloudflare, args=(proc,), daemon=True)
+                t.start()
     except KeyboardInterrupt:
         if proc:
             proc.terminate()

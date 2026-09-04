@@ -1833,8 +1833,18 @@
         Ange ditt förnamn så att dina kollegor kan se vem som har godkänt bilderna och lämnat kommentarer i tråden.
       </p>
       
-      <div class="form-group" style="margin-top: 4px;">
-        <label>Ditt Förnamn:</label>
+      <div style="margin: 12px 0 8px 0;">
+        <label style="font-size: 12px; color: var(--text-dim); display: block; margin-bottom: 6px;">Snabbval:</label>
+        <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+          <button type="button" class="btn btn-sm" style="background: rgba(56, 189, 248, 0.15); border: 1px solid var(--accent-blue); color: #fff; cursor: pointer;" onclick="selectQuickReviewer('Andro')">👤 Andro</button>
+          <button type="button" class="btn btn-sm" style="background: rgba(56, 189, 248, 0.15); border: 1px solid var(--accent-blue); color: #fff; cursor: pointer;" onclick="selectQuickReviewer('Jesper')">👤 Jesper</button>
+          <button type="button" class="btn btn-sm" style="background: rgba(56, 189, 248, 0.15); border: 1px solid var(--accent-blue); color: #fff; cursor: pointer;" onclick="selectQuickReviewer('Amalia')">👤 Amalia</button>
+          <button type="button" class="btn btn-sm" style="background: rgba(56, 189, 248, 0.15); border: 1px solid var(--accent-blue); color: #fff; cursor: pointer;" onclick="selectQuickReviewer('Anton')">👤 Anton</button>
+        </div>
+      </div>
+
+      <div class="form-group" style="margin-top: 8px;">
+        <label>Eller skriv ditt förnamn:</label>
         <input type="text" id="initialNameInput" class="form-input" placeholder="t.ex. Johan, Maria, Andronik..." onkeydown="if(event.key==='Enter') saveInitialName()" />
       </div>
 
@@ -2302,6 +2312,14 @@
       showToast(`Inloggad som: ${state.reviewer}`);
     }
 
+    function selectQuickReviewer(name) {
+      state.reviewer = name;
+      localStorage.setItem('hatshop_reviewer', state.reviewer);
+      updateReviewerDisplay();
+      document.getElementById('nameModal').classList.remove('active');
+      showToast(`Inloggad som: ${state.reviewer}`);
+    }
+
     function promptChangeName() { openNameModal(); }
 
     function ensureReviewerName() {
@@ -2326,8 +2344,18 @@
           bSelect.add(opt);
         });
 
-        // 1. Check if URL has a ?batch= parameter
+        // Check if URL has a ?user= or ?reviewer= parameter
         const urlParams = new URLSearchParams(window.location.search);
+        const paramUser = urlParams.get('user') || urlParams.get('reviewer');
+        if (paramUser) {
+          state.reviewer = paramUser.trim();
+          localStorage.setItem('hatshop_reviewer', state.reviewer);
+          updateReviewerDisplay();
+          const nameModal = document.getElementById('nameModal');
+          if (nameModal) nameModal.classList.remove('active');
+        }
+
+        // 1. Check if URL has a ?batch= parameter
         const paramBatch = urlParams.get('batch');
         const targetBatch = (paramBatch && state.batches.some(b => b.id === paramBatch))
           ? paramBatch
