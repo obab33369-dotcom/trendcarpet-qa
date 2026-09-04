@@ -1,0 +1,562 @@
+{
+  "T8044-white": {
+    "1": {
+      "adjust_x": 29,
+      "adjust_y": 50,
+      "scale_factor_override": null,
+      "tolerance": 35.0,
+      "blend_range": 150.0
+    },
+    "3": {
+      "adjust_x": 49,
+      "adjust_y": 300,
+      "scale_factor_override": null,
+      "tolerance": 35.0,
+      "blend_range": 150.0
+    },
+    "4": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 35.0,
+      "blend_range": 150.0
+    },
+    "5": {
+      "adjust_x": -1,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 35.0,
+      "blend_range": 120.0
+    },
+    "9": {
+      "adjust_x": 60,
+      "adjust_y": -86,
+      "scale_factor_override": 1.0733103722031987,
+      "tolerance": 35.0,
+      "blend_range": 150.0
+    },
+    "10": {
+      "adjust_x": 132,
+      "adjust_y": 79,
+      "scale_factor_override": 1.2409647036688618,
+      "tolerance": 35.0,
+      "blend_range": 130.0
+    },
+    "2": {
+      "adjust_x": -84,
+      "adjust_y": 150,
+      "scale_factor_override": null,
+      "tolerance": 35.0,
+      "blend_range": 140.0
+    }
+  },
+  "97828": {
+    "4": {
+      "adjust_x": 74,
+      "adjust_y": 75,
+      "scale_factor_override": null,
+      "tolerance": 35.0,
+      "blend_range": 150.0
+    },
+    "1": {
+      "adjust_x": -1,
+      "adjust_y": -170,
+      "scale_factor_override": null,
+      "tolerance": 20.0,
+      "blend_range": 90.0
+    },
+    "2": {
+      "adjust_x": 0,
+      "adjust_y": 150,
+      "scale_factor_override": null,
+      "tolerance": 20.0,
+      "blend_range": 90.0
+    },
+    "3": {
+      "adjust_x": -1,
+      "adjust_y": 120,
+      "scale_factor_override": null,
+      "tolerance": 35.0,
+      "blend_range": 130.0
+    },
+    "5": {
+      "adjust_x": -1,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 30.0,
+      "blend_range": 110.0
+    },
+    "6": {
+      "adjust_x": 13,
+      "adjust_y": -1,
+      "scale_factor_override": 1.1454764672268911,
+      "tolerance": 35.0,
+      "blend_range": 120.0
+    }
+  },
+  "LINK-SM11-light": {
+    "1": {
+      "adjust_x": -1,
+      "adjust_y": -110,
+      "scale_factor_override": null,
+      "tolerance": 35.0,
+      "blend_range": 140.0
+    },
+    "2": {
+      "adjust_x": 1,
+      "adjust_y": 170,
+      "scale_factor_override": null,
+      "tolerance": 35.0,
+      "blend_range": 130.0
+    },
+    "4": {
+      "adjust_x": 0,
+      "adjust_y": 80,
+      "scale_factor_override": null,
+      "tolerance": 35.0,
+      "blend_range": 130.0
+    },
+    "3": {
+      "adjust_x": -2,
+      "adjust_y": 30,
+      "scale_factor_override": null,
+      "tolerance": 25.0,
+      "blend_range": 100.0
+    },
+    "6": {
+      "adjust_x": 1,
+      "adjust_y": 740,
+      "scale_factor_override": 1.4595215311004786,
+      "tolerance": 30.0,
+      "blend_range": 110.0
+    },
+    "8": {
+      "adjust_x": 2,
+      "adjust_y": 250,
+      "scale_factor_override": 1.4595215311004786,
+      "tolerance": 30.0,
+      "blend_range": 110.0
+    }
+  },
+  "1200180": {
+    "1": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.3073142857142859,
+      "tolerance": 35.0,
+      "blend_range": 150.0
+    },
+    "2": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.4057142857142857,
+      "tolerance": 35.0,
+      "blend_range": 150.0
+    },
+    "3": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.4057142857142857,
+      "tolerance": 35.0,
+      "blend_range": 140.0
+    },
+    "4": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.4057142857142857,
+      "tolerance": 35.0,
+      "blend_range": 120.0
+    },
+    "5": {
+      "adjust_x": -1,
+      "adjust_y": 350,
+      "scale_factor_override": null,
+      "tolerance": 35.0,
+      "blend_range": 130.0
+    },
+    "6": {
+      "adjust_x": -1,
+      "adjust_y": 450,
+      "scale_factor_override": null,
+      "tolerance": 35.0,
+      "blend_range": 130.0
+    }
+  },
+  "1311-L-S": {
+    "1": {
+      "adjust_x": 1,
+      "adjust_y": 60,
+      "scale_factor_override": null,
+      "tolerance": 20.0,
+      "blend_range": 90.0
+    }
+  },
+  "37281105": {
+    "1": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.1433413759552657,
+      "tolerance": 20.0,
+      "blend_range": 90.0
+    },
+    "2": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.1433413759552657,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "3": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.1433413759552657,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "4": {
+      "adjust_x": -1,
+      "adjust_y": 20,
+      "scale_factor_override": null,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "80777": {
+    "1": {
+      "adjust_x": 49,
+      "adjust_y": 183,
+      "scale_factor_override": 0.8838437170010559,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "3": {
+      "adjust_x": 0,
+      "adjust_y": -70,
+      "scale_factor_override": null,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "4": {
+      "adjust_x": -1,
+      "adjust_y": -70,
+      "scale_factor_override": null,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "98875": {
+    "6": {
+      "adjust_x": 12,
+      "adjust_y": -1,
+      "scale_factor_override": 1.204699068493151,
+      "tolerance": 30.0,
+      "blend_range": 110.0
+    },
+    "7": {
+      "adjust_x": 33,
+      "adjust_y": -1,
+      "scale_factor_override": 1.204699068493151,
+      "tolerance": 30.0,
+      "blend_range": 110.0
+    }
+  },
+  "82028": {
+    "1": {
+      "adjust_x": -7,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "99684": {
+    "6": {
+      "adjust_x": 28,
+      "adjust_y": -1,
+      "scale_factor_override": 1.203599890510949,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "91472": {
+    "4": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 0.8847780126849895,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "78145": {
+    "3": {
+      "adjust_x": -1,
+      "adjust_y": 0,
+      "scale_factor_override": 0.8857142857142857,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "91682": {
+    "1": {
+      "adjust_x": -1,
+      "adjust_y": 209,
+      "scale_factor_override": null,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "2": {
+      "adjust_x": 0,
+      "adjust_y": 478,
+      "scale_factor_override": null,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "4300060": {
+    "6": {
+      "adjust_x": 3,
+      "adjust_y": 0,
+      "scale_factor_override": 0.956771841609051,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "90871": {
+    "1": {
+      "adjust_x": 0,
+      "adjust_y": 446,
+      "scale_factor_override": null,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "3": {
+      "adjust_x": -1,
+      "adjust_y": 588,
+      "scale_factor_override": null,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "1400034": {
+    "4": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.130574992679356,
+      "tolerance": 30.0,
+      "blend_range": 110.0
+    }
+  },
+  "8100041": {
+    "1": {
+      "adjust_x": 0,
+      "adjust_y": -54,
+      "scale_factor_override": 0.8615542974781266,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "2": {
+      "adjust_x": -2,
+      "adjust_y": -62,
+      "scale_factor_override": null,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "3": {
+      "adjust_x": -1,
+      "adjust_y": 59,
+      "scale_factor_override": null,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "76660": {
+    "3": {
+      "adjust_x": -1,
+      "adjust_y": -25,
+      "scale_factor_override": 1.2548188126445643,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "WS-18001": {
+    "3": {
+      "adjust_x": -1,
+      "adjust_y": 0,
+      "scale_factor_override": 1.3073142857142859,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "1400042": {
+    "1": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 15.0,
+      "blend_range": 50.0,
+      "highlight_threshold": 170.0,
+      "highlight_factor": 0.4
+    }
+  },
+  "WS-8651A-BlackBlack-NEW": {
+    "9": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.4057839444995046,
+      "tolerance": 22.0,
+      "blend_range": 98.0
+    },
+    "7": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.2158625335976216,
+      "tolerance": 18.0,
+      "blend_range": 88.0
+    },
+    "8": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.4057839444995046,
+      "tolerance": 21.0,
+      "blend_range": 96.0
+    }
+  },
+  "WD2001-KD-white": {
+    "3": {
+      "adjust_x": -1,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 18.0,
+      "blend_range": 88.0
+    },
+    "4": {
+      "adjust_x": -1,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 22.0,
+      "blend_range": 104.0
+    },
+    "10": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.3013174311926607,
+      "tolerance": 18.0,
+      "blend_range": 88.0
+    }
+  },
+  "MLM-502850-dark-grey": {
+    "1": {
+      "scale_factor_override": 1.02,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "2": {
+      "scale_factor_override": 1.02,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "3": {
+      "scale_factor_override": 1.02,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "4": {
+      "scale_factor_override": 1.02,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "MLM-502850": {
+    "1": {
+      "scale_factor_override": 1.02,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "2": {
+      "scale_factor_override": 1.02,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "3": {
+      "scale_factor_override": 1.02,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "4": {
+      "scale_factor_override": 1.02,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "2507-walnut": {
+    "1": {
+      "scale_factor_override": 0.99,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "3": {
+      "scale_factor_override": 1.23,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "4": {
+      "scale_factor_override": 1.189,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "5": {
+      "scale_factor_override": 1.33,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "6": {
+      "scale_factor_override": 1.27,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "7": {
+      "scale_factor_override": 1.35,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "2507-natur": {
+    "1": {
+      "scale_factor_override": 0.99,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "3": {
+      "scale_factor_override": 1.23,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "4": {
+      "scale_factor_override": 1.189,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "5": {
+      "scale_factor_override": 1.33,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "6": {
+      "scale_factor_override": 1.27,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "7": {
+      "scale_factor_override": 1.35,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "1310-L-S": {
+    "1": {
+      "scale_factor_override": 0.98,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  }
+}

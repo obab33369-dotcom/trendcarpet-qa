@@ -1,0 +1,2877 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="theme-color" content="#090A0C" />
+  <title>Foto QA Pocket</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-canvas: #090A0C;
+      --bg-surface: #111419;
+      --bg-card: #151921;
+      --bg-input: #1B212D;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-focus: rgba(59, 130, 246, 0.5);
+      --text-main: #F3F4F6;
+      --text-muted: #94A3B8;
+      --text-dim: #64748B;
+      --accent-blue: #3B82F6;
+      --status-ok: #10B981;
+      --status-warn: #F59E0B;
+      --status-redo: #EF4444;
+      --safe-top: env(safe-area-inset-top, 0px);
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: var(--bg-canvas);
+      color: var(--text-main);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 14px;
+      user-select: none;
+    }
+
+    /* Mobile App Shell */
+    .app-shell {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      padding-top: var(--safe-top);
+      padding-bottom: var(--safe-bottom);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Top Bar */
+    .mobile-header {
+      height: 52px;
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 12px;
+      flex-shrink: 0;
+      z-index: 20;
+    }
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .brand-badge {
+      background: linear-gradient(135deg, #1E293B, #0F172A);
+      border: 1px solid rgba(59, 130, 246, 0.4);
+      color: #60A5FA;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      letter-spacing: 0.04em;
+    }
+    .batch-select-mobile {
+      background: #1A202C;
+      border: 1px solid var(--border-color);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 8px;
+      border-radius: 6px;
+      max-width: 140px;
+      text-overflow: ellipsis;
+      outline: none;
+    }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .reviewer-btn {
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      color: #93C5FD;
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 4px 8px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+    }
+    .desktop-link-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 11.5px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    /* Model Sub-Header */
+    .model-sub-header {
+      background: var(--bg-canvas);
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      flex-shrink: 0;
+    }
+    .model-title-wrap {
+      min-width: 0;
+      flex: 1;
+    }
+    .model-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .model-subtitle {
+      font-size: 11px;
+      color: var(--text-dim);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .model-counter-pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 3px 8px;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      flex-shrink: 0;
+      margin-left: 8px;
+    }
+
+    /* Swipeable Image Stage */
+    .mobile-stage-wrap {
+      flex: 1;
+      min-height: 0;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      background: #000;
+      overflow: hidden;
+    }
+    .mobile-carousel {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .mobile-carousel::-webkit-scrollbar { display: none; }
+    .carousel-slide {
+      flex: 0 0 100%;
+      width: 100%;
+      height: 100%;
+      scroll-snap-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: #FFFFFF;
+    }
+    .carousel-slide img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      pointer-events: auto;
+    }
+    .slide-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(6px);
+      color: #fff;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      pointer-events: none;
+    }
+    .zoom-hint-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(6px);
+      color: #fff;
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      cursor: pointer;
+    }
+
+    /* Laser Guide Overlay for mobile */
+    .mobile-guide-overlay {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      display: none;
+    }
+    .mobile-guide-overlay.active { display: block; }
+    .guide-line-crown {
+      position: absolute; left: 0; width: 100%; height: 1.5px;
+      background: #EAB308; box-shadow: 0 0 4px #EAB308; top: 22%;
+    }
+    .guide-line-base {
+      position: absolute; left: 0; width: 100%; height: 1.5px;
+      background: #EAB308; box-shadow: 0 0 4px #EAB308; top: 78%;
+    }
+    .guide-line-center {
+      position: absolute; top: 0; height: 100%; width: 1.5px;
+      background: #EAB308; box-shadow: 0 0 4px #EAB308; left: 50%;
+    }
+
+    /* Carousel Nav Overlay (Dots + Arrows) */
+    .stage-overlay-nav {
+      position: absolute;
+      bottom: 12px;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      pointer-events: none;
+      z-index: 10;
+    }
+    .stage-nav-arrow {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      pointer-events: auto;
+      cursor: pointer;
+    }
+    .carousel-dots {
+      display: flex;
+      gap: 6px;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(6px);
+      padding: 5px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      pointer-events: auto;
+    }
+    .carousel-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .carousel-dot.active {
+      background: #3B82F6;
+      width: 18px;
+      border-radius: 4px;
+    }
+
+    /* Fixed Bottom Action & Decision Bar */
+    .mobile-bottom-bar {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-color);
+      padding: 8px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-shrink: 0;
+      z-index: 25;
+    }
+
+    /* Step & Sheet Trigger Row */
+    .step-sheet-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .nav-model-btn {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      color: #fff;
+      font-size: 12.5px;
+      font-weight: 600;
+      padding: 8px 10px;
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      cursor: pointer;
+    }
+    .open-sheet-btn {
+      flex: 1.2;
+      background: #1E293B;
+      border: 1px solid rgba(59, 130, 246, 0.35);
+      color: #93C5FD;
+      font-size: 12.5px;
+      font-weight: 600;
+      padding: 8px 10px;
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      cursor: pointer;
+      position: relative;
+    }
+    .comment-count-badge {
+      background: var(--accent-blue);
+      color: #fff;
+      font-size: 10px;
+      padding: 1px 5px;
+      border-radius: 10px;
+      font-weight: 700;
+    }
+
+    /* 3 Big Tactile Decision Buttons */
+    .decision-buttons-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+    }
+    .m-status-btn {
+      padding: 12px 6px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      cursor: pointer;
+      border: 1px solid var(--border-color);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text-muted);
+      transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .m-status-btn .btn-sub {
+      font-size: 9.5px;
+      opacity: 0.7;
+      font-weight: 500;
+    }
+    .m-status-btn.comment-btn {
+      background: rgba(59, 130, 246, 0.08);
+      border-color: rgba(59, 130, 246, 0.3);
+      color: #93C5FD;
+    }
+    .m-status-btn.active-ok {
+      background: rgba(16, 185, 129, 0.18);
+      border-color: #10B981;
+      color: #34D399;
+      box-shadow: 0 0 12px rgba(16, 185, 129, 0.25);
+    }
+    .m-status-btn.active-comment {
+      background: rgba(59, 130, 246, 0.22);
+      border-color: #3B82F6;
+      color: #BFDBFE;
+      box-shadow: 0 0 12px rgba(59, 130, 246, 0.3);
+    }
+    .m-status-btn.active-redo {
+      background: rgba(239, 68, 68, 0.18);
+      border-color: #EF4444;
+      color: #F87171;
+      box-shadow: 0 0 12px rgba(239, 68, 68, 0.25);
+    }
+
+    /* Expandable Bottom Sheet (Checklist & Comments) */
+    .sheet-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(4px);
+      z-index: 100;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .sheet-backdrop.active {
+      display: block;
+      opacity: 1;
+    }
+    .bottom-sheet {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-color);
+      border-radius: 16px 16px 0 0;
+      box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.7);
+      z-index: 101;
+      display: flex;
+      flex-direction: column;
+      max-height: 82vh;
+      transform: translateY(100%);
+      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      padding-bottom: var(--safe-bottom);
+    }
+    .bottom-sheet.open {
+      transform: translateY(0);
+    }
+    .sheet-handle-bar {
+      padding: 10px 0 6px 0;
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .sheet-handle {
+      width: 40px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.25);
+      border-radius: 2px;
+    }
+    .sheet-header {
+      padding: 6px 16px 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .sheet-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .sheet-close-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: none;
+      color: #fff;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .sheet-content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* Checklist Section inside Sheet */
+    .checklist-section-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-dim);
+      margin-bottom: 8px;
+    }
+    .mobile-checklist-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .m-check-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 9px 10px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    .m-check-item input {
+      accent-color: var(--accent-blue);
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Comments in Sheet */
+    .m-comments-stream {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-height: 100px;
+    }
+    .m-comment-bubble {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .m-bubble-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+    }
+    .m-bubble-author { font-weight: 700; color: #93C5FD; }
+    .m-bubble-time { color: var(--text-dim); }
+    .m-bubble-text { font-size: 13px; line-height: 1.4; color: #F3F4F6; }
+
+    /* Composer in Sheet */
+    .m-composer-wrap {
+      padding: 10px 16px 14px 16px;
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .m-pills-row {
+      display: flex;
+      gap: 4px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .m-pill {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .m-pill.active {
+      background: rgba(59, 130, 246, 0.2);
+      border-color: var(--accent-blue);
+      color: #93C5FD;
+      font-weight: 600;
+    }
+    .m-input-row {
+      display: flex;
+      gap: 8px;
+    }
+    .m-textarea {
+      flex: 1;
+      background: var(--bg-input);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      color: #fff;
+      font-family: inherit;
+      font-size: 13px;
+      padding: 8px 10px;
+      resize: none;
+      height: 38px;
+      outline: none;
+    }
+    .m-textarea:focus { border-color: var(--border-focus); }
+    .m-send-btn {
+      background: var(--accent-blue);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 0 14px;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    /* Modal for Name Setting */
+    .name-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 200;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .name-modal.active { display: flex; }
+    .name-modal-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 20px;
+      width: 100%;
+      max-width: 320px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* Toast */
+    .m-toast {
+      position: fixed;
+      top: 60px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-20px);
+      background: #1E293B;
+      border: 1px solid var(--accent-blue);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+      z-index: 300;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.25s ease;
+    }
+    .m-toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* View Switcher Tabs */
+    .mobile-view-tabs {
+      display: flex;
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border-color);
+      padding: 6px 12px;
+      gap: 8px;
+      flex-shrink: 0;
+      z-index: 15;
+    }
+    .m-view-tab {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 7px 10px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      color: var(--text-muted);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .m-view-tab.active {
+      background: rgba(59, 130, 246, 0.18);
+      border-color: rgba(59, 130, 246, 0.5);
+      color: #93C5FD;
+    }
+
+    /* Single View Container */
+    .mobile-single-view {
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    /* Mobile Grid View */
+    .mobile-grid-view {
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      background: var(--bg-canvas);
+      overflow-y: auto;
+      width: 100%;
+      height: 100%;
+      -webkit-overflow-scrolling: touch;
+    }
+    .m-grid-header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      flex-shrink: 0;
+    }
+    .m-grid-title {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .m-tool-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .m-tool-btn.active {
+      background: rgba(234, 179, 8, 0.18);
+      border-color: rgba(234, 179, 8, 0.5);
+      color: #FDE047;
+    }
+    .m-cards-grid {
+      padding: 12px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      padding-bottom: 80px;
+    }
+    .m-grid-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      contain: content;
+    }
+    .m-grid-card.status-approved { border-left: 3px solid var(--status-ok); }
+    .m-grid-card.status-angle_issue { border-left: 3px solid var(--status-warn); }
+    .m-grid-card.status-redo { border-left: 3px solid var(--status-redo); }
+    .m-card-thumb-wrap {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      width: 100%;
+      background: #FFFFFF;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .m-card-thumb-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      pointer-events: none;
+      display: block;
+    }
+    .m-card-status-badge {
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(4px);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      z-index: 5;
+    }
+    .m-card-info {
+      padding: 8px 10px;
+      flex: 1;
+    }
+    .m-card-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .m-card-sub {
+      font-size: 10.5px;
+      color: var(--text-dim);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-top: 1px;
+    }
+    .m-card-actions {
+      display: flex;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(0, 0, 0, 0.2);
+    }
+    .m-mini-btn {
+      flex: 1;
+      background: transparent;
+      border: none;
+      border-right: 1px solid rgba(255, 255, 255, 0.06);
+      color: var(--text-dim);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .m-mini-btn:last-child { border-right: none; }
+    .m-mini-btn.active-ok { background: rgba(16, 185, 129, 0.25); color: #34D399; }
+    .m-mini-btn.active-warn { background: rgba(245, 158, 11, 0.25); color: #FBBF24; }
+    .m-mini-btn.active-redo { background: rgba(239, 68, 68, 0.25); color: #F87171; }
+
+    /* Tap hint badge on carousel */
+    .zoom-tap-hint {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(6px);
+      color: #fff;
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      cursor: pointer;
+      z-index: 8;
+    }
+
+    /* Mobile Zoom Modal */
+    .mobile-zoom-modal {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      z-index: 1000;
+      display: none;
+      flex-direction: column;
+      touch-action: none;
+    }
+    .mobile-zoom-modal.active { display: flex; }
+    .zoom-header {
+      height: 52px;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 14px;
+      z-index: 10;
+      flex-shrink: 0;
+    }
+    .zoom-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 170px;
+    }
+    .zoom-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .zoom-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 5px 9px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .zoom-btn.active {
+      background: #EAB308;
+      color: #000;
+      border-color: #EAB308;
+    }
+    .zoom-close-btn {
+      background: rgba(255, 255, 255, 0.15);
+      border: none;
+      color: #fff;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .zoom-viewport {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+      background: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      touch-action: none;
+    }
+    .zoom-content {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform-origin: center center;
+      will-change: transform;
+    }
+    .zoom-content img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      user-select: none;
+      pointer-events: none;
+    }
+    /* Dynamic Comment Popup Modal */
+    .m-popup-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(4px);
+      z-index: 250;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    .m-popup-backdrop.active {
+      display: block;
+      opacity: 1;
+    }
+    .m-comment-popup {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-color);
+      border-radius: 18px 18px 0 0;
+      box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.8);
+      z-index: 251;
+      display: flex;
+      flex-direction: column;
+      max-height: 88vh;
+      transform: translateY(100%);
+      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      padding-bottom: calc(var(--safe-bottom) + 12px);
+    }
+    .m-comment-popup.active {
+      transform: translateY(0);
+    }
+    .m-popup-header {
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .m-popup-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .m-popup-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .m-popup-close-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: none;
+      color: #fff;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .m-popup-body {
+      padding: 14px 18px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .m-popup-section-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .m-quick-tags-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .m-tag-chip {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border-color);
+      color: #E2E8F0;
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 5px 10px;
+      border-radius: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: background 0.15s ease;
+    }
+    .m-tag-chip:active {
+      background: rgba(59, 130, 246, 0.3);
+      border-color: #3B82F6;
+    }
+    .m-popup-textarea {
+      width: 100%;
+      min-height: 80px;
+      background: var(--bg-input);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      color: #fff;
+      font-family: inherit;
+      font-size: 13.5px;
+      padding: 10px 12px;
+      resize: vertical;
+      outline: none;
+      line-height: 1.4;
+    }
+    .m-popup-textarea:focus {
+      border-color: var(--accent-blue);
+      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+    }
+    .m-popup-status-checkbox {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12.5px;
+      color: #F87171;
+      cursor: pointer;
+      padding: 4px 0;
+    }
+    .m-popup-status-checkbox input {
+      accent-color: #EF4444;
+      width: 16px;
+      height: 16px;
+    }
+    .m-popup-footer {
+      padding: 10px 18px 0 18px;
+      display: flex;
+      gap: 10px;
+    }
+
+    /* Existing comments and status reset styling */
+    .m-popup-comment-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 9px 11px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .m-popup-comment-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .m-popup-comment-author {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #93C5FD;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .m-popup-comment-del {
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #F87171;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+    }
+    .m-popup-comment-del:active {
+      background: rgba(239, 68, 68, 0.3);
+    }
+    .m-popup-status-bar {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .m-current-status-tag {
+      font-size: 12px;
+      font-weight: 600;
+      color: #E2E8F0;
+    }
+    .m-reset-status-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #CBD5E1;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 9px;
+      border-radius: 6px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .m-reset-status-btn:active {
+      background: rgba(239, 68, 68, 0.2);
+      color: #F87171;
+      border-color: #EF4444;
+    }
+    .m-single-reset-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 6px;
+      padding: 6px 12px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px dashed rgba(255, 255, 255, 0.15);
+      border-radius: 6px;
+      font-size: 11.5px;
+      color: var(--text-muted);
+    }
+
+    /* Zoom Sub Bar & Bottom Bar */
+    .zoom-sub-bar {
+      height: 40px;
+      background: rgba(15, 23, 42, 0.92);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 12px;
+      z-index: 10;
+      flex-shrink: 0;
+    }
+    .zoom-nav-arrows {
+      display: flex;
+      gap: 6px;
+    }
+    .zoom-nav-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 9px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .zoom-nav-btn:active {
+      background: var(--accent-blue);
+    }
+    .zoom-bottom-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.98) 75%, transparent);
+      padding: 14px 14px calc(var(--safe-bottom) + 12px) 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      z-index: 20;
+    }
+    .zoom-scroll-hint {
+      text-align: center;
+      pointer-events: none;
+    }
+    .zoom-scroll-hint span {
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(6px);
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 11px;
+      padding: 4px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .zoom-action-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+    }
+    .zoom-act-btn {
+      padding: 10px 4px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-weight: 700;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      cursor: pointer;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+    .zoom-act-btn.ok {
+      color: #34D399;
+      border-color: rgba(16, 185, 129, 0.3);
+    }
+    .zoom-act-btn.ok.active-ok {
+      background: rgba(16, 185, 129, 0.3);
+      border-color: #10B981;
+      box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+    }
+    .zoom-act-btn.comment {
+      color: #93C5FD;
+      border-color: rgba(59, 130, 246, 0.3);
+    }
+    .zoom-act-btn.comment.active-comment {
+      background: rgba(59, 130, 246, 0.3);
+      border-color: #3B82F6;
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+    }
+    .zoom-act-btn.redo {
+      color: #F87171;
+      border-color: rgba(239, 68, 68, 0.3);
+    }
+    .zoom-act-btn.redo.active-redo {
+      background: rgba(239, 68, 68, 0.3);
+      border-color: #EF4444;
+      box-shadow: 0 0 10px rgba(239, 68, 68, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-shell">
+    
+    <!-- Top Bar -->
+    <header class="mobile-header">
+      <div class="brand-wrap">
+        <div class="brand-badge">POCKET QA</div>
+        <select id="mobileBatchSelect" class="batch-select-mobile" onchange="switchBatch(this.value)">
+          <!-- Loaded dynamically -->
+        </select>
+      </div>
+
+      <div class="header-actions">
+        <div class="reviewer-btn" onclick="copyMobileOneDriveLink()" id="mBtnOneDrive" title="Kopiera OneDrive-länk">☁️</div>
+        <div class="reviewer-btn" onclick="copyMobileShareLink()" title="Dela länk till denna mapp">🔗</div>
+        <div class="reviewer-btn" onclick="openNameModal()" title="Klicka för att byta namn">
+          <span>👤</span>
+          <span id="mReviewerDisplay">Namn</span>
+        </div>
+        <a href="/?desktop=1" onclick="sessionStorage.setItem('prefer_desktop', '1')" class="desktop-link-btn" title="Gå till full desktopvy">💻</a>
+      </div>
+    </header>
+
+    <!-- View Switcher Tabs -->
+    <div class="mobile-view-tabs">
+      <button class="m-view-tab active" id="tabModeSingle" onclick="switchMobileView('single')">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+        Singelvy (Karusell)
+      </button>
+      <button class="m-view-tab" id="tabModeGrid" onclick="switchMobileView('grid')">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        <span id="tabGridLabel">Översiktsgrid</span>
+      </button>
+    </div>
+
+    <!-- VIEW 1: SINGLE / CAROUSEL -->
+    <div class="mobile-single-view" id="mobileSingleView">
+      <!-- Model Info Bar -->
+      <div class="model-sub-header">
+        <div class="model-title-wrap">
+          <div class="model-title" id="mModelTitle">Laddar produkt...</div>
+          <div class="model-subtitle" id="mModelSubtitle">-</div>
+        </div>
+        <div class="model-counter-pill" id="mCounterPill">1 / 1</div>
+      </div>
+
+      <!-- Swipeable Image Carousel Stage -->
+      <div class="mobile-stage-wrap">
+        <div class="mobile-carousel" id="mobileCarousel">
+          <!-- Slides generated dynamically -->
+        </div>
+
+        <!-- Laser Guide Overlay -->
+        <div class="mobile-guide-overlay" id="mobileGuideOverlay">
+          <div class="guide-line-crown"></div>
+          <div class="guide-line-center"></div>
+          <div class="guide-line-base"></div>
+        </div>
+
+        <!-- Controls Overlay -->
+        <div class="stage-overlay-nav">
+          <div class="stage-nav-arrow" onclick="carouselPrev()">❮</div>
+          <div class="carousel-dots" id="carouselDots">
+            <!-- Dots generated dynamically -->
+          </div>
+          <div class="stage-nav-arrow" onclick="carouselNext()">❯</div>
+        </div>
+      </div>
+
+      <!-- Fixed Bottom Decision Bar -->
+      <div class="mobile-bottom-bar">
+        
+        <!-- Nav & Sheet Controls -->
+        <div class="step-sheet-row">
+          <button class="nav-model-btn" onclick="prevProduct()">
+            ❮ Föregående
+          </button>
+
+          <button class="open-sheet-btn" onclick="openBottomSheet()">
+            <span>📝 Checklista & Chatt</span>
+            <span class="comment-count-badge" id="mCommentCountBadge">0</span>
+          </button>
+
+          <button class="nav-model-btn" onclick="nextProduct()">
+            Nästa ❯
+          </button>
+        </div>
+
+        <!-- Big Decision Buttons -->
+        <div class="decision-buttons-row">
+          <button class="m-status-btn" id="mBtnOk" onclick="setMobileStatus('approved')">
+            <span>✓ Godkänd</span>
+            <span class="btn-sub">Klar för publicering</span>
+          </button>
+
+          <button class="m-status-btn comment-btn" id="mBtnComment" onclick="openCommentPopup()">
+            <span>💬 Kommentera</span>
+            <span class="btn-sub" id="mCommentBtnSub">Lämna anmärkning</span>
+          </button>
+
+          <button class="m-status-btn" id="mBtnRedo" onclick="setMobileStatus('redo')">
+            <span>✕ Gör om</span>
+            <span class="btn-sub">Kräver ny retusch</span>
+          </button>
+        </div>
+
+        <!-- Reset Status Indicator & Button -->
+        <div class="m-single-reset-bar" id="mSingleResetBar" style="display: none;">
+          <span id="mSingleStatusReviewerText">Markerad</span>
+          <button class="m-reset-status-btn" onclick="clearMobileStatus()">
+            ⚪ Ångra / Nollställ markering
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- VIEW 2: 2-COLUMN GRID -->
+    <div class="mobile-grid-view" id="mobileGridView" style="display: none;">
+      <div class="m-grid-header-bar">
+        <div class="m-grid-title" id="mGridTitle">15 modeller</div>
+        <div class="m-grid-toolbar-actions">
+          <button class="m-tool-btn" id="mGridGuidesBtn" onclick="toggleMobileGridGuides()">📐 Guider: Av</button>
+        </div>
+      </div>
+      <div class="m-cards-grid" id="mCardsGrid">
+        <!-- 2-column cards generated dynamically -->
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom Sheet (Checklist & Comments) -->
+  <div class="sheet-backdrop" id="sheetBackdrop" onclick="closeBottomSheet()"></div>
+  <div class="bottom-sheet" id="bottomSheet">
+    <div class="sheet-handle-bar" onclick="closeBottomSheet()">
+      <div class="sheet-handle"></div>
+    </div>
+
+    <div class="sheet-header">
+      <div class="sheet-title">Kvalitetschecklista & Kommentarer</div>
+      <button class="sheet-close-btn" onclick="closeBottomSheet()">✕</button>
+    </div>
+
+    <div class="sheet-content">
+      <!-- Checklist -->
+      <div>
+        <div class="checklist-section-title">Anmärkningar & Flaggor</div>
+        <div class="mobile-checklist-grid">
+          <label class="m-check-item">
+            <input type="checkbox" id="m_chk_angle" onchange="toggleChecklistFlag('angle', this.checked)">
+            <span>📐 Vinkelfel</span>
+          </label>
+          <label class="m-check-item">
+            <input type="checkbox" id="m_chk_crown" onchange="toggleChecklistFlag('crown', this.checked)">
+            <span>👑 Formfel</span>
+          </label>
+          <label class="m-check-item">
+            <input type="checkbox" id="m_chk_edge" onchange="toggleChecklistFlag('edge', this.checked)">
+            <span>✂️ Friläggning</span>
+          </label>
+          <label class="m-check-item">
+            <input type="checkbox" id="m_chk_color" onchange="toggleChecklistFlag('color', this.checked)">
+            <span>🎨 Färgavvikelse</span>
+          </label>
+          <label class="m-check-item">
+            <input type="checkbox" id="m_chk_dust" onchange="toggleChecklistFlag('dust', this.checked)">
+            <span>🧹 Damm/Smuts</span>
+          </label>
+          <label class="m-check-item">
+            <input type="checkbox" id="m_chk_shadow" onchange="toggleChecklistFlag('shadow', this.checked)">
+            <span>🌓 Skuggning</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Live Comments Stream -->
+      <div>
+        <div class="checklist-section-title" style="display: flex; justify-content: space-between;">
+          <span>Kommentarstråd</span>
+          <span id="mSheetCommentCount" style="color: var(--accent-blue);">0 inlägg</span>
+        </div>
+        <div class="m-comments-stream" id="mCommentsStream">
+          <!-- Comments generated dynamically -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Integrated Composer -->
+    <div class="m-composer-wrap">
+      <div class="m-pills-row" id="mPillsRow">
+        <span class="m-pill active" onclick="setCommentShot('all', this)">🌐 Alla</span>
+        <span class="m-pill" onclick="setCommentShot('01', this)">01</span>
+        <span class="m-pill" onclick="setCommentShot('02', this)">02</span>
+        <span class="m-pill" onclick="setCommentShot('03', this)">03</span>
+        <span class="m-pill" onclick="setCommentShot('04', this)">04</span>
+      </div>
+      <div class="m-input-row">
+        <textarea id="mCommentInput" class="m-textarea" rows="1" placeholder="Skriv anmärkning här..."></textarea>
+        <button class="m-send-btn" onclick="submitMobileComment()">Skicka</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reviewer Name Modal -->
+  <div class="name-modal" id="nameModal">
+    <div class="name-modal-card">
+      <h3 style="font-size: 15px; font-weight: 700; color: #fff;">Vem granskar?</h3>
+      <p style="font-size: 12px; color: var(--text-muted);">Ange ditt förnamn så att teamet ser vem som har godkänt eller skrivit kommentarer.</p>
+      <input type="text" id="mNameInput" class="m-textarea" style="height: 38px;" placeholder="Ditt förnamn (t.ex. Andro)" />
+      <button class="m-send-btn" style="height: 38px; width: 100%;" onclick="saveReviewerName()">Spara namn</button>
+    </div>
+  </div>
+
+  <!-- Dynamic Comment Popup Modal -->
+  <div class="m-popup-backdrop" id="commentPopupBackdrop" onclick="closeCommentPopup()"></div>
+  <div class="m-comment-popup" id="commentPopup">
+    <div class="m-popup-header">
+      <div>
+        <div class="m-popup-title" id="mCommentPopupTitle">💬 Lämna kommentar</div>
+        <div class="m-popup-sub" id="mCommentPopupSub">Modellnamn</div>
+      </div>
+      <button class="m-popup-close-btn" onclick="closeCommentPopup()">✕</button>
+    </div>
+
+    <div class="m-popup-body">
+      <!-- Status Bar with Reset Button -->
+      <div class="m-popup-status-bar" id="mPopupStatusBar" style="display: none;">
+        <div class="m-current-status-tag" id="mPopupCurrentStatusTag">Status: ⚪ Ej granskad</div>
+        <button class="m-reset-status-btn" onclick="resetMobileStatusFromPopup()">⚪ Ångra markering</button>
+      </div>
+
+      <!-- Existing Comments Thread -->
+      <div id="mPopupExistingCommentsWrap" style="display: none; margin-bottom: 8px;">
+        <div class="m-popup-section-label" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+          <span>💬 Befintliga kommentarer:</span>
+          <span id="mPopupCommentsCountBadge" style="color: var(--accent-blue); font-weight: 700;"></span>
+        </div>
+        <div class="m-popup-comments-list" id="mPopupCommentsList" style="display: flex; flex-direction: column; gap: 6px; max-height: 180px; overflow-y: auto; margin-bottom: 8px;">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+
+      <!-- Shot selector -->
+      <div class="m-popup-section-label">Vinkel / Bild för ny kommentar:</div>
+      <div class="m-pills-row" id="mPopupShotPills">
+        <button class="m-pill active" onclick="setPopupCommentShot('all', this)">🌐 Hela modellen</button>
+        <button class="m-pill" onclick="setPopupCommentShot('01', this)">📸 Bild 01</button>
+        <button class="m-pill" onclick="setPopupCommentShot('02', this)">📸 Bild 02</button>
+        <button class="m-pill" onclick="setPopupCommentShot('03', this)">📸 Bild 03</button>
+        <button class="m-pill" onclick="setPopupCommentShot('04', this)">📸 Bild 04</button>
+      </div>
+
+      <!-- Quick tags / snabbval -->
+      <div class="m-popup-section-label" style="margin-top: 10px;">Snabbval (klicka för att lägga till text):</div>
+      <div class="m-quick-tags-row">
+        <button class="m-tag-chip" onclick="insertCommentTag('Vinkelfel')">📐 Vinkelfel</button>
+        <button class="m-tag-chip" onclick="insertCommentTag('Formfel / Buckla')">🧢 Formfel / Buckla</button>
+        <button class="m-tag-chip" onclick="insertCommentTag('Friläggningskant')">✂️ Friläggningskant</button>
+        <button class="m-tag-chip" onclick="insertCommentTag('Damm / Smuts')">✨ Damm / Smuts</button>
+        <button class="m-tag-chip" onclick="insertCommentTag('Färgavvikelse')">🎨 Färgavvikelse</button>
+        <button class="m-tag-chip" onclick="insertCommentTag('Skuggning')">🌓 Skuggning</button>
+      </div>
+
+      <!-- Comment textarea -->
+      <div class="m-popup-section-label" style="margin-top: 12px;">Din anmärkning:</div>
+      <textarea class="m-popup-textarea" id="mPopupCommentInput" placeholder="Skriv anmärkning här... (t.ex. 'Lutar för mycket åt höger' eller 'Ta bort damm på skärmen')"></textarea>
+
+      <!-- Optional status toggle -->
+      <label class="m-popup-status-checkbox">
+        <input type="checkbox" id="mPopupMarkRedo">
+        <span>Markera samtidigt som: <b>Gör om (🔴)</b></span>
+      </label>
+    </div>
+
+    <div class="m-popup-footer">
+      <button class="btn btn-outline" onclick="closeCommentPopup()" style="flex: 1; padding: 12px;">Avbryt</button>
+      <button class="btn btn-primary" onclick="submitPopupComment()" style="flex: 2; padding: 12px; font-weight: 700;">
+        Skicka kommentar ✓
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile High-Res Zoom Modal -->
+  <div class="mobile-zoom-modal" id="mobileZoomModal">
+    <div class="zoom-header">
+      <div class="zoom-title" id="zoomTitle">Modell - Bild 01</div>
+      <div class="zoom-actions">
+        <button class="zoom-btn" id="btnZoomGuides" onclick="toggleZoomGuides()">📐 Guider</button>
+        <button class="zoom-btn" onclick="resetZoom()">1x</button>
+        <button class="zoom-close-btn" onclick="closeMobileZoom()">✕</button>
+      </div>
+    </div>
+    <!-- Angle Pills Sub Bar -->
+    <div class="zoom-sub-bar" id="zoomSubBar">
+      <div class="m-pills-row" id="zoomAnglePills">
+        <!-- Injected dynamically -->
+      </div>
+      <div class="zoom-nav-arrows">
+        <button class="zoom-nav-btn" onclick="zoomPrevProduct()" title="Föregående modell">▲ Föreg.</button>
+        <button class="zoom-nav-btn" onclick="zoomNextProduct()" title="Nästa modell">▼ Nästa</button>
+      </div>
+    </div>
+    <div class="zoom-viewport" id="zoomViewport">
+      <div class="zoom-content" id="zoomContent">
+        <img id="zoomImg" src="" alt="Zoomad bild" />
+        <div class="mobile-guide-overlay" id="zoomGuideOverlay" style="display: none;">
+          <div class="guide-line-crown"></div>
+          <div class="guide-line-center"></div>
+          <div class="guide-line-base"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Bottom Floating Bar in Zoom Mode -->
+    <div class="zoom-bottom-bar">
+      <div class="zoom-scroll-hint">
+        <span>↕ Scrolla / svep nedåt för nästa produkt</span>
+      </div>
+      <div class="zoom-action-buttons">
+        <button class="zoom-act-btn ok" id="zoomBtnOk" onclick="setMobileStatus('approved')">✓ Godkänd</button>
+        <button class="zoom-act-btn comment" id="zoomBtnComment" onclick="openCommentPopup()">💬 Kommentera</button>
+        <button class="zoom-act-btn redo" id="zoomBtnRedo" onclick="setMobileStatus('redo')">✕ Gör om</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="m-toast" id="mToast">Ändringar sparade!</div>
+
+  <script>
+    // Bypass ngrok warning automatically
+    const _origFetch = window.fetch;
+    window.fetch = function(url, options = {}) {
+      options = options || {};
+      options.headers = options.headers || {};
+      if (typeof options.headers === 'object' && !(options.headers instanceof Headers)) {
+        options.headers['ngrok-skip-browser-warning'] = 'true';
+      }
+      return _origFetch.call(this, url, options);
+    };
+
+    const state = {
+      batches: [],
+      currentBatchId: '',
+      products: [],
+      reviews: {},
+      reviewer: localStorage.getItem('hatshop_reviewer') || 'Andro',
+      currentProductIndex: 0,
+      currentShotIndex: 0,
+      commentShotTarget: 'all',
+      showGuides: false,
+      mobileView: 'single',
+      mobileGridGuides: false
+    };
+
+    window.addEventListener('DOMContentLoaded', async () => {
+      updateReviewerDisplay();
+      await initBatches();
+      setupCarouselTouch();
+      setupZoomTouchEvents();
+      setupHistoryNavigation();
+    });
+
+    function updateReviewerDisplay() {
+      const el = document.getElementById('mReviewerDisplay');
+      if (el) el.innerText = state.reviewer || 'Ange namn';
+    }
+
+    function openNameModal() {
+      document.getElementById('mNameInput').value = state.reviewer || '';
+      document.getElementById('nameModal').classList.add('active');
+      history.pushState({ modal: 'name' }, '');
+    }
+
+    function saveReviewerName() {
+      const name = document.getElementById('mNameInput').value.trim();
+      if (!name) return;
+      state.reviewer = name;
+      localStorage.setItem('hatshop_reviewer', name);
+      updateReviewerDisplay();
+      document.getElementById('nameModal').classList.remove('active');
+      if (history.state?.modal === 'name') {
+        history.back();
+      }
+      showToast(`Välkommen ${name}!`);
+    }
+
+    async function initBatches() {
+      try {
+        const res = await fetch('/api/batches');
+        const data = await res.json();
+        state.batches = data.batches || [];
+        const select = document.getElementById('mobileBatchSelect');
+        select.innerHTML = '';
+        state.batches.forEach(b => {
+          const opt = document.createElement('option');
+          opt.value = b.id;
+          opt.innerText = b.name;
+          select.appendChild(opt);
+        });
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const paramBatch = urlParams.get('batch');
+        const targetBatch = (paramBatch && state.batches.some(b => b.id === paramBatch))
+          ? paramBatch
+          : (state.batches[0]?.id || '');
+
+        if (targetBatch) {
+          state.currentBatchId = targetBatch;
+          select.value = targetBatch;
+          await loadBatch(targetBatch);
+        }
+      } catch (err) {
+        console.error('Kunde inte ladda mappar:', err);
+      }
+    }
+
+    async function switchBatch(batchId) {
+      state.currentBatchId = batchId;
+      state.currentProductIndex = 0;
+      try {
+        const newUrl = new URL(window.location);
+        newUrl.searchParams.set('batch', batchId);
+        window.history.replaceState({}, '', newUrl);
+      } catch (e) {}
+      await loadBatch(batchId);
+    }
+
+    function copyMobileShareLink() {
+      const url = window.location.href;
+      navigator.clipboard.writeText(url).then(() => {
+        showToast('🔗 Mapplänk kopierad till urklipp!');
+      }).catch(() => {
+        prompt('Kopiera denna länk:', url);
+      });
+    }
+
+    function copyMobileOneDriveLink() {
+      const batch = state.batches.find(b => b.id === state.currentBatchId);
+      const link = batch?.onedrive_url;
+      if (!link) {
+        const input = prompt('Klistra in OneDrive / SharePoint-länk för mappen:');
+        if (!input || !input.trim()) return;
+        const trimmed = input.trim();
+        fetch(`/api/batch/set_onedrive?batch=${encodeURIComponent(state.currentBatchId)}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ batch_id: state.currentBatchId, onedrive_url: trimmed })
+        }).then(() => {
+          if (batch) batch.onedrive_url = trimmed;
+          navigator.clipboard.writeText(trimmed).catch(() => {});
+          showToast('☁️ OneDrive-länk sparad och kopierad!');
+        });
+        return;
+      }
+      navigator.clipboard.writeText(link).then(() => {
+        showToast('☁️ OneDrive-länk kopierad till urklipp!');
+      }).catch(() => {
+        prompt('Kopiera OneDrive-länk:', link);
+      });
+    }
+
+    async function loadBatch(batchId) {
+      try {
+        const res = await fetch(`/api/products?batch=${encodeURIComponent(batchId)}`);
+        const data = await res.json();
+        state.products = data.products || [];
+        state.reviews = data.reviews || {};
+        updateGridLabels();
+        if (state.mobileView === 'grid') {
+          renderMobileGrid();
+        } else {
+          renderMobileProduct();
+        }
+      } catch (err) {
+        console.error('Kunde inte ladda produkter:', err);
+      }
+    }
+
+    function getEffectiveMobileStatus(productId) {
+      const review = state.reviews[productId] || {};
+      const comments = review.comments || [];
+      const flags = review.flags || {};
+      const hasFlags = Object.values(flags).some(Boolean);
+
+      // Explicitly marked statuses
+      if (review.status === 'redo') return 'redo';
+      if (review.status === 'approved') return 'approved';
+      if (review.status === 'pending') return 'pending'; // Manually reset / undone
+
+      // If comments or flags exist -> requires attention / redo
+      if (comments.length > 0 || hasFlags) {
+        return 'redo';
+      }
+
+      // Default baseline: APPROVED as standard (precis som på desktop)!
+      return 'approved';
+    }
+
+    function handleImageError(img) {
+      if (img.dataset.retried && parseInt(img.dataset.retried) >= 3) return;
+      const count = parseInt(img.dataset.retried || '0') + 1;
+      img.dataset.retried = String(count);
+      setTimeout(() => {
+        try {
+          const url = new URL(img.src, window.location.href);
+          url.searchParams.set('_retry', Date.now());
+          img.src = url.toString();
+        } catch (e) {}
+      }, 350 * count);
+    }
+
+    function renderMobileProduct() {
+      if (state.products.length === 0) return;
+      const prod = state.products[state.currentProductIndex];
+      const review = state.reviews[prod.id] || {};
+
+      // 1. Titles & Counter
+      document.getElementById('mModelTitle').innerText = prod.model;
+      document.getElementById('mModelSubtitle').innerText = `${prod.brand} • ${prod.color}`;
+      document.getElementById('mCounterPill').innerText = `${state.currentProductIndex + 1} / ${state.products.length}`;
+      updateGridLabels();
+
+      // 2. Render Carousel Slides
+      const carousel = document.getElementById('mobileCarousel');
+      const dots = document.getElementById('carouselDots');
+      carousel.innerHTML = '';
+      dots.innerHTML = '';
+
+      const shots = prod.variants['1500px iphone'] || Object.values(prod.variants)[0] || [];
+
+      shots.forEach((s, idx) => {
+        const slide = document.createElement('div');
+        slide.className = 'carousel-slide';
+        const shotKey = String(idx + 1).padStart(2, '0');
+        slide.innerHTML = `
+          <div class="slide-badge">Bild ${s.label || shotKey}</div>
+          <div class="zoom-tap-hint" onclick="openMobileZoom('${s.url}', '${escapeHtml(prod.model)} - Bild ${s.label || shotKey}')">🔍 Zooma</div>
+          <img src="${s.url}" alt="Bild ${shotKey}" loading="${idx === 0 ? 'eager' : 'lazy'}" onerror="handleImageError(this)" onclick="openMobileZoom('${s.url}', '${escapeHtml(prod.model)} - Bild ${s.label || shotKey}')" />
+        `;
+        carousel.appendChild(slide);
+
+        // Dot
+        const dot = document.createElement('div');
+        dot.className = `carousel-dot ${idx === 0 ? 'active' : ''}`;
+        dot.onclick = () => scrollCarouselTo(idx);
+        dots.appendChild(dot);
+      });
+
+      state.currentShotIndex = 0;
+      carousel.scrollLeft = 0;
+
+      // 3. Status Buttons (Default Approved baseline)
+      const effStatus = getEffectiveMobileStatus(prod.id);
+      const comments = review.comments || [];
+      document.getElementById('mBtnOk').className = `m-status-btn ${effStatus === 'approved' ? 'active-ok' : ''}`;
+      const commentBtn = document.getElementById('mBtnComment');
+      if (commentBtn) {
+        commentBtn.className = `m-status-btn comment-btn ${comments.length > 0 ? 'active-comment' : ''}`;
+        const sub = document.getElementById('mCommentBtnSub');
+        if (sub) sub.innerText = comments.length > 0 ? `${comments.length} anmärkning${comments.length > 1 ? 'ar' : ''}` : 'Lämna anmärkning';
+      }
+      document.getElementById('mBtnRedo').className = `m-status-btn ${effStatus === 'redo' ? 'active-redo' : ''}`;
+
+      // Reset Bar in Single view
+      const resetBar = document.getElementById('mSingleResetBar');
+      const resetText = document.getElementById('mSingleStatusReviewerText');
+      if (resetBar && resetText) {
+        if (effStatus === 'approved') {
+          resetBar.style.display = 'flex';
+          resetText.innerHTML = `Status: <b style="color:#34D399;">🟢 Godkänd</b>${review.reviewer ? ' av ' + escapeHtml(review.reviewer) : ' (Standard)'}`;
+        } else if (effStatus === 'redo') {
+          resetBar.style.display = 'flex';
+          resetText.innerHTML = `Status: <b style="color:#F87171;">🔴 Gör om</b>${review.reviewer ? ' av ' + escapeHtml(review.reviewer) : (comments.length > 0 ? ' (Anmärkning finns)' : '')}`;
+        } else {
+          resetBar.style.display = 'none';
+        }
+      }
+
+      // 4. Checklist Flags
+      const flags = review.flags || {};
+      ['angle', 'crown', 'edge', 'color', 'dust', 'shadow'].forEach(f => {
+        const el = document.getElementById(`m_chk_${f}`);
+        if (el) el.checked = !!flags[f];
+      });
+
+      // 5. Comments Count
+      document.getElementById('mCommentCountBadge').innerText = comments.length;
+      document.getElementById('mSheetCommentCount').innerText = `${comments.length} inlägg`;
+
+      renderMobileComments();
+    }
+
+    function scrollCarouselTo(idx) {
+      const carousel = document.getElementById('mobileCarousel');
+      carousel.scrollTo({
+        left: idx * carousel.clientWidth,
+        behavior: 'smooth'
+      });
+      state.currentShotIndex = idx;
+      updateCarouselDots(idx);
+    }
+
+    function updateCarouselDots(activeIdx) {
+      document.querySelectorAll('.carousel-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === activeIdx);
+      });
+    }
+
+    function carouselPrev() {
+      if (state.currentShotIndex > 0) {
+        scrollCarouselTo(state.currentShotIndex - 1);
+      }
+    }
+
+    function carouselNext() {
+      const prod = state.products[state.currentProductIndex];
+      const shots = prod.variants['1500px iphone'] || Object.values(prod.variants)[0] || [];
+      if (state.currentShotIndex < shots.length - 1) {
+        scrollCarouselTo(state.currentShotIndex + 1);
+      }
+    }
+
+    function setupCarouselTouch() {
+      const carousel = document.getElementById('mobileCarousel');
+      carousel.addEventListener('scroll', () => {
+        const w = carousel.clientWidth;
+        if (w > 0) {
+          const activeIdx = Math.round(carousel.scrollLeft / w);
+          if (activeIdx !== state.currentShotIndex) {
+            state.currentShotIndex = activeIdx;
+            updateCarouselDots(activeIdx);
+          }
+        }
+      }, { passive: true });
+    }
+
+    function prevProduct() {
+      if (state.currentProductIndex > 0) {
+        state.currentProductIndex--;
+        renderMobileProduct();
+      }
+    }
+
+    function nextProduct() {
+      if (state.currentProductIndex < state.products.length - 1) {
+        state.currentProductIndex++;
+        renderMobileProduct();
+      }
+    }
+
+    async function setMobileStatus(status) {
+      if (!state.reviewer) { state.reviewer = 'Andro'; }
+      const prod = state.products[state.currentProductIndex];
+      if (!prod) return;
+
+      const currentEff = getEffectiveMobileStatus(prod.id);
+      const review = state.reviews[prod.id] || {};
+      let newStatus = status;
+      if (currentEff === status) {
+        newStatus = 'pending';
+      }
+      review.status = newStatus;
+      review.reviewer = state.reviewer;
+      state.reviews[prod.id] = review;
+
+      // Optimistic update
+      renderMobileProduct();
+      if (state.mobileView === 'grid') renderMobileGrid();
+      if (document.getElementById('mobileZoomModal')?.classList.contains('active')) {
+        updateZoomModalContent();
+      }
+
+      try {
+        const res = await fetch(`/api/status/set?batch=${encodeURIComponent(state.currentBatchId)}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            product_id: prod.id,
+            status: newStatus,
+            reviewer: state.reviewer
+          })
+        });
+        const data = await res.json();
+        if (data.status === 'ok') {
+          state.reviews = data.reviews;
+          renderMobileProduct();
+          if (state.mobileView === 'grid') renderMobileGrid();
+          if (document.getElementById('mobileZoomModal')?.classList.contains('active')) {
+            updateZoomModalContent();
+          }
+          showToast(`Status: ${newStatus === 'approved' ? '✓ Godkänd' : newStatus === 'redo' ? '✕ Gör om' : 'Återställd'}`);
+
+          if (newStatus === 'redo') {
+            setTimeout(() => openCommentPopup(prod.id, 'redo'), 250);
+          }
+        }
+      } catch (err) {
+        console.error('Kunde inte spara status:', err);
+      }
+    }
+
+    async function toggleChecklistFlag(flagName, value) {
+      if (!state.reviewer) { openNameModal(); return; }
+      const prod = state.products[state.currentProductIndex];
+      if (!prod) return;
+
+      const review = state.reviews[prod.id] || {};
+      if (!review.flags) review.flags = {};
+      review.flags[flagName] = value;
+
+      try {
+        await fetch(`/api/checklist/toggle?batch=${encodeURIComponent(state.currentBatchId)}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            product_id: prod.id,
+            flag: flagName,
+            value: value,
+            reviewer: state.reviewer
+          })
+        });
+      } catch (err) {
+        console.error('Kunde inte spara checklista:', err);
+      }
+    }
+
+    function openBottomSheet() {
+      document.getElementById('sheetBackdrop').classList.add('active');
+      document.getElementById('bottomSheet').classList.add('open');
+      history.pushState({ modal: 'sheet' }, '');
+    }
+
+    function closeBottomSheet(syncHistory = true) {
+      document.getElementById('sheetBackdrop').classList.remove('active');
+      document.getElementById('bottomSheet').classList.remove('open');
+      if (syncHistory && history.state?.modal === 'sheet') {
+        history.back();
+      }
+    }
+
+    function setCommentShot(shot, btn) {
+      state.commentShotTarget = shot;
+      document.querySelectorAll('.m-pill').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    function renderMobileComments() {
+      const prod = state.products[state.currentProductIndex];
+      if (!prod) return;
+      const review = state.reviews[prod.id] || {};
+      const container = document.getElementById('mCommentsStream');
+      const comments = review.comments || [];
+
+      container.innerHTML = '';
+      if (comments.length === 0) {
+        container.innerHTML = `<div style="text-align: center; color: var(--text-dim); font-size: 12px; padding: 16px;">Inga kommentarer ännu.</div>`;
+        return;
+      }
+
+      comments.forEach(c => {
+        const div = document.createElement('div');
+        div.className = 'm-comment-bubble';
+        const shotTag = (c.shots && c.shots.length > 0) ? `<span style="font-size: 10px; background: rgba(59, 130, 246, 0.2); color: #60a5fa; padding: 1px 5px; border-radius: 4px; margin-left: 6px;">📸 Bild ${c.shots.join(', ')}</span>` : '';
+        div.innerHTML = `
+          <div class="m-bubble-header">
+            <div><span class="m-bubble-author">${escapeHtml(c.author)}</span> ${shotTag}</div>
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <span class="m-bubble-time">${c.time || ''}</span>
+              <button class="m-popup-comment-del" onclick="deleteMobileComment('${prod.id}', '${c.id}')" title="Ta bort kommentar">🗑</button>
+            </div>
+          </div>
+          <div class="m-bubble-text">${escapeHtml(c.text)}</div>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    async function submitMobileComment() {
+      if (!state.reviewer) { state.reviewer = 'Andro'; }
+      const inp = document.getElementById('mCommentInput');
+      const text = inp.value.trim();
+      if (!text) return;
+
+      const prod = state.products[state.currentProductIndex];
+      const shotsToSend = state.commentShotTarget === 'all' ? [] : [state.commentShotTarget];
+      inp.value = '';
+
+      try {
+        const res = await fetch(`/api/comment/add?batch=${encodeURIComponent(state.currentBatchId)}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            product_id: prod.id,
+            author: state.reviewer,
+            text: text,
+            shots: shotsToSend
+          })
+        });
+        const data = await res.json();
+        if (data.status === 'ok') {
+          state.reviews = data.reviews;
+          renderMobileProduct();
+          showToast('Kommentar tillagd!');
+        }
+      } catch (err) {
+        console.error('Kunde inte skicka kommentar:', err);
+      }
+    }
+    function showToast(msg) {
+      const t = document.getElementById('mToast');
+      t.innerText = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2000);
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    function updateGridLabels() {
+      const gridLabel = document.getElementById('tabGridLabel');
+      if (gridLabel) gridLabel.innerText = `Översiktsgrid (${state.products.length})`;
+      const gridTitle = document.getElementById('mGridTitle');
+      if (gridTitle) gridTitle.innerText = `${state.products.length} modeller`;
+    }
+
+    function switchMobileView(mode, pushHistory = true) {
+      if (state.mobileView === mode) return;
+      state.mobileView = mode;
+      document.getElementById('tabModeSingle').classList.toggle('active', mode === 'single');
+      document.getElementById('tabModeGrid').classList.toggle('active', mode === 'grid');
+
+      const isSingle = mode === 'single';
+      const singleView = document.getElementById('mobileSingleView');
+      const gridView = document.getElementById('mobileGridView');
+      if (singleView) singleView.style.display = isSingle ? 'flex' : 'none';
+      if (gridView) gridView.style.display = isSingle ? 'none' : 'flex';
+
+      if (!isSingle) {
+        renderMobileGrid();
+      }
+
+      if (pushHistory) {
+        history.pushState({ qaApp: true, view: mode, productIndex: state.currentProductIndex }, '');
+      }
+    }
+
+    function toggleMobileGridGuides() {
+      state.mobileGridGuides = !state.mobileGridGuides;
+      const btn = document.getElementById('mGridGuidesBtn');
+      if (btn) {
+        btn.innerText = state.mobileGridGuides ? '📐 Guider: På' : '📐 Guider: Av';
+        btn.classList.toggle('active', state.mobileGridGuides);
+      }
+      document.querySelectorAll('.m-grid-guide-overlay').forEach(el => {
+        el.style.display = state.mobileGridGuides ? 'block' : 'none';
+      });
+    }
+
+    function renderMobileGrid() {
+      const container = document.getElementById('mCardsGrid');
+      if (!container) return;
+      container.innerHTML = '';
+      updateGridLabels();
+
+      state.products.forEach((prod, idx) => {
+        const shots = prod.variants['1500px iphone'] || Object.values(prod.variants)[0] || [];
+        const shot01 = shots.find(s => s.shot === '01') || shots[0] || {};
+        const review = state.reviews[prod.id] || {};
+        const effStatus = getEffectiveMobileStatus(prod.id);
+        const comments = review.comments || [];
+        const commentsCount = comments.length;
+
+        let statusBadge = '🟢';
+        let statusClass = 'status-approved';
+        if (effStatus === 'approved') { statusBadge = '🟢'; statusClass = 'status-approved'; }
+        if (effStatus === 'redo') { statusBadge = '🔴'; statusClass = 'status-redo'; }
+        if (effStatus === 'pending') { statusBadge = '⚪'; statusClass = 'status-pending'; }
+
+        const card = document.createElement('div');
+        card.className = `m-grid-card ${statusClass}`;
+        card.onclick = () => openProductFromGrid(idx);
+        card.innerHTML = `
+          <div class="m-card-thumb-wrap">
+            <img src="${shot01.thumb_url || shot01.url || ''}" alt="${escapeHtml(prod.model)}" loading="lazy" onerror="handleImageError(this)" />
+            <div class="m-card-status-badge">${statusBadge}</div>
+            <div class="mobile-guide-overlay m-grid-guide-overlay" style="display: ${state.mobileGridGuides ? 'block' : 'none'};">
+              <div class="guide-line-crown"></div>
+              <div class="guide-line-center"></div>
+              <div class="guide-line-base"></div>
+            </div>
+          </div>
+          <div class="m-card-info">
+            <div class="m-card-title">${escapeHtml(prod.model)}</div>
+            <div class="m-card-sub">${escapeHtml(prod.color || prod.brand)}</div>
+          </div>
+          <div class="m-card-actions" onclick="event.stopPropagation()">
+            <button class="m-mini-btn ${effStatus === 'approved' ? 'active-ok' : ''}" onclick="quickSetMobileStatus('${prod.id}', 'approved')" title="Godkänn">✓</button>
+            <button class="m-mini-btn ${commentsCount > 0 ? 'active-comment' : ''}" onclick="openCommentPopup('${prod.id}')" title="Kommentera">💬 ${commentsCount > 0 ? commentsCount : ''}</button>
+            <button class="m-mini-btn ${effStatus === 'redo' ? 'active-redo' : ''}" onclick="quickSetMobileStatus('${prod.id}', 'redo')" title="Gör om">✕</button>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function openProductFromGrid(idx) {
+      state.currentProductIndex = idx;
+      switchMobileView('single', true);
+      renderMobileProduct();
+    }
+
+    async function quickSetMobileStatus(productId, status) {
+      if (!state.reviewer) { state.reviewer = 'Andro'; }
+      const currentEff = getEffectiveMobileStatus(productId);
+      const review = state.reviews[productId] || {};
+      let newStatus = status;
+      if (currentEff === status) {
+        newStatus = 'pending';
+      }
+
+      // Optimistic update
+      review.status = newStatus;
+      review.reviewer = state.reviewer;
+      state.reviews[productId] = review;
+      renderMobileGrid();
+
+      try {
+        const res = await fetch(`/api/status/set?batch=${encodeURIComponent(state.currentBatchId)}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            product_id: productId,
+            status: newStatus,
+            reviewer: state.reviewer
+          })
+        });
+        const data = await res.json();
+        if (data.status === 'ok') {
+          state.reviews = data.reviews;
+          renderMobileGrid();
+          showToast(`Status: ${newStatus === 'approved' ? '✓ Godkänd' : newStatus === 'redo' ? '✕ Gör om' : 'Återställd'}`);
+
+          if (newStatus === 'redo') {
+            setTimeout(() => openCommentPopup(productId, 'redo'), 250);
+          }
+        }
+      } catch (err) {
+        console.error('Kunde inte spara status:', err);
+      }
+    }
+
+    // --- DYNAMIC COMMENT POPUP LOGIC ---
+    let popupTargetProductId = null;
+    let popupTargetShot = 'all';
+
+    function openCommentPopup(productId = null, context = null) {
+      if (!state.reviewer) { state.reviewer = 'Andro'; }
+      const prod = productId 
+        ? state.products.find(p => p.id === productId) 
+        : state.products[state.currentProductIndex];
+      if (!prod) return;
+
+      popupTargetProductId = prod.id;
+      popupTargetShot = 'all';
+
+      const titleEl = document.getElementById('mCommentPopupTitle');
+      const subEl = document.getElementById('mCommentPopupSub');
+      if (titleEl) {
+        titleEl.innerText = context === 'redo' ? '🔴 Vad behöver göras om?' : '💬 Lämna anmärkning';
+      }
+      if (subEl) {
+        subEl.innerText = `${prod.model} (${prod.color || ''})`;
+      }
+
+      const input = document.getElementById('mPopupCommentInput');
+      if (input) input.value = '';
+
+      const redoChk = document.getElementById('mPopupMarkRedo');
+      if (redoChk) {
+        const rev = state.reviews[prod.id] || {};
+        redoChk.checked = rev.status === 'redo' || context === 'redo';
+      }
+
+      renderPopupShotPills(prod);
+      renderPopupCommentsList(prod.id);
+
+      document.getElementById('commentPopupBackdrop').classList.add('active');
+      document.getElementById('commentPopup').classList.add('active');
+      history.pushState({ modal: 'commentPopup' }, '');
+
+      if (input) {
+        setTimeout(() => input.focus(), 250);
+      }
+    }
+
+    function closeCommentPopup(syncHistory = true) {
+      const popup = document.getElementById('commentPopup');
+      const backdrop = document.getElementById('commentPopupBackdrop');
+      if (popup) popup.classList.remove('active');
+      if (backdrop) backdrop.classList.remove('active');
+      if (syncHistory && history.state?.modal === 'commentPopup') {
+        history.back();
+      }
+    }
+
+    function renderPopupShotPills(prod) {
+      const container = document.getElementById('mPopupShotPills');
+      if (!container) return;
+      const shots = prod.variants['1500px iphone'] || Object.values(prod.variants)[0] || [];
+      container.innerHTML = `<button class="m-pill active" onclick="setPopupCommentShot('all', this)">🌐 Hela modellen</button>`;
+      shots.forEach((s, idx) => {
+        const lbl = s.label || String(idx + 1).padStart(2, '0');
+        const btn = document.createElement('button');
+        btn.className = 'm-pill';
+        btn.innerText = `📸 Bild ${lbl}`;
+        btn.onclick = () => setPopupCommentShot(lbl, btn);
+        container.appendChild(btn);
+      });
+    }
+
+    function setPopupCommentShot(shot, btn) {
+      popupTargetShot = shot;
+      document.querySelectorAll('#mPopupShotPills .m-pill').forEach(p => p.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+    }
+
+    function insertCommentTag(tagName) {
+      const input = document.getElementById('mPopupCommentInput');
+      if (!input) return;
+      const current = input.value.trim();
+      if (current.length > 0) {
+        input.value = `${current}, ${tagName}: `;
+      } else {
+        input.value = `${tagName}: `;
+      }
+      input.focus();
+    }
+
+    async function submitPopupComment() {
+      if (!state.reviewer) { state.reviewer = 'Andro'; }
+      const input = document.getElementById('mPopupCommentInput');
+      const text = input ? input.value.trim() : '';
+      if (!text) {
+        showToast('Vänligen skriv en kommentar');
+        if (input) input.focus();
+        return;
+      }
+
+      const prodId = popupTargetProductId || (state.products[state.currentProductIndex] && state.products[state.currentProductIndex].id);
+      if (!prodId) return;
+
+      const shotsToSend = popupTargetShot === 'all' ? [] : [popupTargetShot];
+      const markRedo = document.getElementById('mPopupMarkRedo')?.checked;
+
+      try {
+        const res = await fetch(`/api/comment/add?batch=${encodeURIComponent(state.currentBatchId)}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            product_id: prodId,
+            author: state.reviewer,
+            text: text,
+            shots: shotsToSend
+          })
+        });
+        const data = await res.json();
+        if (data.status === 'ok') {
+          state.reviews = data.reviews;
+
+          if (markRedo && state.reviews[prodId]?.status !== 'redo') {
+            await fetch(`/api/status/set?batch=${encodeURIComponent(state.currentBatchId)}`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                product_id: prodId,
+                status: 'redo',
+                reviewer: state.reviewer
+              })
+            });
+            state.reviews[prodId].status = 'redo';
+          }
+
+          closeCommentPopup(true);
+          renderMobileProduct();
+          if (state.mobileView === 'grid') renderMobileGrid();
+          if (document.getElementById('mobileZoomModal')?.classList.contains('active')) {
+            updateZoomModalContent();
+          }
+          showToast('✓ Kommentar sparad & synkad!');
+        }
+      } catch (err) {
+        console.error('Kunde inte spara kommentar:', err);
+        showToast('Fel vid sparning');
+      }
+    }
+
+    function renderPopupCommentsList(prodId) {
+      const review = state.reviews[prodId] || {};
+      const comments = review.comments || [];
+      const wrap = document.getElementById('mPopupExistingCommentsWrap');
+      const container = document.getElementById('mPopupCommentsList');
+      const countBadge = document.getElementById('mPopupCommentsCountBadge');
+      const statusBar = document.getElementById('mPopupStatusBar');
+      const statusTag = document.getElementById('mPopupCurrentStatusTag');
+
+      // 1. Status bar in popup
+      if (statusBar && statusTag) {
+        const effStatus = review.status || 'pending';
+        if (effStatus === 'approved') {
+          statusBar.style.display = 'flex';
+          statusTag.innerHTML = `Status: <span style="color: #34D399; font-weight: 700;">🟢 Godkänd</span> ${review.reviewer ? '(' + escapeHtml(review.reviewer) + ')' : ''}`;
+        } else if (effStatus === 'redo') {
+          statusBar.style.display = 'flex';
+          statusTag.innerHTML = `Status: <span style="color: #F87171; font-weight: 700;">🔴 Gör om</span> ${review.reviewer ? '(' + escapeHtml(review.reviewer) + ')' : ''}`;
+        } else {
+          statusBar.style.display = 'none';
+        }
+      }
+
+      // 2. Existing comments list in popup
+      if (!wrap || !container) return;
+      if (comments.length === 0) {
+        wrap.style.display = 'none';
+        container.innerHTML = '';
+        if (countBadge) countBadge.innerText = '';
+        return;
+      }
+
+      wrap.style.display = 'block';
+      if (countBadge) countBadge.innerText = `${comments.length} st`;
+      container.innerHTML = '';
+
+      comments.forEach(c => {
+        const item = document.createElement('div');
+        item.className = 'm-popup-comment-item';
+        const shotTag = (c.shots && c.shots.length > 0) ? `<span style="font-size: 10px; background: rgba(59, 130, 246, 0.2); color: #60a5fa; padding: 1px 5px; border-radius: 4px; margin-left: 4px;">📸 ${c.shots.join(', ')}</span>` : '';
+        item.innerHTML = `
+          <div class="m-popup-comment-head">
+            <div class="m-popup-comment-author">
+              <span>👤 ${escapeHtml(c.author)}</span>
+              ${shotTag}
+              <span style="font-size: 10.5px; color: var(--text-dim); font-weight: 400; margin-left: 6px;">${c.time || ''}</span>
+            </div>
+            <button class="m-popup-comment-del" onclick="deleteMobileComment('${prodId}', '${c.id}')" title="Ta bort kommentar">🗑 Ta bort</button>
+          </div>
+          <div style="font-size: 12.5px; line-height: 1.4; color: #F1F5F9; word-break: break-word;">${escapeHtml(c.text)}</div>
+        `;
+        container.appendChild(item);
+      });
+    }
+
+    async function deleteMobileComment(productId, commentId) {
+      if (!confirm('Vill du ta bort denna kommentar?')) return;
+      try {
+        const res = await fetch(`/api/comment/delete?batch=${encodeURIComponent(state.currentBatchId)}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ product_id: productId, comment_id: commentId })
+        });
+        const data = await res.json();
+        if (data.status === 'ok') {
+          state.reviews = data.reviews;
+          renderMobileProduct();
+          if (state.mobileView === 'grid') renderMobileGrid();
+          if (document.getElementById('mobileZoomModal')?.classList.contains('active')) {
+            updateZoomModalContent();
+          }
+          renderPopupCommentsList(productId);
+          showToast('✓ Kommentar borttagen');
+        }
+      } catch (err) {
+        console.error('Kunde inte ta bort kommentar:', err);
+      }
+    }
+
+    async function clearMobileStatus(productId = null) {
+      if (!state.reviewer) { state.reviewer = 'Andro'; }
+      const prodId = productId || (state.products[state.currentProductIndex] && state.products[state.currentProductIndex].id);
+      if (!prodId) return;
+
+      const review = state.reviews[prodId] || {};
+      review.status = 'pending';
+      review.reviewer = state.reviewer;
+      state.reviews[prodId] = review;
+
+      renderMobileProduct();
+      if (state.mobileView === 'grid') renderMobileGrid();
+      if (document.getElementById('mobileZoomModal')?.classList.contains('active')) {
+        updateZoomModalContent();
+      }
+
+      try {
+        const res = await fetch(`/api/status/set?batch=${encodeURIComponent(state.currentBatchId)}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            product_id: prodId,
+            status: 'pending',
+            reviewer: state.reviewer
+          })
+        });
+        const data = await res.json();
+        if (data.status === 'ok') {
+          state.reviews = data.reviews;
+          renderMobileProduct();
+          if (state.mobileView === 'grid') renderMobileGrid();
+          if (document.getElementById('mobileZoomModal')?.classList.contains('active')) {
+            updateZoomModalContent();
+          }
+          showToast('Status återställd till Ej granskad (⚪)');
+        }
+      } catch (err) {
+        console.error('Kunde inte nollställa status:', err);
+      }
+    }
+
+    async function resetMobileStatusFromPopup() {
+      const prodId = popupTargetProductId || (state.products[state.currentProductIndex] && state.products[state.currentProductIndex].id);
+      if (!prodId) return;
+      await clearMobileStatus(prodId);
+      renderPopupCommentsList(prodId);
+    }
+
+    // --- MOBILE HIGH-RES ZOOM & ENLARGED VIEWER ---
+    let zoomLevel = 1;
+    let zoomPanX = 0;
+    let zoomPanY = 0;
+    let pinchStartDist = 0;
+    let pinchStartZoom = 1;
+    let lastTapTime = 0;
+    let zoomGuidesActive = false;
+
+    function openActiveShotZoom() {
+      const prod = state.products[state.currentProductIndex];
+      if (!prod) return;
+      openMobileZoom();
+    }
+
+    function openMobileZoom(imgUrl = null, title = null) {
+      const modal = document.getElementById('mobileZoomModal');
+      resetZoom();
+      updateZoomModalContent();
+      if (imgUrl) {
+        const img = document.getElementById('zoomImg');
+        if (img) img.src = imgUrl;
+      }
+      if (title) {
+        const titleEl = document.getElementById('zoomTitle');
+        if (titleEl) titleEl.innerText = title;
+      }
+      if (modal) {
+        modal.classList.add('active');
+        history.pushState({ modal: 'zoom' }, '');
+      }
+    }
+
+    function closeMobileZoom(syncHistory = true) {
+      const modal = document.getElementById('mobileZoomModal');
+      if (modal && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+        if (syncHistory && history.state?.modal === 'zoom') {
+          history.back();
+        }
+      }
+    }
+
+    function updateZoomModalContent() {
+      const prod = state.products[state.currentProductIndex];
+      if (!prod) return;
+      const shots = prod.variants['1500px iphone'] || Object.values(prod.variants)[0] || [];
+      const s = shots[state.currentShotIndex] || shots[0];
+      if (!s) return;
+
+      const img = document.getElementById('zoomImg');
+      if (img) img.src = s.url;
+
+      const titleEl = document.getElementById('zoomTitle');
+      if (titleEl) {
+        titleEl.innerText = `${prod.model} (${state.currentProductIndex + 1}/${state.products.length})`;
+      }
+
+      // Render angle pills in zoom sub bar
+      renderZoomAnglePills(shots);
+
+      // Update status buttons in zoom bottom bar
+      const rev = state.reviews[prod.id] || {};
+      const effStatus = getEffectiveMobileStatus(prod.id);
+      const okBtn = document.getElementById('zoomBtnOk');
+      const redoBtn = document.getElementById('zoomBtnRedo');
+      const commentBtn = document.getElementById('zoomBtnComment');
+      if (okBtn) okBtn.className = `zoom-act-btn ok ${effStatus === 'approved' ? 'active-ok' : ''}`;
+      if (redoBtn) redoBtn.className = `zoom-act-btn redo ${effStatus === 'redo' ? 'active-redo' : ''}`;
+      if (commentBtn) {
+        const cCount = (rev.comments || []).length;
+        commentBtn.innerText = cCount > 0 ? `💬 (${cCount})` : '💬 Kommentera';
+        commentBtn.className = `zoom-act-btn comment ${cCount > 0 ? 'active-comment' : ''}`;
+      }
+    }
+
+    function renderZoomAnglePills(shots) {
+      const container = document.getElementById('zoomAnglePills');
+      if (!container) return;
+      container.innerHTML = '';
+      shots.forEach((s, idx) => {
+        const pill = document.createElement('button');
+        pill.className = `m-pill ${idx === state.currentShotIndex ? 'active' : ''}`;
+        pill.innerText = `📸 ${s.label || String(idx + 1).padStart(2, '0')}`;
+        pill.onclick = () => {
+          state.currentShotIndex = idx;
+          updateZoomModalContent();
+        };
+        container.appendChild(pill);
+      });
+    }
+
+    function zoomNextProduct() {
+      if (state.currentProductIndex < state.products.length - 1) {
+        state.currentProductIndex++;
+        state.currentShotIndex = 0;
+        resetZoom();
+        updateZoomModalContent();
+        renderMobileProduct();
+        if (state.mobileView === 'grid') renderMobileGrid();
+        showToast(`Nästa: ${state.products[state.currentProductIndex].model}`);
+      } else {
+        showToast('Sista modellen i mappen');
+      }
+    }
+
+    function zoomPrevProduct() {
+      if (state.currentProductIndex > 0) {
+        state.currentProductIndex--;
+        state.currentShotIndex = 0;
+        resetZoom();
+        updateZoomModalContent();
+        renderMobileProduct();
+        if (state.mobileView === 'grid') renderMobileGrid();
+        showToast(`Föregående: ${state.products[state.currentProductIndex].model}`);
+      } else {
+        showToast('Första modellen i mappen');
+      }
+    }
+
+    function zoomNextAngle() {
+      const prod = state.products[state.currentProductIndex];
+      if (!prod) return;
+      const shots = prod.variants['1500px iphone'] || Object.values(prod.variants)[0] || [];
+      if (state.currentShotIndex < shots.length - 1) {
+        state.currentShotIndex++;
+        updateZoomModalContent();
+      }
+    }
+
+    function zoomPrevAngle() {
+      if (state.currentShotIndex > 0) {
+        state.currentShotIndex--;
+        updateZoomModalContent();
+      }
+    }
+
+    function resetZoom() {
+      zoomLevel = 1;
+      zoomPanX = 0;
+      zoomPanY = 0;
+      applyZoomTransform();
+    }
+
+    function applyZoomTransform() {
+      const el = document.getElementById('zoomContent');
+      if (el) {
+        el.style.transform = `translate(${zoomPanX}px, ${zoomPanY}px) scale(${zoomLevel})`;
+      }
+    }
+
+    function toggleZoomGuides() {
+      zoomGuidesActive = !zoomGuidesActive;
+      const overlay = document.getElementById('zoomGuideOverlay');
+      const btn = document.getElementById('btnZoomGuides');
+      if (overlay) overlay.style.display = zoomGuidesActive ? 'block' : 'none';
+      if (btn) btn.classList.toggle('active', zoomGuidesActive);
+    }
+
+    function setupZoomTouchEvents() {
+      const vp = document.getElementById('zoomViewport');
+      if (!vp) return;
+
+      let touchStartX = 0;
+      let touchStartY = 0;
+      let touchStartTime = 0;
+      let isPinching = false;
+      let isPanning = false;
+      let wheelCooldown = 0;
+
+      vp.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 2) {
+          isPinching = true;
+          isPanning = false;
+          pinchStartDist = Math.hypot(
+            e.touches[0].clientX - e.touches[1].clientX,
+            e.touches[0].clientY - e.touches[1].clientY
+          );
+          pinchStartZoom = zoomLevel;
+        } else if (e.touches.length === 1) {
+          touchStartX = e.touches[0].clientX;
+          touchStartY = e.touches[0].clientY;
+          touchStartTime = Date.now();
+
+          // Double tap detection
+          const now = Date.now();
+          if (now - lastTapTime < 300) {
+            if (zoomLevel > 1.2) {
+              resetZoom();
+            } else {
+              zoomLevel = 2.5;
+              zoomPanX = 0;
+              zoomPanY = 0;
+              applyZoomTransform();
+            }
+            lastTapTime = 0;
+          } else {
+            lastTapTime = now;
+            if (zoomLevel > 1.05) {
+              isPanning = true;
+            }
+          }
+        }
+      }, { passive: true });
+
+      vp.addEventListener('touchmove', (e) => {
+        if (isPinching && e.touches.length === 2) {
+          e.preventDefault();
+          const dist = Math.hypot(
+            e.touches[0].clientX - e.touches[1].clientX,
+            e.touches[0].clientY - e.touches[1].clientY
+          );
+          if (pinchStartDist > 0) {
+            const scaleFactor = dist / pinchStartDist;
+            zoomLevel = Math.max(1, Math.min(4.5, pinchStartZoom * scaleFactor));
+            applyZoomTransform();
+          }
+        } else if (isPanning && e.touches.length === 1 && zoomLevel > 1.05) {
+          e.preventDefault();
+          const dx = e.touches[0].clientX - touchStartX;
+          const dy = e.touches[0].clientY - touchStartY;
+          zoomPanX += dx;
+          zoomPanY += dy;
+          touchStartX = e.touches[0].clientX;
+          touchStartY = e.touches[0].clientY;
+          applyZoomTransform();
+        }
+      }, { passive: false });
+
+      vp.addEventListener('touchend', (e) => {
+        if (isPinching) {
+          if (e.touches.length < 2) isPinching = false;
+          if (zoomLevel < 1.05) resetZoom();
+          return;
+        }
+
+        if (isPanning) {
+          isPanning = false;
+          return;
+        }
+
+        // At 1x normal view: Detect gestures to switch products or angles!
+        if (zoomLevel <= 1.05 && e.changedTouches.length === 1) {
+          const deltaX = e.changedTouches[0].clientX - touchStartX;
+          const deltaY = e.changedTouches[0].clientY - touchStartY;
+          const absX = Math.abs(deltaX);
+          const absY = Math.abs(deltaY);
+
+          // Vertical flick / scroll:
+          if (absY > 35 && absY > absX * 1.1) {
+            if (deltaY < -35) {
+              // Pulled up / scroll down -> NEXT PRODUCT!
+              zoomNextProduct();
+            } else if (deltaY > 35) {
+              // Pulled down / scroll up -> PREVIOUS PRODUCT!
+              zoomPrevProduct();
+            }
+          }
+          // Horizontal flick / swipe:
+          else if (absX > 35 && absX > absY * 1.1) {
+            if (deltaX < -35) {
+              // Swiped left -> NEXT ANGLE
+              zoomNextAngle();
+            } else if (deltaX > 35) {
+              // Swiped right -> PREV ANGLE
+              zoomPrevAngle();
+            }
+          }
+        }
+      }, { passive: true });
+
+      // Mouse wheel support for scrolling down to next product in zoom view
+      vp.addEventListener('wheel', (e) => {
+        if (zoomLevel > 1.05) return;
+        e.preventDefault();
+        const now = Date.now();
+        if (now < wheelCooldown) return;
+
+        if (e.deltaY > 30) {
+          wheelCooldown = now + 350;
+          zoomNextProduct();
+        } else if (e.deltaY < -30) {
+          wheelCooldown = now + 350;
+          zoomPrevProduct();
+        }
+      }, { passive: false });
+    }
+
+    // --- ANDROID HARDWARE BACK & NAVIGATION HISTORY ---
+    let lastBackPressTime = 0;
+
+    function setupHistoryNavigation() {
+      try {
+        history.replaceState({ qaApp: true, view: 'base' }, '');
+        history.pushState({ qaApp: true, view: state.mobileView }, '');
+      } catch (e) {}
+
+      window.addEventListener('popstate', (e) => {
+        // ALWAYS keep history trap active so pressing back never closes the browser or leaves the app
+        try {
+          history.pushState({ qaApp: true, view: state.mobileView }, '');
+        } catch (err) {}
+
+        // 1. If Comment Popup is open, close it
+        const commentPopup = document.getElementById('commentPopup');
+        if (commentPopup && commentPopup.classList.contains('active')) {
+          closeCommentPopup(false);
+          return;
+        }
+
+        // 2. If Zoom Modal is open, close it
+        const zoomModal = document.getElementById('mobileZoomModal');
+        if (zoomModal && zoomModal.classList.contains('active')) {
+          closeMobileZoom(false);
+          return;
+        }
+
+        // 3. If Bottom Sheet is open, close it
+        const sheet = document.getElementById('bottomSheet');
+        if (sheet && sheet.classList.contains('open')) {
+          closeBottomSheet(false);
+          return;
+        }
+
+        // 4. If Name Modal is open, close it
+        const nameModal = document.getElementById('nameModal');
+        if (nameModal && nameModal.classList.contains('active')) {
+          nameModal.classList.remove('active');
+          return;
+        }
+
+        // 5. If in Single View, back button returns to Grid View (Startsidan)
+        if (state.mobileView === 'single') {
+          switchMobileView('grid', false);
+          showToast('Tillbaka till översikten');
+          return;
+        }
+
+        // 6. If already in Grid View (startsidan): NEVER LEAVE
+        showToast('Du är redan på startsidan');
+      });
+    }
+
+    // --- REAL-TIME BACKGROUND SYNC WITH DESKTOP ---
+    let lastSyncReviewsStr = '';
+    setInterval(async () => {
+      if (!state.currentBatchId) return;
+      try {
+        const res = await fetch(`/api/reviews?batch=${encodeURIComponent(state.currentBatchId)}`);
+        const data = await res.json();
+        if (data && data.reviews) {
+          const newStr = JSON.stringify(data.reviews);
+          if (lastSyncReviewsStr && newStr !== lastSyncReviewsStr) {
+            state.reviews = data.reviews;
+            renderMobileProduct();
+            if (state.mobileView === 'grid') {
+              renderMobileGrid();
+            }
+            if (document.getElementById('mobileZoomModal')?.classList.contains('active')) {
+              updateZoomModalContent();
+            }
+          }
+          lastSyncReviewsStr = newStr;
+        }
+      } catch (e) {}
+    }, 3500);
+  </script>
+</body>
+</html>

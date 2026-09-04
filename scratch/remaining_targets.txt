@@ -1,0 +1,165 @@
+
+=== PATTERN: def process_single_main_image ===991:     }
+992: 
+993: def process_single_main_image(f, idx, total_count, sku_to_prod, status_db, artiklar_dir, liten_dir, zoom_dir):
+994:     sku = f[:-4]
+995:     sku_lower = sku.lower()
+996:     
+997:     if sku_lower not in sku_to_prod:
+998:         print(f"[{idx+1}/{total_count}] Unrecognized SKU: {sku}. Skipping.")
+999:         return "skipped"
+1000:         
+1001:     slug, prod_name = sku_to_prod[sku_lower]
+1002:     
+
+=== PATTERN: is_ok = (0.95 <= scale_needed ===1143:         
+1144:     tolerance = 0.05
+1145:     is_ok = (0.95 <= scale_needed <= 1.05) and (cx_dev <= tolerance) and (bottom_dev <= tolerance)
+1146:     if has_fix_match:
+1147:         print(f"    [Fix Match Force] SKU has a manual white background fix match. Forcing auto-correction flow...")
+1148:         is_ok = False
+1149:     
+1150:     # Rule-based is_closeup override disabled for main images to prevent false positives on tight crops.
+1151:     is_closeup = False
+1152:         
+1153:     is_tabletop_only = False
+1154:     if category in ["table_dining", "table_coffee", "desk", "sideboard_credenza"] and h_curr < 0.22:
+1432:         
+1433:     tolerance = 0.05
+1434:     is_ok = (0.95 <= scale_needed <= 1.05) and (cx_dev <= tolerance) and (bottom_dev <= tolerance)
+1435:     if has_fix_match:
+1436:         print(f"    [Fix Match Force] Zoom SKU has a manual white background fix match. Forcing auto-correction flow...")
+1437:         is_ok = False
+1438:     
+1439:     # Rule-based is_closeup override disabled for zoom images to prevent false positives on tight crops.
+1440:     is_closeup = False
+1441:         
+1442:     is_tabletop_only = False
+1443:     if category in ["table_dining", "table_coffee", "desk", "sideboard_credenza"] and h_curr < 0.22:
+
+=== PATTERN: def process_single_zoom_image ===1280:             return "auto-corrected"
+1281: 
+1282: def process_single_zoom_image(f, idx, total_count, sku_to_prod, status_db, zoom_dir):
+1283:     if f.lower().endswith('_1.jpg'):
+1284:         return "skipped"
+1285:         
+1286:     m = re.match(r"^(.+?)_\d+\.jpg$", f)
+1287:     if not m:
+1288:         return "skipped"
+1289:     sku = m.group(1)
+1290:     sku_lower = sku.lower()
+1291:     
+
+=== PATTERN: db_key = f"zoom/{f}" ===1304:     has_fix_match = src_image is not None and "white background fix" in src_image.lower()
+1305:     
+1306:     db_key = f"zoom/{f}"
+1307:     if db_key in status_db:
+1308:         status = status_db[db_key].get("status")
+1309:         # Force reprocess if there is a manual white background fix match
+1310:         if not has_fix_match and status in ("approved", "auto-corrected", "skipped", "verification_failed"):
+1311:             return status
+1312:             
+1313:     img_path = os.path.join(zoom_dir, f)
+1314:     
+1315:     try:
+1640:             all_zoom_files = [f for f in os.listdir(zoom_dir) if f.lower().endswith('.jpg') and os.path.isfile(os.path.join(zoom_dir, f))]
+1641:             for f in all_zoom_files:
+1642:                 db_key = f"zoom/{f}"
+1643:                 if skus_filter is not None:
+1644:                     m = re.match(r"^(.+?)_\d+\.jpg$", f)
+1645:                     if not m or m.group(1).lower() not in skus_filter:
+1646:                         continue
+1647:                 if db_key not in status_db:
+1648:                     unreviewed_zoom.append(f)
+1649:                 else:
+1650:                     status = status_db[db_key].get("status")
+1651:                     if status not in ("approved", "auto-corrected", "skipped"):
+
+=== PATTERN: limit = None ===1596:     
+1597:     # Parse command line arguments
+1598:     limit = None
+1599:     batch_size = None
+1600:     skus_filter = None
+1601:     for arg in sys.argv:
+1602:         if arg.startswith("--limit="):
+1603:             try:
+1604:                 limit = int(arg.split("=")[1])
+1605:             except ValueError:
+1606:                 pass
+1607:         elif arg.startswith("--batch-size="):
+
+=== PATTERN: unreviewed_main = [] ===1614: 
+1615:     # Get all unreviewed main files
+1616:     unreviewed_main = []
+1617:     for f in main_files:
+1618:         db_key = f"artiklar/{f}"
+1619:         if db_key not in status_db:
+1620:             unreviewed_main.append(f)
+1621:         else:
+1622:             status = status_db[db_key].get("status")
+1623:             if status not in ("approved", "auto-corrected", "skipped"):
+1624:                 unreviewed_main.append(f)
+1625: 
+
+=== PATTERN: unreviewed_zoom = [] ===1636:         main_files = unreviewed_main
+1637:         # Get all unreviewed zoom files
+1638:         unreviewed_zoom = []
+1639:         if os.path.exists(zoom_dir):
+1640:             all_zoom_files = [f for f in os.listdir(zoom_dir) if f.lower().endswith('.jpg') and os.path.isfile(os.path.join(zoom_dir, f))]
+1641:             for f in all_zoom_files:
+1642:                 db_key = f"zoom/{f}"
+1643:                 if skus_filter is not None:
+1644:                     m = re.match(r"^(.+?)_\d+\.jpg$", f)
+1645:                     if not m or m.group(1).lower() not in skus_filter:
+1646:                         continue
+1647:                 if db_key not in status_db:
+
+=== PATTERN: process_single_main_image(f ===991:     }
+992: 
+993: def process_single_main_image(f, idx, total_count, sku_to_prod, status_db, artiklar_dir, liten_dir, zoom_dir):
+994:     sku = f[:-4]
+995:     sku_lower = sku.lower()
+996:     
+997:     if sku_lower not in sku_to_prod:
+998:         print(f"[{idx+1}/{total_count}] Unrecognized SKU: {sku}. Skipping.")
+999:         return "skipped"
+1000:         
+1001:     slug, prod_name = sku_to_prod[sku_lower]
+1002:     
+1661:     print("\n--- PHASE 1: Reviewing Main Images ---")
+1662:     for idx, f in enumerate(main_files):
+1663:         res = process_single_main_image(f, idx, len(main_files), sku_to_prod, status_db, artiklar_dir, liten_dir, zoom_dir)
+1664:         if res == "approved":
+1665:             approved_count += 1
+1666:         elif res == "auto-corrected":
+1667:             corrected_count += 1
+1668:         elif res == "skipped":
+1669:             skipped_count += 1
+1670:         elif res == "verification_failed":
+1671:             failures.append(f"artiklar/{f}")
+1672:             
+
+=== PATTERN: process_single_zoom_image(f ===1280:             return "auto-corrected"
+1281: 
+1282: def process_single_zoom_image(f, idx, total_count, sku_to_prod, status_db, zoom_dir):
+1283:     if f.lower().endswith('_1.jpg'):
+1284:         return "skipped"
+1285:         
+1286:     m = re.match(r"^(.+?)_\d+\.jpg$", f)
+1287:     if not m:
+1288:         return "skipped"
+1289:     sku = m.group(1)
+1290:     sku_lower = sku.lower()
+1291:     
+1673:     print("\n--- PHASE 2: Reviewing Secondary Zoom Images ---")
+1674:     for idx, f in enumerate(zoom_files):
+1675:         res = process_single_zoom_image(f, idx, len(zoom_files), sku_to_prod, status_db, zoom_dir)
+1676:         if res == "approved":
+1677:             approved_count += 1
+1678:         elif res == "auto-corrected":
+1679:             corrected_count += 1
+1680:         elif res == "skipped":
+1681:             skipped_count += 1
+1682:         elif res == "verification_failed":
+1683:             failures.append(f"zoom/{f}")
+1684: 

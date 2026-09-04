@@ -1,0 +1,619 @@
+=== Search for 99070 ===
+485:     [Save] Saved corrected image: 2000x2000 to 99066_1.jpg
+486:     ✓ Synced correction to zoom: 99066_1.jpg
+487: [39/84] SKU: 99070 | Name: 'Klädhängare 'Ljusdal' 24cm - Svart' | Cat: cabinet_large
+488:     Querying Gemini Vision API for bounding box on Klädhängare _Ljusdal_ 24cm - Svart-01-W-wonder.jpg...
+489:     [Fix Match Force] SKU has a manual white background fix match. Forcing auto-correction flow...
+490:     ✗ Fails alignment. Width=0.11 (target 0.80), Bottom=0.86 (target 0.90). Autocorrecting...
+491:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\Refoma white background fix\shelf\Klädhängare _Ljusdal_ 24cm - Svart\Klädhängare _Ljusdal_ 24cm - Svart-01-W-wonder.jpg
+492:     [Background Cleaning] Skipped: image is fix folder image. Pixels kept 100% original.
+493:     [Crop] Detected product+shadow box (Hybrid): 217x1422 at y:[298,1720], x:[890,1107]
+494:     [Save] Saved corrected image: 1000x1000 to 99070.jpg
+495:     Querying Gemini Vision API for verification...
+496:     ✗ Verification failed: The product is not centered horizontally. The main vertical pole and the entire coat rack are significantly shifted to the right, resulting in a much larger empty margin on the left side compared to the right side. This creates an unbalanced composition and does not meet the horizontal centering guideline, even considering allowances for asymmetrical products.. Reverting to original.
+497:     [ensure_square_canvas] Saved 1000x1000 (cabinet_large) to 99070.jpg
+498: [40/84] SKU: alm-3062 - Already SKIPPED. Restoring (Cached)...
+499: [41/84] SKU: ber101d - Already SKIPPED. Restoring (Cached)...
+500: [42/84] SKU: ber102b - Already SKIPPED. Restoring (Cached)...
+501: [43/84] SKU: bs-605a-brown - Lifestyle image detected. Skipping.
+502: [44/84] SKU: ct-175 - Already VERIFICATION_FAILED. Restoring (Cached)...
+503: [45/84] SKU: dc-070 - Lifestyle image detected. Skipping.
+504: [46/84] SKU: ellens01-white - Already SKIPPED. Restoring (Cached)...
+505: [47/84] SKU: ellesc01-green - Already SKIPPED. Restoring (Cached)...
+506: [48/84] SKU: ellewd02-black | Name: 'Klädskåp 'Elle' - Svart/Mässing' | Cat: cabinet_large
+507:     Querying Gemini Vision API for bounding box on Klädskåp _Elle_ - SvartMässing-01-W-wonder.jpg...
+508:     [Fix Match Force] SKU has a manual white background fix match. Forcing auto-correction flow...
+509:     ✗ Fails alignment. Width=0.20 (target 0.80), Bottom=0.80 (target 0.90). Autocorrecting...
+510:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\Refoma white background fix\cabinet\White background\Klädskåp _Elle_ - SvartMässing\Klädskåp _Elle_ - SvartMässing-01-W-wonder.jpg
+511:     [Background Cleaning] Skipped: image is fix folder image. Pixels kept 100% original.
+--------------------------------------------------
+492:     [Background Cleaning] Skipped: image is fix folder image. Pixels kept 100% original.
+493:     [Crop] Detected product+shadow box (Hybrid): 217x1422 at y:[298,1720], x:[890,1107]
+494:     [Save] Saved corrected image: 1000x1000 to 99070.jpg
+495:     Querying Gemini Vision API for verification...
+496:     ✗ Verification failed: The product is not centered horizontally. The main vertical pole and the entire coat rack are significantly shifted to the right, resulting in a much larger empty margin on the left side compared to the right side. This creates an unbalanced composition and does not meet the horizontal centering guideline, even considering allowances for asymmetrical products.. Reverting to original.
+497:     [ensure_square_canvas] Saved 1000x1000 (cabinet_large) to 99070.jpg
+498: [40/84] SKU: alm-3062 - Already SKIPPED. Restoring (Cached)...
+499: [41/84] SKU: ber101d - Already SKIPPED. Restoring (Cached)...
+500: [42/84] SKU: ber102b - Already SKIPPED. Restoring (Cached)...
+501: [43/84] SKU: bs-605a-brown - Lifestyle image detected. Skipping.
+502: [44/84] SKU: ct-175 - Already VERIFICATION_FAILED. Restoring (Cached)...
+503: [45/84] SKU: dc-070 - Lifestyle image detected. Skipping.
+504: [46/84] SKU: ellens01-white - Already SKIPPED. Restoring (Cached)...
+505: [47/84] SKU: ellesc01-green - Already SKIPPED. Restoring (Cached)...
+506: [48/84] SKU: ellewd02-black | Name: 'Klädskåp 'Elle' - Svart/Mässing' | Cat: cabinet_large
+507:     Querying Gemini Vision API for bounding box on Klädskåp _Elle_ - SvartMässing-01-W-wonder.jpg...
+508:     [Fix Match Force] SKU has a manual white background fix match. Forcing auto-correction flow...
+509:     ✗ Fails alignment. Width=0.20 (target 0.80), Bottom=0.80 (target 0.90). Autocorrecting...
+510:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\Refoma white background fix\cabinet\White background\Klädskåp _Elle_ - SvartMässing\Klädskåp _Elle_ - SvartMässing-01-W-wonder.jpg
+511:     [Background Cleaning] Skipped: image is fix folder image. Pixels kept 100% original.
+512:     [Leg Refinement] Refined ymax_gem from 1599 to 1906 based on dark leg pixels.
+513:     [Crop] Detected product+shadow box (Hybrid): 640x1457 at y:[482,1939], x:[565,1205]
+514:     [Save] Saved corrected image: 1000x1000 to ellewd02-black.jpg
+515:     Querying Gemini Vision API for verification...
+516:     ✓ Verification success: Corrected image approved!
+517:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\Refoma white background fix\cabinet\White background\Klädskåp _Elle_ - SvartMässing\Klädskåp _Elle_ - SvartMässing-01-W-wonder.jpg
+518:     [Background Cleaning] Skipped: image is fix folder image. Pixels kept 100% original.
+--------------------------------------------------
+495:     Querying Gemini Vision API for verification...
+496:     ✗ Verification failed: The product is not centered horizontally. The main vertical pole and the entire coat rack are significantly shifted to the right, resulting in a much larger empty margin on the left side compared to the right side. This creates an unbalanced composition and does not meet the horizontal centering guideline, even considering allowances for asymmetrical products.. Reverting to original.
+497:     [ensure_square_canvas] Saved 1000x1000 (cabinet_large) to 99070.jpg
+498: [40/84] SKU: alm-3062 - Already SKIPPED. Restoring (Cached)...
+499: [41/84] SKU: ber101d - Already SKIPPED. Restoring (Cached)...
+500: [42/84] SKU: ber102b - Already SKIPPED. Restoring (Cached)...
+501: [43/84] SKU: bs-605a-brown - Lifestyle image detected. Skipping.
+502: [44/84] SKU: ct-175 - Already VERIFICATION_FAILED. Restoring (Cached)...
+503: [45/84] SKU: dc-070 - Lifestyle image detected. Skipping.
+504: [46/84] SKU: ellens01-white - Already SKIPPED. Restoring (Cached)...
+505: [47/84] SKU: ellesc01-green - Already SKIPPED. Restoring (Cached)...
+506: [48/84] SKU: ellewd02-black | Name: 'Klädskåp 'Elle' - Svart/Mässing' | Cat: cabinet_large
+507:     Querying Gemini Vision API for bounding box on Klädskåp _Elle_ - SvartMässing-01-W-wonder.jpg...
+508:     [Fix Match Force] SKU has a manual white background fix match. Forcing auto-correction flow...
+509:     ✗ Fails alignment. Width=0.20 (target 0.80), Bottom=0.80 (target 0.90). Autocorrecting...
+510:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\Refoma white background fix\cabinet\White background\Klädskåp _Elle_ - SvartMässing\Klädskåp _Elle_ - SvartMässing-01-W-wonder.jpg
+511:     [Background Cleaning] Skipped: image is fix folder image. Pixels kept 100% original.
+512:     [Leg Refinement] Refined ymax_gem from 1599 to 1906 based on dark leg pixels.
+513:     [Crop] Detected product+shadow box (Hybrid): 640x1457 at y:[482,1939], x:[565,1205]
+514:     [Save] Saved corrected image: 1000x1000 to ellewd02-black.jpg
+515:     Querying Gemini Vision API for verification...
+516:     ✓ Verification success: Corrected image approved!
+517:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\Refoma white background fix\cabinet\White background\Klädskåp _Elle_ - SvartMässing\Klädskåp _Elle_ - SvartMässing-01-W-wonder.jpg
+518:     [Background Cleaning] Skipped: image is fix folder image. Pixels kept 100% original.
+519:     [Leg Refinement] Refined ymax_gem from 1599 to 1906 based on dark leg pixels.
+520:     [Crop] Detected product+shadow box (Hybrid): 640x1457 at y:[482,1939], x:[565,1205]
+521:     [Save] Saved corrected image: 400x400 to ellewd02-black_S.jpg
+--------------------------------------------------
+1471: [893/1934] Zoom SKU: 99066 - Excluded: Product has a fix folder but slot 3 is not in it. Deleting.
+1472: [894/1934] Zoom SKU: 99066 - Excluded: Product has a fix folder but slot 4 is not in it. Deleting.
+1473: [897/1934] Zoom SKU: 99070 - Excluded: Product has a fix folder but slot 3 is not in it. Deleting.
+1474: [898/1934] Zoom SKU: 99070 - Excluded: Product has a fix folder but slot 4 is not in it. Deleting.
+1475: [901/1934] Zoom SKU: 99556 - Excluded: Product has a fix folder but slot 7 is not in it. Deleting.
+1476: [926/1934] Zoom SKU: adst-brown - Excluded: Product has a fix folder but slot 2 is not in it. Deleting.
+1477: [929/1934] Zoom SKU: adst-lotus-2 - Excluded: Product has a fix folder but slot 3 is not in it. Deleting.
+1478: [931/1934] Zoom SKU: adst-lotus-3 - Excluded: Product has a fix folder but slot 2 is not in it. Deleting.
+1479: [934/1934] Zoom SKU: adst-lotus - Excluded: Product has a fix folder but slot 3 is not in it. Deleting.
+1480: [937/1934] Zoom SKU: adst-white - Excluded: Product has a fix folder but slot 3 is not in it. Deleting.
+1481: [939/1934] Zoom SKU: advent-star-brown - Excluded: Product has a fix folder but slot 2 is not in it. Deleting.
+1482: [941/1934] Zoom SKU: advent-star-red-10 - Excluded: Product has a fix folder but slot 2 is not in it. Deleting.
+1483: [944/1934] Zoom SKU: advent-star-red-5 - Excluded: Product has a fix folder but slot 3 is not in it. Deleting.
+1484: [947/1934] Zoom SKU: advent-star-white-10 - Excluded: Product has a fix folder but slot 3 is not in it. Deleting.
+1485: [950/1934] Zoom SKU: advent-star-white-2 - Excluded: Product has a fix folder but slot 3 is not in it. Deleting.
+1486: [953/1934] Zoom SKU: advent-star-white-5 - Excluded: Product has a fix folder but slot 3 is not in it. Deleting.
+1487: [956/1934] Zoom SKU: advent-star-white-8 - Excluded: Product has a fix folder but slot 3 is not in it. Deleting.
+1488: [959/1934] Zoom SKU: advent-star-white - Excluded: Product has a fix folder but slot 3 is not in it. Deleting.
+1489: [961/1934] Zoom SKU: alm-3061-20 - Excluded: Product has a fix folder but slot 2 is not in it. Deleting.
+1490: [963/1934] Zoom SKU: alm-3061-25 - Excluded: Product has a fix folder but slot 2 is not in it. Deleting.
+1491: [965/1934] Zoom SKU: alm-3061-30 - Excluded: Product has a fix folder but slot 2 is not in it. Deleting.
+1492: [968/1934] Zoom SKU: alm-3061-t-23 - Excluded: Product has a fix folder but slot 2 is not in it. Deleting.
+1493: [972/1934] Zoom SKU: alm-3062 - Excluded: Product has a fix folder but slot 2 is not in it. Deleting.
+1494: [993/1934] Zoom SKU: ber101d - Excluded: Product has a fix folder but slot 8 is not in it. Deleting.
+1495: [994/1934] Zoom SKU: ber101d - Excluded: Product has a fix folder but slot 9 is not in it. Deleting.
+1496: [999/1934] Zoom SKU: bs-605a-black - Excluded: Product has a fix folder but slot 10 is not in it. Deleting.
+1497: [1002/1934] Zoom SKU: bs-605a-black - Excluded: Product has a fix folder but slot 7 is not in it. Deleting.
+--------------------------------------------------
+1472: [894/1934] Zoom SKU: 99066 - Excluded: Product has a fix folder but slot 4 is not in it. Deleting.
+1473: [897/1934] Zoom SKU: 99070 - Excluded: Product has a fix folder but slot 3 is not in it. Deleting.
+1474: [898/1934] Zoom SKU: 99070 - Excluded: Product has a fix folder but slot 4 is not in it. Deleting.
+1475: [901/1934] Zoom SKU: 99556 - Excluded: Product has a fix folder but slot 7 is not in it. Deleting.
+1476: [926/1934] Zoom SKU: adst-brown - Excluded: Product has a fix folder but slot 2 is not in it. Deleting.
+1477: [929/1934] Zoom SKU: adst-lotus-2 - Excluded: Product has a fix folder but slot 3 is not in it. Deleting.
+1478: [931/1934] Zoom SKU: adst-lotus-3 - Excluded: Product has a fix folder but slot 2 is not in it. Deleting.
+1479: [934/1934] Zoom SKU: adst-lotus - Excluded: Product has a fix folder but slot 3 is not in it. Deleting.
+1480: [937/1934] Zoom SKU: adst-white - Excluded: Product has a fix folder but slot 3 is not in it. Deleting.
+1481: [939/1934] Zoom SKU: advent-star-brown - Excluded: Product has a fix folder but slot 2 is not in it. Deleting.
+1482: [941/1934] Zoom SKU: advent-star-red-10 - Excluded: Product has a fix folder but slot 2 is not in it. Deleting.
+1483: [944/1934] Zoom SKU: advent-star-red-5 - Excluded: Product has a fix folder but slot 3 is not in it. Deleting.
+1484: [947/1934] Zoom SKU: advent-star-white-10 - Excluded: Product has a fix folder but slot 3 is not in it. Deleting.
+1485: [950/1934] Zoom SKU: advent-star-white-2 - Excluded: Product has a fix folder but slot 3 is not in it. Deleting.
+1486: [953/1934] Zoom SKU: advent-star-white-5 - Excluded: Product has a fix folder but slot 3 is not in it. Deleting.
+1487: [956/1934] Zoom SKU: advent-star-white-8 - Excluded: Product has a fix folder but slot 3 is not in it. Deleting.
+1488: [959/1934] Zoom SKU: advent-star-white - Excluded: Product has a fix folder but slot 3 is not in it. Deleting.
+1489: [961/1934] Zoom SKU: alm-3061-20 - Excluded: Product has a fix folder but slot 2 is not in it. Deleting.
+1490: [963/1934] Zoom SKU: alm-3061-25 - Excluded: Product has a fix folder but slot 2 is not in it. Deleting.
+1491: [965/1934] Zoom SKU: alm-3061-30 - Excluded: Product has a fix folder but slot 2 is not in it. Deleting.
+1492: [968/1934] Zoom SKU: alm-3061-t-23 - Excluded: Product has a fix folder but slot 2 is not in it. Deleting.
+1493: [972/1934] Zoom SKU: alm-3062 - Excluded: Product has a fix folder but slot 2 is not in it. Deleting.
+1494: [993/1934] Zoom SKU: ber101d - Excluded: Product has a fix folder but slot 8 is not in it. Deleting.
+1495: [994/1934] Zoom SKU: ber101d - Excluded: Product has a fix folder but slot 9 is not in it. Deleting.
+1496: [999/1934] Zoom SKU: bs-605a-black - Excluded: Product has a fix folder but slot 10 is not in it. Deleting.
+1497: [1002/1934] Zoom SKU: bs-605a-black - Excluded: Product has a fix folder but slot 7 is not in it. Deleting.
+1498: [1003/1934] Zoom SKU: bs-605a-black - Excluded: Product has a fix folder but slot 8 is not in it. Deleting.
+--------------------------------------------------
+
+=== Search for rw811 ===
+706:     [Save] Saved corrected image: 2000x2000 to rio-1-left-fortis03_1.jpg
+707:     ✓ Synced correction to zoom: rio-1-left-fortis03_1.jpg
+708: [65/84] SKU: rw811 | Name: 'Pall 'Frans' - Ljusbrun/Svart' | Cat: stool
+709:     Querying Gemini Vision API for bounding box on rw811.jpg...
+710:     ✗ Fails alignment. Width=0.47 (target 0.54), Bottom=0.90 (target 0.90). Autocorrecting...
+711:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\rw811.jpg
+712:     [Background Cleaning] Cut out product onto pure white background (lacks shadow, bg_val=245.0). Furniture pixels kept original.
+713:     [Leg Refinement] Refined ymax_gem from 2680 to 2838 based on dark leg pixels.
+714:     [Crop] Detected product+shadow box (Hybrid): 2971x2740 at y:[233,2973], x:[2,2973]
+715:     [Save] Saved corrected image: 1000x1000 to rw811.jpg
+716:     Querying Gemini Vision API for verification...
+717:     ✗ Verification failed: The product is not centered horizontally. It is significantly shifted to the right, resulting in a much larger white margin on the left side of the image compared to the right side. The horizontal center is not at 50.0%.. Reverting to original.
+718:     [ensure_square_canvas] Saved 1000x1000 (stool) to rw811.jpg
+719: [66/84] SKU: rw812-30 | Name: 'Pall 'Em' - Natur/Svart' | Cat: stool
+720:     Querying Gemini Vision API for bounding box on Pall _Em_ - NaturSvart-01-W-wonder.jpg...
+721:     [Fix Match Force] SKU has a manual white background fix match. Forcing auto-correction flow...
+722:     ✗ Fails alignment. Width=0.35 (target 0.54), Bottom=0.70 (target 0.90). Autocorrecting...
+723:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\Refoma white background fix\armchairs\Pall _Em_ - NaturSvart\Pall _Em_ - NaturSvart-01-W-wonder.jpg
+724:     [Background Cleaning] Skipped: image is fix folder image. Pixels kept 100% original.
+725:     [Leg Refinement] Refined ymax_gem from 1399 to 1700 based on dark leg pixels.
+726:     [Crop] Detected product+shadow box (Hybrid): 900x1113 at y:[590,1703], x:[481,1381]
+727:     [Save] Saved corrected image: 1000x1000 to rw812-30.jpg
+728:     Querying Gemini Vision API for verification...
+729:     ✓ Verification success: Corrected image approved!
+730:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\Refoma white background fix\armchairs\Pall _Em_ - NaturSvart\Pall _Em_ - NaturSvart-01-W-wonder.jpg
+731:     [Background Cleaning] Skipped: image is fix folder image. Pixels kept 100% original.
+732:     [Leg Refinement] Refined ymax_gem from 1399 to 1700 based on dark leg pixels.
+--------------------------------------------------
+707:     ✓ Synced correction to zoom: rio-1-left-fortis03_1.jpg
+708: [65/84] SKU: rw811 | Name: 'Pall 'Frans' - Ljusbrun/Svart' | Cat: stool
+709:     Querying Gemini Vision API for bounding box on rw811.jpg...
+710:     ✗ Fails alignment. Width=0.47 (target 0.54), Bottom=0.90 (target 0.90). Autocorrecting...
+711:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\rw811.jpg
+712:     [Background Cleaning] Cut out product onto pure white background (lacks shadow, bg_val=245.0). Furniture pixels kept original.
+713:     [Leg Refinement] Refined ymax_gem from 2680 to 2838 based on dark leg pixels.
+714:     [Crop] Detected product+shadow box (Hybrid): 2971x2740 at y:[233,2973], x:[2,2973]
+715:     [Save] Saved corrected image: 1000x1000 to rw811.jpg
+716:     Querying Gemini Vision API for verification...
+717:     ✗ Verification failed: The product is not centered horizontally. It is significantly shifted to the right, resulting in a much larger white margin on the left side of the image compared to the right side. The horizontal center is not at 50.0%.. Reverting to original.
+718:     [ensure_square_canvas] Saved 1000x1000 (stool) to rw811.jpg
+719: [66/84] SKU: rw812-30 | Name: 'Pall 'Em' - Natur/Svart' | Cat: stool
+720:     Querying Gemini Vision API for bounding box on Pall _Em_ - NaturSvart-01-W-wonder.jpg...
+721:     [Fix Match Force] SKU has a manual white background fix match. Forcing auto-correction flow...
+722:     ✗ Fails alignment. Width=0.35 (target 0.54), Bottom=0.70 (target 0.90). Autocorrecting...
+723:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\Refoma white background fix\armchairs\Pall _Em_ - NaturSvart\Pall _Em_ - NaturSvart-01-W-wonder.jpg
+724:     [Background Cleaning] Skipped: image is fix folder image. Pixels kept 100% original.
+725:     [Leg Refinement] Refined ymax_gem from 1399 to 1700 based on dark leg pixels.
+726:     [Crop] Detected product+shadow box (Hybrid): 900x1113 at y:[590,1703], x:[481,1381]
+727:     [Save] Saved corrected image: 1000x1000 to rw812-30.jpg
+728:     Querying Gemini Vision API for verification...
+729:     ✓ Verification success: Corrected image approved!
+730:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\Refoma white background fix\armchairs\Pall _Em_ - NaturSvart\Pall _Em_ - NaturSvart-01-W-wonder.jpg
+731:     [Background Cleaning] Skipped: image is fix folder image. Pixels kept 100% original.
+732:     [Leg Refinement] Refined ymax_gem from 1399 to 1700 based on dark leg pixels.
+733:     [Crop] Detected product+shadow box (Hybrid): 900x1113 at y:[590,1703], x:[481,1381]
+--------------------------------------------------
+709:     Querying Gemini Vision API for bounding box on rw811.jpg...
+710:     ✗ Fails alignment. Width=0.47 (target 0.54), Bottom=0.90 (target 0.90). Autocorrecting...
+711:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\rw811.jpg
+712:     [Background Cleaning] Cut out product onto pure white background (lacks shadow, bg_val=245.0). Furniture pixels kept original.
+713:     [Leg Refinement] Refined ymax_gem from 2680 to 2838 based on dark leg pixels.
+714:     [Crop] Detected product+shadow box (Hybrid): 2971x2740 at y:[233,2973], x:[2,2973]
+715:     [Save] Saved corrected image: 1000x1000 to rw811.jpg
+716:     Querying Gemini Vision API for verification...
+717:     ✗ Verification failed: The product is not centered horizontally. It is significantly shifted to the right, resulting in a much larger white margin on the left side of the image compared to the right side. The horizontal center is not at 50.0%.. Reverting to original.
+718:     [ensure_square_canvas] Saved 1000x1000 (stool) to rw811.jpg
+719: [66/84] SKU: rw812-30 | Name: 'Pall 'Em' - Natur/Svart' | Cat: stool
+720:     Querying Gemini Vision API for bounding box on Pall _Em_ - NaturSvart-01-W-wonder.jpg...
+721:     [Fix Match Force] SKU has a manual white background fix match. Forcing auto-correction flow...
+722:     ✗ Fails alignment. Width=0.35 (target 0.54), Bottom=0.70 (target 0.90). Autocorrecting...
+723:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\Refoma white background fix\armchairs\Pall _Em_ - NaturSvart\Pall _Em_ - NaturSvart-01-W-wonder.jpg
+724:     [Background Cleaning] Skipped: image is fix folder image. Pixels kept 100% original.
+725:     [Leg Refinement] Refined ymax_gem from 1399 to 1700 based on dark leg pixels.
+726:     [Crop] Detected product+shadow box (Hybrid): 900x1113 at y:[590,1703], x:[481,1381]
+727:     [Save] Saved corrected image: 1000x1000 to rw812-30.jpg
+728:     Querying Gemini Vision API for verification...
+729:     ✓ Verification success: Corrected image approved!
+730:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\Refoma white background fix\armchairs\Pall _Em_ - NaturSvart\Pall _Em_ - NaturSvart-01-W-wonder.jpg
+731:     [Background Cleaning] Skipped: image is fix folder image. Pixels kept 100% original.
+732:     [Leg Refinement] Refined ymax_gem from 1399 to 1700 based on dark leg pixels.
+733:     [Crop] Detected product+shadow box (Hybrid): 900x1113 at y:[590,1703], x:[481,1381]
+734:     [Save] Saved corrected image: 400x400 to rw812-30_S.jpg
+735:     ✓ Synced correction to liten: rw812-30_S.jpg
+--------------------------------------------------
+713:     [Leg Refinement] Refined ymax_gem from 2680 to 2838 based on dark leg pixels.
+714:     [Crop] Detected product+shadow box (Hybrid): 2971x2740 at y:[233,2973], x:[2,2973]
+715:     [Save] Saved corrected image: 1000x1000 to rw811.jpg
+716:     Querying Gemini Vision API for verification...
+717:     ✗ Verification failed: The product is not centered horizontally. It is significantly shifted to the right, resulting in a much larger white margin on the left side of the image compared to the right side. The horizontal center is not at 50.0%.. Reverting to original.
+718:     [ensure_square_canvas] Saved 1000x1000 (stool) to rw811.jpg
+719: [66/84] SKU: rw812-30 | Name: 'Pall 'Em' - Natur/Svart' | Cat: stool
+720:     Querying Gemini Vision API for bounding box on Pall _Em_ - NaturSvart-01-W-wonder.jpg...
+721:     [Fix Match Force] SKU has a manual white background fix match. Forcing auto-correction flow...
+722:     ✗ Fails alignment. Width=0.35 (target 0.54), Bottom=0.70 (target 0.90). Autocorrecting...
+723:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\Refoma white background fix\armchairs\Pall _Em_ - NaturSvart\Pall _Em_ - NaturSvart-01-W-wonder.jpg
+724:     [Background Cleaning] Skipped: image is fix folder image. Pixels kept 100% original.
+725:     [Leg Refinement] Refined ymax_gem from 1399 to 1700 based on dark leg pixels.
+726:     [Crop] Detected product+shadow box (Hybrid): 900x1113 at y:[590,1703], x:[481,1381]
+727:     [Save] Saved corrected image: 1000x1000 to rw812-30.jpg
+728:     Querying Gemini Vision API for verification...
+729:     ✓ Verification success: Corrected image approved!
+730:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\Refoma white background fix\armchairs\Pall _Em_ - NaturSvart\Pall _Em_ - NaturSvart-01-W-wonder.jpg
+731:     [Background Cleaning] Skipped: image is fix folder image. Pixels kept 100% original.
+732:     [Leg Refinement] Refined ymax_gem from 1399 to 1700 based on dark leg pixels.
+733:     [Crop] Detected product+shadow box (Hybrid): 900x1113 at y:[590,1703], x:[481,1381]
+734:     [Save] Saved corrected image: 400x400 to rw812-30_S.jpg
+735:     ✓ Synced correction to liten: rw812-30_S.jpg
+736:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\Refoma white background fix\armchairs\Pall _Em_ - NaturSvart\Pall _Em_ - NaturSvart-01-W-wonder.jpg
+737:     [Background Cleaning] Skipped: image is fix folder image. Pixels kept 100% original.
+738:     [Leg Refinement] Refined ymax_gem from 1399 to 1700 based on dark leg pixels.
+739:     [Crop] Detected product+shadow box (Hybrid): 900x1113 at y:[590,1703], x:[481,1381]
+--------------------------------------------------
+716:     Querying Gemini Vision API for verification...
+717:     ✗ Verification failed: The product is not centered horizontally. It is significantly shifted to the right, resulting in a much larger white margin on the left side of the image compared to the right side. The horizontal center is not at 50.0%.. Reverting to original.
+718:     [ensure_square_canvas] Saved 1000x1000 (stool) to rw811.jpg
+719: [66/84] SKU: rw812-30 | Name: 'Pall 'Em' - Natur/Svart' | Cat: stool
+720:     Querying Gemini Vision API for bounding box on Pall _Em_ - NaturSvart-01-W-wonder.jpg...
+721:     [Fix Match Force] SKU has a manual white background fix match. Forcing auto-correction flow...
+722:     ✗ Fails alignment. Width=0.35 (target 0.54), Bottom=0.70 (target 0.90). Autocorrecting...
+723:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\Refoma white background fix\armchairs\Pall _Em_ - NaturSvart\Pall _Em_ - NaturSvart-01-W-wonder.jpg
+724:     [Background Cleaning] Skipped: image is fix folder image. Pixels kept 100% original.
+725:     [Leg Refinement] Refined ymax_gem from 1399 to 1700 based on dark leg pixels.
+726:     [Crop] Detected product+shadow box (Hybrid): 900x1113 at y:[590,1703], x:[481,1381]
+727:     [Save] Saved corrected image: 1000x1000 to rw812-30.jpg
+728:     Querying Gemini Vision API for verification...
+729:     ✓ Verification success: Corrected image approved!
+730:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\Refoma white background fix\armchairs\Pall _Em_ - NaturSvart\Pall _Em_ - NaturSvart-01-W-wonder.jpg
+731:     [Background Cleaning] Skipped: image is fix folder image. Pixels kept 100% original.
+732:     [Leg Refinement] Refined ymax_gem from 1399 to 1700 based on dark leg pixels.
+733:     [Crop] Detected product+shadow box (Hybrid): 900x1113 at y:[590,1703], x:[481,1381]
+734:     [Save] Saved corrected image: 400x400 to rw812-30_S.jpg
+735:     ✓ Synced correction to liten: rw812-30_S.jpg
+736:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\Refoma white background fix\armchairs\Pall _Em_ - NaturSvart\Pall _Em_ - NaturSvart-01-W-wonder.jpg
+737:     [Background Cleaning] Skipped: image is fix folder image. Pixels kept 100% original.
+738:     [Leg Refinement] Refined ymax_gem from 1399 to 1700 based on dark leg pixels.
+739:     [Crop] Detected product+shadow box (Hybrid): 900x1113 at y:[590,1703], x:[481,1381]
+740:     [Save] Saved corrected image: 2000x2000 to rw812-30_1.jpg
+741:     ✓ Synced correction to zoom: rw812-30_1.jpg
+742: [67/84] SKU: st-050b-100 | Name: 'Matbord 'Marbleous' Runt 100cm - Svart' | Cat: table_dining
+--------------------------------------------------
+1987: [1559/1934] Zoom SKU: rio-1-rigth-grace01 - Excluded: Product has a fix folder but slot 8 is not in it. Deleting.
+1988: [1560/1934] Zoom SKU: rio-1-rigth-grace01 - Excluded: Product has a fix folder but slot 9 is not in it. Deleting.
+1989: [1565/1934] Zoom SKU: rw811 File: rw811_3.jpg | Cat: stool
+1990:     Querying Gemini Vision API for bounding box on rw811_3.jpg...
+1991:     ✓ Approved. Detail close-up (cropped to square full-bleed)
+1992:     [Source Match] Copying raw original image to zoom before cropping: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\zoom\rw811_3.jpg
+1993:     [make_square_by_cropping] Saved cropped 2000x2000 (centered on bbox) to rw811_3.jpg
+1994: [1566/1934] Zoom SKU: rw811 File: rw811_4.jpg | Cat: stool
+1995:     Querying Gemini Vision API for bounding box on rw811_4.jpg...
+1996:     ✗ Fails alignment. Width=0.42 (target 0.54), Bottom=0.90 (target 0.90). Autocorrecting...
+1997:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\zoom\rw811_4.jpg
+1998:     [Background Cleaning] Cut out product onto pure white background (lacks shadow, bg_val=244.3). Furniture pixels kept original.
+1999:     [Leg Refinement] Refined ymax_gem from 2689 to 2770 based on dark leg pixels.
+2000:     [Crop] Detected product+shadow box (Hybrid): 2082x2605 at y:[368,2973], x:[891,2973]
+2001:     [Save] Saved corrected image: 2000x2000 to rw811_4.jpg
+2002:     Querying Gemini Vision API for verification...
+2003:     ✓ Verification success: Corrected image approved!
+2004: [1567/1934] Zoom SKU: rw811 File: rw811_5.jpg | Cat: stool
+2005:     Querying Gemini Vision API for bounding box on rw811_5.jpg...
+2006:     ✗ Fails alignment. Width=0.44 (target 0.54), Bottom=0.90 (target 0.90). Autocorrecting...
+2007:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\zoom\rw811_5.jpg
+2008:     [Background Cleaning] Cut out product onto pure white background (lacks shadow, bg_val=245.0). Furniture pixels kept original.
+2009:     [Leg Refinement] Refined ymax_gem from 2674 to 2785 based on dark leg pixels.
+2010:     [Crop] Detected product+shadow box (Hybrid): 2354x2701 at y:[272,2973], x:[619,2973]
+2011:     [Save] Saved corrected image: 2000x2000 to rw811_5.jpg
+2012:     Querying Gemini Vision API for verification...
+2013:     ✓ Verification success: Corrected image approved!
+--------------------------------------------------
+1988: [1560/1934] Zoom SKU: rio-1-rigth-grace01 - Excluded: Product has a fix folder but slot 9 is not in it. Deleting.
+1989: [1565/1934] Zoom SKU: rw811 File: rw811_3.jpg | Cat: stool
+1990:     Querying Gemini Vision API for bounding box on rw811_3.jpg...
+1991:     ✓ Approved. Detail close-up (cropped to square full-bleed)
+1992:     [Source Match] Copying raw original image to zoom before cropping: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\zoom\rw811_3.jpg
+1993:     [make_square_by_cropping] Saved cropped 2000x2000 (centered on bbox) to rw811_3.jpg
+1994: [1566/1934] Zoom SKU: rw811 File: rw811_4.jpg | Cat: stool
+1995:     Querying Gemini Vision API for bounding box on rw811_4.jpg...
+1996:     ✗ Fails alignment. Width=0.42 (target 0.54), Bottom=0.90 (target 0.90). Autocorrecting...
+1997:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\zoom\rw811_4.jpg
+1998:     [Background Cleaning] Cut out product onto pure white background (lacks shadow, bg_val=244.3). Furniture pixels kept original.
+1999:     [Leg Refinement] Refined ymax_gem from 2689 to 2770 based on dark leg pixels.
+2000:     [Crop] Detected product+shadow box (Hybrid): 2082x2605 at y:[368,2973], x:[891,2973]
+2001:     [Save] Saved corrected image: 2000x2000 to rw811_4.jpg
+2002:     Querying Gemini Vision API for verification...
+2003:     ✓ Verification success: Corrected image approved!
+2004: [1567/1934] Zoom SKU: rw811 File: rw811_5.jpg | Cat: stool
+2005:     Querying Gemini Vision API for bounding box on rw811_5.jpg...
+2006:     ✗ Fails alignment. Width=0.44 (target 0.54), Bottom=0.90 (target 0.90). Autocorrecting...
+2007:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\zoom\rw811_5.jpg
+2008:     [Background Cleaning] Cut out product onto pure white background (lacks shadow, bg_val=245.0). Furniture pixels kept original.
+2009:     [Leg Refinement] Refined ymax_gem from 2674 to 2785 based on dark leg pixels.
+2010:     [Crop] Detected product+shadow box (Hybrid): 2354x2701 at y:[272,2973], x:[619,2973]
+2011:     [Save] Saved corrected image: 2000x2000 to rw811_5.jpg
+2012:     Querying Gemini Vision API for verification...
+2013:     ✓ Verification success: Corrected image approved!
+2014: [1569/1934] Zoom SKU: rw812-30 File: rw812-30_2.jpg | Cat: stool
+--------------------------------------------------
+1990:     Querying Gemini Vision API for bounding box on rw811_3.jpg...
+1991:     ✓ Approved. Detail close-up (cropped to square full-bleed)
+1992:     [Source Match] Copying raw original image to zoom before cropping: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\zoom\rw811_3.jpg
+1993:     [make_square_by_cropping] Saved cropped 2000x2000 (centered on bbox) to rw811_3.jpg
+1994: [1566/1934] Zoom SKU: rw811 File: rw811_4.jpg | Cat: stool
+1995:     Querying Gemini Vision API for bounding box on rw811_4.jpg...
+1996:     ✗ Fails alignment. Width=0.42 (target 0.54), Bottom=0.90 (target 0.90). Autocorrecting...
+1997:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\zoom\rw811_4.jpg
+1998:     [Background Cleaning] Cut out product onto pure white background (lacks shadow, bg_val=244.3). Furniture pixels kept original.
+1999:     [Leg Refinement] Refined ymax_gem from 2689 to 2770 based on dark leg pixels.
+2000:     [Crop] Detected product+shadow box (Hybrid): 2082x2605 at y:[368,2973], x:[891,2973]
+2001:     [Save] Saved corrected image: 2000x2000 to rw811_4.jpg
+2002:     Querying Gemini Vision API for verification...
+2003:     ✓ Verification success: Corrected image approved!
+2004: [1567/1934] Zoom SKU: rw811 File: rw811_5.jpg | Cat: stool
+2005:     Querying Gemini Vision API for bounding box on rw811_5.jpg...
+2006:     ✗ Fails alignment. Width=0.44 (target 0.54), Bottom=0.90 (target 0.90). Autocorrecting...
+2007:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\zoom\rw811_5.jpg
+2008:     [Background Cleaning] Cut out product onto pure white background (lacks shadow, bg_val=245.0). Furniture pixels kept original.
+2009:     [Leg Refinement] Refined ymax_gem from 2674 to 2785 based on dark leg pixels.
+2010:     [Crop] Detected product+shadow box (Hybrid): 2354x2701 at y:[272,2973], x:[619,2973]
+2011:     [Save] Saved corrected image: 2000x2000 to rw811_5.jpg
+2012:     Querying Gemini Vision API for verification...
+2013:     ✓ Verification success: Corrected image approved!
+2014: [1569/1934] Zoom SKU: rw812-30 File: rw812-30_2.jpg | Cat: stool
+2015:     Querying Gemini Vision API for bounding box on Pall _Em_ - NaturSvart-02-W-wonder.jpg...
+2016:     [Fix Match Force] Zoom SKU has a manual white background fix match. Forcing auto-correction flow...
+--------------------------------------------------
+1991:     ✓ Approved. Detail close-up (cropped to square full-bleed)
+1992:     [Source Match] Copying raw original image to zoom before cropping: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\zoom\rw811_3.jpg
+1993:     [make_square_by_cropping] Saved cropped 2000x2000 (centered on bbox) to rw811_3.jpg
+1994: [1566/1934] Zoom SKU: rw811 File: rw811_4.jpg | Cat: stool
+1995:     Querying Gemini Vision API for bounding box on rw811_4.jpg...
+1996:     ✗ Fails alignment. Width=0.42 (target 0.54), Bottom=0.90 (target 0.90). Autocorrecting...
+1997:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\zoom\rw811_4.jpg
+1998:     [Background Cleaning] Cut out product onto pure white background (lacks shadow, bg_val=244.3). Furniture pixels kept original.
+1999:     [Leg Refinement] Refined ymax_gem from 2689 to 2770 based on dark leg pixels.
+2000:     [Crop] Detected product+shadow box (Hybrid): 2082x2605 at y:[368,2973], x:[891,2973]
+2001:     [Save] Saved corrected image: 2000x2000 to rw811_4.jpg
+2002:     Querying Gemini Vision API for verification...
+2003:     ✓ Verification success: Corrected image approved!
+2004: [1567/1934] Zoom SKU: rw811 File: rw811_5.jpg | Cat: stool
+2005:     Querying Gemini Vision API for bounding box on rw811_5.jpg...
+2006:     ✗ Fails alignment. Width=0.44 (target 0.54), Bottom=0.90 (target 0.90). Autocorrecting...
+2007:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\zoom\rw811_5.jpg
+2008:     [Background Cleaning] Cut out product onto pure white background (lacks shadow, bg_val=245.0). Furniture pixels kept original.
+2009:     [Leg Refinement] Refined ymax_gem from 2674 to 2785 based on dark leg pixels.
+2010:     [Crop] Detected product+shadow box (Hybrid): 2354x2701 at y:[272,2973], x:[619,2973]
+2011:     [Save] Saved corrected image: 2000x2000 to rw811_5.jpg
+2012:     Querying Gemini Vision API for verification...
+2013:     ✓ Verification success: Corrected image approved!
+2014: [1569/1934] Zoom SKU: rw812-30 File: rw812-30_2.jpg | Cat: stool
+2015:     Querying Gemini Vision API for bounding box on Pall _Em_ - NaturSvart-02-W-wonder.jpg...
+2016:     [Fix Match Force] Zoom SKU has a manual white background fix match. Forcing auto-correction flow...
+2017:     ✗ Fails alignment. Width=0.37 (target 0.54), Bottom=0.79 (target 0.90). Autocorrecting...
+--------------------------------------------------
+1992:     [Source Match] Copying raw original image to zoom before cropping: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\zoom\rw811_3.jpg
+1993:     [make_square_by_cropping] Saved cropped 2000x2000 (centered on bbox) to rw811_3.jpg
+1994: [1566/1934] Zoom SKU: rw811 File: rw811_4.jpg | Cat: stool
+1995:     Querying Gemini Vision API for bounding box on rw811_4.jpg...
+1996:     ✗ Fails alignment. Width=0.42 (target 0.54), Bottom=0.90 (target 0.90). Autocorrecting...
+1997:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\zoom\rw811_4.jpg
+1998:     [Background Cleaning] Cut out product onto pure white background (lacks shadow, bg_val=244.3). Furniture pixels kept original.
+1999:     [Leg Refinement] Refined ymax_gem from 2689 to 2770 based on dark leg pixels.
+2000:     [Crop] Detected product+shadow box (Hybrid): 2082x2605 at y:[368,2973], x:[891,2973]
+2001:     [Save] Saved corrected image: 2000x2000 to rw811_4.jpg
+2002:     Querying Gemini Vision API for verification...
+2003:     ✓ Verification success: Corrected image approved!
+2004: [1567/1934] Zoom SKU: rw811 File: rw811_5.jpg | Cat: stool
+2005:     Querying Gemini Vision API for bounding box on rw811_5.jpg...
+2006:     ✗ Fails alignment. Width=0.44 (target 0.54), Bottom=0.90 (target 0.90). Autocorrecting...
+2007:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\zoom\rw811_5.jpg
+2008:     [Background Cleaning] Cut out product onto pure white background (lacks shadow, bg_val=245.0). Furniture pixels kept original.
+2009:     [Leg Refinement] Refined ymax_gem from 2674 to 2785 based on dark leg pixels.
+2010:     [Crop] Detected product+shadow box (Hybrid): 2354x2701 at y:[272,2973], x:[619,2973]
+2011:     [Save] Saved corrected image: 2000x2000 to rw811_5.jpg
+2012:     Querying Gemini Vision API for verification...
+2013:     ✓ Verification success: Corrected image approved!
+2014: [1569/1934] Zoom SKU: rw812-30 File: rw812-30_2.jpg | Cat: stool
+2015:     Querying Gemini Vision API for bounding box on Pall _Em_ - NaturSvart-02-W-wonder.jpg...
+2016:     [Fix Match Force] Zoom SKU has a manual white background fix match. Forcing auto-correction flow...
+2017:     ✗ Fails alignment. Width=0.37 (target 0.54), Bottom=0.79 (target 0.90). Autocorrecting...
+2018:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\Refoma white background fix\armchairs\Pall _Em_ - NaturSvart\Pall _Em_ - NaturSvart-02-W-wonder.jpg
+--------------------------------------------------
+1993:     [make_square_by_cropping] Saved cropped 2000x2000 (centered on bbox) to rw811_3.jpg
+1994: [1566/1934] Zoom SKU: rw811 File: rw811_4.jpg | Cat: stool
+1995:     Querying Gemini Vision API for bounding box on rw811_4.jpg...
+1996:     ✗ Fails alignment. Width=0.42 (target 0.54), Bottom=0.90 (target 0.90). Autocorrecting...
+1997:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\zoom\rw811_4.jpg
+1998:     [Background Cleaning] Cut out product onto pure white background (lacks shadow, bg_val=244.3). Furniture pixels kept original.
+1999:     [Leg Refinement] Refined ymax_gem from 2689 to 2770 based on dark leg pixels.
+2000:     [Crop] Detected product+shadow box (Hybrid): 2082x2605 at y:[368,2973], x:[891,2973]
+2001:     [Save] Saved corrected image: 2000x2000 to rw811_4.jpg
+2002:     Querying Gemini Vision API for verification...
+2003:     ✓ Verification success: Corrected image approved!
+2004: [1567/1934] Zoom SKU: rw811 File: rw811_5.jpg | Cat: stool
+2005:     Querying Gemini Vision API for bounding box on rw811_5.jpg...
+2006:     ✗ Fails alignment. Width=0.44 (target 0.54), Bottom=0.90 (target 0.90). Autocorrecting...
+2007:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\zoom\rw811_5.jpg
+2008:     [Background Cleaning] Cut out product onto pure white background (lacks shadow, bg_val=245.0). Furniture pixels kept original.
+2009:     [Leg Refinement] Refined ymax_gem from 2674 to 2785 based on dark leg pixels.
+2010:     [Crop] Detected product+shadow box (Hybrid): 2354x2701 at y:[272,2973], x:[619,2973]
+2011:     [Save] Saved corrected image: 2000x2000 to rw811_5.jpg
+2012:     Querying Gemini Vision API for verification...
+2013:     ✓ Verification success: Corrected image approved!
+2014: [1569/1934] Zoom SKU: rw812-30 File: rw812-30_2.jpg | Cat: stool
+2015:     Querying Gemini Vision API for bounding box on Pall _Em_ - NaturSvart-02-W-wonder.jpg...
+2016:     [Fix Match Force] Zoom SKU has a manual white background fix match. Forcing auto-correction flow...
+2017:     ✗ Fails alignment. Width=0.37 (target 0.54), Bottom=0.79 (target 0.90). Autocorrecting...
+2018:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\Refoma white background fix\armchairs\Pall _Em_ - NaturSvart\Pall _Em_ - NaturSvart-02-W-wonder.jpg
+2019:     [Background Cleaning] Skipped: image is fix folder image. Pixels kept 100% original.
+--------------------------------------------------
+1995:     Querying Gemini Vision API for bounding box on rw811_4.jpg...
+1996:     ✗ Fails alignment. Width=0.42 (target 0.54), Bottom=0.90 (target 0.90). Autocorrecting...
+1997:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\zoom\rw811_4.jpg
+1998:     [Background Cleaning] Cut out product onto pure white background (lacks shadow, bg_val=244.3). Furniture pixels kept original.
+1999:     [Leg Refinement] Refined ymax_gem from 2689 to 2770 based on dark leg pixels.
+2000:     [Crop] Detected product+shadow box (Hybrid): 2082x2605 at y:[368,2973], x:[891,2973]
+2001:     [Save] Saved corrected image: 2000x2000 to rw811_4.jpg
+2002:     Querying Gemini Vision API for verification...
+2003:     ✓ Verification success: Corrected image approved!
+2004: [1567/1934] Zoom SKU: rw811 File: rw811_5.jpg | Cat: stool
+2005:     Querying Gemini Vision API for bounding box on rw811_5.jpg...
+2006:     ✗ Fails alignment. Width=0.44 (target 0.54), Bottom=0.90 (target 0.90). Autocorrecting...
+2007:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\zoom\rw811_5.jpg
+2008:     [Background Cleaning] Cut out product onto pure white background (lacks shadow, bg_val=245.0). Furniture pixels kept original.
+2009:     [Leg Refinement] Refined ymax_gem from 2674 to 2785 based on dark leg pixels.
+2010:     [Crop] Detected product+shadow box (Hybrid): 2354x2701 at y:[272,2973], x:[619,2973]
+2011:     [Save] Saved corrected image: 2000x2000 to rw811_5.jpg
+2012:     Querying Gemini Vision API for verification...
+2013:     ✓ Verification success: Corrected image approved!
+2014: [1569/1934] Zoom SKU: rw812-30 File: rw812-30_2.jpg | Cat: stool
+2015:     Querying Gemini Vision API for bounding box on Pall _Em_ - NaturSvart-02-W-wonder.jpg...
+2016:     [Fix Match Force] Zoom SKU has a manual white background fix match. Forcing auto-correction flow...
+2017:     ✗ Fails alignment. Width=0.37 (target 0.54), Bottom=0.79 (target 0.90). Autocorrecting...
+2018:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\Refoma white background fix\armchairs\Pall _Em_ - NaturSvart\Pall _Em_ - NaturSvart-02-W-wonder.jpg
+2019:     [Background Cleaning] Skipped: image is fix folder image. Pixels kept 100% original.
+2020:     [Leg Refinement] Refined ymax_gem from 1583 to 1709 based on dark leg pixels.
+2021:     [Crop] Detected product+shadow box (Hybrid): 1055x1144 at y:[590,1734], x:[277,1332]
+--------------------------------------------------
+1999:     [Leg Refinement] Refined ymax_gem from 2689 to 2770 based on dark leg pixels.
+2000:     [Crop] Detected product+shadow box (Hybrid): 2082x2605 at y:[368,2973], x:[891,2973]
+2001:     [Save] Saved corrected image: 2000x2000 to rw811_4.jpg
+2002:     Querying Gemini Vision API for verification...
+2003:     ✓ Verification success: Corrected image approved!
+2004: [1567/1934] Zoom SKU: rw811 File: rw811_5.jpg | Cat: stool
+2005:     Querying Gemini Vision API for bounding box on rw811_5.jpg...
+2006:     ✗ Fails alignment. Width=0.44 (target 0.54), Bottom=0.90 (target 0.90). Autocorrecting...
+2007:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\zoom\rw811_5.jpg
+2008:     [Background Cleaning] Cut out product onto pure white background (lacks shadow, bg_val=245.0). Furniture pixels kept original.
+2009:     [Leg Refinement] Refined ymax_gem from 2674 to 2785 based on dark leg pixels.
+2010:     [Crop] Detected product+shadow box (Hybrid): 2354x2701 at y:[272,2973], x:[619,2973]
+2011:     [Save] Saved corrected image: 2000x2000 to rw811_5.jpg
+2012:     Querying Gemini Vision API for verification...
+2013:     ✓ Verification success: Corrected image approved!
+2014: [1569/1934] Zoom SKU: rw812-30 File: rw812-30_2.jpg | Cat: stool
+2015:     Querying Gemini Vision API for bounding box on Pall _Em_ - NaturSvart-02-W-wonder.jpg...
+2016:     [Fix Match Force] Zoom SKU has a manual white background fix match. Forcing auto-correction flow...
+2017:     ✗ Fails alignment. Width=0.37 (target 0.54), Bottom=0.79 (target 0.90). Autocorrecting...
+2018:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\Refoma white background fix\armchairs\Pall _Em_ - NaturSvart\Pall _Em_ - NaturSvart-02-W-wonder.jpg
+2019:     [Background Cleaning] Skipped: image is fix folder image. Pixels kept 100% original.
+2020:     [Leg Refinement] Refined ymax_gem from 1583 to 1709 based on dark leg pixels.
+2021:     [Crop] Detected product+shadow box (Hybrid): 1055x1144 at y:[590,1734], x:[277,1332]
+2022:     [Save] Saved corrected image: 2000x2000 to rw812-30_2.jpg
+2023:     Querying Gemini Vision API for verification...
+2024:     ✓ Verification success: Corrected image approved!
+2025: [1570/1934] Zoom SKU: rw812-30 File: rw812-30_3.jpg | Cat: stool
+--------------------------------------------------
+2002:     Querying Gemini Vision API for verification...
+2003:     ✓ Verification success: Corrected image approved!
+2004: [1567/1934] Zoom SKU: rw811 File: rw811_5.jpg | Cat: stool
+2005:     Querying Gemini Vision API for bounding box on rw811_5.jpg...
+2006:     ✗ Fails alignment. Width=0.44 (target 0.54), Bottom=0.90 (target 0.90). Autocorrecting...
+2007:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\zoom\rw811_5.jpg
+2008:     [Background Cleaning] Cut out product onto pure white background (lacks shadow, bg_val=245.0). Furniture pixels kept original.
+2009:     [Leg Refinement] Refined ymax_gem from 2674 to 2785 based on dark leg pixels.
+2010:     [Crop] Detected product+shadow box (Hybrid): 2354x2701 at y:[272,2973], x:[619,2973]
+2011:     [Save] Saved corrected image: 2000x2000 to rw811_5.jpg
+2012:     Querying Gemini Vision API for verification...
+2013:     ✓ Verification success: Corrected image approved!
+2014: [1569/1934] Zoom SKU: rw812-30 File: rw812-30_2.jpg | Cat: stool
+2015:     Querying Gemini Vision API for bounding box on Pall _Em_ - NaturSvart-02-W-wonder.jpg...
+2016:     [Fix Match Force] Zoom SKU has a manual white background fix match. Forcing auto-correction flow...
+2017:     ✗ Fails alignment. Width=0.37 (target 0.54), Bottom=0.79 (target 0.90). Autocorrecting...
+2018:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\Refoma white background fix\armchairs\Pall _Em_ - NaturSvart\Pall _Em_ - NaturSvart-02-W-wonder.jpg
+2019:     [Background Cleaning] Skipped: image is fix folder image. Pixels kept 100% original.
+2020:     [Leg Refinement] Refined ymax_gem from 1583 to 1709 based on dark leg pixels.
+2021:     [Crop] Detected product+shadow box (Hybrid): 1055x1144 at y:[590,1734], x:[277,1332]
+2022:     [Save] Saved corrected image: 2000x2000 to rw812-30_2.jpg
+2023:     Querying Gemini Vision API for verification...
+2024:     ✓ Verification success: Corrected image approved!
+2025: [1570/1934] Zoom SKU: rw812-30 File: rw812-30_3.jpg | Cat: stool
+2026:     Querying Gemini Vision API for bounding box on Pall _Em_ - NaturSvart-03-W-wonder.jpg...
+2027:     [Fix Match Force] Zoom SKU has a manual white background fix match. Forcing auto-correction flow...
+2028:     ✗ Fails alignment. Width=0.26 (target 0.54), Bottom=0.70 (target 0.90). Autocorrecting...
+--------------------------------------------------
+2003:     ✓ Verification success: Corrected image approved!
+2004: [1567/1934] Zoom SKU: rw811 File: rw811_5.jpg | Cat: stool
+2005:     Querying Gemini Vision API for bounding box on rw811_5.jpg...
+2006:     ✗ Fails alignment. Width=0.44 (target 0.54), Bottom=0.90 (target 0.90). Autocorrecting...
+2007:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\zoom\rw811_5.jpg
+2008:     [Background Cleaning] Cut out product onto pure white background (lacks shadow, bg_val=245.0). Furniture pixels kept original.
+2009:     [Leg Refinement] Refined ymax_gem from 2674 to 2785 based on dark leg pixels.
+2010:     [Crop] Detected product+shadow box (Hybrid): 2354x2701 at y:[272,2973], x:[619,2973]
+2011:     [Save] Saved corrected image: 2000x2000 to rw811_5.jpg
+2012:     Querying Gemini Vision API for verification...
+2013:     ✓ Verification success: Corrected image approved!
+2014: [1569/1934] Zoom SKU: rw812-30 File: rw812-30_2.jpg | Cat: stool
+2015:     Querying Gemini Vision API for bounding box on Pall _Em_ - NaturSvart-02-W-wonder.jpg...
+2016:     [Fix Match Force] Zoom SKU has a manual white background fix match. Forcing auto-correction flow...
+2017:     ✗ Fails alignment. Width=0.37 (target 0.54), Bottom=0.79 (target 0.90). Autocorrecting...
+2018:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\Refoma white background fix\armchairs\Pall _Em_ - NaturSvart\Pall _Em_ - NaturSvart-02-W-wonder.jpg
+2019:     [Background Cleaning] Skipped: image is fix folder image. Pixels kept 100% original.
+2020:     [Leg Refinement] Refined ymax_gem from 1583 to 1709 based on dark leg pixels.
+2021:     [Crop] Detected product+shadow box (Hybrid): 1055x1144 at y:[590,1734], x:[277,1332]
+2022:     [Save] Saved corrected image: 2000x2000 to rw812-30_2.jpg
+2023:     Querying Gemini Vision API for verification...
+2024:     ✓ Verification success: Corrected image approved!
+2025: [1570/1934] Zoom SKU: rw812-30 File: rw812-30_3.jpg | Cat: stool
+2026:     Querying Gemini Vision API for bounding box on Pall _Em_ - NaturSvart-03-W-wonder.jpg...
+2027:     [Fix Match Force] Zoom SKU has a manual white background fix match. Forcing auto-correction flow...
+2028:     ✗ Fails alignment. Width=0.26 (target 0.54), Bottom=0.70 (target 0.90). Autocorrecting...
+2029:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\Refoma white background fix\armchairs\Pall _Em_ - NaturSvart\Pall _Em_ - NaturSvart-03-W-wonder.jpg
+--------------------------------------------------
+2005:     Querying Gemini Vision API for bounding box on rw811_5.jpg...
+2006:     ✗ Fails alignment. Width=0.44 (target 0.54), Bottom=0.90 (target 0.90). Autocorrecting...
+2007:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\zoom\rw811_5.jpg
+2008:     [Background Cleaning] Cut out product onto pure white background (lacks shadow, bg_val=245.0). Furniture pixels kept original.
+2009:     [Leg Refinement] Refined ymax_gem from 2674 to 2785 based on dark leg pixels.
+2010:     [Crop] Detected product+shadow box (Hybrid): 2354x2701 at y:[272,2973], x:[619,2973]
+2011:     [Save] Saved corrected image: 2000x2000 to rw811_5.jpg
+2012:     Querying Gemini Vision API for verification...
+2013:     ✓ Verification success: Corrected image approved!
+2014: [1569/1934] Zoom SKU: rw812-30 File: rw812-30_2.jpg | Cat: stool
+2015:     Querying Gemini Vision API for bounding box on Pall _Em_ - NaturSvart-02-W-wonder.jpg...
+2016:     [Fix Match Force] Zoom SKU has a manual white background fix match. Forcing auto-correction flow...
+2017:     ✗ Fails alignment. Width=0.37 (target 0.54), Bottom=0.79 (target 0.90). Autocorrecting...
+2018:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\Refoma white background fix\armchairs\Pall _Em_ - NaturSvart\Pall _Em_ - NaturSvart-02-W-wonder.jpg
+2019:     [Background Cleaning] Skipped: image is fix folder image. Pixels kept 100% original.
+2020:     [Leg Refinement] Refined ymax_gem from 1583 to 1709 based on dark leg pixels.
+2021:     [Crop] Detected product+shadow box (Hybrid): 1055x1144 at y:[590,1734], x:[277,1332]
+2022:     [Save] Saved corrected image: 2000x2000 to rw812-30_2.jpg
+2023:     Querying Gemini Vision API for verification...
+2024:     ✓ Verification success: Corrected image approved!
+2025: [1570/1934] Zoom SKU: rw812-30 File: rw812-30_3.jpg | Cat: stool
+2026:     Querying Gemini Vision API for bounding box on Pall _Em_ - NaturSvart-03-W-wonder.jpg...
+2027:     [Fix Match Force] Zoom SKU has a manual white background fix match. Forcing auto-correction flow...
+2028:     ✗ Fails alignment. Width=0.26 (target 0.54), Bottom=0.70 (target 0.90). Autocorrecting...
+2029:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\Refoma white background fix\armchairs\Pall _Em_ - NaturSvart\Pall _Em_ - NaturSvart-03-W-wonder.jpg
+2030:     [Background Cleaning] Skipped: image is fix folder image. Pixels kept 100% original.
+2031:     [Leg Refinement] Refined ymax_gem from 1403 to 1709 based on dark leg pixels.
+--------------------------------------------------
+2009:     [Leg Refinement] Refined ymax_gem from 2674 to 2785 based on dark leg pixels.
+2010:     [Crop] Detected product+shadow box (Hybrid): 2354x2701 at y:[272,2973], x:[619,2973]
+2011:     [Save] Saved corrected image: 2000x2000 to rw811_5.jpg
+2012:     Querying Gemini Vision API for verification...
+2013:     ✓ Verification success: Corrected image approved!
+2014: [1569/1934] Zoom SKU: rw812-30 File: rw812-30_2.jpg | Cat: stool
+2015:     Querying Gemini Vision API for bounding box on Pall _Em_ - NaturSvart-02-W-wonder.jpg...
+2016:     [Fix Match Force] Zoom SKU has a manual white background fix match. Forcing auto-correction flow...
+2017:     ✗ Fails alignment. Width=0.37 (target 0.54), Bottom=0.79 (target 0.90). Autocorrecting...
+2018:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\Refoma white background fix\armchairs\Pall _Em_ - NaturSvart\Pall _Em_ - NaturSvart-02-W-wonder.jpg
+2019:     [Background Cleaning] Skipped: image is fix folder image. Pixels kept 100% original.
+2020:     [Leg Refinement] Refined ymax_gem from 1583 to 1709 based on dark leg pixels.
+2021:     [Crop] Detected product+shadow box (Hybrid): 1055x1144 at y:[590,1734], x:[277,1332]
+2022:     [Save] Saved corrected image: 2000x2000 to rw812-30_2.jpg
+2023:     Querying Gemini Vision API for verification...
+2024:     ✓ Verification success: Corrected image approved!
+2025: [1570/1934] Zoom SKU: rw812-30 File: rw812-30_3.jpg | Cat: stool
+2026:     Querying Gemini Vision API for bounding box on Pall _Em_ - NaturSvart-03-W-wonder.jpg...
+2027:     [Fix Match Force] Zoom SKU has a manual white background fix match. Forcing auto-correction flow...
+2028:     ✗ Fails alignment. Width=0.26 (target 0.54), Bottom=0.70 (target 0.90). Autocorrecting...
+2029:     [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\Refoma white background fix\armchairs\Pall _Em_ - NaturSvart\Pall _Em_ - NaturSvart-03-W-wonder.jpg
+2030:     [Background Cleaning] Skipped: image is fix folder image. Pixels kept 100% original.
+2031:     [Leg Refinement] Refined ymax_gem from 1403 to 1709 based on dark leg pixels.
+2032:     [Crop] Detected product+shadow box (Hybrid): 985x1123 at y:[590,1713], x:[320,1305]
+2033:     [Save] Saved corrected image: 2000x2000 to rw812-30_3.jpg
+2034:     Querying Gemini Vision API for verification...
+2035:     ✓ Verification success: Corrected image approved!
+--------------------------------------------------

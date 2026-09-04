@@ -1,0 +1,33 @@
+{
+  "timestamp": "2026-06-12T10:30:34.421896",
+  "turboflow_integrity": {
+    "rooms_turboflow_json": {
+      "exists": true,
+      "valid": true,
+      "empty": false,
+      "size_bytes": 365988,
+      "error": null
+    },
+    "turboflow_ready_csv": {
+      "exists": true,
+      "valid": true,
+      "empty": false,
+      "size_bytes": 344254,
+      "error": null
+    }
+  },
+  "quality_check": {
+    "script_executed": true,
+    "mode": "dry",
+    "total_analyzed": 1,
+    "matches": 1,
+    "mismatches": 0,
+    "failures": 0,
+    "exit_code": 0,
+    "error_message": null
+  },
+  "pipeline_health": {
+    "healthy": true,
+    "message": "Pipeline is healthy. All outputs verified and quality checks passed."
+  }
+}

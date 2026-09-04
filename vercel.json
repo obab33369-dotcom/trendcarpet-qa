@@ -1,0 +1,11 @@
+{
+  "name": "trendcarpet-qa",
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://consult-sbjct-fascinating-extended.trycloudflare.com/",
+      "permanent": false
+    }
+  ]
+}

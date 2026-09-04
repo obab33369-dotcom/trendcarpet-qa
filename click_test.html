@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klick- och Autoklickertest</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0d0e15;
+            --card-bg: rgba(22, 24, 37, 0.7);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --primary-glow: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+            --accent-glow: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 242, 254, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(245, 87, 108, 0.05) 0%, transparent 40%);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 650px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 40px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: var(--primary-glow);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 30px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 15px 10px;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            border-color: rgba(0, 242, 254, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 5px;
+        }
+
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-variant-numeric: tabular-nums;
+        }
+
+        #cps-value {
+            background: var(--accent-glow);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .click-area {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            background: rgba(0, 0, 0, 0.2);
+            border: 2px dashed rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            margin-bottom: 25px;
+            transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+        }
+
+        .click-area:hover {
+            border-color: rgba(0, 242, 254, 0.4);
+            background: rgba(0, 242, 254, 0.02);
+        }
+
+        .click-area:active {
+            transform: scale(0.98);
+            border-color: #00f2fe;
+        }
+
+        .click-prompt {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            pointer-events: none;
+            transition: color 0.3s;
+        }
+
+        .click-area:hover .click-prompt {
+            color: var(--text-main);
+        }
+
+        .ripple {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: radial-gradient(circle, rgba(0, 242, 254, 0.8) 0%, rgba(0, 242, 254, 0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%) scale(1);
+            animation: rip 0.6s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+        }
+
+        @keyframes rip {
+            to {
+                width: 120px;
+                height: 120px;
+                opacity: 0;
+            }
+        }
+
+        .badge-container {
+            margin-top: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            min-height: 24px;
+        }
+
+        .badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .badge-none { background: rgba(255, 255, 255, 0.05); color: var(--text-muted); }
+        .badge-human { background: rgba(76, 175, 80, 0.15); color: #4caf50; border: 1px solid rgba(76, 175, 80, 0.2); }
+        .badge-fast { background: rgba(255, 152, 0, 0.15); color: #ff9800; border: 1px solid rgba(255, 152, 0, 0.2); }
+        .badge-bot { background: rgba(244, 67, 54, 0.15); color: #f44336; border: 1px solid rgba(244, 67, 54, 0.2); animation: pulse 1s infinite alternate; }
+
+        @keyframes pulse {
+            from { box-shadow: 0 0 0 rgba(244, 67, 54, 0); }
+            to { box-shadow: 0 0 10px rgba(244, 67, 54, 0.4); }
+        }
+
+        .btn-reset {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: var(--text-muted);
+            padding: 10px 24px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-reset:hover {
+            color: var(--text-main);
+            border-color: var(--text-main);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .indicator {
+            position: absolute;
+            font-size: 0.75rem;
+            color: rgba(0, 242, 254, 0.9);
+            font-weight: bold;
+            pointer-events: none;
+            animation: fadeUp 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeUp {
+            to {
+                transform: translateY(-25px);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Klicktest</h1>
+        <p class="subtitle">Testa om din autoklickare registrerar klick genom RustDesk</p>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Totalt</div>
+                <div class="stat-value" id="click-count">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Klick/sek (CPS)</div>
+                <div class="stat-value" id="cps-value">0.0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Max CPS</div>
+                <div class="stat-value" id="max-cps-value">0.0</div>
+            </div>
+        </div>
+
+        <div class="click-area" id="click-zone">
+            <span class="click-prompt" id="prompt-text">KLICKA HÄR</span>
+        </div>
+
+        <div class="badge-container">
+            Kategori: <span class="badge badge-none" id="speed-badge">Ingen data</span>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <button class="btn-reset" id="btn-reset">Nollställ data</button>
+        </div>
+    </div>
+
+    <script>
+        const clickZone = document.getElementById('click-zone');
+        const clickCountEl = document.getElementById('click-count');
+        const cpsValueEl = document.getElementById('cps-value');
+        const maxCpsValueEl = document.getElementById('max-cps-value');
+        const speedBadge = document.getElementById('speed-badge');
+        const btnReset = document.getElementById('btn-reset');
+        const promptText = document.getElementById('prompt-text');
+
+        let totalClicks = 0;
+        let clickTimes = [];
+        let maxCPS = 0.0;
+
+        clickZone.addEventListener('mousedown', (e) => {
+            e.preventDefault();
+            totalClicks++;
+            clickCountEl.textContent = totalClicks;
+            
+            const now = performance.now();
+            clickTimes.push(now);
+
+            // Clean prompt text
+            if (promptText.style.display !== 'none') {
+                promptText.style.display = 'none';
+            }
+
+            // Create ripple effect
+            const rect = clickZone.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const ripple = document.createElement('div');
+            ripple.classList.add('ripple');
+            ripple.style.left = `${x}px`;
+            ripple.style.top = `${y}px`;
+            clickZone.appendChild(ripple);
+
+            // Create coordinate indicator
+            const ind = document.createElement('div');
+            ind.classList.add('indicator');
+            ind.style.left = `${x}px`;
+            ind.style.top = `${y - 15}px`;
+            ind.textContent = `X: ${Math.round(x)}, Y: ${Math.round(y)}`;
+            clickZone.appendChild(ind);
+
+            // Remove elements after animations complete
+            setTimeout(() => { ripple.remove(); }, 600);
+            setTimeout(() => { ind.remove(); }, 800);
+        });
+
+        // CPS Calculation Loop
+        setInterval(() => {
+            const now = performance.now();
+            // Filter clicks in the last 1 second
+            clickTimes = clickTimes.filter(t => now - t < 1000);
+            
+            const currentCPS = clickTimes.length;
+            cpsValueEl.textContent = currentCPS.toFixed(1);
+
+            if (currentCPS > maxCPS) {
+                maxCPS = currentCPS;
+                maxCpsValueEl.textContent = maxCPS.toFixed(1);
+            }
+
+            // Update badge classification
+            if (totalClicks === 0) {
+                speedBadge.textContent = "Ingen klick";
+                speedBadge.className = "badge badge-none";
+            } else if (currentCPS <= 7) {
+                speedBadge.textContent = "Människa";
+                speedBadge.className = "badge badge-human";
+            } else if (currentCPS <= 18) {
+                speedBadge.textContent = "Snabb (Gamer)";
+                speedBadge.className = "badge badge-fast";
+            } else {
+                speedBadge.textContent = "Autoklickare / Bot!";
+                speedBadge.className = "badge badge-bot";
+            }
+        }, 100);
+
+        btnReset.addEventListener('click', () => {
+            totalClicks = 0;
+            maxCPS = 0.0;
+            clickTimes = [];
+            clickCountEl.textContent = '0';
+            cpsValueEl.textContent = '0.0';
+            maxCpsValueEl.textContent = '0.0';
+            speedBadge.textContent = "Ingen data";
+            speedBadge.className = "badge badge-none";
+            promptText.style.display = 'block';
+        });
+    </script>
+</body>
+</html>

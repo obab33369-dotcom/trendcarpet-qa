@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klassisk Submit-ruta</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        input[type="submit"] {
+            background-color: #0078d4;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        input[type="submit"]:hover {
+            background-color: #005a9e;
+        }
+        input[type="submit"]:active {
+            background-color: #004578;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Klassisk Submit-test</h2>
+    <p style="color: #666; margin-bottom: 20px;">Detta är en helt vanlig, standard HTML-submitknapp.</p>
+    <form onsubmit="alert('Submit registrerades framgångsrikt!'); return false;">
+        <input type="submit" value="Skicka / Submit">
+    </form>
+</div>
+
+</body>
+</html>

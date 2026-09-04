@@ -1,0 +1,44 @@
+{
+  "Keps-Black River-Charleston-Off white-Khaki": {
+    "status": "approved",
+    "flags": {},
+    "comments": [
+      {
+        "id": "c_1788433034157",
+        "author": "Andro",
+        "text": "Testing Testing 1-2 1-2",
+        "shots": [],
+        "drawings": [],
+        "time": "12:57"
+      }
+    ],
+    "reviewer": "Anton",
+    "updatedAt": "2026-09-03T11:04:35.139Z"
+  },
+  "Keps-Black River-Dacer-Drak Green- Cream": {
+    "status": "approved",
+    "flags": {},
+    "comments": [],
+    "reviewer": "Anton",
+    "updatedAt": "2026-09-03T11:04:32.281Z"
+  },
+  "Keps-Black River-Dayton-Brown": {
+    "status": "approved",
+    "flags": {},
+    "comments": [],
+    "reviewer": "Anton",
+    "updatedAt": "2026-09-03T11:04:30.225Z"
+  },
+  "Keps-Black River-Eagle-Black- Cream": {
+    "status": "approved",
+    "flags": {},
+    "comments": [],
+    "reviewer": "Anton",
+    "updatedAt": "2026-09-03T11:04:25.834Z"
+  },
+  "Keps-Black River-Portland-Black- Cream": {
+    "status": "approved",
+    "reviewer": "Jesper",
+    "updatedAt": "2026-09-03T11:20:31.380Z"
+  }
+}

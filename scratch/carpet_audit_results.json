@@ -1,0 +1,782 @@
+[
+  {
+    "sku": "6100071",
+    "folder_name": "Matta Amori 160x230 Gra (6100071)",
+    "status": "ERROR",
+    "details": "Local reference file missing"
+  },
+  {
+    "sku": "H100110",
+    "folder_name": "Bomullsmatta Nilo Gron (H100110)",
+    "status": "ERROR",
+    "details": "Local reference file missing"
+  },
+  {
+    "sku": "RG01-20",
+    "folder_name": "Matta Aravelle - Multi (RG01-20)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-20.jpg",
+    "web_img": "audit_images/web_RG01-20.jpg"
+  },
+  {
+    "sku": "RG01-19",
+    "folder_name": "Matta Aravelle - GråMulti (RG01-19)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-19.jpg",
+    "web_img": "audit_images/web_RG01-19.jpg"
+  },
+  {
+    "sku": "RG01-64",
+    "folder_name": "Matta Arvella - Brun (RG01-64)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-64.jpg",
+    "web_img": "audit_images/web_RG01-64.jpg"
+  },
+  {
+    "sku": "RG01-8",
+    "folder_name": "Matta Aureline - BeigeBrun (RG01-8)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-8.jpg",
+    "web_img": "audit_images/web_RG01-8.jpg"
+  },
+  {
+    "sku": "RG01-66",
+    "folder_name": "Matta Arvella - BrunSvart (RG01-66)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-66.jpg",
+    "web_img": "audit_images/web_RG01-66.jpg"
+  },
+  {
+    "sku": "RG01-65",
+    "folder_name": "Matta Arvella - RödGrön (RG01-65)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-65.jpg",
+    "web_img": "audit_images/web_RG01-65.jpg"
+  },
+  {
+    "sku": "RG01-9",
+    "folder_name": "Matta Aureline - Grön (RG01-9)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-9.jpg",
+    "web_img": "audit_images/web_RG01-9.jpg"
+  },
+  {
+    "sku": "RG01-7",
+    "folder_name": "Matta Aureline BeigeGrå (RG01-7)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-7.jpg",
+    "web_img": "audit_images/web_RG01-7.jpg"
+  },
+  {
+    "sku": "RG01-76",
+    "folder_name": "Matta Avendo - GulBeige (RG01-76)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-76.jpg",
+    "web_img": "audit_images/web_RG01-76.jpg"
+  },
+  {
+    "sku": "RG01-74",
+    "folder_name": "Matta Belden - Grön (RG01-74)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-74.jpg",
+    "web_img": "audit_images/web_RG01-74.jpg"
+  },
+  {
+    "sku": "RG01-75",
+    "folder_name": "Matta Avendo - Röd (RG01-75)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-75.jpg",
+    "web_img": "audit_images/web_RG01-75.jpg"
+  },
+  {
+    "sku": "RG01-73",
+    "folder_name": "Matta Belden - Röd (RG01-73)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-73.jpg",
+    "web_img": "audit_images/web_RG01-73.jpg"
+  },
+  {
+    "sku": "RG01-35",
+    "folder_name": "Matta Calvera - Grå (RG01-35)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-35.jpg",
+    "web_img": "audit_images/web_RG01-35.jpg"
+  },
+  {
+    "sku": "RG01-34",
+    "folder_name": "Matta Calvera - Röd (RG01-34)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-34.jpg",
+    "web_img": "audit_images/web_RG01-34.jpg"
+  },
+  {
+    "sku": "RG01-72",
+    "folder_name": "Matta Carrano - GråVit (RG01-72)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-72.jpg",
+    "web_img": "audit_images/web_RG01-72.jpg"
+  },
+  {
+    "sku": "RG01-70",
+    "folder_name": "Matta Carrano - SvartVit (RG01-70)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-70.jpg",
+    "web_img": "audit_images/web_RG01-70.jpg"
+  },
+  {
+    "sku": "RG01-71",
+    "folder_name": "Matta Carrano - Grön (RG01-71)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-71.jpg",
+    "web_img": "audit_images/web_RG01-71.jpg"
+  },
+  {
+    "sku": "RG01-47",
+    "folder_name": "Matta Heloria - SvartVit (RG01-47)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-47.jpg",
+    "web_img": "audit_images/web_RG01-47.jpg"
+  },
+  {
+    "sku": "RG01-67",
+    "folder_name": "Matta Linella - SvartVit (RG01-67)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-67.jpg",
+    "web_img": "audit_images/web_RG01-67.jpg"
+  },
+  {
+    "sku": "RG01-69",
+    "folder_name": "Matta Linella - GråVit (RG01-69)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-69.jpg",
+    "web_img": "audit_images/web_RG01-69.jpg"
+  },
+  {
+    "sku": "RG01-28",
+    "folder_name": "Matta Lunelle - Beige (RG01-28)",
+    "status": "ERROR",
+    "details": "Local reference file missing"
+  },
+  {
+    "sku": "RG01-77",
+    "folder_name": "Matta Lorano - Multi (RG01-77)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-77.jpg",
+    "web_img": "audit_images/web_RG01-77.jpg"
+  },
+  {
+    "sku": "RG01-26",
+    "folder_name": "Matta Lunelle - Brun (RG01-26)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-26.jpg",
+    "web_img": "audit_images/web_RG01-26.jpg"
+  },
+  {
+    "sku": "RG01-78",
+    "folder_name": "Matta Lorano - Röd (RG01-78)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-78.jpg",
+    "web_img": "audit_images/web_RG01-78.jpg"
+  },
+  {
+    "sku": "RG01-27",
+    "folder_name": "Matta Lunelle - Ljusgrön (RG01-27)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-27.jpg",
+    "web_img": "audit_images/web_RG01-27.jpg"
+  },
+  {
+    "sku": "RG01-43",
+    "folder_name": "Matta Marionae - BrunBeige (RG01-43)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-43.jpg",
+    "web_img": "audit_images/web_RG01-43.jpg"
+  },
+  {
+    "sku": "RG01-44",
+    "folder_name": "Matta Marionae - Brun (RG01-44)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-44.jpg",
+    "web_img": "audit_images/web_RG01-44.jpg"
+  },
+  {
+    "sku": "RG01-42",
+    "folder_name": "Matta Marionae - RödMulti (RG01-42)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-42.jpg",
+    "web_img": "audit_images/web_RG01-42.jpg"
+  },
+  {
+    "sku": "RG01-59",
+    "folder_name": "Matta Markelo - GulMulti (RG01-59)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-59.jpg",
+    "web_img": "audit_images/web_RG01-59.jpg"
+  },
+  {
+    "sku": "RG01-29",
+    "folder_name": "Matta Marovi - BrunVit (RG01-29)",
+    "status": "ERROR",
+    "details": "Local reference file missing"
+  },
+  {
+    "sku": "RG01-57",
+    "folder_name": "Matta Markelo - BrunSvart (RG01-57)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-57.jpg",
+    "web_img": "audit_images/web_RG01-57.jpg"
+  },
+  {
+    "sku": "RG01-58",
+    "folder_name": "Matta Markelo - Röd (RG01-58)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-58.jpg",
+    "web_img": "audit_images/web_RG01-58.jpg"
+  },
+  {
+    "sku": "RG01-31",
+    "folder_name": "Matta Marovi - GråVit (RG01-31)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-31.jpg",
+    "web_img": "audit_images/web_RG01-31.jpg"
+  },
+  {
+    "sku": "RG01-30",
+    "folder_name": "Matta Marovi - SvartVit (RG01-30)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-30.jpg",
+    "web_img": "audit_images/web_RG01-30.jpg"
+  },
+  {
+    "sku": "RG01-62",
+    "folder_name": "Matta Merano - BlåGrå (RG01-62)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-62.jpg",
+    "web_img": "audit_images/web_RG01-62.jpg"
+  },
+  {
+    "sku": "RG01-61",
+    "folder_name": "Matta Merano - Grå (RG01-61)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-61.jpg",
+    "web_img": "audit_images/web_RG01-61.jpg"
+  },
+  {
+    "sku": "RG01-63",
+    "folder_name": "Matta Merano - GrönBeige (RG01-63)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-63.jpg",
+    "web_img": "audit_images/web_RG01-63.jpg"
+  },
+  {
+    "sku": "RG01-60",
+    "folder_name": "Matta Merano - Ljusgrå (RG01-60)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-60.jpg",
+    "web_img": "audit_images/web_RG01-60.jpg"
+  },
+  {
+    "sku": "RG01-17",
+    "folder_name": "Matta Molirae - Grå (RG01-17)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-17.jpg",
+    "web_img": "audit_images/web_RG01-17.jpg"
+  },
+  {
+    "sku": "RG01-16",
+    "folder_name": "Matta Molirae - BrunBeige (RG01-16)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-16.jpg",
+    "web_img": "audit_images/web_RG01-16.jpg"
+  },
+  {
+    "sku": "RG01-18",
+    "folder_name": "Matta Molirae - Grön (RG01-18)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-18.jpg",
+    "web_img": "audit_images/web_RG01-18.jpg"
+  },
+  {
+    "sku": "RG01-855",
+    "folder_name": "Matta Oralia - VitMulti (RG01-855)",
+    "status": "ERROR",
+    "details": "Local reference file missing"
+  },
+  {
+    "sku": "RG01-83",
+    "folder_name": "Matta Oralia - Multi (RG01-83)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-83.jpg",
+    "web_img": "audit_images/web_RG01-83.jpg"
+  },
+  {
+    "sku": "RG01-84",
+    "folder_name": "Matta Oralia - RödMulti (RG01-84)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-84.jpg",
+    "web_img": "audit_images/web_RG01-84.jpg"
+  },
+  {
+    "sku": "RG01-36",
+    "folder_name": "Matta Rivetta - BeigeBrun (RG01-36)",
+    "status": "ERROR",
+    "details": "Local reference file missing"
+  },
+  {
+    "sku": "RG01-499",
+    "folder_name": "Matta Orlisse - Brun (RG01-499)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-499.jpg",
+    "web_img": "audit_images/web_RG01-499.jpg"
+  },
+  {
+    "sku": "RG01-48",
+    "folder_name": "Matta Orlisse - Röd (RG01-48)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-48.jpg",
+    "web_img": "audit_images/web_RG01-48.jpg"
+  },
+  {
+    "sku": "RG01-37",
+    "folder_name": "Matta Rivetta - BeigeGrön (RG01-37)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-37.jpg",
+    "web_img": "audit_images/web_RG01-37.jpg"
+  },
+  {
+    "sku": "RG01-96",
+    "folder_name": "Matta Savelle - BeigeBrun (RG01-96)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-96.jpg",
+    "web_img": "audit_images/web_RG01-96.jpg"
+  },
+  {
+    "sku": "RG01-98",
+    "folder_name": "Matta Savelle - BrunBeige (RG01-98)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-98.jpg",
+    "web_img": "audit_images/web_RG01-98.jpg"
+  },
+  {
+    "sku": "RG01-99",
+    "folder_name": "Matta Savelle - BrunGul (RG01-99)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-99.jpg",
+    "web_img": "audit_images/web_RG01-99.jpg"
+  },
+  {
+    "sku": "RG01-97",
+    "folder_name": "Matta Savelle - Grön (RG01-97)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-97.jpg",
+    "web_img": "audit_images/web_RG01-97.jpg"
+  },
+  {
+    "sku": "RG01-94",
+    "folder_name": "Matta Savelle - RödBrun (RG01-94)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-94.jpg",
+    "web_img": "audit_images/web_RG01-94.jpg"
+  },
+  {
+    "sku": "RG01-95",
+    "folder_name": "Matta Savelle - RödMulti (RG01-95)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-95.jpg",
+    "web_img": "audit_images/web_RG01-95.jpg"
+  },
+  {
+    "sku": "RG01-21",
+    "folder_name": "Matta Savena - GrönGrå (RG01-21)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-21.jpg",
+    "web_img": "audit_images/web_RG01-21.jpg"
+  },
+  {
+    "sku": "RG01-22",
+    "folder_name": "Matta Savena - GulGrå (RG01-22)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-22.jpg",
+    "web_img": "audit_images/web_RG01-22.jpg"
+  },
+  {
+    "sku": "RG01-15",
+    "folder_name": "Matta Seleren - BlåMulti (RG01-15)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-15.jpg",
+    "web_img": "audit_images/web_RG01-15.jpg"
+  },
+  {
+    "sku": "RG01-14",
+    "folder_name": "Matta Seleren - BrunMulti (RG01-14)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-14.jpg",
+    "web_img": "audit_images/web_RG01-14.jpg"
+  },
+  {
+    "sku": "RG01-13",
+    "folder_name": "Matta Seleren - Multi (RG01-13)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-13.jpg",
+    "web_img": "audit_images/web_RG01-13.jpg"
+  },
+  {
+    "sku": "RG01-50",
+    "folder_name": "Matta Sorvento - SvartBeige (RG01-50)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-50.jpg",
+    "web_img": "audit_images/web_RG01-50.jpg"
+  },
+  {
+    "sku": "RG01-51",
+    "folder_name": "Matta Sorvento - SvartGrå (RG01-51)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-51.jpg",
+    "web_img": "audit_images/web_RG01-51.jpg"
+  },
+  {
+    "sku": "Jute-Striped-160.230",
+    "folder_name": "Matta Striped Sand - Natur 160x230 (Jute-Striped-160.230)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_Jute-Striped-160.230.jpg",
+    "web_img": "audit_images/web_Jute-Striped-160.230.jpg"
+  },
+  {
+    "sku": "RG01-79",
+    "folder_name": "Matta Taliana - Orange (RG01-79)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-79.jpg",
+    "web_img": "audit_images/web_RG01-79.jpg"
+  },
+  {
+    "sku": "RG01-80",
+    "folder_name": "Matta Taliana - RosaRöd (RG01-80)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-80.jpg",
+    "web_img": "audit_images/web_RG01-80.jpg"
+  },
+  {
+    "sku": "RG01-39",
+    "folder_name": "Matta Tireno - BlåVit (RG01-39)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-39.jpg",
+    "web_img": "audit_images/web_RG01-39.jpg"
+  },
+  {
+    "sku": "RG01-38",
+    "folder_name": "Matta Tireno - SvartVit (RG01-38)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-38.jpg",
+    "web_img": "audit_images/web_RG01-38.jpg"
+  },
+  {
+    "sku": "RG01-25",
+    "folder_name": "Matta Valora - Brun (RG01-25)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-25.jpg",
+    "web_img": "audit_images/web_RG01-25.jpg"
+  },
+  {
+    "sku": "RG01-23",
+    "folder_name": "Matta Valora - Lila (RG01-23)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-23.jpg",
+    "web_img": "audit_images/web_RG01-23.jpg"
+  },
+  {
+    "sku": "RG01-24",
+    "folder_name": "Matta Valora - Ljusbrun (RG01-24)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-24.jpg",
+    "web_img": "audit_images/web_RG01-24.jpg"
+  },
+  {
+    "sku": "RG01-266",
+    "folder_name": "Matta Valora - RödLila (RG01-266)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-266.jpg",
+    "web_img": "audit_images/web_RG01-266.jpg"
+  },
+  {
+    "sku": "RG016",
+    "folder_name": "Matta Velenna 160x230 cm - Blå (RG016)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG016.jpg",
+    "web_img": "audit_images/web_RG016.jpg"
+  },
+  {
+    "sku": "RG018",
+    "folder_name": "Matta Velenna 160x230 cm - RödBeige (RG018)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG018.jpg",
+    "web_img": "audit_images/web_RG018.jpg"
+  },
+  {
+    "sku": "RG019",
+    "folder_name": "Matta Velenna 200x280 cm - Blå (RG019)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG019.jpg",
+    "web_img": "audit_images/web_RG019.jpg"
+  },
+  {
+    "sku": "RG017",
+    "folder_name": "Matta Velenna 200x280 cm - RödBeige (RG017)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG017.jpg",
+    "web_img": "audit_images/web_RG017.jpg"
+  },
+  {
+    "sku": "RG01-81",
+    "folder_name": "Matta Velorin - GrönMulti (RG01-81)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-81.jpg",
+    "web_img": "audit_images/web_RG01-81.jpg"
+  },
+  {
+    "sku": "RG01-82",
+    "folder_name": "Matta Velorin - GulMulti (RG01-82)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-82.jpg",
+    "web_img": "audit_images/web_RG01-82.jpg"
+  },
+  {
+    "sku": "RG01-89",
+    "folder_name": "Matta Ventaro - Beige (RG01-89)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-89.jpg",
+    "web_img": "audit_images/web_RG01-89.jpg"
+  },
+  {
+    "sku": "RG01-93",
+    "folder_name": "Matta Ventaro - BeigeBrun (RG01-93)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-93.jpg",
+    "web_img": "audit_images/web_RG01-93.jpg"
+  },
+  {
+    "sku": "RG01-86",
+    "folder_name": "Matta Ventaro - BrunGrå (RG01-86)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-86.jpg",
+    "web_img": "audit_images/web_RG01-86.jpg"
+  },
+  {
+    "sku": "RG01-91",
+    "folder_name": "Matta Ventaro - GrönGul (RG01-91)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-91.jpg",
+    "web_img": "audit_images/web_RG01-91.jpg"
+  },
+  {
+    "sku": "RG01-92",
+    "folder_name": "Matta Ventaro - BrunBeige (RG01-92)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-92.jpg",
+    "web_img": "audit_images/web_RG01-92.jpg"
+  },
+  {
+    "sku": "RG01-87",
+    "folder_name": "Matta Ventaro - Multi (RG01-87)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-87.jpg",
+    "web_img": "audit_images/web_RG01-87.jpg"
+  },
+  {
+    "sku": "RG01-88",
+    "folder_name": "Matta Ventaro - RödOrange (RG01-88)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-88.jpg",
+    "web_img": "audit_images/web_RG01-88.jpg"
+  },
+  {
+    "sku": "RG01-90",
+    "folder_name": "Matta Ventaro - RosaBrun (RG01-90)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG01-90.jpg",
+    "web_img": "audit_images/web_RG01-90.jpg"
+  },
+  {
+    "sku": "rug02-170x230",
+    "folder_name": "Matta Verona 170x230 - Beige (rug02-170x230)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_rug02-170x230.jpg",
+    "web_img": "audit_images/web_rug02-170x230.jpg"
+  },
+  {
+    "sku": "RG002",
+    "folder_name": "Matta Ängelholm - GråBlå (RG002)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG002.jpg",
+    "web_img": "audit_images/web_RG002.jpg"
+  },
+  {
+    "sku": "H100143",
+    "folder_name": "Rund Matta Amora Vit (H100143)",
+    "status": "ERROR",
+    "details": "Local reference file missing"
+  },
+  {
+    "sku": "H100138",
+    "folder_name": "Rund Matta Aranga Super Soft Fur Rosa (H100138)",
+    "status": "ERROR",
+    "details": "Local reference file missing"
+  },
+  {
+    "sku": "H100152",
+    "folder_name": "Rund Matta Aranga Super Soft Oliv (H100152)",
+    "status": "ERROR",
+    "details": "Local reference file missing"
+  },
+  {
+    "sku": "H100014",
+    "folder_name": "Rund Matta Aranga Super Soft Vit (H100014)",
+    "status": "ERROR",
+    "details": "Local reference file missing"
+  },
+  {
+    "sku": "H100072",
+    "folder_name": "Rund Matta Hamilton Saffron (H100072)",
+    "status": "ERROR",
+    "details": "Local reference file missing"
+  },
+  {
+    "sku": "H100080",
+    "folder_name": "Rund Matta Janjira Vit (H100080)",
+    "status": "ERROR",
+    "details": "Local reference file missing"
+  },
+  {
+    "sku": "V10199402",
+    "folder_name": "Runda Matta Aranga Super Soft 200cm Gul (V10199402)",
+    "status": "ERROR",
+    "details": "Local reference file missing"
+  },
+  {
+    "sku": "H100017",
+    "folder_name": "Ryamatta Aranga Super Soft Fur Rosa (H100017)",
+    "status": "ERROR",
+    "details": "Local reference file missing"
+  },
+  {
+    "sku": "V173401247",
+    "folder_name": "Ryamatta Cloud Super Soft Offwhite (V173401247)",
+    "status": "ERROR",
+    "details": "Local reference file missing"
+  },
+  {
+    "sku": "V2019",
+    "folder_name": "Ryamatta Wendy Vit (V2019)",
+    "status": "ERROR",
+    "details": "Local reference file missing"
+  },
+  {
+    "sku": "V1020149000",
+    "folder_name": "Ullmatta Almaty Vit (V1020149000)",
+    "status": "ERROR",
+    "details": "Local reference file missing"
+  },
+  {
+    "sku": "V1020110",
+    "folder_name": "Ullmatta Talvia Flatad Ull Natur (V1020110)",
+    "status": "ERROR",
+    "details": "Local reference file missing"
+  },
+  {
+    "sku": "RG001",
+    "folder_name": "Matta Ängelholm - Mörkbrun (RG001)",
+    "status": "MATCH",
+    "explanation": "Bilder matchade exakt via pixel-nivå analys (MAE: 0.00, Hamming-avstånd: 0/64).",
+    "local_img": "audit_images/local_RG001.jpg",
+    "web_img": "audit_images/web_RG001.jpg"
+  },
+  {
+    "sku": "RG00",
+    "folder_name": "Matta Ängelholm - Grön (RG00)",
+    "status": "MISMATCH",
+    "explanation": "Bilderna visar samma design och textur på mattan, men färgen skiljer sig markant. Bild 1 (lokal) har en blågrå nyans, medan Bild 2 (webb) har en grön/olivfärgad nyans. Eftersom produktmappen indikerar 'Grön', är det troligt att Bild 1 har fel färg.",
+    "local_img": "audit_images/local_RG00.jpg",
+    "web_img": "audit_images/web_RG00.jpg"
+  }
+]

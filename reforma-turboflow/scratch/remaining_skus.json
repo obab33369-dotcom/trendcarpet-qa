@@ -1,0 +1,317 @@
+[
+  {
+    "sku": "1400034",
+    "name": "pall-milou-rektangular-gra",
+    "category": "chair",
+    "in_topaz": true,
+    "in_fallback": true
+  },
+  {
+    "sku": "1400028",
+    "name": "pall-bubbly-sun-gul",
+    "category": "chair",
+    "in_topaz": true,
+    "in_fallback": true
+  },
+  {
+    "sku": "matgrupp30",
+    "name": "matgrupp-hornstull-elsa-1-bord-4-stolar",
+    "category": "chair",
+    "in_topaz": true,
+    "in_fallback": true
+  },
+  {
+    "sku": "DA-2059",
+    "name": "stol-carrie-konjak",
+    "category": "chair",
+    "in_topaz": false,
+    "in_fallback": true
+  },
+  {
+    "sku": "1274-walnut",
+    "name": "matbord-avora-valnot",
+    "category": "furniture",
+    "in_topaz": false,
+    "in_fallback": true
+  },
+  {
+    "sku": "matgrupp28",
+    "name": "matgrupp-hornstull-forma-1-bord-4-stolar",
+    "category": "chair",
+    "in_topaz": true,
+    "in_fallback": true
+  },
+  {
+    "sku": "WD2001-KD-pink",
+    "name": "pinnstol-elsa-rosa",
+    "category": "chair",
+    "in_topaz": false,
+    "in_fallback": true
+  },
+  {
+    "sku": "2507-walnut",
+    "name": "skrivbord-lovhamn-valnot",
+    "category": "furniture",
+    "in_topaz": false,
+    "in_fallback": true
+  },
+  {
+    "sku": "2507-natur",
+    "name": "skrivbord-lovhamn-natur",
+    "category": "furniture",
+    "in_topaz": false,
+    "in_fallback": true
+  },
+  {
+    "sku": "matgrupp26",
+    "name": "matgrupp-kungsholmen-montmartre-1-bord-4-stolar",
+    "category": "chair",
+    "in_topaz": false,
+    "in_fallback": true
+  },
+  {
+    "sku": "1400040",
+    "name": "pall-marcos-gron",
+    "category": "chair",
+    "in_topaz": true,
+    "in_fallback": true
+  },
+  {
+    "sku": "1400041",
+    "name": "pall-marcos-rod-brun",
+    "category": "chair",
+    "in_topaz": true,
+    "in_fallback": true
+  },
+  {
+    "sku": "15135-1",
+    "name": "soffbord-olbia-natur",
+    "category": "furniture",
+    "in_topaz": true,
+    "in_fallback": true
+  },
+  {
+    "sku": "019-natural",
+    "name": "soffbord-birka-runt-85x85cm-vintage",
+    "category": "furniture",
+    "in_topaz": false,
+    "in_fallback": true
+  },
+  {
+    "sku": "RHONEWD01",
+    "name": "skrivbord-rhone-ek-vit",
+    "category": "furniture",
+    "in_topaz": false,
+    "in_fallback": true
+  },
+  {
+    "sku": "WS-8661",
+    "name": "stol-fager-natur-svart",
+    "category": "chair",
+    "in_topaz": true,
+    "in_fallback": true
+  },
+  {
+    "sku": "SY-8513",
+    "name": "fatolj-kelly-burgundy-sammet",
+    "category": "chair",
+    "in_topaz": true,
+    "in_fallback": true
+  },
+  {
+    "sku": "WA-2819-1-natural",
+    "name": "bord-fager-160-cm-natur",
+    "category": "furniture",
+    "in_topaz": false,
+    "in_fallback": true
+  },
+  {
+    "sku": "1310-L-S",
+    "name": "soffbord-prime-l-valnot",
+    "category": "furniture",
+    "in_topaz": false,
+    "in_fallback": true
+  },
+  {
+    "sku": "MLM-502850",
+    "name": "baddsoffa-kap-verde-gul",
+    "category": "sofa",
+    "in_topaz": true,
+    "in_fallback": true
+  },
+  {
+    "sku": "CT-175",
+    "name": "soffbord-marbleous-vit-svart",
+    "category": "furniture",
+    "in_topaz": true,
+    "in_fallback": true
+  },
+  {
+    "sku": "98389",
+    "name": "soffbord-ponza-beige",
+    "category": "furniture",
+    "in_topaz": false,
+    "in_fallback": true
+  },
+  {
+    "sku": "matgrupp42",
+    "name": "matgrupp-nordisk-elsa-1-bord-4-stolar",
+    "category": "chair",
+    "in_topaz": true,
+    "in_fallback": true
+  },
+  {
+    "sku": "matgrupp6",
+    "name": "matgrupp-nordisk-elsa-1-bord-6-stolar",
+    "category": "chair",
+    "in_topaz": true,
+    "in_fallback": true
+  },
+  {
+    "sku": "WD-18-1",
+    "name": "matbord-elsa-135cm-natur",
+    "category": "furniture",
+    "in_topaz": false,
+    "in_fallback": true
+  },
+  {
+    "sku": "WD2001-KD-silver",
+    "name": "pinnstol-elsa-morkgra-silvergra",
+    "category": "chair",
+    "in_topaz": true,
+    "in_fallback": false
+  },
+  {
+    "sku": "WD-17-1",
+    "name": "soffbord-creme-rund-55-cm-natur",
+    "category": "furniture",
+    "in_topaz": false,
+    "in_fallback": true
+  },
+  {
+    "sku": "MLM-502850-dark-grey",
+    "name": "baddsoffa-kap-verde-mork-gra",
+    "category": "sofa",
+    "in_topaz": true,
+    "in_fallback": true
+  },
+  {
+    "sku": "WD-17-2",
+    "name": "soffbord-creme-rund-75cm-natur",
+    "category": "furniture",
+    "in_topaz": false,
+    "in_fallback": true
+  },
+  {
+    "sku": "018-natural",
+    "name": "sidobord-birka-100cm-vintage",
+    "category": "furniture",
+    "in_topaz": false,
+    "in_fallback": true
+  },
+  {
+    "sku": "CT-186",
+    "name": "soffbord-2st-marble-svart-vit",
+    "category": "furniture",
+    "in_topaz": false,
+    "in_fallback": true
+  },
+  {
+    "sku": "108453",
+    "name": "sangbord-haninge-natur",
+    "category": "furniture",
+    "in_topaz": true,
+    "in_fallback": true
+  },
+  {
+    "sku": "DETROITST01",
+    "name": "sangbord-detroit-valnot-svart",
+    "category": "furniture",
+    "in_topaz": true,
+    "in_fallback": true
+  },
+  {
+    "sku": "010-natural",
+    "name": "matbord-birka-runt-105x105cm-vintage",
+    "category": "furniture",
+    "in_topaz": false,
+    "in_fallback": true
+  },
+  {
+    "sku": "MLM-502860-beige",
+    "name": "baddsoffa-paris-beige",
+    "category": "sofa",
+    "in_topaz": true,
+    "in_fallback": true
+  },
+  {
+    "sku": "0127-natural",
+    "name": "pall-birka-vintage",
+    "category": "chair",
+    "in_topaz": false,
+    "in_fallback": true
+  },
+  {
+    "sku": "T8060C-white",
+    "name": "gungstol-como-vit-teddy",
+    "category": "chair",
+    "in_topaz": true,
+    "in_fallback": true
+  },
+  {
+    "sku": "1273-walnut",
+    "name": "matbord-luma-runt-115cm-valnot",
+    "category": "furniture",
+    "in_topaz": true,
+    "in_fallback": true
+  },
+  {
+    "sku": "WX-7001",
+    "name": "fatolj-chelsea-brun",
+    "category": "chair",
+    "in_topaz": true,
+    "in_fallback": true
+  },
+  {
+    "sku": "109-natural",
+    "name": "soffbord-birka-58x58cm-vintage",
+    "category": "furniture",
+    "in_topaz": false,
+    "in_fallback": true
+  },
+  {
+    "sku": "WS-18003",
+    "name": "barstol-industri-jarn",
+    "category": "chair",
+    "in_topaz": true,
+    "in_fallback": true
+  },
+  {
+    "sku": "WS-8662",
+    "name": "stol-fager-valnot-svart",
+    "category": "chair",
+    "in_topaz": true,
+    "in_fallback": true
+  },
+  {
+    "sku": "LINK-ADS-038",
+    "name": "stol-alfors-natur",
+    "category": "chair",
+    "in_topaz": true,
+    "in_fallback": true
+  },
+  {
+    "sku": "011-natural",
+    "name": "matbord-birka-120x75cm-vintage",
+    "category": "furniture",
+    "in_topaz": false,
+    "in_fallback": true
+  },
+  {
+    "sku": "102612",
+    "name": "barstol-vaddo-beige",
+    "category": "chair",
+    "in_topaz": true,
+    "in_fallback": false
+  }
+]

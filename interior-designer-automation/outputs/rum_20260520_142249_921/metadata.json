@@ -1,0 +1,13 @@
+{
+    "timestamp": "2026-05-20T14:26:53.713493",
+    "theme": "Arbetsrum (Office)",
+    "furniture_items": [
+        "1st skrivbord-kenneth-ek-svart",
+        "1st stol-gal-beige",
+        "1st lampa-karlskrona-svart",
+        "1st tv-bänk-holmvik-natur-svart"
+    ],
+    "style_reference": "Ryamatta-Zebra-Tufted-Wool-Premium-beige-svart-carpet-teppich-01-Interior-0210.jpg",
+    "prompt": "Skapa en ultrarealistisk interiör i exakt samma stil, färgpalett, materialval och belysning som den första uppladdade referensbilden. Placera sömlöst in möblerna från de andra bilderna (1st 'skrivbord-kenneth-ek-svart' (visas på Bild 2, som har utseendet: En vacker möbel (skrivbord-kenneth-ek-svart) i ljus ek och svartlackad finish.), 1st 'stol-gal-beige' (visas på Bild 3, som har utseendet: En stilren stol/pall i beige tyg med matchande ben.), 1st 'lampa-karlskrona-svart' (visas på Bild 4, som har utseendet: En dekorativ lampa i svartlackad finish som ger ett behagligt sken.), 1st 'tv-bänk-holmvik-natur-svart' (visas på Bild 5, som har utseendet: En funktionell och stilren förvaringsmöbel/skänk i svartlackad finish.)) på lämpliga, realistiska och extremt stilrena platser i rummet. \n\nDet är kritiskt att möblernas exakta form, design, träslag, textilmaterial och färg bevaras perfekt i bilden. Använd din absolut senaste och mest avancerade bildgenereringsmodell för att producera en professionell interiörbild med vacker komposition.\n\nVIKTIGT: Den första uppladdade bilden (Bild 1) är enbart en stilreferens för rummets estetik. De efterföljande bilderna (Bild 2 och framåt) visar de exakta möbler du MÅSTE placera i rummet. Du får absolut inte byta ut dem mot slumpmässiga möbler. Studera Bild 2 och framåt noga och återskapa möblernas ben, träslag, tyg och form helt identiskt i rummet.\n\nGenerera den färdiga interiörsbilden med absolut högsta möjliga realism, detaljrikedom och upplösning. Bilden ska ha tidningskvalitet (som ett exklusivt inredningsmagasin) med perfekt fotorealistisk ljussättning, skuggor och knivskarpa texturer. Använd den senaste tillgängliga högkvalitativa bildgenereringsmodellen.",
+    "images": []
+}

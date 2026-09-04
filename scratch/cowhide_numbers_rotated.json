@@ -1,0 +1,997 @@
+{
+  "AHIN4169.JPG": {
+    "number": "336",
+    "digits_read": [
+      "3",
+      "3",
+      "6"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 90
+  },
+  "AGJM5060.JPG": {
+    "number": "533",
+    "digits_read": [
+      "5",
+      "3",
+      "3"
+    ],
+    "confidence": "high"
+  },
+  "AJWF7102.JPG": {
+    "number": "274",
+    "digits_read": [
+      "2",
+      "7",
+      "4"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "AMXR5849.JPG": {
+    "number": "275",
+    "digits_read": [
+      "2",
+      "7",
+      "5"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "BDAF6906.JPG": {
+    "number": "295",
+    "digits_read": [
+      "2",
+      "9",
+      "5"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "BBNO9250.JPG": {
+    "number": "131",
+    "digits_read": [
+      "1",
+      "3",
+      "1"
+    ],
+    "confidence": "high"
+  },
+  "BHYA4099.JPG": {
+    "number": "289",
+    "digits_read": [
+      "2",
+      "8",
+      "9"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "BPQA5442.JPG": {
+    "number": "299262",
+    "digits_read": [
+      "2",
+      "9",
+      "9",
+      "2",
+      "6",
+      "2"
+    ],
+    "confidence": "high"
+  },
+  "BZFM0889.JPG": {
+    "number": "324",
+    "digits_read": [
+      "3",
+      "2",
+      "4"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 90
+  },
+  "CURC8337.JPG": {
+    "number": "733",
+    "digits_read": [
+      "7",
+      "3",
+      "3"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "CSKG8106.JPG": {
+    "number": "345",
+    "digits_read": [
+      "3",
+      "4",
+      "5"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "CZFW8641.JPG": {
+    "number": "862",
+    "digits_read": [
+      "8",
+      "6",
+      "2"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "DFXC9377.JPG": {
+    "number": "351",
+    "digits_read": [
+      "3",
+      "5",
+      "1"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "CEYY6720.JPG": {
+    "number": "492",
+    "digits_read": [
+      "4",
+      "9",
+      "2"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "DMNO9726.JPG": {
+    "number": "309",
+    "digits_read": [
+      "3",
+      "0",
+      "9"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 90
+  },
+  "DGJR8081.JPG": {
+    "number": "258",
+    "digits_read": [
+      "2",
+      "5",
+      "8"
+    ],
+    "confidence": "high"
+  },
+  "ECNJ7018.JPG": {
+    "number": "133",
+    "digits_read": [
+      "1",
+      "3",
+      "3"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "ELMU8823.JPG": {
+    "number": "356",
+    "digits_read": [
+      "3",
+      "5",
+      "6"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 90
+  },
+  "ENCI2819.JPG": {
+    "number": "843",
+    "digits_read": [
+      "8",
+      "4",
+      "3"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "ESLB9185.JPG": {
+    "number": "249",
+    "digits_read": [
+      "2",
+      "4",
+      "9"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "FGVI4114.JPG": {
+    "number": "317",
+    "digits_read": [
+      "3",
+      "1",
+      "7"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "FTFO0083.JPG": {
+    "number": "262",
+    "digits_read": [
+      "2",
+      "6",
+      "2"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "EDRA8383.JPG": {
+    "number": "306",
+    "digits_read": [
+      "3",
+      "0",
+      "6"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "FUPG5453.JPG": {
+    "number": "993",
+    "digits_read": [
+      "9",
+      "9",
+      "3"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "FZLK0753.JPG": {
+    "number": "318",
+    "digits_read": [
+      "3",
+      "1",
+      "8"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 90
+  },
+  "FWBU1032.JPG": {
+    "number": "327",
+    "digits_read": [
+      "3",
+      "2",
+      "7"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "GDQV3716.JPG": {
+    "number": "361",
+    "digits_read": [
+      "3",
+      "6",
+      "1"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "GGZT7001.JPG": {
+    "number": "333",
+    "digits_read": [
+      "3",
+      "3",
+      "3"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 90
+  },
+  "GFGK2143.JPG": {
+    "number": "338",
+    "digits_read": [
+      "3",
+      "3",
+      "8"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 90
+  },
+  "GXUJ0251.JPG": {
+    "number": "300",
+    "digits_read": [
+      "3",
+      "0",
+      "0"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "HCHH1324.JPG": {
+    "number": "258",
+    "digits_read": [
+      "2",
+      "5",
+      "8"
+    ],
+    "confidence": "high"
+  },
+  "HDEK7399.JPG": {
+    "number": "271",
+    "digits_read": [
+      "2",
+      "7",
+      "1"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "HOFC2459.JPG": {
+    "number": "277",
+    "digits_read": [
+      "2",
+      "7",
+      "7"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 90
+  },
+  "HOFT5966.JPG": {
+    "number": "281",
+    "digits_read": [
+      "2",
+      "8",
+      "1"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "GZFY1063.JPG": {
+    "number": "247",
+    "digits_read": [
+      "2",
+      "4",
+      "7"
+    ],
+    "confidence": "high"
+  },
+  "HPEJ9251.JPG": {
+    "number": "362",
+    "digits_read": [
+      "3",
+      "6",
+      "2"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "HRKU8965.JPG": {
+    "number": "346",
+    "digits_read": [
+      "3",
+      "4",
+      "6"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 90
+  },
+  "IGHF9902.JPG": {
+    "number": "347",
+    "digits_read": [
+      "3",
+      "4",
+      "7"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "IHKO6115.JPG": {
+    "number": "282",
+    "digits_read": [
+      "2",
+      "8",
+      "2"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 90
+  },
+  "JMMU2915.JPG": {
+    "number": "251",
+    "digits_read": [
+      "2",
+      "5",
+      "1"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 90
+  },
+  "JWWS8242.JPG": {
+    "number": "283",
+    "digits_read": [
+      "2",
+      "8",
+      "3"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "JQQY5563.JPG": {
+    "number": "290",
+    "digits_read": [
+      "2",
+      "9",
+      "0"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 90
+  },
+  "JUIE7548.JPG": {
+    "number": "312",
+    "digits_read": [
+      "3",
+      "1",
+      "2"
+    ],
+    "confidence": "high"
+  },
+  "KASR7947.JPG": {
+    "number": "297",
+    "digits_read": [
+      "2",
+      "9",
+      "7"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 90
+  },
+  "KKXZ6474.JPG": {
+    "number": "305",
+    "digits_read": [
+      "3",
+      "0",
+      "5"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 90
+  },
+  "KLPD8550.JPG": {
+    "number": "253",
+    "digits_read": [
+      "2",
+      "5",
+      "3"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "KQHZ9488.JPG": {
+    "number": "273",
+    "digits_read": [
+      "2",
+      "7",
+      "3"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "KRQX8214.JPG": {
+    "number": "303",
+    "digits_read": [
+      "3",
+      "0",
+      "3"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "KVVA4296.JPG": {
+    "number": "257",
+    "digits_read": [
+      "2",
+      "5",
+      "7"
+    ],
+    "confidence": "high"
+  },
+  "KWHA5687.JPG": {
+    "number": "259",
+    "digits_read": [
+      "2",
+      "5",
+      "9"
+    ],
+    "confidence": "high"
+  },
+  "LGAU7624.JPG": {
+    "number": "292",
+    "digits_read": [
+      "2",
+      "9",
+      "2"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 90
+  },
+  "KFLO0338.JPG": {
+    "number": "341",
+    "digits_read": [
+      "3",
+      "4",
+      "1"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "LTXT3472.JPG": {
+    "number": "287",
+    "digits_read": [
+      "2",
+      "8",
+      "7"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "MAQO8172.JPG": {
+    "number": "252",
+    "digits_read": [
+      "2",
+      "5",
+      "2"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "LZGJ6856.JPG": {
+    "number": "321",
+    "digits_read": [
+      "3",
+      "2",
+      "1"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 90
+  },
+  "MDJX1336.JPG": {
+    "number": "24",
+    "digits_read": [
+      "2",
+      "4"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "MOAO8863.JPG": {
+    "number": "363",
+    "digits_read": [
+      "3",
+      "6",
+      "3"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 90
+  },
+  "MFBZ6240.JPG": {
+    "number": "322",
+    "digits_read": [
+      "3",
+      "2",
+      "2"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "NSPM3714.JPG": {
+    "number": "352",
+    "digits_read": [
+      "3",
+      "5",
+      "2"
+    ],
+    "confidence": "high"
+  },
+  "NIBY0223.JPG": {
+    "number": "291",
+    "digits_read": [
+      "2",
+      "9",
+      "1"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 90
+  },
+  "NNRK8041.JPG": {
+    "number": "335",
+    "digits_read": [
+      "3",
+      "3",
+      "5"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 90
+  },
+  "NTHT9785.JPG": {
+    "number": "270",
+    "digits_read": [
+      "2",
+      "7",
+      "0"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "OBSY6632.JPG": {
+    "number": "28",
+    "digits_read": [
+      "2",
+      "8"
+    ],
+    "confidence": "high"
+  },
+  "OMFT5250.JPG": {
+    "number": "263",
+    "digits_read": [
+      "2",
+      "6",
+      "3"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 90
+  },
+  "OIOZ0067.JPG": {
+    "number": "367",
+    "digits_read": [
+      "3",
+      "6",
+      "7"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "OREZ1399.JPG": {
+    "number": "365",
+    "digits_read": [
+      "3",
+      "6",
+      "5"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 90
+  },
+  "OTYL1698.JPG": {
+    "number": "52353",
+    "digits_read": [
+      "5",
+      "2",
+      "3",
+      "5",
+      "3"
+    ],
+    "confidence": "high"
+  },
+  "PITD2654.JPG": {
+    "number": "320",
+    "digits_read": [
+      "3",
+      "2",
+      "0"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "ORYK4519.JPG": {
+    "number": "308",
+    "digits_read": [
+      "3",
+      "0",
+      "8"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 90
+  },
+  "PVGO7036.JPG": {
+    "number": "349",
+    "digits_read": [
+      "3",
+      "4",
+      "9"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "QUEP4181.JPG": {
+    "number": "267",
+    "digits_read": [
+      "2",
+      "6",
+      "7"
+    ],
+    "confidence": "high"
+  },
+  "RNBD4362.JPG": {
+    "number": "315",
+    "digits_read": [
+      "3",
+      "1",
+      "5"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "RQUR2911.JPG": {
+    "number": "286",
+    "digits_read": [
+      "2",
+      "8",
+      "6"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 90
+  },
+  "RVFJ4893.JPG": {
+    "number": "256",
+    "digits_read": [
+      "2",
+      "5",
+      "6"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "RTZO6498.JPG": {
+    "number": "288",
+    "digits_read": [
+      "2",
+      "8",
+      "8"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "SKAE3335.JPG": {
+    "number": "246",
+    "digits_read": [
+      "2",
+      "4",
+      "6"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 90
+  },
+  "RXSA5233.JPG": {
+    "number": "27",
+    "digits_read": [
+      "2",
+      "7"
+    ],
+    "confidence": "high"
+  },
+  "SKVK9465.JPG": {
+    "number": "314",
+    "digits_read": [
+      "3",
+      "1",
+      "4"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "SSUF0150.JPG": {
+    "number": "245",
+    "digits_read": [
+      "2",
+      "4",
+      "5"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "RDIK1368.JPG": {
+    "number": "301",
+    "digits_read": [
+      "3",
+      "0",
+      "1"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "TGRR0790.JPG": {
+    "number": "013",
+    "digits_read": [
+      "0",
+      "1",
+      "3"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "TIRA0130.JPG": {
+    "number": "354",
+    "digits_read": [
+      "3",
+      "5",
+      "4"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 90
+  },
+  "TNML9192.JPG": {
+    "number": "241",
+    "digits_read": [
+      "2",
+      "4",
+      "1"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "TNUW6723.JPG": {
+    "number": "329",
+    "digits_read": [
+      "3",
+      "2",
+      "9"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 90
+  },
+  "UVAR6030.JPG": {
+    "number": "250",
+    "digits_read": [
+      "2",
+      "5",
+      "0"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "TUOE9901.JPG": {
+    "number": "284",
+    "digits_read": [
+      "2",
+      "8",
+      "4"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "TOAJ7047.JPG": {
+    "number": "343",
+    "digits_read": [
+      "3",
+      "4",
+      "3"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 90
+  },
+  "VIPB2867.JPG": {
+    "number": "248",
+    "digits_read": [
+      "2",
+      "4",
+      "8"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "VKTJ0424.JPG": {
+    "number": "328",
+    "digits_read": [
+      "3",
+      "2",
+      "8"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 90
+  },
+  "VRUN4012.JPG": {
+    "number": "063",
+    "digits_read": [
+      "0",
+      "6",
+      "3"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "WKFI6689.JPG": {
+    "number": "619",
+    "digits_read": [
+      "6",
+      "1",
+      "9"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "WLPR8195.JPG": {
+    "number": "264",
+    "digits_read": [
+      "2",
+      "6",
+      "4"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 90
+  },
+  "WUIS4290.JPG": {
+    "number": "278",
+    "digits_read": [
+      "2",
+      "7",
+      "8"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 90
+  },
+  "XKKZ8852.JPG": {
+    "number": "326",
+    "digits_read": [
+      "3",
+      "2",
+      "6"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "WYGV2057.JPG": {
+    "number": "265",
+    "digits_read": [
+      "2",
+      "6",
+      "5"
+    ],
+    "confidence": "high"
+  },
+  "XDTA3237.JPG": {
+    "number": "280",
+    "digits_read": [
+      "2",
+      "8",
+      "0"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "XSPB3112.JPG": {
+    "number": "260",
+    "digits_read": [
+      "2",
+      "6",
+      "0"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "XVVZ1333.JPG": {
+    "number": "433",
+    "digits_read": [
+      "4",
+      "3",
+      "3"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "YFTN8799.JPG": {
+    "number": "353",
+    "digits_read": [
+      "3",
+      "5",
+      "3"
+    ],
+    "phone_location": "bottom-right",
+    "rotation_angle": 270
+  },
+  "c.JPG": {
+    "number": "533",
+    "digits_read": [
+      "5",
+      "3",
+      "3"
+    ],
+    "confidence": "high"
+  },
+  "YLBS5372.JPG": {
+    "number": "259",
+    "digits_read": [
+      "2",
+      "5",
+      "9"
+    ],
+    "confidence": "high"
+  }
+}

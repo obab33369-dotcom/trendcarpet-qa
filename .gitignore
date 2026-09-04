@@ -1,0 +1,17 @@
+# Cache and temp
+.cache/
+__pycache__/
+*.pyc
+*.log
+loophole_bin/
+test_*.png
+test_*.py
+.system_generated/
+*.tmp
+
+# Sensitive and binary
+*.env
+*.exe
+*.pt
+*.pth
+*.zip

@@ -1,0 +1,114 @@
+{
+  "102576.jpg": {
+    "classification": "COMPLETE",
+    "reason": "The main furniture item, a sofa with a chaise, is fully visible within the image frame. All parts, including the legs, armrests, backrest, and cushions, are completely shown with clear space around them, indicating it is not cut off at any edge."
+  },
+  "107927.jpg": {
+    "classification": "COMPLETE",
+    "reason": "The main furniture item, a coffee table, is fully visible within the image frame. No parts of the table, including its legs or tabletop, are cut off at the edges."
+  },
+  "109-natural.jpg": {
+    "classification": "COMPLETE",
+    "reason": "The entire product, a round wooden table, is fully visible within the image frame. There is ample white space around all edges of the table, indicating no part of it is cut off or cropped."
+  },
+  "20117-3.jpg": {
+    "classification": "COMPLETE",
+    "reason": "The product, a black cabinet with rattan doors, is fully visible within the image frame. No part of the top, bottom, or sides, including the legs, is cut off or cropped at the edges of the image."
+  },
+  "21703-walnut.jpg": {
+    "classification": "COMPLETE",
+    "reason": "The entire C-shaped side table is fully visible within the image frame, with no parts cut off at the edges."
+  },
+  "31322.jpg": {
+    "classification": "COMPLETE",
+    "reason": "The entire table, including the tabletop and the base, is fully visible within the image frame with sufficient white space around all edges. Nothing is cut off."
+  },
+  "31325.jpg": {
+    "classification": "COMPLETE",
+    "reason": "Both tables are fully visible within the image frame, with no parts (legs, tabletops, or sides) cut off at the edges."
+  },
+  "6027-natur.jpg": {
+    "classification": "COMPLETE",
+    "reason": "The entire table, including the tabletop and all four legs, is fully visible within the image frame with clear space around all edges."
+  },
+  "6027-walnut.jpg": {
+    "classification": "COMPLETE",
+    "reason": "The main furniture item, a table, is fully visible within the image frame. None of its edges (top, bottom, left, or right) are cut off or cropped. There is sufficient white space around the entire product."
+  },
+  "89382.jpg": {
+    "classification": "COMPLETE",
+    "reason": "The entire product is visible within the image frame, with clear white space around all its edges. Nothing is cut off or cropped."
+  },
+  "89784.jpg": {
+    "classification": "COMPLETE",
+    "reason": "The entire product, which appears to be a simple bent shelf or bookend, is fully visible within the image frame. No parts of the item are cut off or cropped at any edge."
+  },
+  "91517.jpg": {
+    "classification": "COMPLETE",
+    "reason": "The entire table, including all legs and the full tabletop, is visible within the image frame. Nothing is cut off at the edges."
+  },
+  "91519.jpg": {
+    "classification": "COMPLETE",
+    "reason": "The entire table, including its tabletop and all legs, is fully visible within the image frame. There is clear space around all edges of the furniture item, indicating it is not cut off or cropped."
+  },
+  "93161.jpg": {
+    "classification": "COMPLETE",
+    "reason": "The entire shelf is visible within the image frame, with no parts cut off at the edges."
+  },
+  "95031.jpg": {
+    "classification": "COMPLETE",
+    "reason": "The entire furniture item, from top to bottom and side to side, is fully visible within the image frame with adequate padding around it. No part of the product is cut off or cropped at the edges."
+  },
+  "acfw00061.jpg": {
+    "classification": "COMPLETE",
+    "reason": "The entire wooden shelf is fully visible within the image frame, with clear space around all its edges. Nothing is cut off."
+  },
+  "adst-lotus-3.jpg": {
+    "classification": "COMPLETE",
+    "reason": "The red paper fan, which is the main object in the image, is fully visible and not cut off at any of its edges."
+  },
+  "amstersb01.jpg": {
+    "classification": "COMPLETE",
+    "reason": "The entire furniture item, including its top, sides, and the full extent of its base/legs, is completely visible within the image frame. There is adequate white space around all edges of the product."
+  },
+  "ellewd02-black.jpg": {
+    "classification": "COMPLETE",
+    "reason": "The product, a tall black cabinet with golden legs, is fully visible within the image frame. There is ample space around all edges of the furniture item, indicating it is not cut off or cropped at the top, bottom, or sides."
+  },
+  "inds-205.jpg": {
+    "classification": "CUT_OFF_BAD",
+    "reason": "The top part of the hanging chain/cord is cut off at the very top edge of the image."
+  },
+  "rs-02-m-black.jpg": {
+    "classification": "COMPLETE",
+    "reason": "The entire stool, including the top of the seat and the bottom of all legs, is fully visible within the image frame with clear space around all edges."
+  },
+  "rs-02-w-wood.jpg": {
+    "classification": "COMPLETE",
+    "reason": "The entire stool, including the seat, adjustable mechanism, and all legs down to the floor, is fully visible within the image frame. No part of the main furniture item is cut off at the edges."
+  },
+  "rw811.jpg": {
+    "classification": "COMPLETE",
+    "reason": "The entire stool is visible within the image frame. No part of the legs, seat, or sides is cut off by the edges of the image."
+  },
+  "sm-1025k-steel.jpg": {
+    "classification": "COMPLETE",
+    "reason": "The entire stool, including all legs and the seat, is fully visible within the image frame with sufficient padding around the edges. It is not cut off at any point."
+  },
+  "sy-8513.jpg": {
+    "classification": "COMPLETE",
+    "reason": "The entire chair, including the top of the backrest, all sides, and the bottom of the legs, is fully visible within the image frame with adequate spacing around it. Nothing is cut off."
+  },
+  "wd2001-kd-black.jpg": {
+    "classification": "COMPLETE",
+    "reason": "The main furniture item, a chair, is fully visible within the image frame. No parts of the chair, including the legs, backrest, or sides, are cut off or cropped at the edges."
+  },
+  "ws-18003.jpg": {
+    "classification": "COMPLETE",
+    "reason": "The entire bar stool is visible within the image frame, with no parts cut off at the edges. There is sufficient white space around the product."
+  },
+  "ws-8652.jpg": {
+    "classification": "COMPLETE",
+    "reason": "The entire chair, including all its legs, the seat, backrest, and armrests, is fully visible within the image frame with clear space around all edges."
+  }
+}

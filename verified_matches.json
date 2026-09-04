@@ -1,0 +1,874 @@
+[
+  {
+    "index": 1,
+    "name": "Wiltonmatta - Elena (beige/guld)",
+    "web_file": "C:\\Users\\AndronikLindgren\\.gemini\\antigravity\\brain\\fe4f6eb2-ba1b-4a8e-8b4e-0c73ce486573\\scratch\\web_images\\01_Elena_beige_guld.jpg",
+    "selected_dt_file": "DT25506_101_160x230.jpg",
+    "selected_metrics": {
+      "filename": "DT25506_101_160x230.jpg",
+      "clip_sim": 0.976,
+      "color_sim": 0.898,
+      "final_score": 0.948
+    },
+    "top_candidates": [
+      {
+        "filename": "DT25506_101_160x230.jpg",
+        "clip_sim": 0.976,
+        "color_sim": 0.898,
+        "final_score": 0.948
+      },
+      {
+        "filename": "DT65528_103_160x230.jpg",
+        "clip_sim": 0.93,
+        "color_sim": 0.94,
+        "final_score": 0.933
+      },
+      {
+        "filename": "DT65326_109_160x230.jpg",
+        "clip_sim": 0.901,
+        "color_sim": 0.985,
+        "final_score": 0.93
+      },
+      {
+        "filename": "DT65528_102_160x230.jpg",
+        "clip_sim": 0.92,
+        "color_sim": 0.843,
+        "final_score": 0.893
+      }
+    ]
+  },
+  {
+    "index": 2,
+    "name": "Wiltonmatta - Lynton (svart)",
+    "web_file": "C:\\Users\\AndronikLindgren\\.gemini\\antigravity\\brain\\fe4f6eb2-ba1b-4a8e-8b4e-0c73ce486573\\scratch\\web_images\\02_Lynton_svart.jpg",
+    "selected_dt_file": "DT75340_101_160x230.jpg",
+    "selected_metrics": {
+      "filename": "DT75340_101_160x230.jpg",
+      "clip_sim": 0.83,
+      "color_sim": 0.227,
+      "rgb_dist": 68.4,
+      "final_score": 0.369
+    },
+    "top_candidates": [
+      {
+        "filename": "DT75340_101_160x230.jpg",
+        "clip_sim": 0.83,
+        "color_sim": 0.227,
+        "rgb_dist": 68.4,
+        "final_score": 0.369
+      },
+      {
+        "filename": "DT75340_116_160x230.jpg",
+        "clip_sim": 0.829,
+        "color_sim": 0.228,
+        "rgb_dist": 84.5,
+        "final_score": 0.356
+      },
+      {
+        "filename": "DT75340_104_160x230.jpg",
+        "clip_sim": 0.871,
+        "color_sim": -0.029,
+        "rgb_dist": 36.6,
+        "final_score": 0.32
+      },
+      {
+        "filename": "DT75340_114_160x230.jpg",
+        "clip_sim": 0.825,
+        "color_sim": -0.015,
+        "rgb_dist": 43.9,
+        "final_score": 0.295
+      }
+    ]
+  },
+  {
+    "index": 3,
+    "name": "Wiltonmatta - Lynton (brun)",
+    "web_file": "C:\\Users\\AndronikLindgren\\.gemini\\antigravity\\brain\\fe4f6eb2-ba1b-4a8e-8b4e-0c73ce486573\\scratch\\web_images\\03_Lynton_brun.jpg",
+    "selected_dt_file": "DT75340_104_160x230.jpg",
+    "selected_metrics": {
+      "filename": "DT75340_104_160x230.jpg",
+      "clip_sim": 1.0,
+      "color_sim": 0.95,
+      "rgb_dist": 0.1,
+      "final_score": 0.78
+    },
+    "top_candidates": [
+      {
+        "filename": "DT75340_104_160x230.jpg",
+        "clip_sim": 1.0,
+        "color_sim": 0.95,
+        "rgb_dist": 0.1,
+        "final_score": 0.78
+      }
+    ]
+  },
+  {
+    "index": 4,
+    "name": "Wiltonmatta - Lynton (beige)",
+    "web_file": "C:\\Users\\AndronikLindgren\\.gemini\\antigravity\\brain\\fe4f6eb2-ba1b-4a8e-8b4e-0c73ce486573\\scratch\\web_images\\04_Lynton_beige.jpg",
+    "selected_dt_file": "DT75340_115_160x230.jpg",
+    "selected_metrics": {
+      "filename": "DT75340_115_160x230.jpg",
+      "clip_sim": 0.883,
+      "color_sim": 0.153,
+      "rgb_dist": 27.5,
+      "final_score": 0.393
+    },
+    "top_candidates": [
+      {
+        "filename": "DT75340_115_160x230.jpg",
+        "clip_sim": 0.883,
+        "color_sim": 0.153,
+        "rgb_dist": 27.5,
+        "final_score": 0.393
+      },
+      {
+        "filename": "DT75340_111_160x230.jpg",
+        "clip_sim": 0.903,
+        "color_sim": 0.047,
+        "rgb_dist": 54.2,
+        "final_score": 0.337
+      },
+      {
+        "filename": "DT75340_102_160x230.jpg",
+        "clip_sim": 0.903,
+        "color_sim": -0.014,
+        "rgb_dist": 35.2,
+        "final_score": 0.334
+      },
+      {
+        "filename": "DT75340_116_160x230.jpg",
+        "clip_sim": 0.869,
+        "color_sim": 0.154,
+        "rgb_dist": 99.6,
+        "final_score": 0.331
+      }
+    ]
+  },
+  {
+    "index": 5,
+    "name": "Wiltonmatta - Lynton (grå)",
+    "web_file": "C:\\Users\\AndronikLindgren\\.gemini\\antigravity\\brain\\fe4f6eb2-ba1b-4a8e-8b4e-0c73ce486573\\scratch\\web_images\\05_Lynton_grå.jpg",
+    "selected_dt_file": "DT75340_116_160x230.jpg",
+    "selected_metrics": {
+      "filename": "DT75340_116_160x230.jpg",
+      "clip_sim": 0.864,
+      "color_sim": 0.191,
+      "rgb_dist": 10.3,
+      "final_score": 0.414
+    },
+    "top_candidates": [
+      {
+        "filename": "DT75340_116_160x230.jpg",
+        "clip_sim": 0.864,
+        "color_sim": 0.191,
+        "rgb_dist": 10.3,
+        "final_score": 0.414
+      },
+      {
+        "filename": "DT75340_115_160x230.jpg",
+        "clip_sim": 0.862,
+        "color_sim": 0.183,
+        "rgb_dist": 80.6,
+        "final_score": 0.355
+      },
+      {
+        "filename": "DT75340_103_160x230.jpg",
+        "clip_sim": 0.874,
+        "color_sim": -0.015,
+        "rgb_dist": 46.6,
+        "final_score": 0.313
+      },
+      {
+        "filename": "DT75340_107_160x230.jpg",
+        "clip_sim": 0.849,
+        "color_sim": -0.022,
+        "rgb_dist": 40.9,
+        "final_score": 0.308
+      }
+    ]
+  },
+  {
+    "index": 6,
+    "name": "Wiltonmatta - Kebira (blå)",
+    "web_file": "C:\\Users\\AndronikLindgren\\.gemini\\antigravity\\brain\\fe4f6eb2-ba1b-4a8e-8b4e-0c73ce486573\\scratch\\web_images\\06_Kebira_blå.jpg",
+    "selected_dt_file": "DT65326_110_160x230.jpg",
+    "selected_metrics": {
+      "filename": "DT65326_110_160x230.jpg",
+      "clip_sim": 0.937,
+      "color_sim": 0.446,
+      "rgb_dist": 13.5,
+      "final_score": 0.542
+    },
+    "top_candidates": [
+      {
+        "filename": "DT65326_110_160x230.jpg",
+        "clip_sim": 0.937,
+        "color_sim": 0.446,
+        "rgb_dist": 13.5,
+        "final_score": 0.542
+      }
+    ]
+  },
+  {
+    "index": 7,
+    "name": "Wiltonmatta - Kebira (beige)",
+    "web_file": "C:\\Users\\AndronikLindgren\\.gemini\\antigravity\\brain\\fe4f6eb2-ba1b-4a8e-8b4e-0c73ce486573\\scratch\\web_images\\07_Kebira_beige.jpg",
+    "selected_dt_file": "DT65326_109_160x230.jpg",
+    "selected_metrics": {
+      "filename": "DT65326_109_160x230.jpg",
+      "clip_sim": 0.997,
+      "color_sim": 0.874,
+      "rgb_dist": 1.7,
+      "final_score": 0.747
+    },
+    "top_candidates": [
+      {
+        "filename": "DT65326_109_160x230.jpg",
+        "clip_sim": 0.997,
+        "color_sim": 0.874,
+        "rgb_dist": 1.7,
+        "final_score": 0.747
+      }
+    ]
+  },
+  {
+    "index": 8,
+    "name": "Wiltonmatta - Olivera (brun)",
+    "web_file": "C:\\Users\\AndronikLindgren\\.gemini\\antigravity\\brain\\fe4f6eb2-ba1b-4a8e-8b4e-0c73ce486573\\scratch\\web_images\\08_Olivera_brun.jpg",
+    "selected_dt_file": "DT75272_101_160X230.jpg",
+    "selected_metrics": {
+      "filename": "DT75272_101_160X230.jpg",
+      "clip_sim": 0.997,
+      "color_sim": 0.86,
+      "rgb_dist": 1.8,
+      "final_score": 0.741
+    },
+    "top_candidates": [
+      {
+        "filename": "DT75272_101_160X230.jpg",
+        "clip_sim": 0.997,
+        "color_sim": 0.86,
+        "rgb_dist": 1.8,
+        "final_score": 0.741
+      }
+    ]
+  },
+  {
+    "index": 9,
+    "name": "Wiltonmatta - Idri (röd/multi)",
+    "web_file": "C:\\Users\\AndronikLindgren\\.gemini\\antigravity\\brain\\fe4f6eb2-ba1b-4a8e-8b4e-0c73ce486573\\scratch\\web_images\\09_Idri_röd_multi.jpg",
+    "selected_dt_file": "DT25404_102_160x230_anmak.jpg",
+    "selected_metrics": {
+      "filename": "DT25404_102_160x230_anmak.jpg",
+      "clip_sim": 0.994,
+      "color_sim": 0.683,
+      "rgb_dist": 10.4,
+      "final_score": 0.662
+    },
+    "top_candidates": [
+      {
+        "filename": "DT25404_102_160x230_anmak.jpg",
+        "clip_sim": 0.994,
+        "color_sim": 0.683,
+        "rgb_dist": 10.4,
+        "final_score": 0.662
+      }
+    ]
+  },
+  {
+    "index": 10,
+    "name": "Wiltonmatta - Serifos (mörkgrå)",
+    "web_file": "C:\\Users\\AndronikLindgren\\.gemini\\antigravity\\brain\\fe4f6eb2-ba1b-4a8e-8b4e-0c73ce486573\\scratch\\web_images\\10_Serifos_mörkgrå.jpg",
+    "selected_dt_file": "DT70229_101_160Xyuvarlak.jpg",
+    "selected_metrics": {
+      "filename": "DT70229_101_160Xyuvarlak.jpg",
+      "clip_sim": 0.88,
+      "color_sim": 0.289,
+      "final_score": 0.673
+    },
+    "top_candidates": [
+      {
+        "filename": "DT70229_101_160Xyuvarlak.jpg",
+        "clip_sim": 0.88,
+        "color_sim": 0.289,
+        "final_score": 0.673
+      },
+      {
+        "filename": "DT75229_101_160X230.jpg",
+        "clip_sim": 0.868,
+        "color_sim": 0.284,
+        "final_score": 0.663
+      },
+      {
+        "filename": "DT45276_102_160x230_anmak.jpg",
+        "clip_sim": 0.875,
+        "color_sim": 0.264,
+        "final_score": 0.661
+      },
+      {
+        "filename": "DT70264_101_160Xyuvarlak.jpg",
+        "clip_sim": 0.863,
+        "color_sim": 0.235,
+        "final_score": 0.644
+      }
+    ]
+  },
+  {
+    "index": 11,
+    "name": "Wiltonmatta - Campile (blå)",
+    "web_file": "C:\\Users\\AndronikLindgren\\.gemini\\antigravity\\brain\\fe4f6eb2-ba1b-4a8e-8b4e-0c73ce486573\\scratch\\web_images\\11_Campile_blå.jpg",
+    "selected_dt_file": "DT75275_101_160X230.jpg",
+    "selected_metrics": {
+      "filename": "DT75275_101_160X230.jpg",
+      "clip_sim": 0.984,
+      "color_sim": 0.866,
+      "rgb_dist": 1.5,
+      "final_score": 0.739
+    },
+    "top_candidates": [
+      {
+        "filename": "DT75275_101_160X230.jpg",
+        "clip_sim": 0.984,
+        "color_sim": 0.866,
+        "rgb_dist": 1.5,
+        "final_score": 0.739
+      }
+    ]
+  },
+  {
+    "index": 12,
+    "name": "Wiltonmatta - Barcelona (brun)",
+    "web_file": "C:\\Users\\AndronikLindgren\\.gemini\\antigravity\\brain\\fe4f6eb2-ba1b-4a8e-8b4e-0c73ce486573\\scratch\\web_images\\12_Barcelona_brun.jpg",
+    "selected_dt_file": "DT35907_102_160X230.jpg",
+    "selected_metrics": {
+      "filename": "DT35907_102_160X230.jpg",
+      "clip_sim": 0.91,
+      "color_sim": 0.493,
+      "final_score": 0.764
+    },
+    "top_candidates": [
+      {
+        "filename": "DT35907_102_160X230.jpg",
+        "clip_sim": 0.91,
+        "color_sim": 0.493,
+        "final_score": 0.764
+      },
+      {
+        "filename": "DT75340_103_160x230.jpg",
+        "clip_sim": 0.905,
+        "color_sim": 0.381,
+        "final_score": 0.722
+      },
+      {
+        "filename": "DT25506_101_160x230.jpg",
+        "clip_sim": 0.905,
+        "color_sim": 0.307,
+        "final_score": 0.696
+      },
+      {
+        "filename": "DT75264_101_160X230.jpg",
+        "clip_sim": 0.913,
+        "color_sim": 0.217,
+        "final_score": 0.669
+      }
+    ]
+  },
+  {
+    "index": 13,
+    "name": "Wiltonmatta - Barcelona (grön)",
+    "web_file": "C:\\Users\\AndronikLindgren\\.gemini\\antigravity\\brain\\fe4f6eb2-ba1b-4a8e-8b4e-0c73ce486573\\scratch\\web_images\\13_Barcelona_grön.jpg",
+    "selected_dt_file": "DT36095_101_160X230.jpg",
+    "selected_metrics": {
+      "filename": "DT36095_101_160X230.jpg",
+      "clip_sim": 0.925,
+      "color_sim": 0.209,
+      "final_score": 0.674
+    },
+    "top_candidates": [
+      {
+        "filename": "DT36095_101_160X230.jpg",
+        "clip_sim": 0.925,
+        "color_sim": 0.209,
+        "final_score": 0.674
+      },
+      {
+        "filename": "DT36061_101_160x230.jpg",
+        "clip_sim": 0.917,
+        "color_sim": 0.216,
+        "final_score": 0.672
+      },
+      {
+        "filename": "DT36093_101_160X230.jpg",
+        "clip_sim": 0.912,
+        "color_sim": 0.19,
+        "final_score": 0.659
+      },
+      {
+        "filename": "DT36078_101_160x230.jpg",
+        "clip_sim": 0.905,
+        "color_sim": 0.183,
+        "final_score": 0.652
+      }
+    ]
+  },
+  {
+    "index": 14,
+    "name": "Wiltonmatta - Lazio (beige/rosa)",
+    "web_file": "C:\\Users\\AndronikLindgren\\.gemini\\antigravity\\brain\\fe4f6eb2-ba1b-4a8e-8b4e-0c73ce486573\\scratch\\web_images\\14_Lazio_beige_rosa.jpg",
+    "selected_dt_file": "DT70339_102 Lazio (beige pink).jpg",
+    "selected_metrics": {
+      "filename": "DT70339_102 Lazio (beige pink).jpg",
+      "clip_sim": 0.883,
+      "color_sim": 0.649,
+      "rgb_dist": 17.7,
+      "final_score": 0.599
+    },
+    "top_candidates": [
+      {
+        "filename": "DT70339_102 Lazio (beige pink).jpg",
+        "clip_sim": 0.883,
+        "color_sim": 0.649,
+        "rgb_dist": 17.7,
+        "final_score": 0.599
+      }
+    ]
+  },
+  {
+    "index": 15,
+    "name": "Wiltonmatta - Baden (rosa)",
+    "web_file": "C:\\Users\\AndronikLindgren\\.gemini\\antigravity\\brain\\fe4f6eb2-ba1b-4a8e-8b4e-0c73ce486573\\scratch\\web_images\\15_Baden_rosa.jpg",
+    "selected_dt_file": "DT75348_101_160x230.jpg",
+    "selected_metrics": {
+      "filename": "DT75348_101_160x230.jpg",
+      "clip_sim": 0.965,
+      "color_sim": 0.811,
+      "final_score": 0.911
+    },
+    "top_candidates": [
+      {
+        "filename": "DT75348_101_160x230.jpg",
+        "clip_sim": 0.965,
+        "color_sim": 0.811,
+        "final_score": 0.911
+      },
+      {
+        "filename": "DT75340_105_160x230.jpg",
+        "clip_sim": 0.928,
+        "color_sim": 0.673,
+        "final_score": 0.839
+      },
+      {
+        "filename": "TS25808_103_160X230.jpg",
+        "clip_sim": 0.885,
+        "color_sim": 0.264,
+        "final_score": 0.668
+      },
+      {
+        "filename": "DT75248_103 Mogoro (pink).jpg",
+        "clip_sim": 0.894,
+        "color_sim": 0.105,
+        "final_score": 0.618
+      }
+    ]
+  },
+  {
+    "index": 16,
+    "name": "Wiltonmatta - Bornos (grå/beige)",
+    "web_file": "C:\\Users\\AndronikLindgren\\.gemini\\antigravity\\brain\\fe4f6eb2-ba1b-4a8e-8b4e-0c73ce486573\\scratch\\web_images\\16_Bornos_grå_beige.jpg",
+    "selected_dt_file": "DT75269_101_160x230.jpg",
+    "selected_metrics": {
+      "filename": "DT75269_101_160x230.jpg",
+      "clip_sim": 0.887,
+      "color_sim": 0.89,
+      "final_score": 0.888
+    },
+    "top_candidates": [
+      {
+        "filename": "DT75269_101_160x230.jpg",
+        "clip_sim": 0.887,
+        "color_sim": 0.89,
+        "final_score": 0.888
+      },
+      {
+        "filename": "DT75237_101_160X230.jpg",
+        "clip_sim": 0.885,
+        "color_sim": 0.844,
+        "final_score": 0.871
+      },
+      {
+        "filename": "DT35629_101_160X230_anmak.jpg",
+        "clip_sim": 0.896,
+        "color_sim": 0.78,
+        "final_score": 0.855
+      },
+      {
+        "filename": "isilti.vsl11111.2107.lattecolor.shine_wiltonmatta_zaria_ljusbrunguld_matta_carpet_teppich_01rr.jpg",
+        "clip_sim": 0.893,
+        "color_sim": 0.778,
+        "final_score": 0.853
+      }
+    ]
+  },
+  {
+    "index": 17,
+    "name": "Wiltonmatta - Zaria (ljusbrun/guld)",
+    "web_file": "C:\\Users\\AndronikLindgren\\.gemini\\antigravity\\brain\\fe4f6eb2-ba1b-4a8e-8b4e-0c73ce486573\\scratch\\web_images\\17_Zaria_ljusbrun_guld.jpg",
+    "selected_dt_file": "DT65451_101_160x230.jpg",
+    "selected_metrics": {
+      "filename": "DT65451_101_160x230.jpg",
+      "clip_sim": 0.894,
+      "color_sim": 0.425,
+      "final_score": 0.73
+    },
+    "top_candidates": [
+      {
+        "filename": "DT65451_101_160x230.jpg",
+        "clip_sim": 0.894,
+        "color_sim": 0.425,
+        "final_score": 0.73
+      },
+      {
+        "filename": "TS25808_104_160X230.jpg",
+        "clip_sim": 0.895,
+        "color_sim": 0.422,
+        "final_score": 0.729
+      },
+      {
+        "filename": "DT70271_101_160.jpg",
+        "clip_sim": 0.887,
+        "color_sim": 0.413,
+        "final_score": 0.721
+      },
+      {
+        "filename": "isilti.vsl11111.2107.lattecolor.shine_wiltonmatta_zaria_ljusbrunguld_matta_carpet_teppich_01rr.jpg",
+        "clip_sim": 0.969,
+        "color_sim": 0.191,
+        "final_score": 0.697
+      }
+    ]
+  },
+  {
+    "index": 18,
+    "name": "Wiltonmatta - Bovera (brun/röd)",
+    "web_file": "C:\\Users\\AndronikLindgren\\.gemini\\antigravity\\brain\\fe4f6eb2-ba1b-4a8e-8b4e-0c73ce486573\\scratch\\web_images\\18_Bovera_brun_röd.jpg",
+    "selected_dt_file": "DT75258_101_160x230.jpg",
+    "selected_metrics": {
+      "filename": "DT75258_101_160x230.jpg",
+      "clip_sim": 0.917,
+      "color_sim": 0.989,
+      "rgb_dist": 22.5,
+      "final_score": 0.745
+    },
+    "top_candidates": [
+      {
+        "filename": "DT75258_101_160x230.jpg",
+        "clip_sim": 0.917,
+        "color_sim": 0.989,
+        "rgb_dist": 22.5,
+        "final_score": 0.745
+      }
+    ]
+  },
+  {
+    "index": 19,
+    "name": "Wiltonmatta - Olmedo (grå/beige)",
+    "web_file": "C:\\Users\\AndronikLindgren\\.gemini\\antigravity\\brain\\fe4f6eb2-ba1b-4a8e-8b4e-0c73ce486573\\scratch\\web_images\\19_Olmedo_grå_beige.jpg",
+    "selected_dt_file": "DT45279_106_160x230_anmak.jpg",
+    "selected_metrics": {
+      "filename": "DT45279_106_160x230_anmak.jpg",
+      "clip_sim": 0.851,
+      "color_sim": 0.637,
+      "final_score": 0.776
+    },
+    "top_candidates": [
+      {
+        "filename": "DT45279_106_160x230_anmak.jpg",
+        "clip_sim": 0.851,
+        "color_sim": 0.637,
+        "final_score": 0.776
+      },
+      {
+        "filename": "DT70240_101_160Xyuvarlak.jpg",
+        "clip_sim": 0.872,
+        "color_sim": 0.588,
+        "final_score": 0.773
+      },
+      {
+        "filename": "DT35629_101_160X230_anmak.jpg",
+        "clip_sim": 0.86,
+        "color_sim": 0.518,
+        "final_score": 0.74
+      },
+      {
+        "filename": "DT36126_101 ANTONIA GRA.jpg",
+        "clip_sim": 0.842,
+        "color_sim": 0.523,
+        "final_score": 0.73
+      }
+    ]
+  },
+  {
+    "index": 20,
+    "name": "Wiltonmatta - Zaria (ljusgrå/silver)",
+    "web_file": "C:\\Users\\AndronikLindgren\\.gemini\\antigravity\\brain\\fe4f6eb2-ba1b-4a8e-8b4e-0c73ce486573\\scratch\\web_images\\20_Zaria_ljusgrå_silver.jpg",
+    "selected_dt_file": "DT65381_106_160X230.jpg",
+    "selected_metrics": {
+      "filename": "DT65381_106_160X230.jpg",
+      "clip_sim": 0.881,
+      "color_sim": 0.72,
+      "final_score": 0.824
+    },
+    "top_candidates": [
+      {
+        "filename": "DT65381_106_160X230.jpg",
+        "clip_sim": 0.881,
+        "color_sim": 0.72,
+        "final_score": 0.824
+      },
+      {
+        "filename": "DT35629_101_160X230_anmak.jpg",
+        "clip_sim": 0.902,
+        "color_sim": 0.642,
+        "final_score": 0.811
+      },
+      {
+        "filename": "DT35628_104_160X230_anmak.jpg",
+        "clip_sim": 0.902,
+        "color_sim": 0.581,
+        "final_score": 0.79
+      },
+      {
+        "filename": "DT45276_102_160x230_anmak.jpg",
+        "clip_sim": 0.881,
+        "color_sim": 0.599,
+        "final_score": 0.783
+      }
+    ]
+  },
+  {
+    "index": 21,
+    "name": "Wiltonmatta - Pavoa (orange)",
+    "web_file": "C:\\Users\\AndronikLindgren\\.gemini\\antigravity\\brain\\fe4f6eb2-ba1b-4a8e-8b4e-0c73ce486573\\scratch\\web_images\\21_Pavoa_orange.jpg",
+    "selected_dt_file": "DT75356_102 Pavoa (orange).jpg",
+    "selected_metrics": {
+      "filename": "DT75356_102 Pavoa (orange).jpg",
+      "clip_sim": 1.0,
+      "color_sim": 0.727,
+      "rgb_dist": 0.7,
+      "final_score": 0.69
+    },
+    "top_candidates": [
+      {
+        "filename": "DT75356_102 Pavoa (orange).jpg",
+        "clip_sim": 1.0,
+        "color_sim": 0.727,
+        "rgb_dist": 0.7,
+        "final_score": 0.69
+      }
+    ]
+  },
+  {
+    "index": 22,
+    "name": "Wiltonmatta - Siliana (beige)",
+    "web_file": "C:\\Users\\AndronikLindgren\\.gemini\\antigravity\\brain\\fe4f6eb2-ba1b-4a8e-8b4e-0c73ce486573\\scratch\\web_images\\22_Siliana_beige.jpg",
+    "selected_dt_file": "DT45274_113_150x230_anmak.jpg",
+    "selected_metrics": {
+      "filename": "DT45274_113_150x230_anmak.jpg",
+      "clip_sim": 0.942,
+      "color_sim": 0.72,
+      "final_score": 0.865
+    },
+    "top_candidates": [
+      {
+        "filename": "DT45274_113_150x230_anmak.jpg",
+        "clip_sim": 0.942,
+        "color_sim": 0.72,
+        "final_score": 0.865
+      },
+      {
+        "filename": "DT45372_104_160x230_anmak.jpg",
+        "clip_sim": 0.98,
+        "color_sim": 0.491,
+        "final_score": 0.809
+      },
+      {
+        "filename": "DT45372_103_160x230_anmak.jpg",
+        "clip_sim": 0.947,
+        "color_sim": 0.481,
+        "final_score": 0.784
+      },
+      {
+        "filename": "DT25464_102_160x230_anmak.jpg",
+        "clip_sim": 0.939,
+        "color_sim": 0.378,
+        "final_score": 0.743
+      }
+    ]
+  },
+  {
+    "index": 23,
+    "name": "Wiltonmatta - Amorgos (cloud)",
+    "web_file": "C:\\Users\\AndronikLindgren\\.gemini\\antigravity\\brain\\fe4f6eb2-ba1b-4a8e-8b4e-0c73ce486573\\scratch\\web_images\\23_Amorgos_cloud.jpg",
+    "selected_dt_file": "DT35855_101_160X230.jpg",
+    "selected_metrics": {
+      "filename": "DT35855_101_160X230.jpg",
+      "clip_sim": 0.861,
+      "color_sim": 0.642,
+      "final_score": 0.785
+    },
+    "top_candidates": [
+      {
+        "filename": "DT35855_101_160X230.jpg",
+        "clip_sim": 0.861,
+        "color_sim": 0.642,
+        "final_score": 0.785
+      },
+      {
+        "filename": "DT35685_102_160X230_anmak.jpg",
+        "clip_sim": 0.91,
+        "color_sim": 0.337,
+        "final_score": 0.71
+      },
+      {
+        "filename": "DT094130_101_160X160.jpg",
+        "clip_sim": 0.883,
+        "color_sim": 0.385,
+        "final_score": 0.709
+      },
+      {
+        "filename": "DT02773-102_160X230.jpg",
+        "clip_sim": 0.86,
+        "color_sim": 0.423,
+        "final_score": 0.707
+      }
+    ]
+  },
+  {
+    "index": 24,
+    "name": "Wiltonmatta - Saranda (guld)",
+    "web_file": "C:\\Users\\AndronikLindgren\\.gemini\\antigravity\\brain\\fe4f6eb2-ba1b-4a8e-8b4e-0c73ce486573\\scratch\\web_images\\24_Saranda_guld.jpg",
+    "selected_dt_file": "DT70220_101_160Xyuvarlak.jpg",
+    "selected_metrics": {
+      "filename": "DT70220_101_160Xyuvarlak.jpg",
+      "clip_sim": 0.872,
+      "color_sim": 0.501,
+      "final_score": 0.742
+    },
+    "top_candidates": [
+      {
+        "filename": "DT70220_101_160Xyuvarlak.jpg",
+        "clip_sim": 0.872,
+        "color_sim": 0.501,
+        "final_score": 0.742
+      },
+      {
+        "filename": "DT75225_101_160X230.jpg",
+        "clip_sim": 0.876,
+        "color_sim": 0.48,
+        "final_score": 0.738
+      },
+      {
+        "filename": "DT35852_101_160X230.jpg",
+        "clip_sim": 0.874,
+        "color_sim": 0.425,
+        "final_score": 0.717
+      },
+      {
+        "filename": "DT75264_101_160X230.jpg",
+        "clip_sim": 0.87,
+        "color_sim": 0.401,
+        "final_score": 0.706
+      }
+    ]
+  },
+  {
+    "index": 25,
+    "name": "Wiltonmatta - Lynton (terracotta)",
+    "web_file": "C:\\Users\\AndronikLindgren\\.gemini\\antigravity\\brain\\fe4f6eb2-ba1b-4a8e-8b4e-0c73ce486573\\scratch\\web_images\\25_Lynton_terracotta.jpg",
+    "selected_dt_file": "DT75340_121_160x230.jpg",
+    "selected_metrics": {
+      "filename": "DT75340_121_160x230.jpg",
+      "clip_sim": 1.0,
+      "color_sim": 0.905,
+      "rgb_dist": 0.1,
+      "final_score": 0.762
+    },
+    "top_candidates": [
+      {
+        "filename": "DT75340_121_160x230.jpg",
+        "clip_sim": 1.0,
+        "color_sim": 0.905,
+        "rgb_dist": 0.1,
+        "final_score": 0.762
+      }
+    ]
+  },
+  {
+    "index": 26,
+    "name": "Wiltonmatta - Domont (brun)",
+    "web_file": "C:\\Users\\AndronikLindgren\\.gemini\\antigravity\\brain\\fe4f6eb2-ba1b-4a8e-8b4e-0c73ce486573\\scratch\\web_images\\26_Domont_brun.jpg",
+    "selected_dt_file": "DT75347_103 Domont (brown).jpg",
+    "selected_metrics": {
+      "filename": "DT75347_103 Domont (brown).jpg",
+      "clip_sim": 0.999,
+      "color_sim": 0.887,
+      "rgb_dist": 0.0,
+      "final_score": 0.754
+    },
+    "top_candidates": [
+      {
+        "filename": "DT75347_103 Domont (brown).jpg",
+        "clip_sim": 0.999,
+        "color_sim": 0.887,
+        "rgb_dist": 0.0,
+        "final_score": 0.754
+      },
+      {
+        "filename": "DT75347_103_160x230.jpg",
+        "clip_sim": 0.999,
+        "color_sim": 0.887,
+        "rgb_dist": 0.0,
+        "final_score": 0.754
+      }
+    ]
+  },
+  {
+    "index": 27,
+    "name": "Wiltonmatta - Vivian (beige)",
+    "web_file": "C:\\Users\\AndronikLindgren\\.gemini\\antigravity\\brain\\fe4f6eb2-ba1b-4a8e-8b4e-0c73ce486573\\scratch\\web_images\\27_Vivian_beige.jpg",
+    "selected_dt_file": "DT45274_113_150x230_anmak.jpg",
+    "selected_metrics": {
+      "filename": "DT45274_113_150x230_anmak.jpg",
+      "clip_sim": 0.943,
+      "color_sim": 0.803,
+      "final_score": 0.894
+    },
+    "top_candidates": [
+      {
+        "filename": "DT45274_113_150x230_anmak.jpg",
+        "clip_sim": 0.943,
+        "color_sim": 0.803,
+        "final_score": 0.894
+      },
+      {
+        "filename": "DT35588_107_160X230_anmak.jpg",
+        "clip_sim": 0.914,
+        "color_sim": 0.221,
+        "final_score": 0.672
+      },
+      {
+        "filename": "DT65414_105_160x230_anmak.jpg",
+        "clip_sim": 0.9,
+        "color_sim": 0.194,
+        "final_score": 0.653
+      },
+      {
+        "filename": "DT25809_101 Lena (beige).jpg",
+        "clip_sim": 0.914,
+        "color_sim": 0.149,
+        "final_score": 0.646
+      }
+    ]
+  }
+]

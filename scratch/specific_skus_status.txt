@@ -1,0 +1,544 @@
+--- DB Status ---
+Key: artiklar/1091-black.jpg -> Status: auto-corrected | Reason: None
+Key: zoom/1091-black_10.jpg -> Status: skipped | Reason: Excluded: Product has a fix folder but slot 10 is not in it
+Key: zoom/1091-black_2.jpg -> Status: skipped | Reason: Lifestyle image (no white background)
+Key: zoom/1091-black_3.jpg -> Status: skipped | Reason: Lifestyle image (no white background)
+Key: zoom/1091-black_4.jpg -> Status: skipped | Reason: Lifestyle image (no white background)
+Key: zoom/1091-black_5.jpg -> Status: skipped | Reason: Lifestyle image (no white background)
+Key: zoom/1091-black_6.jpg -> Status: skipped | Reason: Lifestyle image (no white background)
+Key: zoom/1091-black_7.jpg -> Status: skipped | Reason: Lifestyle image (no white background)
+Key: zoom/1091-black_8.jpg -> Status: skipped | Reason: Lifestyle image (no white background)
+Key: zoom/1091-black_9.jpg -> Status: skipped | Reason: Excluded: Product has a fix folder but slot 9 is not in it
+Key: artiklar/1091-walnut.jpg -> Status: auto-corrected | Reason: None
+Key: zoom/1091-walnut_2.jpg -> Status: skipped | Reason: Lifestyle image (no white background)
+Key: zoom/1091-walnut_3.jpg -> Status: skipped | Reason: Lifestyle image (no white background)
+Key: zoom/1091-walnut_4.jpg -> Status: skipped | Reason: Lifestyle image (no white background)
+Key: zoom/1091-walnut_5.jpg -> Status: skipped | Reason: Lifestyle image (no white background)
+Key: zoom/1091-walnut_6.jpg -> Status: skipped | Reason: Lifestyle image (no white background)
+Key: zoom/1091-walnut_7.jpg -> Status: skipped | Reason: Lifestyle image (no white background)
+Key: zoom/1091-walnut_8.jpg -> Status: skipped | Reason: Excluded: Product has a fix folder but slot 8 is not in it
+Key: zoom/1091-walnut_9.jpg -> Status: skipped | Reason: Excluded: Product has a fix folder but slot 9 is not in it
+Key: artiklar/6027-natur.jpg -> Status: auto-corrected | Reason: None
+Key: zoom/6027-natur_2.jpg -> Status: skipped | Reason: Lifestyle image (no white background)
+Key: zoom/6027-natur_3.jpg -> Status: auto-corrected | Reason: None
+Key: zoom/6027-natur_4.jpg -> Status: auto-corrected | Reason: None
+Key: artiklar/6027-walnut.jpg -> Status: auto-corrected | Reason: None
+Key: zoom/6027-walnut_2.jpg -> Status: skipped | Reason: Lifestyle image (no white background)
+Key: zoom/6027-walnut_3.jpg -> Status: auto-corrected | Reason: None
+Key: zoom/6027-walnut_4.jpg -> Status: auto-corrected | Reason: None
+Key: artiklar/rw811.jpg -> Status: verification_failed | Reason: The product is not centered horizontally. It is significantly shifted to the right, resulting in a much larger white margin on the left side of the image compared to the right side. The horizontal center is not at 50.0%.
+Key: zoom/rw811_2.jpg -> Status: skipped | Reason: Lifestyle image (no white background)
+Key: zoom/rw811_3.jpg -> Status: approved | Reason: Detail close-up (cropped to square full-bleed)
+Key: zoom/rw811_4.jpg -> Status: auto-corrected | Reason: None
+Key: zoom/rw811_5.jpg -> Status: auto-corrected | Reason: None
+Key: artiklar/99070.jpg -> Status: verification_failed | Reason: The product is not centered horizontally. The main vertical pole and the entire coat rack are significantly shifted to the right, resulting in a much larger empty margin on the left side compared to the right side. This creates an unbalanced composition and does not meet the horizontal centering guideline, even considering allowances for asymmetrical products.
+Key: zoom/99070_2.jpg -> Status: skipped | Reason: Lifestyle image (no white background)
+Key: zoom/99070_3.jpg -> Status: skipped | Reason: Excluded: Product has a fix folder but slot 3 is not in it
+Key: zoom/99070_4.jpg -> Status: skipped | Reason: Excluded: Product has a fix folder but slot 4 is not in it
+Key: artiklar/throw-striped-12.jpg -> Status: approved | Reason: Detail close-up image (preserved as-is)
+Key: zoom/throw-striped-12_2.jpg -> Status: skipped | Reason: Lifestyle image (no white background)
+Key: zoom/throw-striped-12_3.jpg -> Status: skipped | Reason: Lifestyle image (no white background)
+Key: zoom/throw-striped-12_4.jpg -> Status: skipped | Reason: Lifestyle image (no white background)
+Key: zoom/throw-striped-12_5.jpg -> Status: skipped | Reason: Lifestyle image (no white background)
+Key: artiklar/dc-070-brown.jpg -> Status: approved | Reason: Detail close-up image (preserved as-is)
+Key: artiklar/dc-070.jpg -> Status: auto-corrected | Reason: None
+Key: zoom/dc-070-brown_2.jpg -> Status: skipped | Reason: Lifestyle image (no white background)
+Key: zoom/dc-070-brown_3.jpg -> Status: approved | Reason: Detail close-up image (preserved as-is)
+Key: zoom/dc-070-brown_4.jpg -> Status: skipped | Reason: Lifestyle image (no white background)
+Key: zoom/dc-070-brown_5.jpg -> Status: approved | Reason: Approved (Within tolerance)
+Key: zoom/dc-070-brown_6.jpg -> Status: approved | Reason: Approved (Within tolerance)
+Key: zoom/dc-070_10.jpg -> Status: skipped | Reason: Excluded: Product has a fix folder but slot 10 is not in it
+Key: zoom/dc-070_2.jpg -> Status: approved | Reason: Approved (Within tolerance)
+Key: zoom/dc-070_3.jpg -> Status: auto-corrected | Reason: None
+Key: zoom/dc-070_4.jpg -> Status: approved | Reason: Approved (Within tolerance)
+Key: zoom/dc-070_5.jpg -> Status: approved | Reason: Detail close-up or technical sketch (preserved as-is)
+Key: zoom/dc-070_6.jpg -> Status: approved | Reason: Detail close-up or technical sketch (preserved as-is)
+Key: zoom/dc-070_7.jpg -> Status: skipped | Reason: Excluded: Product has a fix folder but slot 7 is not in it
+Key: zoom/dc-070_8.jpg -> Status: skipped | Reason: Excluded: Product has a fix folder but slot 8 is not in it
+Key: zoom/dc-070_9.jpg -> Status: skipped | Reason: Excluded: Product has a fix folder but slot 9 is not in it
+Key: artiklar/rio-1-fortis01.jpg -> Status: approved | Reason: Approved (Within tolerance)
+Key: zoom/rio-1-fortis01_2.jpg -> Status: auto-corrected | Reason: None
+Key: zoom/rio-1-fortis01_3.jpg -> Status: approved | Reason: Approved (Within tolerance)
+Key: zoom/rio-1-fortis01_4.jpg -> Status: approved | Reason: Approved (Within tolerance)
+Key: zoom/rio-1-fortis01_5.jpg -> Status: approved | Reason: Approved (Within tolerance)
+Key: zoom/rio-1-fortis01_6.jpg -> Status: approved | Reason: Detail close-up or technical sketch (preserved as-is)
+Key: zoom/rio-1-fortis01_7.jpg -> Status: skipped | Reason: Lifestyle image (no white background)
+Key: zoom/rio-1-fortis01_8.jpg -> Status: approved | Reason: Detail close-up or technical sketch (preserved as-is)
+Key: artiklar/ellewd02-black.jpg -> Status: approved | Reason: Detail close-up image (preserved as-is)
+Key: zoom/ellewd02-black_2.jpg -> Status: auto-corrected | Reason: None
+Key: zoom/ellewd02-black_3.jpg -> Status: skipped | Reason: Excluded: Product has a fix folder but slot 3 is not in it
+Key: zoom/ellewd02-black_4.jpg -> Status: skipped | Reason: Lifestyle image (no white background)
+Key: zoom/ellewd02-black_5.jpg -> Status: approved | Reason: Approved (Within tolerance)
+Key: zoom/ellewd02-black_6.jpg -> Status: approved | Reason: Detail close-up or technical sketch (preserved as-is)
+
+--- Log Grep ---
+
+--- Log for 1091-black ---
+  948: [ensure_square_canvas] Saved 2000x2000 (table_coffee) to 109-natural_4.jpg
+  949: [159/1896] Zoom SKU: 1091-black - Excluded: Product has a fix folder but slot 10 is not in it. Deleting.
+  950: [167/1896] Zoom SKU: 1091-black - Excluded: Product has a fix folder but slot 9 is not in it. Deleting.
+  951: [175/1896] Zoom SKU: 1091-walnut - Excluded: Product has a fix folder but slot 8 is not in it. Deleting.
+  952: [176/1896] Zoom SKU: 1091-walnut - Excluded: Product has a fix folder but slot 9 is not in it. Deleting.
+  953: [180/1896] Zoom SKU: 1091-white-pigmented - Excluded: Product has a fix folder but slot 7 is not in it. Deleting.
+  954: [181/1896] Zoom SKU: 1091-white-pigmented - Excluded: Product has a fix folder but slot 8 is not in it. Deleting.
+  ...
+  949: [159/1896] Zoom SKU: 1091-black - Excluded: Product has a fix folder but slot 10 is not in it. Deleting.
+  950: [167/1896] Zoom SKU: 1091-black - Excluded: Product has a fix folder but slot 9 is not in it. Deleting.
+  951: [175/1896] Zoom SKU: 1091-walnut - Excluded: Product has a fix folder but slot 8 is not in it. Deleting.
+  952: [176/1896] Zoom SKU: 1091-walnut - Excluded: Product has a fix folder but slot 9 is not in it. Deleting.
+  953: [180/1896] Zoom SKU: 1091-white-pigmented - Excluded: Product has a fix folder but slot 7 is not in it. Deleting.
+  954: [181/1896] Zoom SKU: 1091-white-pigmented - Excluded: Product has a fix folder but slot 8 is not in it. Deleting.
+  955: [195/1896] Zoom SKU: 1200180 - Excluded: Product has a fix folder but slot 8 is not in it. Deleting.
+  ...
+
+--- Log for 1091-walnut ---
+  950: [167/1896] Zoom SKU: 1091-black - Excluded: Product has a fix folder but slot 9 is not in it. Deleting.
+  951: [175/1896] Zoom SKU: 1091-walnut - Excluded: Product has a fix folder but slot 8 is not in it. Deleting.
+  952: [176/1896] Zoom SKU: 1091-walnut - Excluded: Product has a fix folder but slot 9 is not in it. Deleting.
+  953: [180/1896] Zoom SKU: 1091-white-pigmented - Excluded: Product has a fix folder but slot 7 is not in it. Deleting.
+  954: [181/1896] Zoom SKU: 1091-white-pigmented - Excluded: Product has a fix folder but slot 8 is not in it. Deleting.
+  955: [195/1896] Zoom SKU: 1200180 - Excluded: Product has a fix folder but slot 8 is not in it. Deleting.
+  956: [196/1896] Zoom SKU: 1200180 - Excluded: Product has a fix folder but slot 9 is not in it. Deleting.
+  ...
+  951: [175/1896] Zoom SKU: 1091-walnut - Excluded: Product has a fix folder but slot 8 is not in it. Deleting.
+  952: [176/1896] Zoom SKU: 1091-walnut - Excluded: Product has a fix folder but slot 9 is not in it. Deleting.
+  953: [180/1896] Zoom SKU: 1091-white-pigmented - Excluded: Product has a fix folder but slot 7 is not in it. Deleting.
+  954: [181/1896] Zoom SKU: 1091-white-pigmented - Excluded: Product has a fix folder but slot 8 is not in it. Deleting.
+  955: [195/1896] Zoom SKU: 1200180 - Excluded: Product has a fix folder but slot 8 is not in it. Deleting.
+  956: [196/1896] Zoom SKU: 1200180 - Excluded: Product has a fix folder but slot 9 is not in it. Deleting.
+  957: [199/1896] Zoom SKU: 1211-c-black - Excluded: Product has a fix folder but slot 4 is not in it. Deleting.
+  ...
+
+--- Log for 6027-natur ---
+  248: [22/73] SKU: 45921-white - Already SKIPPED. Restoring (Cached)...
+  249: [23/73] SKU: 6027-natur | Name: 'Matbord 'Uovo' 220x115cm - Natur' | Cat: table_dining
+  250: Querying Gemini Vision API for bounding box...
+  251: ✗ Fails alignment. Width=0.88 (target 0.94), Bottom=0.76 (target 0.89). Autocorrecting...
+  252: [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\6027-natur.jpg
+  253: [Background Cleaning] Skipped: background not off-white (bg_val=254.0). Pixels kept 100% original.
+  254: [Crop] Detected product+shadow box (Hybrid): 479x197 at y:[81,278], x:[30,509]
+  ...
+  251: ✗ Fails alignment. Width=0.88 (target 0.94), Bottom=0.76 (target 0.89). Autocorrecting...
+  252: [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\6027-natur.jpg
+  253: [Background Cleaning] Skipped: background not off-white (bg_val=254.0). Pixels kept 100% original.
+  254: [Crop] Detected product+shadow box (Hybrid): 479x197 at y:[81,278], x:[30,509]
+  255: [Save] Saved corrected image: 1000x1000 to 6027-natur.jpg
+  256: Querying Gemini Vision API for verification...
+  257: ✓ Verification success: Corrected image approved!
+  ...
+  254: [Crop] Detected product+shadow box (Hybrid): 479x197 at y:[81,278], x:[30,509]
+  255: [Save] Saved corrected image: 1000x1000 to 6027-natur.jpg
+  256: Querying Gemini Vision API for verification...
+  257: ✓ Verification success: Corrected image approved!
+  258: [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\6027-natur.jpg
+  259: [Background Cleaning] Skipped: background not off-white (bg_val=254.0). Pixels kept 100% original.
+  260: [Crop] Detected product+shadow box (Hybrid): 479x197 at y:[81,278], x:[30,509]
+  ...
+  257: ✓ Verification success: Corrected image approved!
+  258: [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\6027-natur.jpg
+  259: [Background Cleaning] Skipped: background not off-white (bg_val=254.0). Pixels kept 100% original.
+  260: [Crop] Detected product+shadow box (Hybrid): 479x197 at y:[81,278], x:[30,509]
+  261: [Save] Saved corrected image: 400x400 to 6027-natur_S.jpg
+  262: ✓ Synced correction to liten: 6027-natur_S.jpg
+  263: [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\6027-natur.jpg
+  ...
+  260: [Crop] Detected product+shadow box (Hybrid): 479x197 at y:[81,278], x:[30,509]
+  261: [Save] Saved corrected image: 400x400 to 6027-natur_S.jpg
+  262: ✓ Synced correction to liten: 6027-natur_S.jpg
+  263: [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\6027-natur.jpg
+  264: [Background Cleaning] Skipped: background not off-white (bg_val=254.0). Pixels kept 100% original.
+  265: [Crop] Detected product+shadow box (Hybrid): 479x197 at y:[81,278], x:[30,509]
+  266: [Save] Saved corrected image: 2000x2000 to 6027-natur_1.jpg
+  ...
+  261: [Save] Saved corrected image: 400x400 to 6027-natur_S.jpg
+  262: ✓ Synced correction to liten: 6027-natur_S.jpg
+  263: [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\6027-natur.jpg
+  264: [Background Cleaning] Skipped: background not off-white (bg_val=254.0). Pixels kept 100% original.
+  265: [Crop] Detected product+shadow box (Hybrid): 479x197 at y:[81,278], x:[30,509]
+  266: [Save] Saved corrected image: 2000x2000 to 6027-natur_1.jpg
+  267: ✓ Synced correction to zoom: 6027-natur_1.jpg
+  ...
+  262: ✓ Synced correction to liten: 6027-natur_S.jpg
+  263: [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\6027-natur.jpg
+  264: [Background Cleaning] Skipped: background not off-white (bg_val=254.0). Pixels kept 100% original.
+  265: [Crop] Detected product+shadow box (Hybrid): 479x197 at y:[81,278], x:[30,509]
+  266: [Save] Saved corrected image: 2000x2000 to 6027-natur_1.jpg
+  267: ✓ Synced correction to zoom: 6027-natur_1.jpg
+  268: [24/73] SKU: 6027-walnut | Name: 'Matbord 'Uovo' 220x115cm - Valnöt' | Cat: table_dining
+  ...
+  265: [Crop] Detected product+shadow box (Hybrid): 479x197 at y:[81,278], x:[30,509]
+  266: [Save] Saved corrected image: 2000x2000 to 6027-natur_1.jpg
+  267: ✓ Synced correction to zoom: 6027-natur_1.jpg
+  268: [24/73] SKU: 6027-walnut | Name: 'Matbord 'Uovo' 220x115cm - Valnöt' | Cat: table_dining
+  269: Querying Gemini Vision API for bounding box...
+  270: ✗ Fails alignment. Width=0.80 (target 0.94), Bottom=0.78 (target 0.89). Autocorrecting...
+  271: [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\6027-walnut.jpg
+  ...
+  266: [Save] Saved corrected image: 2000x2000 to 6027-natur_1.jpg
+  267: ✓ Synced correction to zoom: 6027-natur_1.jpg
+  268: [24/73] SKU: 6027-walnut | Name: 'Matbord 'Uovo' 220x115cm - Valnöt' | Cat: table_dining
+  269: Querying Gemini Vision API for bounding box...
+  270: ✗ Fails alignment. Width=0.80 (target 0.94), Bottom=0.78 (target 0.89). Autocorrecting...
+  271: [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\6027-walnut.jpg
+  272: [Background Cleaning] Skipped: background not off-white (bg_val=254.0). Pixels kept 100% original.
+  ...
+  1167: [610/1896] Zoom SKU: 48944640 - Excluded: Product has a fix folder but slot 3 is not in it. Deleting.
+  1168: [625/1896] Zoom SKU: 6027-natur File: 6027-natur_3.jpg | Cat: table_dining
+  1169: Querying Gemini Vision API for bounding box...
+  1170: ✗ Fails alignment. Width=0.80 (target 0.94), Bottom=0.82 (target 0.89). Autocorrecting...
+  1171: [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\zoom\6027-natur_3.jpg
+  1172: [Background Cleaning] Skipped: background not off-white (bg_val=255.0). Pixels kept 100% original.
+  1173: [Crop] Detected product+shadow box (Hybrid): 1125x560 at y:[153,713], x:[87,1212]
+  ...
+  1170: ✗ Fails alignment. Width=0.80 (target 0.94), Bottom=0.82 (target 0.89). Autocorrecting...
+  1171: [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\zoom\6027-natur_3.jpg
+  1172: [Background Cleaning] Skipped: background not off-white (bg_val=255.0). Pixels kept 100% original.
+  1173: [Crop] Detected product+shadow box (Hybrid): 1125x560 at y:[153,713], x:[87,1212]
+  1174: [Save] Saved corrected image: 2000x2000 to 6027-natur_3.jpg
+  1175: Querying Gemini Vision API for verification...
+  1176: ✓ Verification success: Corrected image approved!
+  ...
+  1173: [Crop] Detected product+shadow box (Hybrid): 1125x560 at y:[153,713], x:[87,1212]
+  1174: [Save] Saved corrected image: 2000x2000 to 6027-natur_3.jpg
+  1175: Querying Gemini Vision API for verification...
+  1176: ✓ Verification success: Corrected image approved!
+  1177: [626/1896] Zoom SKU: 6027-natur File: 6027-natur_4.jpg | Cat: table_dining
+  1178: Querying Gemini Vision API for bounding box...
+  1179: ✗ Fails alignment. Width=0.57 (target 0.94), Bottom=0.85 (target 0.89). Autocorrecting...
+  ...
+  1176: ✓ Verification success: Corrected image approved!
+  1177: [626/1896] Zoom SKU: 6027-natur File: 6027-natur_4.jpg | Cat: table_dining
+  1178: Querying Gemini Vision API for bounding box...
+  1179: ✗ Fails alignment. Width=0.57 (target 0.94), Bottom=0.85 (target 0.89). Autocorrecting...
+  1180: [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\zoom\6027-natur_4.jpg
+  1181: [Background Cleaning] Skipped: background not off-white (bg_val=255.0). Pixels kept 100% original.
+  1182: [Leg Refinement] Refined ymax_gem from 740 to 758 based on dark leg pixels.
+  ...
+  1179: ✗ Fails alignment. Width=0.57 (target 0.94), Bottom=0.85 (target 0.89). Autocorrecting...
+  1180: [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\zoom\6027-natur_4.jpg
+  1181: [Background Cleaning] Skipped: background not off-white (bg_val=255.0). Pixels kept 100% original.
+  1182: [Leg Refinement] Refined ymax_gem from 740 to 758 based on dark leg pixels.
+  1183: [Crop] Detected product+shadow box (Hybrid): 743x656 at y:[105,761], x:[278,1021]
+  1184: [Save] Saved corrected image: 2000x2000 to 6027-natur_4.jpg
+  1185: Querying Gemini Vision API for verification...
+  ...
+  1183: [Crop] Detected product+shadow box (Hybrid): 743x656 at y:[105,761], x:[278,1021]
+  1184: [Save] Saved corrected image: 2000x2000 to 6027-natur_4.jpg
+  1185: Querying Gemini Vision API for verification...
+  1186: ✓ Verification success: Corrected image approved!
+  1187: [629/1896] Zoom SKU: 6027-walnut File: 6027-walnut_3.jpg | Cat: table_dining
+  1188: Querying Gemini Vision API for bounding box...
+  1189: ✗ Fails alignment. Width=0.79 (target 0.94), Bottom=0.81 (target 0.89). Autocorrecting...
+  ...
+
+--- Log for 6027-walnut ---
+  267: ✓ Synced correction to zoom: 6027-natur_1.jpg
+  268: [24/73] SKU: 6027-walnut | Name: 'Matbord 'Uovo' 220x115cm - Valnöt' | Cat: table_dining
+  269: Querying Gemini Vision API for bounding box...
+  270: ✗ Fails alignment. Width=0.80 (target 0.94), Bottom=0.78 (target 0.89). Autocorrecting...
+  271: [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\6027-walnut.jpg
+  272: [Background Cleaning] Skipped: background not off-white (bg_val=254.0). Pixels kept 100% original.
+  273: [Crop] Detected product+shadow box (Hybrid): 503x205 at y:[77,282], x:[19,522]
+  ...
+  270: ✗ Fails alignment. Width=0.80 (target 0.94), Bottom=0.78 (target 0.89). Autocorrecting...
+  271: [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\6027-walnut.jpg
+  272: [Background Cleaning] Skipped: background not off-white (bg_val=254.0). Pixels kept 100% original.
+  273: [Crop] Detected product+shadow box (Hybrid): 503x205 at y:[77,282], x:[19,522]
+  274: [Save] Saved corrected image: 1000x1000 to 6027-walnut.jpg
+  275: Querying Gemini Vision API for verification...
+  276: ✓ Verification success: Corrected image approved!
+  ...
+  273: [Crop] Detected product+shadow box (Hybrid): 503x205 at y:[77,282], x:[19,522]
+  274: [Save] Saved corrected image: 1000x1000 to 6027-walnut.jpg
+  275: Querying Gemini Vision API for verification...
+  276: ✓ Verification success: Corrected image approved!
+  277: [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\6027-walnut.jpg
+  278: [Background Cleaning] Skipped: background not off-white (bg_val=254.0). Pixels kept 100% original.
+  279: [Crop] Detected product+shadow box (Hybrid): 503x205 at y:[77,282], x:[19,522]
+  ...
+  276: ✓ Verification success: Corrected image approved!
+  277: [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\6027-walnut.jpg
+  278: [Background Cleaning] Skipped: background not off-white (bg_val=254.0). Pixels kept 100% original.
+  279: [Crop] Detected product+shadow box (Hybrid): 503x205 at y:[77,282], x:[19,522]
+  280: [Save] Saved corrected image: 400x400 to 6027-walnut_S.jpg
+  281: ✓ Synced correction to liten: 6027-walnut_S.jpg
+  282: [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\6027-walnut.jpg
+  ...
+  279: [Crop] Detected product+shadow box (Hybrid): 503x205 at y:[77,282], x:[19,522]
+  280: [Save] Saved corrected image: 400x400 to 6027-walnut_S.jpg
+  281: ✓ Synced correction to liten: 6027-walnut_S.jpg
+  282: [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\6027-walnut.jpg
+  283: [Background Cleaning] Skipped: background not off-white (bg_val=254.0). Pixels kept 100% original.
+  284: [Crop] Detected product+shadow box (Hybrid): 503x205 at y:[77,282], x:[19,522]
+  285: [Save] Saved corrected image: 2000x2000 to 6027-walnut_1.jpg
+  ...
+  280: [Save] Saved corrected image: 400x400 to 6027-walnut_S.jpg
+  281: ✓ Synced correction to liten: 6027-walnut_S.jpg
+  282: [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\6027-walnut.jpg
+  283: [Background Cleaning] Skipped: background not off-white (bg_val=254.0). Pixels kept 100% original.
+  284: [Crop] Detected product+shadow box (Hybrid): 503x205 at y:[77,282], x:[19,522]
+  285: [Save] Saved corrected image: 2000x2000 to 6027-walnut_1.jpg
+  286: ✓ Synced correction to zoom: 6027-walnut_1.jpg
+  ...
+  281: ✓ Synced correction to liten: 6027-walnut_S.jpg
+  282: [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\6027-walnut.jpg
+  283: [Background Cleaning] Skipped: background not off-white (bg_val=254.0). Pixels kept 100% original.
+  284: [Crop] Detected product+shadow box (Hybrid): 503x205 at y:[77,282], x:[19,522]
+  285: [Save] Saved corrected image: 2000x2000 to 6027-walnut_1.jpg
+  286: ✓ Synced correction to zoom: 6027-walnut_1.jpg
+  287: [25/73] SKU: 717ab-walnut - Already SKIPPED. Restoring (Cached)...
+  ...
+  284: [Crop] Detected product+shadow box (Hybrid): 503x205 at y:[77,282], x:[19,522]
+  285: [Save] Saved corrected image: 2000x2000 to 6027-walnut_1.jpg
+  286: ✓ Synced correction to zoom: 6027-walnut_1.jpg
+  287: [25/73] SKU: 717ab-walnut - Already SKIPPED. Restoring (Cached)...
+  288: [26/73] SKU: 77638 | Name: 'Vägghylla 'Hydra' - Svart' | Cat: shelf_hanging
+  289: Querying Gemini Vision API for bounding box...
+  290: [Fix Match Force] SKU has a manual white background fix match. Forcing auto-correction flow...
+  ...
+  285: [Save] Saved corrected image: 2000x2000 to 6027-walnut_1.jpg
+  286: ✓ Synced correction to zoom: 6027-walnut_1.jpg
+  287: [25/73] SKU: 717ab-walnut - Already SKIPPED. Restoring (Cached)...
+  288: [26/73] SKU: 77638 | Name: 'Vägghylla 'Hydra' - Svart' | Cat: shelf_hanging
+  289: Querying Gemini Vision API for bounding box...
+  290: [Fix Match Force] SKU has a manual white background fix match. Forcing auto-correction flow...
+  291: ✗ Fails alignment. Width=0.37 (target 0.83), Bottom=0.72 (target 0.50). Autocorrecting...
+  ...
+  1186: ✓ Verification success: Corrected image approved!
+  1187: [629/1896] Zoom SKU: 6027-walnut File: 6027-walnut_3.jpg | Cat: table_dining
+  1188: Querying Gemini Vision API for bounding box...
+  1189: ✗ Fails alignment. Width=0.79 (target 0.94), Bottom=0.81 (target 0.89). Autocorrecting...
+  1190: [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\zoom\6027-walnut_3.jpg
+  1191: [Background Cleaning] Skipped: background not off-white (bg_val=255.0). Pixels kept 100% original.
+  1192: [Leg Refinement] Refined ymax_gem from 698 to 706 based on dark leg pixels.
+  ...
+  1189: ✗ Fails alignment. Width=0.79 (target 0.94), Bottom=0.81 (target 0.89). Autocorrecting...
+  1190: [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\zoom\6027-walnut_3.jpg
+  1191: [Background Cleaning] Skipped: background not off-white (bg_val=255.0). Pixels kept 100% original.
+  1192: [Leg Refinement] Refined ymax_gem from 698 to 706 based on dark leg pixels.
+  1193: [Crop] Detected product+shadow box (Hybrid): 1121x552 at y:[157,709], x:[89,1210]
+  1194: [Save] Saved corrected image: 2000x2000 to 6027-walnut_3.jpg
+  1195: Querying Gemini Vision API for verification...
+  ...
+  1193: [Crop] Detected product+shadow box (Hybrid): 1121x552 at y:[157,709], x:[89,1210]
+  1194: [Save] Saved corrected image: 2000x2000 to 6027-walnut_3.jpg
+  1195: Querying Gemini Vision API for verification...
+  1196: ✓ Verification success: Corrected image approved!
+  1197: [630/1896] Zoom SKU: 6027-walnut File: 6027-walnut_4.jpg | Cat: table_dining
+  1198: Querying Gemini Vision API for bounding box...
+  1199: ✗ Fails alignment. Width=0.56 (target 0.94), Bottom=0.87 (target 0.89). Autocorrecting...
+  ...
+  1196: ✓ Verification success: Corrected image approved!
+  1197: [630/1896] Zoom SKU: 6027-walnut File: 6027-walnut_4.jpg | Cat: table_dining
+  1198: Querying Gemini Vision API for bounding box...
+  1199: ✗ Fails alignment. Width=0.56 (target 0.94), Bottom=0.87 (target 0.89). Autocorrecting...
+  1200: [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\zoom\6027-walnut_4.jpg
+  1201: [Background Cleaning] Skipped: background not off-white (bg_val=255.0). Pixels kept 100% original.
+  1202: [Crop] Detected product+shadow box (Hybrid): 736x650 at y:[108,758], x:[282,1018]
+  ...
+  1199: ✗ Fails alignment. Width=0.56 (target 0.94), Bottom=0.87 (target 0.89). Autocorrecting...
+  1200: [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\zoom\6027-walnut_4.jpg
+  1201: [Background Cleaning] Skipped: background not off-white (bg_val=255.0). Pixels kept 100% original.
+  1202: [Crop] Detected product+shadow box (Hybrid): 736x650 at y:[108,758], x:[282,1018]
+  1203: [Save] Saved corrected image: 2000x2000 to 6027-walnut_4.jpg
+  1204: Querying Gemini Vision API for verification...
+  1205: ✓ Verification success: Corrected image approved!
+  ...
+  1202: [Crop] Detected product+shadow box (Hybrid): 736x650 at y:[108,758], x:[282,1018]
+  1203: [Save] Saved corrected image: 2000x2000 to 6027-walnut_4.jpg
+  1204: Querying Gemini Vision API for verification...
+  1205: ✓ Verification success: Corrected image approved!
+  1206: [648/1896] Zoom SKU: 64015-black - Excluded: Product has a fix folder but slot 5 is not in it. Deleting.
+  1207: [649/1896] Zoom SKU: 64015-black - Excluded: Product has a fix folder but slot 6 is not in it. Deleting.
+  1208: [650/1896] Zoom SKU: 64015-black - Excluded: Product has a fix folder but slot 7 is not in it. Deleting.
+  ...
+
+--- Log for rw811 ---
+  583: [57/73] SKU: rh2012-39 - Already SKIPPED. Restoring (Cached)...
+  584: [58/73] SKU: rw811 | Name: 'Pall 'Frans' - Ljusbrun/Svart' | Cat: stool
+  585: Querying Gemini Vision API for bounding box...
+  586: ✗ Fails alignment. Width=0.48 (target 0.54), Bottom=0.95 (target 0.90). Autocorrecting...
+  587: [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\rw811.jpg
+  588: [Background Cleaning] Cut out product onto pure white background (lacks shadow, bg_val=245.0). Furniture pixels kept original.
+  589: [Leg Refinement] Refined ymax_gem from 2823 to 2838 based on dark leg pixels.
+  ...
+  586: ✗ Fails alignment. Width=0.48 (target 0.54), Bottom=0.95 (target 0.90). Autocorrecting...
+  587: [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\rw811.jpg
+  588: [Background Cleaning] Cut out product onto pure white background (lacks shadow, bg_val=245.0). Furniture pixels kept original.
+  589: [Leg Refinement] Refined ymax_gem from 2823 to 2838 based on dark leg pixels.
+  590: [Crop] Detected product+shadow box (Hybrid): 2971x2740 at y:[233,2973], x:[2,2973]
+  591: [Save] Saved corrected image: 1000x1000 to rw811.jpg
+  592: Querying Gemini Vision API for verification...
+  ...
+  590: [Crop] Detected product+shadow box (Hybrid): 2971x2740 at y:[233,2973], x:[2,2973]
+  591: [Save] Saved corrected image: 1000x1000 to rw811.jpg
+  592: Querying Gemini Vision API for verification...
+  593: ✗ Verification failed: The product is not centered horizontally. It is significantly shifted to the right, resulting in a much larger white margin on the left side of the image compared to the right side. The horizontal center is not at 50.0%.. Reverting to original.
+  594: [ensure_square_canvas] Saved 1000x1000 (stool) to rw811.jpg
+  595: [59/73] SKU: sy-8581a - Lifestyle image detected. Skipping.
+  596: [60/73] SKU: wd-18-1-walnut - Lifestyle image detected. Skipping.
+  ...
+  593: ✗ Verification failed: The product is not centered horizontally. It is significantly shifted to the right, resulting in a much larger white margin on the left side of the image compared to the right side. The horizontal center is not at 50.0%.. Reverting to original.
+  594: [ensure_square_canvas] Saved 1000x1000 (stool) to rw811.jpg
+  595: [59/73] SKU: sy-8581a - Lifestyle image detected. Skipping.
+  596: [60/73] SKU: wd-18-1-walnut - Lifestyle image detected. Skipping.
+  597: [61/73] SKU: wd-18-1-whitepigmented | Name: 'Matbord 'Elsa' 135cm - Vitpigmenterad' | Cat: table_dining
+  598: Querying Gemini Vision API for bounding box...
+  599: ✗ Fails alignment. Width=0.60 (target 0.70), Bottom=0.43 (target 0.89). Autocorrecting...
+  ...
+  1622: [1525/1896] Zoom SKU: rio-1-rigth-grace01 - Excluded: Product has a fix folder but slot 9 is not in it. Deleting.
+  1623: [1530/1896] Zoom SKU: rw811 File: rw811_3.jpg | Cat: stool
+  1624: Querying Gemini Vision API for bounding box...
+  1625: ✓ Approved. Detail close-up (cropped to square full-bleed)
+  1626: [make_square_by_cropping] Saved cropped 2000x2000 (centered on bbox) to rw811_3.jpg
+  1627: [1531/1896] Zoom SKU: rw811 File: rw811_4.jpg | Cat: stool
+  1628: Querying Gemini Vision API for bounding box...
+  ...
+  1625: ✓ Approved. Detail close-up (cropped to square full-bleed)
+  1626: [make_square_by_cropping] Saved cropped 2000x2000 (centered on bbox) to rw811_3.jpg
+  1627: [1531/1896] Zoom SKU: rw811 File: rw811_4.jpg | Cat: stool
+  1628: Querying Gemini Vision API for bounding box...
+  1629: ✗ Fails alignment. Width=0.42 (target 0.54), Bottom=0.90 (target 0.90). Autocorrecting...
+  1630: [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\zoom\rw811_4.jpg
+  1631: [Background Cleaning] Cut out product onto pure white background (lacks shadow, bg_val=244.3). Furniture pixels kept original.
+  ...
+  1626: [make_square_by_cropping] Saved cropped 2000x2000 (centered on bbox) to rw811_3.jpg
+  1627: [1531/1896] Zoom SKU: rw811 File: rw811_4.jpg | Cat: stool
+  1628: Querying Gemini Vision API for bounding box...
+  1629: ✗ Fails alignment. Width=0.42 (target 0.54), Bottom=0.90 (target 0.90). Autocorrecting...
+  1630: [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\zoom\rw811_4.jpg
+  1631: [Background Cleaning] Cut out product onto pure white background (lacks shadow, bg_val=244.3). Furniture pixels kept original.
+  1632: [Leg Refinement] Refined ymax_gem from 2680 to 2770 based on dark leg pixels.
+  ...
+  1629: ✗ Fails alignment. Width=0.42 (target 0.54), Bottom=0.90 (target 0.90). Autocorrecting...
+  1630: [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\zoom\rw811_4.jpg
+  1631: [Background Cleaning] Cut out product onto pure white background (lacks shadow, bg_val=244.3). Furniture pixels kept original.
+  1632: [Leg Refinement] Refined ymax_gem from 2680 to 2770 based on dark leg pixels.
+  1633: [Crop] Detected product+shadow box (Hybrid): 2082x2605 at y:[368,2973], x:[891,2973]
+  1634: [Save] Saved corrected image: 2000x2000 to rw811_4.jpg
+  1635: Querying Gemini Vision API for verification...
+  ...
+  1633: [Crop] Detected product+shadow box (Hybrid): 2082x2605 at y:[368,2973], x:[891,2973]
+  1634: [Save] Saved corrected image: 2000x2000 to rw811_4.jpg
+  1635: Querying Gemini Vision API for verification...
+  1636: ✓ Verification success: Corrected image approved!
+  1637: [1532/1896] Zoom SKU: rw811 File: rw811_5.jpg | Cat: stool
+  1638: Querying Gemini Vision API for bounding box...
+  1639: ✗ Fails alignment. Width=0.53 (target 0.54), Bottom=0.90 (target 0.90). Autocorrecting...
+  ...
+  1636: ✓ Verification success: Corrected image approved!
+  1637: [1532/1896] Zoom SKU: rw811 File: rw811_5.jpg | Cat: stool
+  1638: Querying Gemini Vision API for bounding box...
+  1639: ✗ Fails alignment. Width=0.53 (target 0.54), Bottom=0.90 (target 0.90). Autocorrecting...
+  1640: [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\zoom\rw811_5.jpg
+  1641: [Background Cleaning] Cut out product onto pure white background (lacks shadow, bg_val=245.0). Furniture pixels kept original.
+  1642: [Leg Refinement] Refined ymax_gem from 2689 to 2785 based on dark leg pixels.
+  ...
+  1639: ✗ Fails alignment. Width=0.53 (target 0.54), Bottom=0.90 (target 0.90). Autocorrecting...
+  1640: [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\zoom\rw811_5.jpg
+  1641: [Background Cleaning] Cut out product onto pure white background (lacks shadow, bg_val=245.0). Furniture pixels kept original.
+  1642: [Leg Refinement] Refined ymax_gem from 2689 to 2785 based on dark leg pixels.
+  1643: [Crop] Detected product+shadow box (Hybrid): 2354x2701 at y:[272,2973], x:[619,2973]
+  1644: [Save] Saved corrected image: 2000x2000 to rw811_5.jpg
+  1645: Querying Gemini Vision API for verification...
+  ...
+  1643: [Crop] Detected product+shadow box (Hybrid): 2354x2701 at y:[272,2973], x:[619,2973]
+  1644: [Save] Saved corrected image: 2000x2000 to rw811_5.jpg
+  1645: Querying Gemini Vision API for verification...
+  1646: ✓ Verification success: Corrected image approved!
+  1647: [1563/1896] Zoom SKU: sy-8581a-grey - Excluded: Product has a fix folder but slot 5 is not in it. Deleting.
+  1648: [1564/1896] Zoom SKU: sy-8581a-grey - Excluded: Product has a fix folder but slot 6 is not in it. Deleting.
+  1649: [1568/1896] Zoom SKU: sy-8581a-metallic-black - Excluded: Product has a fix folder but slot 5 is not in it. Deleting.
+  ...
+
+--- Log for 99070 ---
+  393: ✓ Synced correction to zoom: 9375%20oak_1.jpg
+  394: [34/73] SKU: 99070 | Name: 'Klädhängare 'Ljusdal' 24cm - Svart' | Cat: cabinet_large
+  395: Querying Gemini Vision API for bounding box...
+  396: [Fix Match Force] SKU has a manual white background fix match. Forcing auto-correction flow...
+  397: ✗ Fails alignment. Width=0.11 (target 0.80), Bottom=0.86 (target 0.90). Autocorrecting...
+  398: [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\Refoma white background fix\shelf\Klädhängare _Ljusdal_ 24cm - Svart\Klädhängare _Ljusdal_ 24cm - Svart-01-W-wonder.jpg
+  399: [Background Cleaning] Skipped: image is fix folder image. Pixels kept 100% original.
+  ...
+  400: [Crop] Detected product+shadow box (Hybrid): 217x1422 at y:[298,1720], x:[890,1107]
+  401: [Save] Saved corrected image: 1000x1000 to 99070.jpg
+  402: Querying Gemini Vision API for verification...
+  403: ✗ Verification failed: The product is not centered horizontally. The main vertical pole and the entire coat rack are significantly shifted to the right, resulting in a much larger empty margin on the left side compared to the right side. This creates an unbalanced composition and does not meet the horizontal centering guideline, even considering allowances for asymmetrical products.. Reverting to original.
+  404: [ensure_square_canvas] Saved 1000x1000 (cabinet_large) to 99070.jpg
+  405: [35/73] SKU: 99566 | Name: 'Stol 'Gandia' - Svart' | Cat: chair_dining
+  406: Querying Gemini Vision API for bounding box...
+  ...
+  403: ✗ Verification failed: The product is not centered horizontally. The main vertical pole and the entire coat rack are significantly shifted to the right, resulting in a much larger empty margin on the left side compared to the right side. This creates an unbalanced composition and does not meet the horizontal centering guideline, even considering allowances for asymmetrical products.. Reverting to original.
+  404: [ensure_square_canvas] Saved 1000x1000 (cabinet_large) to 99070.jpg
+  405: [35/73] SKU: 99566 | Name: 'Stol 'Gandia' - Svart' | Cat: chair_dining
+  406: Querying Gemini Vision API for bounding box...
+  407: ✗ Fails alignment. Width=0.76 (target 0.68), Bottom=0.96 (target 0.90). Autocorrecting...
+  408: [Source Match] Using raw original image from: C:\Users\AndronikLindgren\OneDrive - CaMa Gruppen AB\Pictures\turboflow\temp_raw_images\artiklar\99566.jpg
+  409: [Background Cleaning] Skipped: background not off-white (bg_val=254.0). Pixels kept 100% original.
+  ...
+  1360: [893/1896] Zoom SKU: 99066 - Excluded: Product has a fix folder but slot 4 is not in it. Deleting.
+  1361: [896/1896] Zoom SKU: 99070 - Excluded: Product has a fix folder but slot 3 is not in it. Deleting.
+  1362: [897/1896] Zoom SKU: 99070 - Excluded: Product has a fix folder but slot 4 is not in it. Deleting.
+  1363: [900/1896] Zoom SKU: 99556 - Excluded: Product has a fix folder but slot 7 is not in it. Deleting.
+  1364: [906/1896] Zoom SKU: 99566 File: 99566_6.jpg | Cat: chair_dining
+  1365: Querying Gemini Vision API for bounding box...
+  1366: ✓ Approved. Approved (Within tolerance)
+  ...
+  1361: [896/1896] Zoom SKU: 99070 - Excluded: Product has a fix folder but slot 3 is not in it. Deleting.
+  1362: [897/1896] Zoom SKU: 99070 - Excluded: Product has a fix folder but slot 4 is not in it. Deleting.
+  1363: [900/1896] Zoom SKU: 99556 - Excluded: Product has a fix folder but slot 7 is not in it. Deleting.
+  1364: [906/1896] Zoom SKU: 99566 File: 99566_6.jpg | Cat: chair_dining
+  1365: Querying Gemini Vision API for bounding box...
+  1366: ✓ Approved. Approved (Within tolerance)
+  1367: [ensure_square_canvas] Saved 2000x2000 (chair_dining) to 99566_6.jpg
+  ...
+
+--- Log for throw-striped-12 ---
+  Not found in log.
+
+--- Log for dc-070 ---
+  1451: [1095/1896] Zoom SKU: da-1019 - Excluded: Product has a fix folder but slot 9 is not in it. Deleting.
+  1452: [1110/1896] Zoom SKU: dc-070 - Excluded: Product has a fix folder but slot 10 is not in it. Deleting.
+  1453: [1111/1896] Zoom SKU: dc-070 - Excluded: Product has a fix folder but slot 7 is not in it. Deleting.
+  1454: [1112/1896] Zoom SKU: dc-070 - Excluded: Product has a fix folder but slot 8 is not in it. Deleting.
+  1455: [1113/1896] Zoom SKU: dc-070 - Excluded: Product has a fix folder but slot 9 is not in it. Deleting.
+  1456: [1130/1896] Zoom SKU: ellecd01-green - Excluded: Product has a fix folder but slot 3 is not in it. Deleting.
+  1457: [1137/1896] Zoom SKU: ellecd03-black - Excluded: Product has a fix folder but slot 4 is not in it. Deleting.
+  ...
+  1452: [1110/1896] Zoom SKU: dc-070 - Excluded: Product has a fix folder but slot 10 is not in it. Deleting.
+  1453: [1111/1896] Zoom SKU: dc-070 - Excluded: Product has a fix folder but slot 7 is not in it. Deleting.
+  1454: [1112/1896] Zoom SKU: dc-070 - Excluded: Product has a fix folder but slot 8 is not in it. Deleting.
+  1455: [1113/1896] Zoom SKU: dc-070 - Excluded: Product has a fix folder but slot 9 is not in it. Deleting.
+  1456: [1130/1896] Zoom SKU: ellecd01-green - Excluded: Product has a fix folder but slot 3 is not in it. Deleting.
+  1457: [1137/1896] Zoom SKU: ellecd03-black - Excluded: Product has a fix folder but slot 4 is not in it. Deleting.
+  1458: [1138/1896] Zoom SKU: ellecd03-black - Excluded: Product has a fix folder but slot 5 is not in it. Deleting.
+  ...
+  1453: [1111/1896] Zoom SKU: dc-070 - Excluded: Product has a fix folder but slot 7 is not in it. Deleting.
+  1454: [1112/1896] Zoom SKU: dc-070 - Excluded: Product has a fix folder but slot 8 is not in it. Deleting.
+  1455: [1113/1896] Zoom SKU: dc-070 - Excluded: Product has a fix folder but slot 9 is not in it. Deleting.
+  1456: [1130/1896] Zoom SKU: ellecd01-green - Excluded: Product has a fix folder but slot 3 is not in it. Deleting.
+  1457: [1137/1896] Zoom SKU: ellecd03-black - Excluded: Product has a fix folder but slot 4 is not in it. Deleting.
+  1458: [1138/1896] Zoom SKU: ellecd03-black - Excluded: Product has a fix folder but slot 5 is not in it. Deleting.
+  1459: [1139/1896] Zoom SKU: ellecd03-black - Excluded: Product has a fix folder but slot 6 is not in it. Deleting.
+  ...
+  1454: [1112/1896] Zoom SKU: dc-070 - Excluded: Product has a fix folder but slot 8 is not in it. Deleting.
+  1455: [1113/1896] Zoom SKU: dc-070 - Excluded: Product has a fix folder but slot 9 is not in it. Deleting.
+  1456: [1130/1896] Zoom SKU: ellecd01-green - Excluded: Product has a fix folder but slot 3 is not in it. Deleting.
+  1457: [1137/1896] Zoom SKU: ellecd03-black - Excluded: Product has a fix folder but slot 4 is not in it. Deleting.
+  1458: [1138/1896] Zoom SKU: ellecd03-black - Excluded: Product has a fix folder but slot 5 is not in it. Deleting.
+  1459: [1139/1896] Zoom SKU: ellecd03-black - Excluded: Product has a fix folder but slot 6 is not in it. Deleting.
+  1460: [1140/1896] Zoom SKU: ellecd03-black - Excluded: Product has a fix folder but slot 7 is not in it. Deleting.
+  ...
+
+--- Log for rio-1-fortis01 ---
+  Not found in log.
+
+--- Log for ellewd02-black ---
+  1516: [1182/1896] Zoom SKU: ellesc01-white - Excluded: Product has a fix folder but slot 7 is not in it. Deleting.
+  1517: [1186/1896] Zoom SKU: ellewd02-black - Excluded: Product has a fix folder but slot 3 is not in it. Deleting.
+  1518: [1189/1896] Zoom SKU: fc19-black - Excluded: Product has a fix folder but slot 10 is not in it. Deleting.
+  1519: [1199/1896] Zoom SKU: fc19-natur - Excluded: Product has a fix folder but slot 10 is not in it. Deleting.
+  1520: [1214/1896] Zoom SKU: h000018217 - Excluded: Product has a fix folder but slot 6 is not in it. Deleting.
+  1521: [1216/1896] Zoom SKU: h000018249 - Excluded: Product has a fix folder but slot 7 is not in it. Deleting.
+  1522: [1227/1896] Zoom SKU: h000020139 File: h000020139_2.jpg | Cat: table_coffee
+  ...

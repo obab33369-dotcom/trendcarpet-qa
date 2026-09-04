@@ -1,0 +1,141 @@
+Found 22 true cross-product design mismatches.
+
+[MISMATCH DETECTED] Hash: bf72033bfd4665f8f8f6ab927e48c134
+  * SKU: RG01-19
+    - File: 2007_matta-aravelle-gra-multi.jpg -> Resolved to: Matta 'Aravelle' - Grå/Multi
+    - File: RG01-19.jpg -> Resolved to: Matta 'Aravelle' - Grå/Multi
+  * SKU: RG01-1
+    - File: 2087_matta-seronis-svart-beige.jpg -> Resolved to: Matta 'Seronis' - Svart/Beige
+--------------------------------------------------
+[MISMATCH DETECTED] Hash: 61a6e062ae027347d16d01e84e48e590
+  * SKU: RG01-6
+    - File: 2104_matta-velenna-svart-beige.jpg -> Resolved to: Matta 'Velenna' - Svart/Grå
+  * SKU: RG01-64
+    - File: RG01-64.jpg -> Resolved to: Matta 'Arvella' - Brun
+    - File: 2009_matta-arvella-brun-lila.jpg -> Resolved to: Matta 'Arvella' - Brun
+--------------------------------------------------
+[MISMATCH DETECTED] Hash: 0f57f664d0757c464fad49375d3b5a0c
+  * SKU: ELLENS01-white
+    - File: 2014_matta-aureline-gron.jpg -> Resolved to: Sängbord 'Elle' - Vit/Mässing
+  * SKU: RG01-9
+    - File: RG01-9.jpg -> Resolved to: Matta 'Aureline' - Grön
+--------------------------------------------------
+[MISMATCH DETECTED] Hash: 02eb93ab301149bf5c513c0a75b975fe
+  * SKU: 4978-walnut
+    - File: 2023_matta-carrano-svart-vit.jpg -> Resolved to: Sidobord/sängbord 'Sapri' 45x60cm - Valnöt/Travertin
+  * SKU: RG01-70
+    - File: RG01-70.jpg -> Resolved to: Matta 'Carrano' - Svart/Vit
+--------------------------------------------------
+[MISMATCH DETECTED] Hash: c68b354b729aa1f1753c4a732c1572c5
+  * SKU: 64015-black
+    - File: 2029_matta-cozy-luxury-gra-vit-160x230.jpg -> Resolved to: Stol 'Bistro' - Trä/Svart
+  * SKU: Pet-Pattern-160x230
+    - File: Pet-Pattern-160x230.jpg -> Resolved to: Matta 'Cozy Luxury' 160x230cm - Grå/Vit
+--------------------------------------------------
+[MISMATCH DETECTED] Hash: b27e651a35285882bfaf6e32fc733aab
+  * SKU: 96091
+    - File: 2040_matta-forma-beige.jpg -> Resolved to: Barstol 'Tärnsjö' - Brun
+  * SKU: RG01-33
+    - File: RG01-33.jpg -> Resolved to: Matta 'Forma' - Beige
+--------------------------------------------------
+[MISMATCH DETECTED] Hash: 03ef582323ad59e447f169341d634d62
+  * SKU: 1315
+    - File: 2047_matta-lorano-brun.jpg -> Resolved to: Soffbord inkl. tidningsställ 'Ylva' - Natur/Svart
+  * SKU: RG01-77
+    - File: RG01-77.jpg -> Resolved to: Matta 'Lorano' - Multi
+--------------------------------------------------
+[MISMATCH DETECTED] Hash: 0a5de352d6f32c59d396fcedce2b584b
+  * SKU: 91517
+    - File: 2053_matta-marionae-brun-beige.jpg -> Resolved to: Matbord 'Örsjö' Runt 105cm - Natur
+  * SKU: RG01-43
+    - File: RG01-43.jpg -> Resolved to: Matta 'Marionae' - Brun/Beige
+--------------------------------------------------
+[MISMATCH DETECTED] Hash: b8936940df0fd05caab93cefe3ec6979
+  * SKU: 31322
+    - File: 2057_matta-markelo-gul-multi.jpg -> Resolved to: Soffbord 'Bilbao' Runt 80cm - Grå
+  * SKU: RG01-59
+    - File: RG01-59.jpg -> Resolved to: Matta 'Markelo' - Gul/Multi
+--------------------------------------------------
+[MISMATCH DETECTED] Hash: e8c14fe557b0fd3793130e62f9246db2
+  * SKU: C-970-grey
+    - File: 2062_matta-merano-gra.jpg -> Resolved to: Stol 'Elegant' - Grå
+  * SKU: RG01-61
+    - File: RG01-61.jpg -> Resolved to: Matta 'Merano' - Grå
+--------------------------------------------------
+[MISMATCH DETECTED] Hash: 4cadb180bcf6d2fdee48b9d7eb67b0b6
+  * SKU: WS-ND010-walnut-darkgrey
+    - File: 2066_matta-molirae-brun-beige.jpg -> Resolved to: Stol 'Sirdal' - Valnöt/Mörkgrå
+  * SKU: RG01-16
+    - File: RG01-16.jpg -> Resolved to: Matta 'Molirae' - Brun/Beige
+--------------------------------------------------
+[MISMATCH DETECTED] Hash: 574c6812db2a5bcbd9c380f47b970e49
+  * SKU: 2372-1-natur
+    - File: 2075_matta-rivetta-beige-gron.jpg -> Resolved to: Tv-bänk 'Myshult' 160x55cm - Natur
+  * SKU: RG01-37
+    - File: RG01-37.jpg -> Resolved to: Matta 'Rivetta' - Beige/Grön
+--------------------------------------------------
+[MISMATCH DETECTED] Hash: 828f8c0f64b87510946137d49c3dc480
+  * SKU: 88322
+    - File: 2079_matta-savelle-gron.jpg -> Resolved to: Tv Bank Cefal Natur Vit
+  * SKU: RG01-97
+    - File: RG01-97.jpg -> Resolved to: Matta 'Savelle' - Grön
+--------------------------------------------------
+[MISMATCH DETECTED] Hash: 83810d4f2fd25f411d2de591e7d19245
+  * SKU: RG01-22
+    - File: RG01-22.jpg -> Resolved to: Matta 'Savena' - Gul/Grå
+  * SKU: 91517
+    - File: 2083_matta-savena-gul-gra.jpg -> Resolved to: Matbord 'Örsjö' Runt 105cm - Natur
+--------------------------------------------------
+[MISMATCH DETECTED] Hash: 426c2358ea5044e4f2bc8dbcfc539a11
+  * SKU: RG01-499
+    - File: RG01-499.jpg -> Resolved to: Matta 'Orlisse' - Brun
+  * SKU: RG01-49
+    - File: 2089_matta-sorvento-svart-beige.jpg -> Resolved to: Matta 'Sorvento' - Svart/Beige
+--------------------------------------------------
+[MISMATCH DETECTED] Hash: 3ac7e9ee66999d56b61f310527682de4
+  * SKU: RG01-51
+    - File: RG01-51.jpg -> Resolved to: Matta 'Sorvento' - Svart/Grå
+  * SKU: matgrupp42
+    - File: 2090_matta-sorvento-svart-gra.jpg -> Resolved to: Matgrupp 'Nordisk Elsa' - 1 Bord & 4 Stolar
+--------------------------------------------------
+[MISMATCH DETECTED] Hash: 9480fbfcf17e7f9e8a3044327ff923da
+  * SKU: Jute-Striped-160.230
+    - File: Jute-Striped-160.230.jpg -> Resolved to: Matta 'Striped Sand' - Natur 160x230
+  * SKU: matgrupp42
+    - File: 2091_matta-striped-sand-natur-160x230.jpg -> Resolved to: Matgrupp 'Nordisk Elsa' - 1 Bord & 4 Stolar
+--------------------------------------------------
+[MISMATCH DETECTED] Hash: 04f0aa472b8fe1da4981c831c627cf8d
+  * SKU: DETROITST01
+    - File: 2093_matta-taliana-rosa-rod.jpg -> Resolved to: Sängbord 'Detroit' - Valnöt/Svart
+  * SKU: RG01-80
+    - File: RG01-80.jpg -> Resolved to: Matta 'Taliana' - Rosa/Röd
+--------------------------------------------------
+[MISMATCH DETECTED] Hash: 8419bc4b2fa92071722c58828f8b57a1
+  * SKU: H000021092
+    - File: 2100_matta-velenna-160x230-cm-ljusbrun-beige.jpg -> Resolved to: Sidobord 'Moliden' - Natur
+  * SKU: RG019
+    - File: RG019.jpg -> Resolved to: Matta 'Velenna' 200x280 cm - Blå
+    - File: 2103_matta-velenna-200x280-cm-rod-beige.jpg -> Resolved to: Matta 'Velenna' 200x280 cm - Blå
+  * SKU: RG016
+    - File: RG016.jpg -> Resolved to: Matta 'Velenna' 160x230 cm - Blå
+--------------------------------------------------
+[MISMATCH DETECTED] Hash: a106150efa98a86fc61907dcf2072b3c
+  * SKU: RG017
+    - File: 2102_matta-velenna-200x280-cm-ljusbrun-beige.jpg -> Resolved to: Matta 'Velenna' 200x280 cm - Röd/Beige
+    - File: RG017.jpg -> Resolved to: Matta 'Velenna' 200x280 cm - Röd/Beige
+  * SKU: RG018
+    - File: 2101_matta-velenna-160x230-cm-rod-beige.jpg -> Resolved to: Matta 'Velenna' 160x230 cm - Röd/Beige
+    - File: RG018.jpg -> Resolved to: Matta 'Velenna' 160x230 cm - Röd/Beige
+--------------------------------------------------
+[MISMATCH DETECTED] Hash: ecd841b45a58f96c2829dc48fcbf6b81
+  * SKU: H000017986
+    - File: 2107_matta-ventaro-beige.jpg -> Resolved to: Skrivbord 'Neptun' - Vit
+  * SKU: RG01-89
+    - File: RG01-89.jpg -> Resolved to: Matta 'Ventaro' - Beige
+--------------------------------------------------
+[MISMATCH DETECTED] Hash: 454305a115ccd29a7a4159507ea01201
+  * SKU: RG01-85
+    - File: 2113_matta-ventaro-rod-multi.jpg -> Resolved to: Matta 'Ventaro' - Röd/Multi
+  * SKU: RG01-855
+    - File: RG01-855.jpg -> Resolved to: Matta 'Oralia' - Vit/Multi
+--------------------------------------------------

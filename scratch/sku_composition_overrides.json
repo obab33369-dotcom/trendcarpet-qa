@@ -1,0 +1,931 @@
+{
+  "Rio-1-left-Grace01": {
+    "1": {
+      "adjust_x": 0,
+      "adjust_y": 248,
+      "scale_factor_override": null,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "4": {
+      "adjust_x": 0,
+      "adjust_y": 218,
+      "scale_factor_override": null,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "5": {
+      "adjust_x": 0,
+      "adjust_y": 159,
+      "scale_factor_override": null,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "6": {
+      "adjust_x": 0,
+      "adjust_y": 247,
+      "scale_factor_override": null,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "76661": {
+    "1": {
+      "adjust_x": -2,
+      "adjust_y": -37,
+      "scale_factor_override": 1.2976744186046512,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "2": {
+      "adjust_x": 0,
+      "adjust_y": -47,
+      "scale_factor_override": null,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "3": {
+      "adjust_x": -1,
+      "adjust_y": -86,
+      "scale_factor_override": null,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "6": {
+      "adjust_x": 1,
+      "adjust_y": -7,
+      "scale_factor_override": null,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "WS-ND006-walnut-grey": {
+    "5": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 30.0,
+      "blend_range": 110.0
+    }
+  },
+  "81699": {
+    "4": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 0.884310618066561,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "WS-C1003": {
+    "1": {
+      "adjust_x": -1,
+      "adjust_y": -37,
+      "scale_factor_override": 0.8885350318471338,
+      "tolerance": 30.0,
+      "blend_range": 110.0
+    },
+    "2": {
+      "adjust_x": -1,
+      "adjust_y": -28,
+      "scale_factor_override": null,
+      "tolerance": 30.0,
+      "blend_range": 110.0
+    },
+    "3": {
+      "adjust_x": 0,
+      "adjust_y": -53,
+      "scale_factor_override": null,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "60341": {
+    "6": {
+      "adjust_x": 0,
+      "adjust_y": -37,
+      "scale_factor_override": 0.9097826086956522,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "20117-3": {
+    "5": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 0.9150802139037434,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "H000020139": {
+    "3": {
+      "adjust_x": 0,
+      "adjust_y": -9,
+      "scale_factor_override": null,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "76660": {
+    "3": {
+      "adjust_x": -1,
+      "adjust_y": -25,
+      "scale_factor_override": 1.2548188126445643,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "5": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.0852927910562837,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "H000021093": {
+    "1": {
+      "adjust_x": 160,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "WS-ND004-walnut-beige": {
+    "6": {
+      "adjust_x": -1,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 30.0,
+      "blend_range": 110.0
+    }
+  },
+  "WS-ND007-valnot-morkgra": {
+    "5": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.3002557544757034,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "1081-natural": {
+    "3": {
+      "adjust_x": 16,
+      "adjust_y": 0,
+      "scale_factor_override": 1.0151607034566403,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "2300232": {
+    "1": {
+      "adjust_x": -1,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 20.0,
+      "blend_range": 90.0
+    }
+  },
+  "J9715": {
+    "4": {
+      "adjust_x": 4,
+      "adjust_y": 0,
+      "scale_factor_override": 1.0167557932263815,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "SY-8581A-grey": {
+    "6": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.046808510638298,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "WA-2819-1-natural": {
+    "4": {
+      "adjust_x": -1,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 25.0,
+      "blend_range": 100.0
+    }
+  },
+  "19023-C": {
+    "1": {
+      "adjust_x": -1,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 30.0,
+      "blend_range": 110.0
+    },
+    "2": {
+      "adjust_x": -1,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 20.0,
+      "blend_range": 90.0
+    }
+  },
+  "1400042": {
+    "4": {
+      "adjust_x": 1,
+      "adjust_y": -5,
+      "scale_factor_override": null,
+      "tolerance": 30.0,
+      "blend_range": 110.0
+    },
+    "1": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 5.0,
+      "blend_range": 30.0,
+      "highlight_threshold": 170.0,
+      "highlight_factor": 0.4
+    }
+  },
+  "1211-C": {
+    "2": {
+      "adjust_x": -7,
+      "adjust_y": 0,
+      "scale_factor_override": 1.6229916897506926,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "9": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.6229916897506926,
+      "tolerance": 20.0,
+      "blend_range": 90.0
+    }
+  },
+  "1211-C-Oak": {
+    "2": {
+      "adjust_x": -7,
+      "adjust_y": 0,
+      "scale_factor_override": 1.6229916897506926,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "LUXDT01": {
+    "6": {
+      "adjust_x": 16,
+      "adjust_y": 0,
+      "scale_factor_override": 1.0427787934186472,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "1211-C-Black": {
+    "2": {
+      "adjust_x": -8,
+      "adjust_y": 0,
+      "scale_factor_override": 1.6297635605006955,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "6": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.4095825034770517,
+      "tolerance": 30.0,
+      "blend_range": 110.0
+    }
+  },
+  "1200180": {
+    "8": {
+      "adjust_x": -279,
+      "adjust_y": -26,
+      "scale_factor_override": 1.2158022857142858,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "108004": {
+    "8": {
+      "adjust_x": -90,
+      "adjust_y": -1,
+      "scale_factor_override": 1.3851914062500001,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "102088": {
+    "7": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 0.8914086971964005,
+      "tolerance": 30.0,
+      "blend_range": 110.0
+    }
+  },
+  "91621": {
+    "4": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 25.0,
+      "blend_range": 100.0
+    }
+  },
+  "82020": {
+    "1": {
+      "adjust_x": -2,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 20.0,
+      "blend_range": 90.0
+    },
+    "2": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 25.0,
+      "blend_range": 100.0
+    },
+    "3": {
+      "adjust_x": -1,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 25.0,
+      "blend_range": 100.0
+    }
+  },
+  "H000016832": {
+    "3": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 20.0,
+      "blend_range": 90.0
+    },
+    "4": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 25.0,
+      "blend_range": 100.0
+    }
+  },
+  "102094": {
+    "3": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 25.0,
+      "blend_range": 100.0
+    },
+    "4": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 25.0,
+      "blend_range": 100.0
+    }
+  },
+  "71940": {
+    "4": {
+      "adjust_x": -1,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 20.0,
+      "blend_range": 90.0
+    }
+  },
+  "0000104589": {
+    "2": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 20.0,
+      "blend_range": 90.0
+    }
+  },
+  "99556": {
+    "2": {
+      "adjust_x": -1,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 20.0,
+      "blend_range": 90.0
+    },
+    "3": {
+      "adjust_x": -1,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 20.0,
+      "blend_range": 90.0
+    }
+  },
+  "2010001196266": {
+    "4": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 20.0,
+      "blend_range": 90.0
+    },
+    "7": {
+      "adjust_x": -1,
+      "adjust_y": 0,
+      "scale_factor_override": 1.3453322119428093,
+      "tolerance": 20.0,
+      "blend_range": 90.0
+    }
+  },
+  "H000019037": {
+    "4": {
+      "adjust_x": -1,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 20.0,
+      "blend_range": 90.0
+    }
+  },
+  "104624": {
+    "2": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 20.0,
+      "blend_range": 90.0
+    }
+  },
+  "H000018249": {
+    "2": {
+      "adjust_x": -2,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 20.0,
+      "blend_range": 90.0
+    },
+    "3": {
+      "adjust_x": -1,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 30.0,
+      "blend_range": 110.0
+    },
+    "4": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.5130952380952383,
+      "tolerance": 30.0,
+      "blend_range": 110.0
+    }
+  },
+  "0000107482": {
+    "2": {
+      "adjust_x": -2,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 30.0,
+      "blend_range": 110.0
+    },
+    "4": {
+      "adjust_x": -1,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 20.0,
+      "blend_range": 90.0
+    },
+    "5": {
+      "adjust_x": -1,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 25.0,
+      "blend_range": 100.0
+    }
+  },
+  "107425": {
+    "2": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 20.0,
+      "blend_range": 90.0
+    },
+    "4": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 30.0,
+      "blend_range": 110.0
+    }
+  },
+  "97828": {
+    "3": {
+      "adjust_x": -1,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 20.0,
+      "blend_range": 90.0
+    },
+    "4": {
+      "adjust_x": -1,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 25.0,
+      "blend_range": 100.0
+    }
+  },
+  "102084": {
+    "2": {
+      "adjust_x": -1,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 20.0,
+      "blend_range": 90.0
+    }
+  },
+  "WS-18001": {
+    "3": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.4057142857142857,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "4": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.3073142857142859,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "9": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.4057142857142857,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "10": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.2158022857142858,
+      "tolerance": 20.0,
+      "blend_range": 90.0
+    }
+  },
+  "T8047-boucle-beige": {
+    "6": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.2456520113314449,
+      "tolerance": 25.0,
+      "blend_range": 100.0
+    },
+    "7": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.2456520113314449,
+      "tolerance": 30.0,
+      "blend_range": 110.0
+    }
+  },
+  "19791-white-oak-grey": {
+    "1": {
+      "adjust_x": -1,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "WS-8651A-Blackbrown-NEW": {
+    "4": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.51610337972167,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "WX-7001-grey-metallic": {
+    "5": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.2838383838383838,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "WS-8651A-BlackBlack-NEW": {
+    "7": {
+      "adjust_x": 179,
+      "adjust_y": 0,
+      "scale_factor_override": 0.9461068339371189,
+      "tolerance": 30.0,
+      "blend_range": 110.0
+    },
+    "8": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.0938915873940558,
+      "tolerance": 25.0,
+      "blend_range": 100.0
+    },
+    "9": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.0938915873940558,
+      "tolerance": 25.0,
+      "blend_range": 100.0
+    },
+    "1": {
+      "adjust_x": 111,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "3": {
+      "adjust_x": -165,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "DC-087-RETRO": {
+    "2": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.3992660550458718,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "SY-8581A": {
+    "6": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.1694552127659577,
+      "tolerance": 20.0,
+      "blend_range": 90.0
+    },
+    "7": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.3521276595744682,
+      "tolerance": 20.0,
+      "blend_range": 90.0
+    },
+    "8": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.3521276595744682,
+      "tolerance": 20.0,
+      "blend_range": 90.0
+    }
+  },
+  "DC-070": {
+    "7": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.1265119385140907,
+      "tolerance": 25.0,
+      "blend_range": 100.0
+    }
+  },
+  "T8044-white": {
+    "9": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.2409647036688618,
+      "tolerance": 30.0,
+      "blend_range": 110.0
+    },
+    "10": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.2409647036688618,
+      "tolerance": 30.0,
+      "blend_range": 110.0
+    }
+  },
+  "BS-605A-Black": {
+    "8": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.250374862559242,
+      "tolerance": 30.0,
+      "blend_range": 110.0
+    }
+  },
+  "BS-605A-Brown": {
+    "10": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.4637236084452976,
+      "tolerance": 20.0,
+      "blend_range": 90.0
+    }
+  },
+  "LINK-SM11-dark": {
+    "2": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.3838400000000002,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "WD2001-KD-white": {
+    "9": {
+      "adjust_x": 19,
+      "adjust_y": 0,
+      "scale_factor_override": 0.9734531200517066,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "10": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 0.9734531200517066,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "1": {
+      "adjust_x": 311,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "3": {
+      "adjust_x": -65,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    },
+    "2": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.3992660550458718,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "BTY-18-P6-silver": {
+    "8": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 1.1591788049209142,
+      "tolerance": 25.0,
+      "blend_range": 100.0
+    }
+  },
+  "91472": {
+    "4": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 0.8847780126849895,
+      "tolerance": 20.0,
+      "blend_range": 90.0
+    }
+  },
+  "78145": {
+    "3": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 0.8857142857142857,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "WS-8652": {
+    "1": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 35.0,
+      "blend_range": 140.0
+    },
+    "2": {
+      "adjust_x": -1,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 35.0,
+      "blend_range": 140.0
+    }
+  },
+  "DC-149M-green": {
+    "7": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 0.7232157236842106,
+      "tolerance": 30.0,
+      "blend_range": 110.0
+    }
+  },
+  "100438": {
+    "4": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 0.8074113287453679,
+      "tolerance": 20.0,
+      "blend_range": 90.0
+    },
+    "6": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 0.6983300582318689,
+      "tolerance": 30.0,
+      "blend_range": 110.0
+    }
+  },
+  "102086": {
+    "6": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 0.8857142857142857,
+      "tolerance": 20.0,
+      "blend_range": 90.0
+    }
+  },
+  "102460": {
+    "8": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 0.6968544532488116,
+      "tolerance": 30.0,
+      "blend_range": 110.0
+    }
+  },
+  "107927": {
+    "3": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 0.6900797872340426,
+      "tolerance": 30.0,
+      "blend_range": 110.0
+    }
+  },
+  "1310-L-S": {
+    "8": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 0.7900716479017401,
+      "tolerance": 20.0,
+      "blend_range": 90.0
+    },
+    "9": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 0.6833329682702151,
+      "tolerance": 30.0,
+      "blend_range": 110.0
+    },
+    "10": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": 0.6833329682702151,
+      "tolerance": 30.0,
+      "blend_range": 110.0
+    }
+  },
+  "102560": {
+    "2": {
+      "adjust_x": 0,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 20.0,
+      "blend_range": 90.0
+    }
+  },
+  "19791-black-oak": {
+    "1": {
+      "adjust_x": 246,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  },
+  "19791-walnut": {
+    "1": {
+      "adjust_x": -13,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 30.0,
+      "blend_range": 110.0
+    },
+    "3": {
+      "adjust_x": -18,
+      "adjust_y": 0,
+      "scale_factor_override": null,
+      "tolerance": 15.0,
+      "blend_range": 80.0
+    }
+  }
+}

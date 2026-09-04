@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trendcarpet - Jämförelse Studio Huvudbilder (-01)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #0c0e14;
+            --bg-panel: #141721;
+            --bg-card: #1c202e;
+            --bg-card-hover: #262c3e;
+            --accent: #3b82f6;
+            --accent-hover: #60a5fa;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: #232838;
+            --border-light: #333a50;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --orig-badge: #475569;
+            --v2-badge: #059669;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            user-select: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-panel);
+            border-bottom: 1px solid var(--border);
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 100;
+            flex-shrink: 0;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .badge-batch {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 6px;
+            letter-spacing: 0.02em;
+        }
+
+        .top-info {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .stat-badge {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 5px 12px;
+            border-radius: 6px;
+        }
+
+        .stat-badge strong {
+            color: var(--text-main);
+        }
+
+        /* Main Container */
+        .app-container {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Sidebar */
+        aside {
+            width: 320px;
+            background-color: var(--bg-panel);
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .search-box {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .search-input-wrap {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-input-wrap input {
+            width: 100%;
+            background-color: var(--bg-main);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 9px 12px 9px 36px;
+            color: var(--text-main);
+            font-size: 0.85rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-input-wrap input:focus {
+            border-color: var(--accent);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 12px;
+            color: var(--text-muted);
+            width: 16px;
+            height: 16px;
+        }
+
+        .rug-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .rug-list::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .rug-list::-webkit-scrollbar-thumb {
+            background: var(--border-light);
+            border-radius: 3px;
+        }
+
+        .rug-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 10px;
+            border-radius: 8px;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            border: 1px solid transparent;
+        }
+
+        .rug-item:hover {
+            background-color: var(--bg-card);
+        }
+
+        .rug-item.active {
+            background-color: var(--bg-card-hover);
+            border-color: var(--accent);
+        }
+
+        .rug-thumb {
+            width: 44px;
+            height: 44px;
+            border-radius: 6px;
+            object-fit: cover;
+            background-color: #fff;
+            flex-shrink: 0;
+            border: 1px solid var(--border);
+        }
+
+        .rug-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .rug-title {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-main);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .rug-sub {
+            font-size: 0.74rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 2px;
+        }
+
+        .gradient-pill {
+            font-size: 0.68rem;
+            padding: 1px 5px;
+            border-radius: 4px;
+            font-weight: 600;
+            background-color: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+        }
+
+        /* Main Workspace */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--bg-main);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Top Bar in Workspace */
+        .workspace-header {
+            padding: 12px 24px;
+            background-color: rgba(20, 23, 33, 0.95);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 10;
+            flex-shrink: 0;
+        }
+
+        .current-rug-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .current-rug-num {
+            background: var(--bg-card);
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        .quick-nav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-nav {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.82rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.15s ease;
+        }
+
+        .btn-nav:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-light);
+        }
+
+        /* Side-by-Side Comparison Container */
+        .comparison-stage {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 20px;
+            overflow: hidden;
+            background: radial-gradient(circle at center, #151824 0%, #0a0c10 100%);
+        }
+
+        .stage-pane {
+            display: flex;
+            flex-direction: column;
+            background-color: var(--bg-panel);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .pane-header {
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pane-badge {
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+            letter-spacing: 0.04em;
+        }
+
+        .pane-badge.orig {
+            background: var(--orig-badge);
+            color: #fff;
+        }
+
+        .pane-badge.v2 {
+            background: var(--v2-badge);
+            color: #fff;
+            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+        }
+
+        .pane-filename {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            font-family: monospace;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 250px;
+        }
+
+        .image-view-wrapper {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+            position: relative;
+            overflow: hidden;
+            padding: 10px;
+        }
+
+        .image-view-wrapper img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-radius: 4px;
+        }
+
+        .pane-footer {
+            padding: 10px 16px;
+            background-color: var(--bg-card);
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            font-size: 0.8rem;
+        }
+
+        .metric-cell {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+        }
+
+        .metric-cell .label {
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .metric-cell .value {
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .val-plus {
+            color: #34d399;
+        }
+
+        .val-minus {
+            color: #60a5fa;
+        }
+
+        /* Bottom Status */
+        footer {
+            background-color: var(--bg-panel);
+            border-top: 1px solid var(--border);
+            padding: 10px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            flex-shrink: 0;
+        }
+
+        kbd {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-family: monospace;
+            font-size: 0.75rem;
+            color: var(--text-main);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo-section">
+        <div class="logo-title">
+            <span>Trendcarpet</span>
+            <span style="color: var(--text-muted);">/</span>
+            <span>Studio Huvudbilder (-01)</span>
+            <span class="badge-batch">Jämförelse Sida vid Sida</span>
+        </div>
+    </div>
+
+    <div class="top-info">
+        <div class="stat-badge">Totalt: <strong id="totalCount">0</strong> mattor</div>
+        <div class="stat-badge">Målmapp: <strong>1500px Iphone-jämnt-ljus</strong></div>
+    </div>
+</header>
+
+<div class="app-container">
+    <!-- Sidebar -->
+    <aside>
+        <div class="search-box">
+            <div class="search-input-wrap">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                <input type="text" id="searchInput" placeholder="Sök matta..." oninput="filterRugs()">
+            </div>
+        </div>
+        <div class="rug-list" id="rugList">
+            <!-- Populated via JS -->
+        </div>
+    </aside>
+
+    <!-- Main Workspace -->
+    <main>
+        <div class="workspace-header">
+            <div class="current-rug-title">
+                <span class="current-rug-num" id="currentNum">#1 / 107</span>
+                <span id="currentName">Laddar...</span>
+            </div>
+            <div class="quick-nav">
+                <button class="btn-nav" onclick="prevRug()">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+                    Föregående (←)
+                </button>
+                <button class="btn-nav" onclick="nextRug()">
+                    Nästa (→)
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="comparison-stage">
+            <!-- Left Pane: Old Version -->
+            <div class="stage-pane">
+                <div class="pane-header">
+                    <span class="pane-badge orig">GAMMAL VERSION (Original -01)</span>
+                    <span class="pane-filename" id="origFilename">Laddar...</span>
+                </div>
+                <div class="image-view-wrapper">
+                    <img id="imgOrig" src="" alt="Original Studio Image">
+                </div>
+                <div class="pane-footer">
+                    <div class="metric-cell">
+                        <span class="label">Topp Ljus</span>
+                        <span class="value" id="origTop">-</span>
+                    </div>
+                    <div class="metric-cell">
+                        <span class="label">Mitten Ljus</span>
+                        <span class="value" id="origCenter">-</span>
+                    </div>
+                    <div class="metric-cell">
+                        <span class="label">Botten Ljus</span>
+                        <span class="value" id="origBot">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Pane: New Version (v2) -->
+            <div class="stage-pane">
+                <div class="pane-header">
+                    <span class="pane-badge v2">NY VERSION (Jämnt Ljus v2)</span>
+                    <span class="pane-filename" id="v2Filename">Laddar...</span>
+                </div>
+                <div class="image-view-wrapper">
+                    <img id="imgV2" src="" alt="Jämnt Ljus Studio Image">
+                </div>
+                <div class="pane-footer">
+                    <div class="metric-cell">
+                        <span class="label">Topp Ljus</span>
+                        <span class="value" id="v2Top">-</span>
+                    </div>
+                    <div class="metric-cell">
+                        <span class="label">Mitten (Målankare)</span>
+                        <span class="value" id="v2Center">-</span>
+                    </div>
+                    <div class="metric-cell">
+                        <span class="label">Botten Ljus</span>
+                        <span class="value" id="v2Bot">-</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div>Kortkommandon: <kbd>←</kbd> Föregående matta &nbsp;|&nbsp; <kbd>→</kbd> Nästa matta</div>
+            <div>Mitten-av-mattan förankrad 1D LAB gradient</div>
+        </footer>
+    </main>
+</div>
+
+<script>
+let carpets = [];
+let currentIndex = 0;
+
+async function init() {
+    try {
+        const res = await fetch('/api/carpets');
+        carpets = await res.json();
+        document.getElementById('totalCount').textContent = carpets.length;
+        renderSidebar();
+        selectRug(0);
+    } catch(e) {
+        console.error('Kunde inte ladda metadata', e);
+    }
+}
+
+function renderSidebar() {
+    const list = document.getElementById('rugList');
+    list.innerHTML = '';
+    const q = document.getElementById('searchInput').value.toLowerCase().trim();
+
+    carpets.forEach((rug, idx) => {
+        if (q && !rug.carpet_name.toLowerCase().includes(q)) return;
+
+        const item = document.createElement('div');
+        item.className = `rug-item ${idx === currentIndex ? 'active' : ''}`;
+        item.onclick = () => selectRug(idx);
+
+        const thumb = rug.orig_cache_rel;
+        const grad = rug.stats && rug.stats.total_gradient ? rug.stats.total_gradient.toFixed(1) : '0';
+
+        item.innerHTML = `
+            <img class="rug-thumb" src="${thumb}" alt="thumb" loading="lazy">
+            <div class="rug-info">
+                <div class="rug-title">${rug.carpet_name}</div>
+                <div class="rug-sub">
+                    <span>#${idx + 1}</span>
+                    <span class="gradient-pill">${grad > 0 ? '+' : ''}${grad} L</span>
+                </div>
+            </div>
+        `;
+        list.appendChild(item);
+    });
+}
+
+function filterRugs() {
+    renderSidebar();
+}
+
+function selectRug(idx) {
+    if (idx < 0 || idx >= carpets.length) return;
+    currentIndex = idx;
+
+    document.querySelectorAll('.rug-item').forEach((el, i) => {
+        el.classList.toggle('active', i === idx);
+    });
+
+    const rug = carpets[currentIndex];
+    document.getElementById('currentNum').textContent = `#${currentIndex + 1} / ${carpets.length}`;
+    document.getElementById('currentName').textContent = rug.carpet_name;
+
+    document.getElementById('origFilename').textContent = rug.orig_filename;
+    document.getElementById('v2Filename').textContent = rug.v2_filename;
+
+    document.getElementById('imgOrig').src = rug.orig_cache_rel;
+    document.getElementById('imgV2').src = rug.v2_cache_rel;
+
+    const st = rug.stats;
+    if (st) {
+        document.getElementById('origTop').textContent = st.orig_top_L.toFixed(1);
+        document.getElementById('origCenter').textContent = st.orig_mean_L.toFixed(1);
+        document.getElementById('origBot').textContent = st.orig_bot_L.toFixed(1);
+
+        const topDiff = (st.new_top_L - st.orig_top_L).toFixed(1);
+        const botDiff = (st.new_bot_L - st.orig_bot_L).toFixed(1);
+
+        document.getElementById('v2Top').innerHTML = `${st.new_top_L.toFixed(1)} <span class="${topDiff >= 0 ? 'val-plus' : 'val-minus'}">(${topDiff >= 0 ? '+' : ''}${topDiff})</span>`;
+        document.getElementById('v2Center').textContent = st.target_L.toFixed(1);
+        document.getElementById('v2Bot').innerHTML = `${st.new_bot_L.toFixed(1)} <span class="${botDiff >= 0 ? 'val-plus' : 'val-minus'}">(${botDiff >= 0 ? '+' : ''}${botDiff})</span>`;
+    }
+}
+
+function nextRug() {
+    if (currentIndex < carpets.length - 1) selectRug(currentIndex + 1);
+}
+
+function prevRug() {
+    if (currentIndex > 0) selectRug(currentIndex - 1);
+}
+
+window.addEventListener('keydown', (e) => {
+    if (e.target.tagName === 'INPUT') return;
+    if (e.key === 'ArrowRight') nextRug();
+    if (e.key === 'ArrowLeft') prevRug();
+});
+
+init();
+</script>
+</body>
+</html>
