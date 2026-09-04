@@ -45,9 +45,19 @@
       --status-pending-bg: rgba(255, 255, 255, 0.05);
       
       --stage-backdrop: #ffffff;
+      --guide-crown-y: 22%;
+      --guide-base-y: 78%;
+      --guide-center-y: 52%;
+      --guide-center-x: 50%;
+      --guide-angle: 12deg;
+      --guide-angle-y: 72%;
       --guide-color: #00f0ff;
       --guide-color-secondary: #ff007f;
       --guide-color-center: #ffe600;
+      --guide-width: 1.5px;
+      --guide-style: solid;
+      --guide-glow: 0 0 6px rgba(0, 240, 255, 0.6);
+      --guide-circle-size: 70%;
     }
 
     /* Sleek Studio Custom Scrollbars */
@@ -384,15 +394,317 @@
     }
     .cap-card-img { width: 100%; height: 100%; object-fit: contain; display: block; pointer-events: none; user-select: none; }
 
-    .alignment-guides-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10; }
-    .guide-line { position: absolute; pointer-events: none; box-shadow: 0 0 4px rgba(0, 0, 0, 0.5); }
-    .guide-h { left: 0; right: 0; height: 1.5px; }
-    .guide-v { top: 0; bottom: 0; width: 1.5px; }
-    .guide-crown { background-color: var(--guide-color); }
-    .guide-base { background-color: var(--guide-color); }
-    .guide-center-h { background-color: var(--guide-color-center); border-top: 1px dashed var(--guide-color-center); }
-    .guide-center-v { background-color: var(--guide-color-center); border-left: 1px dashed var(--guide-color-center); }
-    .guide-angle { position: absolute; width: 140%; left: -20%; height: 1.5px; background-color: var(--guide-color-secondary); transform-origin: center center; }
+    .alignment-guides-overlay {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 10;
+      overflow: hidden;
+    }
+    .guide-line {
+      position: absolute;
+      pointer-events: auto;
+      box-shadow: var(--guide-glow, 0 0 4px rgba(0, 0, 0, 0.6));
+      border-style: var(--guide-style, solid);
+      user-select: none;
+      touch-action: none;
+      transition: filter 120ms ease;
+    }
+    .guide-line:hover, .guide-line.dragging {
+      filter: brightness(1.4) drop-shadow(0 0 4px #fff);
+    }
+    .guide-h {
+      left: 0;
+      right: 0;
+      height: var(--guide-width, 1.5px);
+      cursor: ns-resize;
+    }
+    .guide-h::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      bottom: -8px;
+      left: 0;
+      right: 0;
+      cursor: ns-resize;
+    }
+    .guide-v {
+      top: 0;
+      bottom: 0;
+      width: var(--guide-width, 1.5px);
+      cursor: ew-resize;
+    }
+    .guide-v::before {
+      content: '';
+      position: absolute;
+      left: -8px;
+      right: -8px;
+      top: 0;
+      bottom: 0;
+      cursor: ew-resize;
+    }
+    .guide-crown {
+      top: var(--guide-crown-y, 22%);
+      background-color: var(--guide-color);
+    }
+    .guide-base {
+      top: var(--guide-base-y, 78%);
+      background-color: var(--guide-color);
+    }
+    .guide-center-h {
+      top: var(--guide-center-y, 52%);
+      background-color: var(--guide-color-center);
+      border-top: 1px dashed var(--guide-color-center);
+    }
+    .guide-center-v {
+      left: var(--guide-center-x, 50%);
+      background-color: var(--guide-color-center);
+      border-left: 1px dashed var(--guide-color-center);
+    }
+    .guide-angle {
+      position: absolute;
+      top: var(--guide-angle-y, 72%);
+      width: 140%;
+      left: -20%;
+      height: var(--guide-width, 1.5px);
+      background-color: var(--guide-color-secondary);
+      transform-origin: center center;
+      transform: rotate(var(--guide-angle, 12deg));
+      cursor: grab;
+    }
+    .guide-angle::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      bottom: -10px;
+      left: 0;
+      right: 0;
+      cursor: grab;
+    }
+    .guide-angle-rotator {
+      position: absolute;
+      right: 22%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--guide-color-secondary, #ff007f);
+      color: #fff;
+      font-size: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: grab;
+      box-shadow: 0 0 6px rgba(0,0,0,0.8);
+      pointer-events: auto;
+      user-select: none;
+    }
+    .guide-angle-rotator:hover {
+      transform: translateY(-50%) scale(1.25);
+      box-shadow: 0 0 10px var(--guide-color-secondary, #ff007f);
+    }
+    .guide-circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: var(--guide-circle-size, 70%);
+      height: var(--guide-circle-size, 70%);
+      transform: translate(-50%, -50%);
+      border: var(--guide-width, 1.5px) dashed var(--guide-color);
+      border-radius: 50%;
+      box-shadow: var(--guide-glow, 0 0 4px rgba(0, 0, 0, 0.5));
+      pointer-events: none;
+      display: none;
+    }
+    .guide-custom {
+      box-shadow: var(--guide-glow, 0 0 4px rgba(0, 0, 0, 0.6));
+    }
+    .guide-tooltip-pill {
+      position: fixed;
+      z-index: 10000;
+      pointer-events: none;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid var(--accent-blue, #3b82f6);
+      color: #fff;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.6);
+      transform: translate(-50%, -140%);
+      display: none;
+      white-space: nowrap;
+    }
+    .guide-adjust-panel {
+      position: fixed;
+      top: 88px;
+      right: 24px;
+      width: 360px;
+      max-width: 95vw;
+      max-height: calc(100vh - 110px);
+      overflow-y: auto;
+      background: rgba(15, 23, 42, 0.96);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 12px;
+      padding: 14px;
+      z-index: 1500;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      font-family: inherit;
+      user-select: none;
+      animation: slideInPanel 150ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes slideInPanel {
+      from { opacity: 0; transform: translateY(-8px) scale(0.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .gap-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .gap-section {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      background: rgba(30, 41, 59, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      padding: 10px;
+    }
+    .gap-section-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--text-dim, #94a3b8);
+      text-transform: uppercase;
+    }
+    .gap-presets-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 6px;
+    }
+    .gap-preset-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border-radius: 6px;
+      padding: 6px 4px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: all 120ms ease;
+    }
+    .gap-preset-btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+    .gap-preset-btn.active {
+      background: rgba(59, 130, 246, 0.2);
+      border-color: var(--accent-blue, #3b82f6);
+      color: #60a5fa;
+    }
+    .gap-controls-list {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .gap-control-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .gap-label {
+      font-size: 11px;
+      color: var(--text-muted, #cbd5e1);
+      white-space: nowrap;
+      min-width: 120px;
+    }
+    .gap-inputs {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      flex: 1;
+    }
+    .gap-inputs input[type="range"] {
+      flex: 1;
+      height: 4px;
+      accent-color: var(--accent-blue, #3b82f6);
+      cursor: pointer;
+    }
+    .gap-step-btn {
+      width: 20px;
+      height: 20px;
+      padding: 0;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+    .gap-step-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .gap-val {
+      font-size: 11px;
+      font-weight: 700;
+      color: #fff;
+      min-width: 44px;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+    .gap-color-chips {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+    .gap-chip {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: transform 120ms ease;
+    }
+    .gap-chip:hover {
+      transform: scale(1.2);
+    }
+    .gap-chip.active {
+      border-color: #fff;
+      box-shadow: 0 0 6px rgba(255,255,255,0.8);
+    }
+    .gap-custom-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      max-height: 130px;
+      overflow-y: auto;
+    }
+    .gap-custom-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      background: rgba(15, 23, 42, 0.6);
+      padding: 4px 8px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
     .pixel-grid-layer {
       position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.15;
       background-size: 50px 50px;
@@ -2025,12 +2337,16 @@
           <canvas id="lbAnnotateCanvas" class="annotation-canvas" style="display: none;"></canvas>
 
           <!-- Guides Overlay in Lightbox -->
-          <div id="lbGuidesOverlay" class="alignment-guides-overlay" style="display: none; pointer-events: none;">
-            <div class="guide-line guide-h guide-crown" style="top: 22%;"></div>
-            <div class="guide-line guide-h guide-base" style="top: 78%;"></div>
-            <div class="guide-line guide-h guide-center-h" style="top: 52%;"></div>
-            <div class="guide-line guide-v guide-center-v" style="left: 50%;"></div>
-            <div class="guide-line guide-angle" style="top: 72%; transform: rotate(12deg);"></div>
+          <div id="lbGuidesOverlay" class="alignment-guides-overlay" style="display: none;">
+            <div class="guide-line guide-h guide-crown" data-guide="crownY" title="Topplinje: Dra för att flytta"></div>
+            <div class="guide-line guide-h guide-base" data-guide="baseY" title="Baslinje: Dra för att flytta"></div>
+            <div class="guide-line guide-h guide-center-h" data-guide="centerY" title="Centrum H: Dra för att flytta"></div>
+            <div class="guide-line guide-v guide-center-v" data-guide="centerX" title="Centrum V: Dra för att flytta"></div>
+            <div class="guide-line guide-angle" data-guide="angle" title="Vinkellinje: Dra upp/ner för höjd">
+              <div class="guide-angle-rotator" data-guide="angleRotate" title="Vinkelrotator: Dra för att rotera lutning">↺</div>
+            </div>
+            <div class="guide-circle" data-guide="circle"></div>
+            <div class="custom-guides-container"></div>
           </div>
         </div>
 
@@ -2137,6 +2453,182 @@
 
   <div class="toast" id="toast">Ändringar sparade!</div>
 
+  <!-- Live Tooltip Pill during guide dragging -->
+  <div id="guideTooltipPill" class="guide-tooltip-pill">Topp: 22.0%</div>
+
+  <!-- Floating Dynamic Guides Adjustment Panel -->
+  <div id="guideAdjustPanel" class="guide-adjust-panel" style="display: none;">
+    <div class="gap-header">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 16px;">📐</span>
+        <div>
+          <div style="font-weight: 700; font-size: 13px; color: #fff;">Justera Stödlinjer</div>
+          <div style="font-size: 10px; color: var(--text-dim);">Dra linjerna direkt på bilderna eller finjustera här</div>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 6px;">
+        <button class="btn btn-sm btn-outline" onclick="resetGuides()" style="padding: 2px 7px; font-size: 10px;" title="Återställ till standard">🔄 Återställ</button>
+        <button class="btn btn-sm btn-outline" onclick="closeGuideAdjustPanel()" style="padding: 2px 7px; font-size: 11px;">✕</button>
+      </div>
+    </div>
+
+    <!-- Presets -->
+    <div class="gap-section">
+      <div class="gap-section-title">FÖRINSTÄLLDA MALLAR (PRESETS)</div>
+      <div class="gap-presets-grid">
+        <button class="gap-preset-btn" id="presetBtn_kepsar" onclick="applyGuidePreset('kepsar')">
+          🧢 Kepsar
+        </button>
+        <button class="gap-preset-btn" id="presetBtn_mattor" onclick="applyGuidePreset('mattor')">
+          🧶 Mattor
+        </button>
+        <button class="gap-preset-btn" id="presetBtn_rund" onclick="applyGuidePreset('rund')">
+          ⚪ Rund Matta
+        </button>
+      </div>
+    </div>
+
+    <!-- Sliders with [-] [+] -->
+    <div class="gap-section">
+      <div class="gap-section-title">POSITIONER & VINKLAR</div>
+      <div class="gap-controls-list">
+        <!-- Crown / Top line -->
+        <div class="gap-control-row">
+          <span class="gap-label">Topplinje (Krona):</span>
+          <div class="gap-inputs">
+            <button class="gap-step-btn" onclick="stepGuide('guideCrownY', -0.5)">-</button>
+            <input type="range" min="0" max="60" step="0.5" id="sliderCrownY" oninput="onGuideSliderChange('guideCrownY', this.value)">
+            <button class="gap-step-btn" onclick="stepGuide('guideCrownY', 0.5)">+</button>
+            <span class="gap-val" id="valCrownY">22%</span>
+          </div>
+        </div>
+
+        <!-- Base / Bottom line -->
+        <div class="gap-control-row">
+          <span class="gap-label">Baslinje (Nederkant):</span>
+          <div class="gap-inputs">
+            <button class="gap-step-btn" onclick="stepGuide('guideBaseY', -0.5)">-</button>
+            <input type="range" min="40" max="100" step="0.5" id="sliderBaseY" oninput="onGuideSliderChange('guideBaseY', this.value)">
+            <button class="gap-step-btn" onclick="stepGuide('guideBaseY', 0.5)">+</button>
+            <span class="gap-val" id="valBaseY">78%</span>
+          </div>
+        </div>
+
+        <!-- Center H -->
+        <div class="gap-control-row">
+          <span class="gap-label">Horisontell mitt:</span>
+          <div class="gap-inputs">
+            <button class="gap-step-btn" onclick="stepGuide('guideCenterY', -0.5)">-</button>
+            <input type="range" min="10" max="90" step="0.5" id="sliderCenterY" oninput="onGuideSliderChange('guideCenterY', this.value)">
+            <button class="gap-step-btn" onclick="stepGuide('guideCenterY', 0.5)">+</button>
+            <span class="gap-val" id="valCenterY">52%</span>
+          </div>
+        </div>
+
+        <!-- Center V -->
+        <div class="gap-control-row">
+          <span class="gap-label">Vertikal mitt (Centrum):</span>
+          <div class="gap-inputs">
+            <button class="gap-step-btn" onclick="stepGuide('guideCenterX', -0.5)">-</button>
+            <input type="range" min="10" max="90" step="0.5" id="sliderCenterX" oninput="onGuideSliderChange('guideCenterX', this.value)">
+            <button class="gap-step-btn" onclick="stepGuide('guideCenterX', 0.5)">+</button>
+            <span class="gap-val" id="valCenterX">50%</span>
+          </div>
+        </div>
+
+        <!-- Skärmvinkel -->
+        <div class="gap-control-row">
+          <span class="gap-label">Skärmvinkel:</span>
+          <div class="gap-inputs">
+            <button class="gap-step-btn" onclick="stepGuide('guideAngle', -1)">-</button>
+            <input type="range" min="-45" max="45" step="1" id="sliderAngle" oninput="onGuideSliderChange('guideAngle', this.value)">
+            <button class="gap-step-btn" onclick="stepGuide('guideAngle', 1)">+</button>
+            <span class="gap-val" id="valAngle">12°</span>
+          </div>
+        </div>
+
+        <!-- Vinkelns position Y -->
+        <div class="gap-control-row">
+          <span class="gap-label">Vinkellinjens höjd Y:</span>
+          <div class="gap-inputs">
+            <button class="gap-step-btn" onclick="stepGuide('guideAngleY', -0.5)">-</button>
+            <input type="range" min="10" max="95" step="0.5" id="sliderAngleY" oninput="onGuideSliderChange('guideAngleY', this.value)">
+            <button class="gap-step-btn" onclick="stepGuide('guideAngleY', 0.5)">+</button>
+            <span class="gap-val" id="valAngleY">72%</span>
+          </div>
+        </div>
+
+        <!-- Cirkelguide -->
+        <div class="gap-control-row">
+          <label class="gap-label" style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+            <input type="checkbox" id="chkGuideCircle" onchange="toggleGuideCircle(this.checked)">
+            Cirkelguide (Rund):
+          </label>
+          <div class="gap-inputs">
+            <button class="gap-step-btn" onclick="stepGuide('guideCircleSize', -1)">-</button>
+            <input type="range" min="20" max="95" step="1" id="sliderCircleSize" oninput="onGuideSliderChange('guideCircleSize', this.value)">
+            <button class="gap-step-btn" onclick="stepGuide('guideCircleSize', 1)">+</button>
+            <span class="gap-val" id="valCircleSize">70%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Appearance / Colors / Styles -->
+    <div class="gap-section">
+      <div class="gap-section-title">UTSEENDE & FÄRG</div>
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+        <!-- Color Chips -->
+        <div class="gap-color-chips">
+          <div class="gap-chip" id="chip_cyan" style="background: #00f0ff;" title="Cyan" onclick="setGuideMainColor('#00f0ff')"></div>
+          <div class="gap-chip" id="chip_magenta" style="background: #ff007f;" title="Magenta" onclick="setGuideMainColor('#ff007f')"></div>
+          <div class="gap-chip" id="chip_yellow" style="background: #ffe600;" title="Gul" onclick="setGuideMainColor('#ffe600')"></div>
+          <div class="gap-chip" id="chip_green" style="background: #00ff66;" title="Grön" onclick="setGuideMainColor('#00ff66')"></div>
+          <div class="gap-chip" id="chip_white" style="background: #ffffff;" title="Vit" onclick="setGuideMainColor('#ffffff')"></div>
+          <div class="gap-chip" id="chip_red" style="background: #ef4444;" title="Röd" onclick="setGuideMainColor('#ef4444')"></div>
+        </div>
+
+        <!-- Line Style & Thickness -->
+        <div style="display: flex; gap: 6px;">
+          <select class="custom-select" id="selGuideStyle" style="font-size: 11px; padding: 2px 6px;" onchange="setGuideStyle(this.value)">
+            <option value="solid">Heldragen</option>
+            <option value="dashed">Streckad</option>
+            <option value="dotted">Prickad</option>
+          </select>
+          <select class="custom-select" id="selGuideWidth" style="font-size: 11px; padding: 2px 6px;" onchange="setGuideWidth(this.value)">
+            <option value="1px">1px</option>
+            <option value="1.5px">1.5px</option>
+            <option value="2px">2px</option>
+            <option value="3px">3px</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Glow toggle -->
+      <div style="margin-top: 8px; display: flex; align-items: center; justify-content: space-between;">
+        <label style="font-size: 11px; color: var(--text-dim); display: flex; align-items: center; gap: 6px; cursor: pointer;">
+          <input type="checkbox" id="chkGuideGlow" onchange="toggleGuideGlow(this.checked)">
+          ✨ Neon Laser-Glow
+        </label>
+        <span style="font-size: 10px; color: #10b981;">✓ Sparas automatiskt</span>
+      </div>
+    </div>
+
+    <!-- Custom Guides -->
+    <div class="gap-section">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+        <div class="gap-section-title" style="margin-bottom: 0;">EGNA EXTRA STÖDLINJER</div>
+        <div style="display: flex; gap: 4px;">
+          <button class="btn btn-sm" onclick="addCustomGuide('h')" style="padding: 2px 6px; font-size: 10px;">+ Horisontell</button>
+          <button class="btn btn-sm" onclick="addCustomGuide('v')" style="padding: 2px 6px; font-size: 10px;">+ Vertikal</button>
+        </div>
+      </div>
+      <div id="gapCustomLinesList" class="gap-custom-list">
+        <!-- Dynamically populated rows -->
+      </div>
+    </div>
+  </div>
+
   <script>
     // Automatically bypass ngrok interstitial warning on all API calls
     const _origFetch = window.fetch;
@@ -2166,6 +2658,15 @@
       guideCenterY: 52,
       guideCenterX: 50,
       guideAngle: 12,
+      guideAngleY: 72,
+      guideWidth: '1.5px',
+      guideStyle: 'solid',
+      guideGlow: true,
+      guidePreset: 'kepsar',
+      guideShowCircle: false,
+      guideCircleSize: 70,
+      customGuides: [],
+      guidePanelOpen: false,
       showGrid: false,
       guideColor: '#00f0ff',
       backdrop: '#ffffff',
@@ -2184,6 +2685,8 @@
 
     window.addEventListener('DOMContentLoaded', async () => {
       checkReviewerNameOnLoad();
+      loadSavedGuides();
+      setupGuideDragListeners();
       await initBatches();
       await loadCalendarProjects();
       setupLightboxZoom();
@@ -2954,22 +3457,9 @@
             </label>
             <span>Rutnät (Grid)</span>
           </div>
-          <div class="tool-item">
-            <span class="control-label">Färg:</span>
-            <select class="custom-select" onchange="setGuideColor(this.value)">
-              <option value="#00f0ff" selected>Cyan</option>
-              <option value="#ff007f">Magenta</option>
-              <option value="#ffe600">Gul</option>
-              <option value="#00ff66">Grön</option>
-              <option value="#ffffff">Vit</option>
-            </select>
-          </div>
-          <div class="tool-item">
-            <span class="control-label">Skärmvinkel:</span>
-            <input type="range" min="0" max="30" value="${state.guideAngle}" style="width: 70px;" oninput="setGuideAngle(this.value)">
-            <span style="font-size: 11px;">${state.guideAngle}°</span>
-          </div>
-          <button class="btn btn-sm" onclick="resetGuides()">Återställ linjer</button>
+          <button class="btn btn-sm ${state.guidePanelOpen ? 'btn-primary' : ''}" id="btnOpenGuideAdjust" onclick="toggleGuideAdjustPanel()" title="Öppna justeringspanel för stödlinjer (eller dra linjerna direkt på bilden)">
+            📐 Justera stödlinjer ▾
+          </button>
         `;
       } else if (state.currentMode === 'product') {
         container.innerHTML = `
@@ -2979,6 +3469,16 @@
             <span style="font-weight: 700; color: #fff;">${state.currentProductIndex + 1} / ${state.products.length}</span>
             <button class="btn btn-sm" onclick="nextProduct()">Nästa (→) ▶</button>
           </div>
+          <div class="tool-item" style="gap: 8px;">
+            <label class="toggle-switch">
+              <input type="checkbox" id="chkGuidesProd" ${state.showGuides ? 'checked' : ''} onchange="toggleGuides(this.checked)">
+              <span class="slider-toggle"></span>
+            </label>
+            <span style="font-weight: 600;">Stödlinjer</span>
+          </div>
+          <button class="btn btn-sm ${state.guidePanelOpen ? 'btn-primary' : ''}" onclick="toggleGuideAdjustPanel()" title="Öppna justeringspanel för stödlinjer">
+            📐 Justera ▾
+          </button>
         `;
       } else if (state.currentMode === 'calendar') {
         container.innerHTML = `
@@ -2997,11 +3497,44 @@
       renderSubToolbar();
     }
 
+    function getGuidesOverlayHtml() {
+      let customHtml = '';
+      if (state.customGuides && state.customGuides.length > 0) {
+        customHtml = state.customGuides.map(g => {
+          if (g.type === 'h') {
+            return `<div class="guide-line guide-h guide-custom" data-guide="custom" data-custom-id="${g.id}" style="top: ${g.pos}%; background-color: ${g.color || 'var(--guide-color)'};" title="Egen horisontell linje (${g.pos}%): Dra för att flytta"></div>`;
+          } else {
+            return `<div class="guide-line guide-v guide-custom" data-guide="custom" data-custom-id="${g.id}" style="left: ${g.pos}%; background-color: ${g.color || 'var(--guide-color)'};" title="Egen vertikal linje (${g.pos}%): Dra för att flytta"></div>`;
+          }
+        }).join('');
+      }
+
+      return `
+        <div class="alignment-guides-overlay" style="display: ${state.showGuides ? 'block' : 'none'};">
+          <div class="guide-line guide-h guide-crown" data-guide="crownY" title="Topplinje: Dra för att flytta"></div>
+          <div class="guide-line guide-h guide-base" data-guide="baseY" title="Baslinje: Dra för att flytta"></div>
+          <div class="guide-line guide-h guide-center-h" data-guide="centerY" title="Centrum H: Dra för att flytta"></div>
+          <div class="guide-line guide-v guide-center-v" data-guide="centerX" title="Centrum V: Dra för att flytta"></div>
+          <div class="guide-line guide-angle" data-guide="angle" title="Vinkellinje: Dra upp/ner för höjd">
+            <div class="guide-angle-rotator" data-guide="angleRotate" title="Vinkelrotator: Dra för att rotera vinkel">↺</div>
+          </div>
+          <div class="guide-circle" data-guide="circle" style="display: ${state.guideShowCircle ? 'block' : 'none'};"></div>
+          <div class="custom-guides-container">${customHtml}</div>
+        </div>
+      `;
+    }
+
     function toggleGuides(show) {
       state.showGuides = show;
       document.querySelectorAll('.alignment-guides-overlay').forEach(el => {
         el.style.display = show ? 'block' : 'none';
       });
+      const chk1 = document.getElementById('chkGuides');
+      if (chk1) chk1.checked = show;
+      const chk2 = document.getElementById('chkGuidesProd');
+      if (chk2) chk2.checked = show;
+      const lbBtn = document.getElementById('lbBtnGuides');
+      if (lbBtn) lbBtn.classList.toggle('btn-primary', show);
     }
 
     function togglePixelGrid(show) {
@@ -3011,26 +3544,444 @@
       });
     }
 
-    function setGuideColor(color) {
-      state.guideColor = color;
-      document.documentElement.style.setProperty('--guide-color', color);
+    function applyGuidesToCSS() {
+      const root = document.documentElement;
+      root.style.setProperty('--guide-crown-y', `${state.guideCrownY}%`);
+      root.style.setProperty('--guide-base-y', `${state.guideBaseY}%`);
+      root.style.setProperty('--guide-center-y', `${state.guideCenterY}%`);
+      root.style.setProperty('--guide-center-x', `${state.guideCenterX}%`);
+      root.style.setProperty('--guide-angle', `${state.guideAngle}deg`);
+      root.style.setProperty('--guide-angle-y', `${state.guideAngleY}%`);
+      root.style.setProperty('--guide-color', state.guideColor || '#00f0ff');
+      root.style.setProperty('--guide-width', state.guideWidth || '1.5px');
+      root.style.setProperty('--guide-style', state.guideStyle || 'solid');
+      root.style.setProperty('--guide-circle-size', `${state.guideCircleSize || 70}%`);
+      
+      if (state.guideGlow) {
+        root.style.setProperty('--guide-glow', `0 0 6px ${state.guideColor || '#00f0ff'}`);
+      } else {
+        root.style.setProperty('--guide-glow', '0 0 3px rgba(0, 0, 0, 0.5)');
+      }
     }
 
-    function setGuideAngle(angle) {
-      state.guideAngle = angle;
-      document.querySelectorAll('.guide-angle').forEach(el => {
-        el.style.transform = `rotate(${angle}deg)`;
+    function loadSavedGuides() {
+      try {
+        const raw = localStorage.getItem('hatshop_dynamic_guides');
+        if (raw) {
+          const s = JSON.parse(raw);
+          if (s.guideCrownY !== undefined) state.guideCrownY = s.guideCrownY;
+          if (s.guideBaseY !== undefined) state.guideBaseY = s.guideBaseY;
+          if (s.guideCenterY !== undefined) state.guideCenterY = s.guideCenterY;
+          if (s.guideCenterX !== undefined) state.guideCenterX = s.guideCenterX;
+          if (s.guideAngle !== undefined) state.guideAngle = s.guideAngle;
+          if (s.guideAngleY !== undefined) state.guideAngleY = s.guideAngleY;
+          if (s.guideColor) state.guideColor = s.guideColor;
+          if (s.guideWidth) state.guideWidth = s.guideWidth;
+          if (s.guideStyle) state.guideStyle = s.guideStyle;
+          if (s.guideGlow !== undefined) state.guideGlow = s.guideGlow;
+          if (s.guidePreset) state.guidePreset = s.guidePreset;
+          if (s.guideShowCircle !== undefined) state.guideShowCircle = s.guideShowCircle;
+          if (s.guideCircleSize !== undefined) state.guideCircleSize = s.guideCircleSize;
+          if (Array.isArray(s.customGuides)) state.customGuides = s.customGuides;
+        }
+      } catch (e) {
+        console.warn('Could not load saved guides', e);
+      }
+      applyGuidesToCSS();
+    }
+
+    function saveGuides() {
+      try {
+        const toSave = {
+          guideCrownY: state.guideCrownY,
+          guideBaseY: state.guideBaseY,
+          guideCenterY: state.guideCenterY,
+          guideCenterX: state.guideCenterX,
+          guideAngle: state.guideAngle,
+          guideAngleY: state.guideAngleY,
+          guideColor: state.guideColor,
+          guideWidth: state.guideWidth,
+          guideStyle: state.guideStyle,
+          guideGlow: state.guideGlow,
+          guidePreset: state.guidePreset,
+          guideShowCircle: state.guideShowCircle,
+          guideCircleSize: state.guideCircleSize,
+          customGuides: state.customGuides || []
+        };
+        localStorage.setItem('hatshop_dynamic_guides', JSON.stringify(toSave));
+      } catch (e) {
+        console.warn('Could not save guides', e);
+      }
+    }
+
+    function toggleGuideAdjustPanel() {
+      state.guidePanelOpen = !state.guidePanelOpen;
+      const panel = document.getElementById('guideAdjustPanel');
+      if (!panel) return;
+      panel.style.display = state.guidePanelOpen ? 'flex' : 'none';
+      if (state.guidePanelOpen) {
+        updateGuidePanelInputs();
+        renderCustomGuidesList();
+      }
+      const btn = document.getElementById('btnOpenGuideAdjust');
+      if (btn) btn.classList.toggle('btn-primary', state.guidePanelOpen);
+    }
+
+    function closeGuideAdjustPanel() {
+      state.guidePanelOpen = false;
+      const panel = document.getElementById('guideAdjustPanel');
+      if (panel) panel.style.display = 'none';
+      const btn = document.getElementById('btnOpenGuideAdjust');
+      if (btn) btn.classList.remove('btn-primary');
+    }
+
+    function updateGuidePanelInputs() {
+      const setVal = (id, val) => { const el = document.getElementById(id); if (el) el.value = val; };
+      const setText = (id, txt) => { const el = document.getElementById(id); if (el) el.textContent = txt; };
+
+      setVal('sliderCrownY', state.guideCrownY);
+      setText('valCrownY', `${state.guideCrownY}%`);
+
+      setVal('sliderBaseY', state.guideBaseY);
+      setText('valBaseY', `${state.guideBaseY}%`);
+
+      setVal('sliderCenterY', state.guideCenterY);
+      setText('valCenterY', `${state.guideCenterY}%`);
+
+      setVal('sliderCenterX', state.guideCenterX);
+      setText('valCenterX', `${state.guideCenterX}%`);
+
+      setVal('sliderAngle', state.guideAngle);
+      setText('valAngle', `${state.guideAngle}°`);
+
+      setVal('sliderAngleY', state.guideAngleY);
+      setText('valAngleY', `${state.guideAngleY}%`);
+
+      const chkCircle = document.getElementById('chkGuideCircle');
+      if (chkCircle) chkCircle.checked = !!state.guideShowCircle;
+      setVal('sliderCircleSize', state.guideCircleSize || 70);
+      setText('valCircleSize', `${state.guideCircleSize || 70}%`);
+
+      const chkGlow = document.getElementById('chkGuideGlow');
+      if (chkGlow) chkGlow.checked = !!state.guideGlow;
+
+      const selStyle = document.getElementById('selGuideStyle');
+      if (selStyle) selStyle.value = state.guideStyle || 'solid';
+
+      const selWidth = document.getElementById('selGuideWidth');
+      if (selWidth) selWidth.value = state.guideWidth || '1.5px';
+
+      // Update color chips active state
+      ['cyan', 'magenta', 'yellow', 'green', 'white', 'red'].forEach(c => {
+        const chip = document.getElementById(`chip_${c}`);
+        if (!chip) return;
+        const colorMap = {
+          cyan: '#00f0ff', magenta: '#ff007f', yellow: '#ffe600',
+          green: '#00ff66', white: '#ffffff', red: '#ef4444'
+        };
+        chip.classList.toggle('active', state.guideColor?.toLowerCase() === colorMap[c].toLowerCase());
       });
-      renderSubToolbar();
+
+      // Update preset buttons active state
+      ['kepsar', 'mattor', 'rund'].forEach(p => {
+        const btn = document.getElementById(`presetBtn_${p}`);
+        if (btn) btn.classList.toggle('active', state.guidePreset === p);
+      });
+    }
+
+    function onGuideSliderChange(prop, val) {
+      state[prop] = parseFloat(val);
+      state.guidePreset = 'custom';
+      applyGuidesToCSS();
+      updateGuidePanelInputs();
+      saveGuides();
+    }
+
+    function stepGuide(prop, delta) {
+      let val = (state[prop] !== undefined ? state[prop] : 0) + delta;
+      if (prop === 'guideAngle') {
+        val = Math.max(-45, Math.min(45, Math.round(val)));
+      } else {
+        val = Math.max(0, Math.min(100, Math.round(val * 2) / 2));
+      }
+      state[prop] = val;
+      state.guidePreset = 'custom';
+      applyGuidesToCSS();
+      updateGuidePanelInputs();
+      saveGuides();
+    }
+
+    function applyGuidePreset(preset) {
+      state.guidePreset = preset;
+      if (preset === 'kepsar') {
+        state.guideCrownY = 22;
+        state.guideBaseY = 78;
+        state.guideCenterY = 52;
+        state.guideCenterX = 50;
+        state.guideAngle = 12;
+        state.guideAngleY = 72;
+        state.guideShowCircle = false;
+      } else if (preset === 'mattor') {
+        state.guideCrownY = 8;
+        state.guideBaseY = 92;
+        state.guideCenterY = 50;
+        state.guideCenterX = 50;
+        state.guideAngle = 0;
+        state.guideAngleY = 90;
+        state.guideShowCircle = false;
+      } else if (preset === 'rund') {
+        state.guideCrownY = 10;
+        state.guideBaseY = 90;
+        state.guideCenterY = 50;
+        state.guideCenterX = 50;
+        state.guideAngle = 0;
+        state.guideAngleY = 90;
+        state.guideShowCircle = true;
+        state.guideCircleSize = 70;
+      }
+      applyGuidesToCSS();
+      updateGuidePanelInputs();
+      updateAllCustomGuidesLayers();
+      saveGuides();
+    }
+
+    function setGuideMainColor(color) {
+      state.guideColor = color;
+      applyGuidesToCSS();
+      updateGuidePanelInputs();
+      saveGuides();
+    }
+
+    function setGuideStyle(style) {
+      state.guideStyle = style;
+      applyGuidesToCSS();
+      saveGuides();
+    }
+
+    function setGuideWidth(width) {
+      state.guideWidth = width;
+      applyGuidesToCSS();
+      saveGuides();
+    }
+
+    function toggleGuideGlow(enabled) {
+      state.guideGlow = enabled;
+      applyGuidesToCSS();
+      saveGuides();
+    }
+
+    function toggleGuideCircle(enabled) {
+      state.guideShowCircle = enabled;
+      updateAllCustomGuidesLayers();
+      updateGuidePanelInputs();
+      saveGuides();
     }
 
     function resetGuides() {
-      state.guideCrownY = 22;
-      state.guideBaseY = 78;
-      state.guideCenterY = 52;
-      state.guideCenterX = 50;
-      state.guideAngle = 12;
-      renderAngleGrid();
+      applyGuidePreset('kepsar');
+      state.guideColor = '#00f0ff';
+      state.guideWidth = '1.5px';
+      state.guideStyle = 'solid';
+      state.guideGlow = true;
+      state.customGuides = [];
+      applyGuidesToCSS();
+      updateGuidePanelInputs();
+      updateAllCustomGuidesLayers();
+      renderCustomGuidesList();
+      saveGuides();
+      showToast('Stödlinjer återställda till standard');
+    }
+
+    function addCustomGuide(type) {
+      if (!state.customGuides) state.customGuides = [];
+      const id = 'cg_' + Date.now();
+      state.customGuides.push({
+        id: id,
+        type: type,
+        pos: 50,
+        color: state.guideColor || '#00f0ff'
+      });
+      updateAllCustomGuidesLayers();
+      renderCustomGuidesList();
+      saveGuides();
+    }
+
+    function removeCustomGuide(id) {
+      state.customGuides = (state.customGuides || []).filter(g => g.id !== id);
+      updateAllCustomGuidesLayers();
+      renderCustomGuidesList();
+      saveGuides();
+    }
+
+    function updateCustomGuidePos(id, pos) {
+      const g = (state.customGuides || []).find(item => item.id === id);
+      if (g) {
+        g.pos = parseFloat(pos);
+        updateAllCustomGuidesLayers();
+        saveGuides();
+      }
+    }
+
+    function renderCustomGuidesList() {
+      const container = document.getElementById('gapCustomLinesList');
+      if (!container) return;
+      if (!state.customGuides || state.customGuides.length === 0) {
+        container.innerHTML = `<div style="font-size: 11px; color: var(--text-dim); text-align: center; padding: 6px 0;">Inga extra linjer tillagda</div>`;
+        return;
+      }
+      container.innerHTML = state.customGuides.map(g => `
+        <div class="gap-custom-row">
+          <span style="font-size: 11px; font-weight: 700; color: ${g.color}; display: flex; align-items: center; gap: 4px;">
+            ${g.type === 'h' ? '↔ H' : '↕ V'}
+          </span>
+          <input type="range" min="0" max="100" step="0.5" value="${g.pos}" style="flex: 1; height: 4px; accent-color: ${g.color};" oninput="updateCustomGuidePos('${g.id}', this.value); this.nextElementSibling.textContent = this.value + '%';">
+          <span style="font-size: 11px; font-weight: 600; min-width: 36px; text-align: right;">${g.pos}%</span>
+          <button class="gap-step-btn" onclick="removeCustomGuide('${g.id}')" title="Ta bort linje" style="color: #ef4444; margin-left: 4px;">✕</button>
+        </div>
+      `).join('');
+    }
+
+    function updateAllCustomGuidesLayers() {
+      const containers = document.querySelectorAll('.custom-guides-container');
+      let customHtml = '';
+      if (state.customGuides && state.customGuides.length > 0) {
+        customHtml = state.customGuides.map(g => {
+          if (g.type === 'h') {
+            return `<div class="guide-line guide-h guide-custom" data-guide="custom" data-custom-id="${g.id}" style="top: ${g.pos}%; background-color: ${g.color || 'var(--guide-color)'};" title="Egen horisontell linje (${g.pos}%): Dra för att flytta"></div>`;
+          } else {
+            return `<div class="guide-line guide-v guide-custom" data-guide="custom" data-custom-id="${g.id}" style="left: ${g.pos}%; background-color: ${g.color || 'var(--guide-color)'};" title="Egen vertikal linje (${g.pos}%): Dra för att flytta"></div>`;
+          }
+        }).join('');
+      }
+      containers.forEach(c => {
+        c.innerHTML = customHtml;
+      });
+
+      const circles = document.querySelectorAll('.guide-circle');
+      circles.forEach(c => {
+        c.style.display = state.guideShowCircle ? 'block' : 'none';
+      });
+    }
+
+    function getGuideLabel(type, customId) {
+      if (type === 'crownY') return `Topplinje: ${state.guideCrownY}%`;
+      if (type === 'baseY') return `Baslinje: ${state.guideBaseY}%`;
+      if (type === 'centerY') return `Mitt H: ${state.guideCenterY}%`;
+      if (type === 'centerX') return `Mitt V: ${state.guideCenterX}%`;
+      if (type === 'angle') return `Vinkelhöjd: ${state.guideAngleY}%`;
+      if (type === 'angleRotate') return `Lutning: ${state.guideAngle}°`;
+      if (type === 'custom') {
+        const g = (state.customGuides || []).find(item => item.id === customId);
+        return g ? `Egen (${g.type === 'h' ? 'H' : 'V'}): ${g.pos}%` : 'Egen linje';
+      }
+      return '';
+    }
+
+    function setupGuideDragListeners() {
+      let activeDrag = null;
+      const pill = document.getElementById('guideTooltipPill');
+
+      document.addEventListener('pointerdown', (e) => {
+        const target = e.target.closest('[data-guide]');
+        if (!target) return;
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        const guideType = target.getAttribute('data-guide');
+        const customId = target.getAttribute('data-custom-id');
+        const overlay = target.closest('.alignment-guides-overlay') || target.closest('.shot-box-image-wrap') || target.closest('.cap-card-body') || target.closest('.lightbox-img-wrap');
+        if (!overlay) return;
+
+        const rect = overlay.getBoundingClientRect();
+        try { target.setPointerCapture(e.pointerId); } catch(err) {}
+
+        activeDrag = {
+          pointerId: e.pointerId,
+          target: target,
+          guideType: guideType,
+          customId: customId,
+          rect: rect,
+          startX: e.clientX,
+          startY: e.clientY,
+          startAngle: state.guideAngle,
+          startAngleY: state.guideAngleY
+        };
+
+        target.classList.add('dragging');
+        window._isDraggingGuide = true;
+
+        if (pill) {
+          pill.style.display = 'block';
+          pill.style.left = e.clientX + 'px';
+          pill.style.top = e.clientY + 'px';
+          pill.textContent = getGuideLabel(guideType, customId);
+        }
+      });
+
+      document.addEventListener('pointermove', (e) => {
+        if (!activeDrag || e.pointerId !== activeDrag.pointerId) return;
+        e.preventDefault();
+        e.stopPropagation();
+
+        const rect = activeDrag.rect;
+        const relY = Math.max(0, Math.min(100, ((e.clientY - rect.top) / rect.height) * 100));
+        const relX = Math.max(0, Math.min(100, ((e.clientX - rect.left) / rect.width) * 100));
+        const roundedY = Math.round(relY * 2) / 2;
+        const roundedX = Math.round(relX * 2) / 2;
+
+        if (activeDrag.guideType === 'crownY') {
+          state.guideCrownY = roundedY;
+        } else if (activeDrag.guideType === 'baseY') {
+          state.guideBaseY = roundedY;
+        } else if (activeDrag.guideType === 'centerY') {
+          state.guideCenterY = roundedY;
+        } else if (activeDrag.guideType === 'centerX') {
+          state.guideCenterX = roundedX;
+        } else if (activeDrag.guideType === 'angle') {
+          state.guideAngleY = roundedY;
+        } else if (activeDrag.guideType === 'angleRotate') {
+          const deltaY = activeDrag.startY - e.clientY;
+          const newAngle = Math.round(activeDrag.startAngle + deltaY * 0.5);
+          state.guideAngle = Math.max(-45, Math.min(45, newAngle));
+        } else if (activeDrag.guideType === 'custom') {
+          const g = (state.customGuides || []).find(item => item.id === activeDrag.customId);
+          if (g) {
+            g.pos = g.type === 'h' ? roundedY : roundedX;
+            activeDrag.target.style[g.type === 'h' ? 'top' : 'left'] = `${g.pos}%`;
+          }
+        }
+
+        applyGuidesToCSS();
+        updateGuidePanelInputs();
+
+        if (pill) {
+          pill.style.left = e.clientX + 'px';
+          pill.style.top = e.clientY + 'px';
+          pill.textContent = getGuideLabel(activeDrag.guideType, activeDrag.customId);
+        }
+      });
+
+      const endDrag = (e) => {
+        if (!activeDrag || e.pointerId !== activeDrag.pointerId) return;
+        try { activeDrag.target.releasePointerCapture(e.pointerId); } catch(err) {}
+        activeDrag.target.classList.remove('dragging');
+
+        if (pill) pill.style.display = 'none';
+
+        saveGuides();
+
+        window._justDraggedGuide = true;
+        setTimeout(() => {
+          window._justDraggedGuide = false;
+          window._isDraggingGuide = false;
+        }, 220);
+
+        activeDrag = null;
+      };
+
+      document.addEventListener('pointerup', endDrag);
+      document.addEventListener('pointercancel', endDrag);
     }
 
     function getEffectiveStatus(productId) {
@@ -3080,13 +4031,7 @@
           <div class="cap-card-body" onclick="openLightbox('${shot01.url || ''}', '${prod.model} (${prod.color}) - Bild 01', '${prod.id}', 0)">
             <img class="cap-card-img" src="${shot01.url || ''}" alt="${prod.model}" loading="lazy" onerror="handleImageError(this)">
 
-            <div class="alignment-guides-overlay" style="display: ${state.showGuides ? 'block' : 'none'};">
-              <div class="guide-line guide-h guide-crown" style="top: ${state.guideCrownY}%;"></div>
-              <div class="guide-line guide-h guide-base" style="top: ${state.guideBaseY}%;"></div>
-              <div class="guide-line guide-h guide-center-h" style="top: ${state.guideCenterY}%;"></div>
-              <div class="guide-line guide-v guide-center-v" style="left: ${state.guideCenterX}%;"></div>
-              <div class="guide-line guide-angle" style="top: ${state.guideBaseY - 6}%; transform: rotate(${state.guideAngle}deg);"></div>
-            </div>
+            ${getGuidesOverlayHtml()}
 
             <div class="pixel-grid-layer" style="display: ${state.showGrid ? 'block' : 'none'};"></div>
           </div>
@@ -3277,6 +4222,7 @@
           </div>
           <div class="shot-box-image-wrap" onclick="openLightbox('${shot.url || ''}', '${prod.model} - ${titleTag}', '${prod.id}', ${idx})">
             <img src="${shot.url || ''}" alt="${titleTag}" loading="lazy" onerror="handleImageError(this)">
+            ${getGuidesOverlayHtml()}
             <div class="shot-hover-hint">🔍 Klicka för storbild & ritverktyg</div>
           </div>
         `;
@@ -4631,6 +5577,7 @@
     let lbShowGuides = false;
 
     function openLightbox(url, title, productId = null, shotIdx = 0) {
+      if (window._justDraggedGuide || window._isDraggingGuide) return;
       if (productId) {
         const pIdx = state.products.findIndex(p => p.id === productId);
         lbCurrentProductIndex = pIdx !== -1 ? pIdx : 0;
@@ -4911,11 +5858,12 @@
     }
 
     function toggleLightboxGuides() {
-      lbShowGuides = !lbShowGuides;
+      const show = !state.showGuides;
+      toggleGuides(show);
       const overlay = document.getElementById('lbGuidesOverlay');
       const btn = document.getElementById('lbBtnGuides');
-      if (overlay) overlay.style.display = lbShowGuides ? 'block' : 'none';
-      if (btn) btn.classList.toggle('btn-primary', lbShowGuides);
+      if (overlay) overlay.style.display = show ? 'block' : 'none';
+      if (btn) btn.classList.toggle('btn-primary', show);
     }
 
     function closeLightbox(e) {
