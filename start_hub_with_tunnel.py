@@ -32,9 +32,9 @@ def update_vercel_config(new_tunnel_url):
         if os.path.exists(VERCEL_JSON):
             with open(VERCEL_JSON, "r", encoding="utf-8") as f:
                 data = json.load(f)
-                rewrites = data.get("rewrites", []) or data.get("redirects", [])
-                if rewrites:
-                    current_dest = rewrites[0].get("destination", "")
+                redirects = data.get("redirects", []) or data.get("rewrites", [])
+                if redirects:
+                    current_dest = redirects[0].get("destination", "")
 
         expected_dest = f"{new_tunnel_url}/$1"
         if current_dest == expected_dest:
@@ -45,10 +45,11 @@ def update_vercel_config(new_tunnel_url):
         config = {
             "name": "trendcarpet-qa",
             "cleanUrls": True,
-            "rewrites": [
+            "redirects": [
                 {
                     "source": "/(.*)",
-                    "destination": expected_dest
+                    "destination": expected_dest,
+                    "permanent": False
                 }
             ]
         }
