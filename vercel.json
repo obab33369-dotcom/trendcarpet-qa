@@ -4,7 +4,7 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "destination": "https://consult-sbjct-fascinating-extended.trycloudflare.com/",
+      "destination": "https://nowhere-auctions-drain-dust.trycloudflare.com/$1",
       "permanent": false
     }
   ]
