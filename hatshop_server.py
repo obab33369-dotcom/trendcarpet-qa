@@ -632,6 +632,22 @@ class HubHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=WORKSPACE_DIR, **kwargs)
 
+    def is_admin_request(self, query=None, body_user=None):
+        if query is None:
+            query = {}
+        show_all = query.get("all", ["false"])[0].lower() == "true"
+        if show_all:
+            return True
+        user = (query.get("user", [""])[0] or query.get("reviewer", [""])[0] or (body_user or "")).strip().lower()
+        if user:
+            return user in ["andro", "andronik", "admin"]
+        
+        # When no explicit user is provided, check if client is purely local (not via Cloudflare tunnel)
+        is_tunnel = bool(self.headers.get("CF-Ray") or self.headers.get("CF-Connecting-IP") or self.headers.get("X-Forwarded-For"))
+        client_ip = self.client_address[0] if hasattr(self, 'client_address') else ''
+        is_local = (not is_tunnel) and (client_ip in ['127.0.0.1', '::1', 'localhost', '192.168.2.33'])
+        return is_local
+
     def do_GET(self):
         parsed = urllib.parse.urlparse(self.path)
         path = parsed.path
@@ -684,8 +700,16 @@ class HubHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
                 return
 
         elif path == "/api/batches":
+            is_admin = self.is_admin_request(query)
             batches = load_batches()
-            content = json.dumps({"batches": batches}, ensure_ascii=False).encode("utf-8")
+            for b in batches:
+                if "published" not in b:
+                    b["published"] = True
+
+            if not is_admin:
+                batches = [b for b in batches if b.get("published", True)]
+
+            content = json.dumps({"batches": batches, "is_admin": is_admin}, ensure_ascii=False).encode("utf-8")
             self.send_response(200)
             self.send_header("Content-Type", "application/json; charset=utf-8")
             self.send_header("Access-Control-Allow-Origin", "*")
@@ -705,6 +729,7 @@ class HubHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
             return
 
         elif path == "/api/products":
+            is_admin = self.is_admin_request(query)
             batch_id = query.get("batch", [""])[0]
             batches = load_batches()
             batch = next((b for b in batches if b["id"] == batch_id), batches[0] if batches else None)
@@ -713,10 +738,24 @@ class HubHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
                 self.send_error(404, "Batch not found")
                 return
 
+            # Check if batch is a private draft and client is not admin
+            if not is_admin and not batch.get("published", True):
+                self.send_response(403)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.send_header("Access-Control-Allow-Origin", "*")
+                self.end_headers()
+                self.wfile.write(json.dumps({
+                    "status": "error",
+                    "error": "draft_private",
+                    "message": "Denna mapp är ett privat utkast och har inte delats med teamet ännu."
+                }, ensure_ascii=False).encode("utf-8"))
+                return
+
             products = scan_batch_products(batch)
             reviews = load_reviews(batch["id"])
             payload = {
                 "batch": batch,
+                "is_admin": is_admin,
                 "count": len(products),
                 "products": products,
                 "reviews": reviews
@@ -858,6 +897,14 @@ class HubHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
             post_data = self.rfile.read(content_length)
             try:
                 body = json.loads(post_data.decode("utf-8"))
+                if not self.is_admin_request(query, body.get("reviewer") or body.get("user")):
+                    self.send_response(403)
+                    self.send_header("Content-Type", "application/json; charset=utf-8")
+                    self.send_header("Access-Control-Allow-Origin", "*")
+                    self.end_headers()
+                    self.wfile.write(json.dumps({"status": "error", "message": "Endast admin kan lägga till mappar."}).encode("utf-8"))
+                    return
+
                 folder_path = body.get("path", "").strip().strip('"').strip("'")
                 name = body.get("name", "").strip()
                 category = body.get("category", "kepsar")
@@ -896,6 +943,7 @@ class HubHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
                     "path": folder_path,
                     "category": category,
                     "onedrive_url": body.get("onedrive_url", "").strip(),
+                    "published": body.get("published", False),
                     "createdAt": datetime.datetime.now().isoformat()
                 }
                 batches.append(new_batch)
@@ -910,6 +958,53 @@ class HubHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
                 return
             except Exception as e:
                 self.send_error(400, f"Error adding batch: {e}")
+                return
+
+        elif path == "/api/batch/toggle_publish":
+            content_length = int(self.headers.get("Content-Length", 0))
+            post_data = self.rfile.read(content_length)
+            try:
+                body = json.loads(post_data.decode("utf-8")) if content_length > 0 else {}
+                if not self.is_admin_request(query, body.get("reviewer") or body.get("user")):
+                    self.send_response(403)
+                    self.send_header("Content-Type", "application/json; charset=utf-8")
+                    self.send_header("Access-Control-Allow-Origin", "*")
+                    self.end_headers()
+                    self.wfile.write(json.dumps({"status": "error", "message": "Endast admin kan ändra publiceringsstatus."}).encode("utf-8"))
+                    return
+
+                batch_id = body.get("batch_id") or query.get("batch", [""])[0]
+                target_pub = body.get("published", None)
+                batches = load_batches()
+                target_batch = next((b for b in batches if b["id"] == batch_id), None)
+                if not target_batch:
+                    self.send_response(404)
+                    self.send_header("Content-Type", "application/json; charset=utf-8")
+                    self.send_header("Access-Control-Allow-Origin", "*")
+                    self.end_headers()
+                    self.wfile.write(json.dumps({"status": "error", "message": "Mapp hittades inte"}).encode("utf-8"))
+                    return
+
+                if target_pub is not None:
+                    target_batch["published"] = bool(target_pub)
+                else:
+                    target_batch["published"] = not target_batch.get("published", False)
+
+                save_batches(batches)
+                resp = json.dumps({
+                    "status": "ok",
+                    "batch": target_batch,
+                    "published": target_batch["published"],
+                    "batches": batches
+                }, ensure_ascii=False).encode("utf-8")
+                self.send_response(200)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.send_header("Access-Control-Allow-Origin", "*")
+                self.end_headers()
+                self.wfile.write(resp)
+                return
+            except Exception as e:
+                self.send_error(500, f"Error toggling publish: {e}")
                 return
 
         elif path == "/api/batch/set_onedrive":

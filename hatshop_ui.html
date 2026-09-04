@@ -1474,6 +1474,12 @@
         <button class="btn btn-sm btn-success" onclick="openAddBatchModal()" title="Skapa en ny mapp för ett fotoprojekt från datorn/OneDrive">
           + Ny Mapp
         </button>
+        <!-- Publish Status & Toggle Button for Admin -->
+        <div id="batchPublishWrap" style="display: none; align-items: center; margin: 0 2px;">
+          <button class="btn btn-sm" id="btnPublishBatch" onclick="toggleBatchPublish()">
+            <!-- Dynamically populated -->
+          </button>
+        </div>
         <button class="btn btn-sm btn-outline" onclick="copyBatchShareLink()" title="Kopiera direktlänk till denna mapp för kollegor i Microsoft Teams">
           🔗 Dela mapp
         </button>
@@ -1893,7 +1899,17 @@
         </div>
       </div>
 
-      <div style="display: flex; justify-content: flex-end; gap: 8px; margin-top: 8px;">
+      <div class="form-group" style="margin-top: 12px; padding: 10px 14px; background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.35); border-radius: 8px;">
+        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; margin: 0; font-size: 13px; color: #fbbf24; font-weight: 600;">
+          <input type="checkbox" id="newBatchDraft" checked style="accent-color: #f59e0b; width: 16px; height: 16px; cursor: pointer;">
+          <span>🔒 Spara som privat utkast (endast synlig för dig)</span>
+        </label>
+        <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px; margin-left: 24px; line-height: 1.4;">
+          Mappen döljs för kollegor tills du har inspekterat bilderna och klickar på <b>"Dela med teamet"</b>.
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: flex-end; gap: 8px; margin-top: 14px;">
         <button class="btn" onclick="closeAddBatchModal()">Avbryt</button>
         <button class="btn btn-primary" id="submitNewBatchBtn" onclick="submitNewBatch()">Lägg till & Aktivera</button>
       </div>
@@ -2310,6 +2326,7 @@
       updateReviewerDisplay();
       document.getElementById('nameModal').classList.remove('active');
       showToast(`Inloggad som: ${state.reviewer}`);
+      initBatches();
     }
 
     function selectQuickReviewer(name) {
@@ -2318,6 +2335,7 @@
       updateReviewerDisplay();
       document.getElementById('nameModal').classList.remove('active');
       showToast(`Inloggad som: ${state.reviewer}`);
+      initBatches();
     }
 
     function promptChangeName() { openNameModal(); }
@@ -2332,18 +2350,6 @@
 
     async function initBatches() {
       try {
-        const res = await fetch('/api/batches');
-        const data = await res.json();
-        state.batches = data.batches || [];
-        
-        const bSelect = document.getElementById('batchSelect');
-        bSelect.innerHTML = '';
-        state.batches.forEach(b => {
-          const icon = b.category === 'kepsar' ? '🧢' : (b.category === 'mattor_inredning' ? '🧶' : '📁');
-          const opt = new Option(`${icon} ${b.name}`, b.id);
-          bSelect.add(opt);
-        });
-
         // Check if URL has a ?user= or ?reviewer= parameter
         const urlParams = new URLSearchParams(window.location.search);
         const paramUser = urlParams.get('user') || urlParams.get('reviewer');
@@ -2354,6 +2360,21 @@
           const nameModal = document.getElementById('nameModal');
           if (nameModal) nameModal.classList.remove('active');
         }
+
+        const res = await fetch(`/api/batches?reviewer=${encodeURIComponent(state.reviewer || '')}`);
+        const data = await res.json();
+        state.batches = data.batches || [];
+        state.isAdmin = data.is_admin || false;
+        
+        const bSelect = document.getElementById('batchSelect');
+        bSelect.innerHTML = '';
+        state.batches.forEach(b => {
+          const icon = b.category === 'kepsar' ? '🧢' : (b.category === 'mattor_inredning' ? '🧶' : '📁');
+          const isDraft = b.published === false;
+          const draftPrefix = (state.isAdmin && isDraft) ? '🔒 [Utkast] ' : '';
+          const opt = new Option(`${draftPrefix}${icon} ${b.name}`, b.id);
+          bSelect.add(opt);
+        });
 
         // 1. Check if URL has a ?batch= parameter
         const paramBatch = urlParams.get('batch');
@@ -2397,7 +2418,12 @@
       }
 
       try {
-        const res = await fetch(`/api/products?batch=${encodeURIComponent(batchId)}`);
+        const res = await fetch(`/api/products?batch=${encodeURIComponent(batchId)}&reviewer=${encodeURIComponent(state.reviewer || '')}`);
+        if (res.status === 403) {
+          const errData = await res.json().catch(() => ({}));
+          showToast('🔒 ' + (errData.message || 'Denna mapp är ett privat utkast och har inte delats ännu.'), 'error');
+          return;
+        }
         const data = await res.json();
         state.currentBatch = data.batch;
         state.products = data.products || [];
@@ -2419,6 +2445,7 @@
         renderSubToolbar();
         updateQAStats();
         updateOneDriveButtons();
+        updateBatchPublishButton();
         showToast(`Laddade ${state.currentBatch.name}`);
       } catch (err) {
         console.error('Error loading batch products:', err);
@@ -2518,6 +2545,75 @@
       });
     }
 
+    function updateBatchPublishButton() {
+      const wrap = document.getElementById('batchPublishWrap');
+      const btn = document.getElementById('btnPublishBatch');
+      if (!wrap || !btn) return;
+
+      if (!state.isAdmin) {
+        wrap.style.display = 'none';
+        return;
+      }
+
+      wrap.style.display = 'inline-flex';
+      const batch = state.currentBatch;
+      if (!batch) return;
+
+      const isPub = batch.published !== false;
+      if (!isPub) {
+        btn.innerHTML = '🔒 Privat utkast <span style="background: rgba(0,0,0,0.25); padding: 2px 7px; border-radius: 4px; margin-left: 5px; font-size: 11px;">🚀 Dela med teamet</span>';
+        btn.className = 'btn btn-sm';
+        btn.style.cssText = 'background: #f59e0b; color: #000; border: none; font-weight: 700; box-shadow: 0 0 10px rgba(245, 158, 11, 0.35); cursor: pointer;';
+        btn.title = 'Denna mapp är ett privat utkast och är helt dold för kollegorna. Klicka här när du granskat klart för att dela den med teamet!';
+      } else {
+        btn.innerHTML = '🌍 Delad med teamet <span style="opacity: 0.7; margin-left: 5px; font-size: 11px;">(ändra)</span>';
+        btn.className = 'btn btn-sm btn-outline';
+        btn.style.cssText = 'border-color: #10b981; color: #10b981; font-weight: 600; background: rgba(16, 185, 129, 0.08); cursor: pointer;';
+        btn.title = 'Mappen är publicerad och synlig för alla kollegor. Klicka om du vill göra den till ett privat utkast igen.';
+      }
+    }
+
+    async function toggleBatchPublish() {
+      const batch = state.currentBatch;
+      if (!batch) return;
+      const willPublish = batch.published === false;
+      const msg = willPublish 
+        ? `Vill du göra "${batch.name}" synlig för alla kollegor nu? Den blir omedelbart synlig i deras mappväljare.` 
+        : `Vill du göra "${batch.name}" privat igen? Den kommer då att döljas för kollegorna.`;
+      if (!confirm(msg)) return;
+
+      try {
+        const res = await fetch('/api/batch/toggle_publish', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ batch_id: batch.id, published: willPublish, reviewer: state.reviewer })
+        });
+        const data = await res.json();
+        if (data.status === 'ok') {
+          batch.published = data.published;
+          const found = state.batches.find(b => b.id === batch.id);
+          if (found) found.published = data.published;
+          updateBatchPublishButton();
+          
+          // Update option label in dropdown
+          const bSelect = document.getElementById('batchSelect');
+          if (bSelect) {
+            const opt = bSelect.querySelector(`option[value="${batch.id}"]`);
+            if (opt) {
+              const icon = batch.category === 'kepsar' ? '🧢' : (batch.category === 'mattor_inredning' ? '🧶' : '📁');
+              const draftPrefix = !data.published ? '🔒 [Utkast] ' : '';
+              opt.innerText = `${draftPrefix}${icon} ${batch.name}`;
+            }
+          }
+          showToast(willPublish ? '🚀 Mappen är nu delad med teamet!' : '🔒 Mappen är nu ett privat utkast.');
+        } else {
+          alert('Kunde inte uppdatera status: ' + (data.message || 'Okänt fel'));
+        }
+      } catch (err) {
+        alert('Fel vid uppdatering: ' + err.message);
+      }
+    }
+
     function hardReloadApp() {
       showToast('🔄 Laddar om sidan helt färskt från servern (Ctrl+F5)...');
       try {
@@ -2560,9 +2656,11 @@
       const p = document.getElementById('newBatchPath');
       const n = document.getElementById('newBatchName');
       const od = document.getElementById('newBatchOneDrive');
+      const draftChk = document.getElementById('newBatchDraft');
       if (p) p.value = '';
       if (n) { n.value = ''; delete n.dataset.autofilled; }
       if (od) od.value = '';
+      if (draftChk) draftChk.checked = true;
       selectCategoryOption('kepsar');
       document.getElementById('addBatchModal').classList.add('active');
       setTimeout(() => p?.focus(), 60);
@@ -2607,6 +2705,7 @@
       const nameInput = document.getElementById('newBatchName').value.trim();
       const onedriveInput = document.getElementById('newBatchOneDrive')?.value.trim() || '';
       const category = state.newBatchCategory || 'kepsar';
+      const isDraft = document.getElementById('newBatchDraft')?.checked ?? true;
 
       if (!pathInput) {
         alert('Vänligen klistra in en mappsökväg.');
@@ -2622,7 +2721,14 @@
         const res = await fetch('/api/batches/add', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ path: pathInput, name: nameInput, category, onedrive_url: onedriveInput })
+          body: JSON.stringify({ 
+            path: pathInput, 
+            name: nameInput, 
+            category, 
+            onedrive_url: onedriveInput,
+            published: !isDraft,
+            reviewer: state.reviewer
+          })
         });
         const data = await res.json();
         if (data.status === 'ok') {
@@ -2632,7 +2738,7 @@
           if (document.getElementById('newBatchOneDrive')) document.getElementById('newBatchOneDrive').value = '';
           await initBatches();
           await loadBatch(data.batch.id);
-          showToast(`Mapp "${data.batch.name}" tillagd och aktiverad!`);
+          showToast(`Mapp "${data.batch.name}" tillagd ${isDraft ? '(som privat utkast)' : '(publicerad)'}!`);
         } else {
           alert('Fel: ' + (data.message || 'Kunde inte lägga till mappen.'));
         }

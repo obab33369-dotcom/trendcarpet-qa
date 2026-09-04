@@ -1294,6 +1294,7 @@
       </div>
 
       <div class="header-actions">
+        <div class="reviewer-btn" id="mBtnPublishBatch" onclick="toggleMobileBatchPublish()" style="display: none; font-size: 15px;" title="Publicera eller gör mappen privat">🔒</div>
         <div class="reviewer-btn" onclick="copyMobileOneDriveLink()" id="mBtnOneDrive" title="Kopiera OneDrive-länk">☁️</div>
         <div class="reviewer-btn" onclick="copyMobileShareLink()" title="Dela länk till denna mapp">🔗</div>
         <div class="reviewer-btn" onclick="openNameModal()" title="Klicka för att byta namn">
@@ -1671,6 +1672,7 @@
         history.back();
       }
       showToast(`Välkommen ${name}!`);
+      initBatches();
     }
 
     function selectQuickMobileReviewer(name) {
@@ -1682,22 +1684,11 @@
         history.back();
       }
       showToast(`Välkommen ${name}!`);
+      initBatches();
     }
 
     async function initBatches() {
       try {
-        const res = await fetch('/api/batches');
-        const data = await res.json();
-        state.batches = data.batches || [];
-        const select = document.getElementById('mobileBatchSelect');
-        select.innerHTML = '';
-        state.batches.forEach(b => {
-          const opt = document.createElement('option');
-          opt.value = b.id;
-          opt.innerText = b.name;
-          select.appendChild(opt);
-        });
-
         // Check if URL has ?user= or ?reviewer= parameter
         const urlParams = new URLSearchParams(window.location.search);
         const paramUser = urlParams.get('user') || urlParams.get('reviewer');
@@ -1708,6 +1699,21 @@
           const nameModal = document.getElementById('nameModal');
           if (nameModal) nameModal.classList.remove('active');
         }
+
+        const res = await fetch(`/api/batches?reviewer=${encodeURIComponent(state.reviewer || '')}`);
+        const data = await res.json();
+        state.batches = data.batches || [];
+        state.isAdmin = data.is_admin || false;
+        const select = document.getElementById('mobileBatchSelect');
+        select.innerHTML = '';
+        state.batches.forEach(b => {
+          const opt = document.createElement('option');
+          opt.value = b.id;
+          const isDraft = b.published === false;
+          const draftPrefix = (state.isAdmin && isDraft) ? '🔒 [Utkast] ' : '';
+          opt.innerText = `${draftPrefix}${b.name}`;
+          select.appendChild(opt);
+        });
 
         const paramBatch = urlParams.get('batch');
         const targetBatch = (paramBatch && state.batches.some(b => b.id === paramBatch))
@@ -1733,6 +1739,59 @@
         window.history.replaceState({}, '', newUrl);
       } catch (e) {}
       await loadBatch(batchId);
+    }
+
+    function updateMobilePublishButton() {
+      const btn = document.getElementById('mBtnPublishBatch');
+      if (!btn) return;
+      if (!state.isAdmin) {
+        btn.style.display = 'none';
+        return;
+      }
+      btn.style.display = 'flex';
+      const batch = state.batches.find(b => b.id === state.currentBatchId);
+      if (!batch) return;
+
+      if (batch.published === false) {
+        btn.innerHTML = '🔒';
+        btn.title = 'Privat utkast (Klicka för att dela med teamet)';
+        btn.style.background = '#f59e0b';
+        btn.style.color = '#000';
+      } else {
+        btn.innerHTML = '🌍';
+        btn.title = 'Delad med teamet (Klicka för att göra privat)';
+        btn.style.background = 'rgba(16, 185, 129, 0.2)';
+        btn.style.color = '#10b981';
+      }
+    }
+
+    async function toggleMobileBatchPublish() {
+      const batch = state.batches.find(b => b.id === state.currentBatchId);
+      if (!batch) return;
+      const willPublish = batch.published === false;
+      const msg = willPublish 
+        ? `Vill du göra "${batch.name}" synlig för alla kollegor nu?` 
+        : `Vill du göra "${batch.name}" privat igen?`;
+      if (!confirm(msg)) return;
+
+      try {
+        const res = await fetch('/api/batch/toggle_publish', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ batch_id: batch.id, published: willPublish, reviewer: state.reviewer })
+        });
+        const data = await res.json();
+        if (data.status === 'ok') {
+          batch.published = data.published;
+          updateMobilePublishButton();
+          await initBatches();
+          showToast(willPublish ? '🚀 Mappen är nu delad med teamet!' : '🔒 Mappen är nu ett privat utkast.');
+        } else {
+          alert('Fel: ' + (data.message || 'Okänt fel'));
+        }
+      } catch (err) {
+        alert('Fel vid uppdatering: ' + err.message);
+      }
     }
 
     function copyMobileShareLink() {
@@ -1771,11 +1830,16 @@
 
     async function loadBatch(batchId) {
       try {
-        const res = await fetch(`/api/products?batch=${encodeURIComponent(batchId)}`);
+        const res = await fetch(`/api/products?batch=${encodeURIComponent(batchId)}&reviewer=${encodeURIComponent(state.reviewer || '')}`);
         const data = await res.json();
+        if (data.status === 'error' && data.error === 'draft_private') {
+          showToast('🔒 ' + data.message);
+          return;
+        }
         state.products = data.products || [];
         state.reviews = data.reviews || {};
         updateGridLabels();
+        updateMobilePublishButton();
         if (state.mobileView === 'grid') {
           renderMobileGrid();
         } else {
