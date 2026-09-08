@@ -4,7 +4,7 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "destination": "https://exchanges-buddy-fire-continuous.trycloudflare.com/$1",
+      "destination": "https://valve-supervisors-celebs-amp.trycloudflare.com/$1",
       "permanent": false
     }
   ]
