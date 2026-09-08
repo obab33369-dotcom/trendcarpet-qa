@@ -1,10 +1,11 @@
 {
   "name": "trendcarpet-qa",
   "cleanUrls": true,
-  "rewrites": [
+  "redirects": [
     {
       "source": "/(.*)",
-      "destination": "https://robot-locations-hierarchy-due.trycloudflare.com/$1"
+      "destination": "https://exchanges-buddy-fire-continuous.trycloudflare.com/$1",
+      "permanent": false
     }
   ]
 }
