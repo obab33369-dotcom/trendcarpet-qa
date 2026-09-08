@@ -1,11 +1,10 @@
 {
   "name": "trendcarpet-qa",
   "cleanUrls": true,
-  "redirects": [
+  "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "https://bunny-pics-arrives-despite.trycloudflare.com/$1",
-      "permanent": false
+      "destination": "https://api.trycloudflare.com/$1"
     }
   ]
 }
