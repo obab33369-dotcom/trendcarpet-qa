@@ -1,0 +1,16 @@
+{
+  "name": "Trendcarpet Foto- & Retusch-Hubb",
+  "short_name": "Trendcarpet QA",
+  "start_url": "https://trendcarpet-qa.vercel.app/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0B0D0F",
+  "theme_color": "#00f0ff",
+  "icons": [
+    {
+      "src": "/trendcarpet_qa.ico",
+      "sizes": "256x256",
+      "type": "image/x-icon"
+    }
+  ]
+}
