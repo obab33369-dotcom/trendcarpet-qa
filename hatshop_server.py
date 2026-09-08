@@ -548,25 +548,32 @@ def scan_batch_products(batch):
                 if not os.path.isdir(folder_path):
                     continue
 
-                parts = folder_name.split("-")
+                # Clean variant suffixes from folder name if present
+                clean_name = re.sub(r'-(?:1500px(?:\s*iphone)?|original|web|print)$', '', folder_name, flags=re.IGNORECASE).strip()
+                if clean_name.lower() == 'frome':
+                    clean_name = 'Frome-red'
+
+                parts = clean_name.split("-")
                 brand = "Brand"
-                model_name = folder_name
+                model_name = clean_name
                 color_name = ""
 
-                if len(parts) >= 4 and parts[0].strip().lower() in ["keps", "matta", "wiltonmatta", "inredning"]:
+                if len(parts) >= 4 and parts[0].strip().lower() in ["keps", "matta", "ullmatta", "viskosmatta", "wiltonmatta", "inredning"]:
                     brand = parts[0].strip()
                     model_name = parts[1].strip()
                     color_name = "-".join(parts[2:]).strip()
                 elif len(parts) >= 3:
+                    brand = parts[0].strip()
                     model_name = parts[1].strip()
                     color_name = "-".join(parts[2:]).strip()
                 elif len(parts) == 2:
                     model_name = parts[0].strip()
                     color_name = parts[1].strip()
 
-                if folder_name not in products_map:
-                    products_map[folder_name] = {
-                        "id": folder_name,
+                prod_key = clean_name
+                if prod_key not in products_map:
+                    products_map[prod_key] = {
+                        "id": prod_key,
                         "brand": brand,
                         "model": model_name,
                         "color": color_name,
@@ -580,9 +587,9 @@ def scan_batch_products(batch):
                 raw_files = [f for f in os.listdir(folder_path) if f.lower().endswith((".jpg", ".jpeg", ".png", ".webp"))]
                 shot_list = process_and_sort_variant_shots(raw_files, batch_id, subdir, folder_name, folder_path)
 
-                products_map[folder_name]["variants"][subdir] = shot_list
+                products_map[prod_key]["variants"][subdir] = shot_list
                 if any(s.get("is_new_version") for s in shot_list):
-                    products_map[folder_name]["has_new_version"] = True
+                    products_map[prod_key]["has_new_version"] = True
                     tag = next((s["version_tag"] for s in shot_list if s.get("is_new_version")), "")
                     if tag:
                         products_map[folder_name]["version_tag"] = tag

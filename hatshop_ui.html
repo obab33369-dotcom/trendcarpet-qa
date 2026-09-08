@@ -2938,12 +2938,12 @@
           badge.style.background = 'rgba(239, 68, 68, 0.15)';
           badge.style.color = '#ef4444';
 
-          // If currently stranded on an old trycloudflare URL, redirect to permanent Vercel domain!
-          if (window.location.hostname.includes('trycloudflare.com')) {
+          // If currently stranded on an old trycloudflare or ngrok URL, redirect to permanent Vercel domain!
+          if (window.location.hostname.includes('trycloudflare.com') || window.location.hostname.includes('ngrok')) {
             showToast('⚠️ Återansluter till permanent adress...', 'error');
             setTimeout(() => {
               window.location.href = 'https://trendcarpet-qa.vercel.app' + window.location.search;
-            }, 1500);
+            }, 1200);
           }
         }
       }, 20000);
@@ -3280,7 +3280,21 @@
             reviewer: state.reviewer
           })
         });
-        const data = await res.json();
+
+        let data;
+        const cType = res.headers.get('content-type') || '';
+        if (cType.includes('application/json')) {
+          data = await res.json();
+        } else {
+          const text = await res.text();
+          if (window.location.hostname.includes('ngrok')) {
+            alert('⚠️ Du är ansluten via en gammal inaktiv ngrok-länk!\n\nAnvänd istället den permanenta länken:\nhttps://trendcarpet-qa.vercel.app');
+            window.location.href = 'https://trendcarpet-qa.vercel.app';
+            return;
+          }
+          throw new Error(`Serverfel (${res.status}): Servern svarade inte med giltig JSON. Kontrollera att serverprocessen är igång.`);
+        }
+
         if (data.status === 'ok') {
           closeAddBatchModal();
           document.getElementById('newBatchPath').value = '';
