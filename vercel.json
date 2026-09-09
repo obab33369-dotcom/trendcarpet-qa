@@ -4,7 +4,7 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "destination": "https://apps-interaction-desired-composed.trycloudflare.com/$1",
+      "destination": "https://brilliant-baghdad-accurately-disciplinary.trycloudflare.com/$1",
       "permanent": false
     }
   ]
