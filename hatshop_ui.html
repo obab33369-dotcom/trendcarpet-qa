@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script>
     (function() {
+      if (window.location.hostname.includes('trycloudflare.com') || window.location.hostname.includes('ngrok')) {
+        window.location.replace('https://trendcarpet-qa.vercel.app' + window.location.pathname + window.location.search);
+        return;
+      }
       const params = new URLSearchParams(window.location.search);
       if (params.get('desktop') === '1' || sessionStorage.getItem('prefer_desktop') === '1') return;
       const isMobile = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || (window.innerWidth > 0 && window.innerWidth <= 768);
