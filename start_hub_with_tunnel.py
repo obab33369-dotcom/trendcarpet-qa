@@ -69,11 +69,10 @@ def update_vercel_config(new_tunnel_url):
         config = {
             "name": "trendcarpet-qa",
             "cleanUrls": True,
-            "redirects": [
+            "rewrites": [
                 {
                     "source": "/(.*)",
-                    "destination": expected_dest,
-                    "permanent": False
+                    "destination": expected_dest
                 }
             ]
         }

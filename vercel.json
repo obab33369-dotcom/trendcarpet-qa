@@ -1,11 +1,10 @@
 {
   "name": "trendcarpet-qa",
   "cleanUrls": true,
-  "redirects": [
+  "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "https://psychology-generally-explosion-meetings.trycloudflare.com/$1",
-      "permanent": false
+      "destination": "https://psychology-generally-explosion-meetings.trycloudflare.com/$1"
     }
   ]
 }
