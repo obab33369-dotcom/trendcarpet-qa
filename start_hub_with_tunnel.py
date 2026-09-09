@@ -23,6 +23,30 @@ LINK_FILE = os.path.join(WORKSPACE_DIR, "PUBLIC_LINK.txt")
 
 PERMANENT_VERCEL_URL = "https://trendcarpet-qa.vercel.app"
 
+# Bypass ISP DNS latency for ephemeral *.trycloudflare.com tunnels using Cloudflare 1.1.1.1 DoH
+import socket
+_orig_getaddrinfo = socket.getaddrinfo
+_dns_cache = {}
+
+def _patched_getaddrinfo(host, port, *args, **kwargs):
+    if isinstance(host, str) and host.endswith(".trycloudflare.com"):
+        if host not in _dns_cache:
+            try:
+                import urllib.request, json
+                req = urllib.request.Request(f"https://1.1.1.1/dns-query?name={host}&type=A", headers={"accept": "application/dns-json"})
+                with urllib.request.urlopen(req, timeout=3) as res:
+                    data = json.loads(res.read().decode("utf-8"))
+                    ips = [ans["data"] for ans in data.get("Answer", []) if ans.get("type") == 1]
+                    if ips:
+                        _dns_cache[host] = ips[0]
+            except Exception:
+                pass
+        if host in _dns_cache:
+            return [(socket.AddressFamily.AF_INET, socket.SocketKind.SOCK_STREAM, 6, "", (_dns_cache[host], port))]
+    return _orig_getaddrinfo(host, port, *args, **kwargs)
+
+socket.getaddrinfo = _patched_getaddrinfo
+
 def run_server():
     hatshop_server.start_server(PORT)
 

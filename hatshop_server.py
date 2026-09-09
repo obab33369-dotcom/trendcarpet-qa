@@ -592,11 +592,11 @@ def scan_batch_products(batch):
                     products_map[prod_key]["has_new_version"] = True
                     tag = next((s["version_tag"] for s in shot_list if s.get("is_new_version")), "")
                     if tag:
-                        products_map[folder_name]["version_tag"] = tag
+                        products_map[prod_key]["version_tag"] = tag
                 
                 mtimes = [s["mtime"] for s in shot_list if s.get("mtime")]
                 if mtimes:
-                    products_map[folder_name]["latest_mtime"] = max(products_map[folder_name]["latest_mtime"], max(mtimes))
+                    products_map[prod_key]["latest_mtime"] = max(products_map[prod_key]["latest_mtime"], max(mtimes))
     else:
         for folder_name in sorted(root_entries):
             folder_path = os.path.join(base_dir, folder_name)
