@@ -127,11 +127,11 @@ def main():
     start_tunnel()
 
     def watchdog_loop():
-        time.sleep(20) # Allow initial tunnel and Vercel setup
+        time.sleep(45) # Allow initial tunnel and Vercel DNS/deploy setup
         failures = 0
         import urllib.request
         while True:
-            time.sleep(25)
+            time.sleep(30)
             try:
                 req = urllib.request.Request(
                     f"{PERMANENT_VERCEL_URL}/api/batches?reviewer=watchdog",
@@ -140,17 +140,15 @@ def main():
                 with urllib.request.urlopen(req, timeout=12) as resp:
                     if resp.status == 200:
                         failures = 0
-                        # Periodic heartbeats
-                        # print(f"[{time.strftime('%H:%M:%S')}] [♥] Uptime Watchdog: Online (200 OK)", flush=True)
                     else:
                         failures += 1
-                        print(f"[{time.strftime('%H:%M:%S')}] [!] Watchdog: Ovantad status {resp.status} (fel {failures}/2)", flush=True)
+                        print(f"[{time.strftime('%H:%M:%S')}] [!] Watchdog: Ovantad status {resp.status} (fel {failures}/5)", flush=True)
             except Exception as e:
                 failures += 1
-                print(f"[{time.strftime('%H:%M:%S')}] [!] Watchdog: Ping misslyckades: {e} (fel {failures}/2)", flush=True)
+                print(f"[{time.strftime('%H:%M:%S')}] [!] Watchdog: Ping misslyckades: {e} (fel {failures}/5)", flush=True)
 
-            if failures >= 2:
-                print(f"[{time.strftime('%H:%M:%S')}] [⚠️] WATCHDOG: Sajten svarar inte! Startar om tunnel automatiskt...", flush=True)
+            if failures >= 5:
+                print(f"[{time.strftime('%H:%M:%S')}] [⚠️] WATCHDOG: Sajten har inte svarat pa 5 forsok (~2.5 min). Startar om tunnel...", flush=True)
                 p = proc_container.get("proc")
                 if p:
                     try:
@@ -160,7 +158,7 @@ def main():
                         pass
                 start_tunnel()
                 failures = 0
-                time.sleep(15)
+                time.sleep(40)
 
     watchdog_thread = threading.Thread(target=watchdog_loop, daemon=True)
     watchdog_thread.start()

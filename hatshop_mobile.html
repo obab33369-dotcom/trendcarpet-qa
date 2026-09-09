@@ -1783,6 +1783,15 @@
           state.currentBatchId = targetBatch;
           select.value = targetBatch;
           await loadBatch(targetBatch);
+
+          const paramProd = urlParams.get('prod');
+          if (paramProd && state.products) {
+            const pIdx = state.products.findIndex(p => p.id === paramProd || p.model === paramProd);
+            if (pIdx >= 0) {
+              state.currentProductIndex = pIdx;
+              renderSingleCard();
+            }
+          }
         }
         startMobileHeartbeat();
       } catch (err) {
@@ -1881,12 +1890,36 @@
       }
     }
 
+    function getPermanentMobileShareUrl(includeProd = false) {
+      const permBase = 'https://trendcarpet-qa.vercel.app';
+      const params = new URLSearchParams();
+      if (state.currentBatchId) {
+        params.set('batch', state.currentBatchId);
+      }
+      if (includeProd && state.products && state.products[state.currentProductIndex]) {
+        params.set('prod', state.products[state.currentProductIndex].id);
+      }
+      const qs = params.toString() ? '?' + params.toString() : '';
+      return permBase + '/' + qs;
+    }
+
     function copyMobileShareLink() {
-      const url = window.location.href;
+      const url = getPermanentMobileShareUrl(false);
       navigator.clipboard.writeText(url).then(() => {
-        showToast('🔗 Mapplänk kopierad till urklipp!');
+        showToast('🔗 Permanent mapplänk kopierad till urklipp!');
       }).catch(() => {
-        prompt('Kopiera denna länk:', url);
+        prompt('Kopiera denna permanenta direktlänk för mappen:', url);
+      });
+    }
+
+    function copyMobileProductShareLink() {
+      const prod = state.products && state.products[state.currentProductIndex];
+      const prodName = prod ? prod.model : 'produkten';
+      const url = getPermanentMobileShareUrl(true);
+      navigator.clipboard.writeText(url).then(() => {
+        showToast(`🔗 Permanent länk till "${prodName}" kopierad!`);
+      }).catch(() => {
+        prompt('Kopiera denna permanenta länk:', url);
       });
     }
 
@@ -1976,7 +2009,7 @@
       const review = state.reviews[prod.id] || {};
 
       // 1. Titles & Counter
-      document.getElementById('mModelTitle').innerText = prod.model;
+      document.getElementById('mModelTitle').innerHTML = `${escapeHtml(prod.model)} <span onclick="copyMobileProductShareLink()" title="Dela permanent länk till ${escapeHtml(prod.model)}" style="cursor: pointer; font-size: 13px; margin-left: 6px; padding: 2px 6px; border-radius: 6px; background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3); color: #93c5fd; vertical-align: middle;">🔗</span>`;
       document.getElementById('mModelSubtitle').innerText = `${prod.brand} • ${prod.color}`;
       document.getElementById('mCounterPill').innerText = `${state.currentProductIndex + 1} / ${state.products.length}`;
       updateGridLabels();

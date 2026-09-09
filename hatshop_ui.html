@@ -1782,6 +1782,9 @@
         <span id="hubStatusDot" style="width: 7px; height: 7px; border-radius: 50%; background: #10b981; box-shadow: 0 0 6px #10b981;"></span>
         <span id="hubStatusText">Online</span>
       </div>
+      <button class="btn btn-sm" onclick="copyBatchShareLink()" title="Klicka för att kopiera den permanenta delningslänken för teamet (trendcarpet-qa.vercel.app)" style="background: rgba(59, 130, 246, 0.12); border: 1px solid rgba(59, 130, 246, 0.35); color: #93c5fd; font-weight: 600; padding: 3px 9px; font-size: 11px; border-radius: 9999px; margin-left: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">
+        <span>🌐</span> trendcarpet-qa.vercel.app <span style="opacity: 0.7; font-size: 10px;">📋</span>
+      </button>
       
       <!-- Batch Selector -->
       <div class="batch-selector-wrap">
@@ -1798,7 +1801,7 @@
             <!-- Dynamically populated -->
           </button>
         </div>
-        <button class="btn btn-sm btn-outline" onclick="copyBatchShareLink()" title="Kopiera direktlänk till denna mapp för kollegor i Microsoft Teams">
+        <button class="btn btn-sm btn-outline" onclick="copyBatchShareLink()" title="Kopiera permanent direktlänk (https://trendcarpet-qa.vercel.app) till denna mapp för kollegor i Teams">
           🔗 Dela mapp
         </button>
         <div class="onedrive-action-group" title="OneDrive / SharePoint-länk">
@@ -3087,13 +3090,38 @@
       }
     }
 
+    function getPermanentShareUrl(includeProd = false) {
+      const permBase = 'https://trendcarpet-qa.vercel.app';
+      const params = new URLSearchParams();
+      if (state.currentBatchId) {
+        params.set('batch', state.currentBatchId);
+      }
+      if (includeProd && state.products && state.products[state.currentProductIndex]) {
+        params.set('prod', state.products[state.currentProductIndex].id);
+      }
+      const qs = params.toString() ? '?' + params.toString() : '';
+      return permBase + '/' + qs;
+    }
+
     function copyBatchShareLink() {
-      const url = window.location.href;
+      // Always share the permanent Vercel address so links never expire
+      const url = getPermanentShareUrl(false);
       const batchName = state.currentBatch?.name || 'aktuell mapp';
       navigator.clipboard.writeText(url).then(() => {
-        showToast(`🔗 Länk till "${batchName}" kopierad! Klistra in i Teams.`);
+        showToast(`🔗 Permanent mapplänk kopierad! Klistra in i Teams.`);
       }).catch(() => {
-        prompt('Kopiera denna direktlänk för att dela mappen:', url);
+        prompt('Kopiera denna permanenta direktlänk för att dela mappen:', url);
+      });
+    }
+
+    function copyProductShareLink() {
+      const prod = state.products && state.products[state.currentProductIndex];
+      const prodName = prod ? prod.model : 'produkten';
+      const url = getPermanentShareUrl(true);
+      navigator.clipboard.writeText(url).then(() => {
+        showToast(`🔗 Permanent direktlänk till "${prodName}" kopierad!`);
+      }).catch(() => {
+        prompt('Kopiera denna permanenta direktlänk för att dela produkten:', url);
       });
     }
 
@@ -3495,6 +3523,11 @@
           <button class="btn btn-sm ${state.guidePanelOpen ? 'btn-primary' : ''}" onclick="toggleGuideAdjustPanel()" title="Öppna justeringspanel för stödlinjer">
             📐 Justera ▾
           </button>
+          <div class="tool-item" style="margin-left: auto;">
+            <button class="btn btn-sm btn-outline" onclick="copyProductShareLink()" title="Kopiera permanent direktlänk till denna specifika produkt (modell) för Teams">
+              🔗 Dela denna produkt
+            </button>
+          </div>
         `;
       } else if (state.currentMode === 'calendar') {
         container.innerHTML = `
@@ -4209,7 +4242,8 @@
       if (!prod) return;
 
       const vHeadTag = prod.has_new_version ? `<span class="version-pill" style="margin-left: 8px;">🔄 Ny version (${prod.version_tag || '-n'})</span>` : '';
-      document.getElementById('currentProductTitle').innerHTML = `${prod.model}${vHeadTag}`;
+      const shareBtn = `<button class="btn btn-sm btn-outline" onclick="copyProductShareLink()" title="Kopiera permanent direktlänk till ${prod.model} för Teams" style="margin-left: 10px; font-size: 11px; padding: 2px 8px; vertical-align: middle; display: inline-flex; align-items: center; gap: 4px;"><span>🔗</span> Dela produkt</button>`;
+      document.getElementById('currentProductTitle').innerHTML = `${prod.model}${vHeadTag} ${shareBtn}`;
       document.getElementById('currentProductSubtitle').innerText = `${prod.brand} • ${prod.color} • ${prod.folder_name}`;
 
       const grid = document.getElementById('shotsGrid');
