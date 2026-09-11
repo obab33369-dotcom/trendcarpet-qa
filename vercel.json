@@ -4,7 +4,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "https://api.trycloudflare.com/$1"
+      "destination": "https://algorithm-municipality-totally-dec.trycloudflare.com/$1"
     }
   ]
 }
