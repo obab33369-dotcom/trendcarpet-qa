@@ -532,6 +532,76 @@ def scan_batch_products(batch):
     if not os.path.exists(base_dir):
         return []
 
+    # Check for products_manifest.json in base_dir or parent directory
+    manifest_candidates = [
+        os.path.join(base_dir, "products_manifest.json"),
+        os.path.join(os.path.dirname(base_dir), "products_manifest.json"),
+        os.path.join(base_dir, "manifest.json"),
+        os.path.join(os.path.dirname(base_dir), "manifest.json"),
+    ]
+    manifest_file = next((f for f in manifest_candidates if os.path.isfile(f)), None)
+
+    if manifest_file:
+        try:
+            with open(manifest_file, "r", encoding="utf-8") as mf:
+                manifest_data = json.load(mf)
+            if isinstance(manifest_data, list):
+                products = []
+                for item in manifest_data:
+                    pid = str(item.get("id", ""))
+                    title = item.get("title", pid)
+                    clean_name = item.get("clean_name", pid)
+                    category = item.get("category", "Möbler")
+
+                    shots = []
+                    for img in item.get("images", []):
+                        fn = img.get("filename", "")
+                        if os.path.exists(os.path.join(base_dir, fn)):
+                            rel_file = fn
+                        elif "rel_path" in img and os.path.exists(os.path.join(base_dir, img["rel_path"])):
+                            rel_file = img["rel_path"]
+                        elif "rel_path" in img and os.path.exists(os.path.join(os.path.dirname(base_dir), img["rel_path"])):
+                            base_name = os.path.basename(img["rel_path"])
+                            rel_file = base_name if os.path.exists(os.path.join(base_dir, base_name)) else fn
+                        else:
+                            rel_file = fn
+
+                        full_path = os.path.join(base_dir, rel_file)
+                        mtime = os.path.getmtime(full_path) if os.path.exists(full_path) else 0
+                        kind = img.get("kind", "")
+                        pos = img.get("pos", len(shots) + 1)
+                        label = f"{pos:02d}" + (f" ({kind})" if kind else "")
+
+                        shots.append({
+                            "shot": pos,
+                            "label": label,
+                            "url": f"/image/{urllib.parse.quote(batch_id)}/{urllib.parse.quote(rel_file)}",
+                            "filename": fn,
+                            "rel_path": rel_file,
+                            "is_primary": (pos == 1),
+                            "is_new_version": False,
+                            "version_tag": "",
+                            "mtime": mtime
+                        })
+
+                    v_label = "1600x2000 Transparent" if any(img.get("is_transparent") for img in item.get("images", [])) else "Standard"
+                    products.append({
+                        "id": pid,
+                        "brand": category,
+                        "model": f"[{pid}] {title}",
+                        "color": clean_name,
+                        "folder_name": pid,
+                        "has_new_version": False,
+                        "version_tag": "",
+                        "latest_mtime": max((s["mtime"] for s in shots), default=0),
+                        "variants": {
+                            v_label: shots
+                        }
+                    })
+                return products
+        except Exception as e:
+            print(f"[!] Error parsing manifest {manifest_file}: {e}")
+
     root_entries = [d for d in os.listdir(base_dir) if os.path.isdir(os.path.join(base_dir, d))]
     has_variant_subdirs = any(v.lower() in ["1500px", "1500px iphone", "original", "web", "print"] for v in root_entries)
 
@@ -853,9 +923,16 @@ class HubHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
                         cache_file = os.path.join(THUMB_CACHE_DIR, cache_key)
                         if not os.path.exists(cache_file):
                             with Image.open(file_path) as img:
-                                img = img.convert("RGB")
+                                if img.mode in ("RGBA", "LA") or (img.mode == "P" and "transparency" in img.info):
+                                    bg = Image.new("RGB", img.size, (255, 255, 255))
+                                    if img.mode != "RGBA":
+                                        img = img.convert("RGBA")
+                                    bg.paste(img, mask=img.split()[3])
+                                    img = bg
+                                else:
+                                    img = img.convert("RGB")
                                 img.thumbnail((target_w, target_w), Image.Resampling.LANCZOS)
-                                img.save(cache_file, "JPEG", quality=82, optimize=True)
+                                img.save(cache_file, "JPEG", quality=85, optimize=True)
                         file_to_serve = cache_file
                     except Exception as e:
                         file_to_serve = file_path
