@@ -4,7 +4,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "https://effectiveness-ice-stay-compression.trycloudflare.com/$1"
+      "destination": "https://motor-safely-solaris-rapidly.trycloudflare.com/$1"
     }
   ]
 }
