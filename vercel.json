@@ -4,7 +4,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "https://motor-safely-solaris-rapidly.trycloudflare.com/$1"
+      "destination": "https://trail-losses-continues-protocol.trycloudflare.com/$1"
     }
   ]
 }
