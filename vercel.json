@@ -4,7 +4,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "https://trail-losses-continues-protocol.trycloudflare.com/$1"
+      "destination": "https://ships-neon-karma-telescope.trycloudflare.com/$1"
     }
   ]
 }
