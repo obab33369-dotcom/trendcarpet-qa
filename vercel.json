@@ -4,7 +4,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "https://ships-neon-karma-telescope.trycloudflare.com/$1"
+      "destination": "https://tons-movies-curious-library.trycloudflare.com/$1"
     }
   ]
 }
