@@ -1,0 +1,30 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-09-14T18:55:00+02:00",
+  "project_name": "Trendcarpet_Interiors_QA_Hub",
+  "mission_statement": "Autonom drift, kvalitetssäkring, bildgranskning och hosting av Trendcarpet Photo QA Hub för mattor, hattar och Reforma-möbelkataloger via permanent webb-UI (trendcarpet-qa.vercel.app).",
+  "scope_jail": {
+    "locked_root_directory": "C:\\\\Users\\\\AndronikLindgren\\\\.gemini\\\\antigravity\\\\scratch\\\\Projects\\\\Trendcarpet_Interiors",
+    "reforma_catalog_directory": "C:\\\\Users\\\\AndronikLindgren\\\\.gemini\\\\antigravity\\\\scratch\\\\reforma_master_catalog\\\\web_ui\\\\images",
+    "forbidden_directories": [
+      "OneDrive - CaMa Gruppen AB"
+    ],
+    "strict_rule": "NO recursive scans over unindexed cloud or OneDrive directories."
+  },
+  "active_services": {
+    "hub_server_script": "start_hub_with_tunnel.py",
+    "local_port": 8000,
+    "permanent_url": "https://trendcarpet-qa.vercel.app",
+    "active_batch": "reforma-images-transparent-1600x2000-shadow"
+  },
+  "features_and_fixes": {
+    "checkerboard_transparency": {
+      "status": "COMPLETED",
+      "description": "Implemented repeating-conic-gradient (#cbd5e1 / #ffffff) for stage backdrop, angle cards, shot boxes and lightbox to reveal transparent RGBA studio cutout edges."
+    },
+    "reforma_manifest_integration": {
+      "status": "COMPLETED",
+      "description": "Added products_manifest.json support in hatshop_server.py with 270 products and 1649 images."
+    }
+  }
+}

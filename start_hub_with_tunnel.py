@@ -20,11 +20,60 @@ WORKSPACE_DIR = os.path.dirname(os.path.abspath(__file__))
 CLOUDFLARED_EXE = os.path.join(WORKSPACE_DIR, "cloudflared.exe")
 VERCEL_JSON = os.path.join(WORKSPACE_DIR, "vercel.json")
 LINK_FILE = os.path.join(WORKSPACE_DIR, "PUBLIC_LINK.txt")
+LOG_FILE = os.path.join(WORKSPACE_DIR, "hub_service.log")
 
 PERMANENT_VERCEL_URL = "https://trendcarpet-qa.vercel.app"
 
-# Bypass ISP DNS latency for ephemeral *.trycloudflare.com tunnels using Cloudflare 1.1.1.1 DoH
+# Dual logger to file and console
+class DualLogger:
+    def __init__(self, filename, stream):
+        self.stream = stream
+        try:
+            self.log_file = open(filename, "a", encoding="utf-8", buffering=1)
+        except Exception:
+            self.log_file = None
+
+    def write(self, message):
+        if self.stream:
+            try:
+                self.stream.write(message)
+                self.stream.flush()
+            except Exception:
+                pass
+        if self.log_file:
+            try:
+                self.log_file.write(message)
+                self.log_file.flush()
+            except Exception:
+                pass
+
+    def flush(self):
+        if self.stream:
+            try:
+                self.stream.flush()
+            except Exception:
+                pass
+        if self.log_file:
+            try:
+                self.log_file.flush()
+            except Exception:
+                pass
+
+sys.stdout = DualLogger(LOG_FILE, sys.stdout)
+sys.stderr = DualLogger(LOG_FILE, sys.stderr)
+
 import socket
+
+# Single-instance check
+def is_already_running(port=PORT):
+    try:
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+            s.settimeout(1.0)
+            return s.connect_ex(('127.0.0.1', port)) == 0
+    except Exception:
+        return False
+
+# Bypass ISP DNS latency for ephemeral *.trycloudflare.com tunnels using Cloudflare 1.1.1.1 DoH
 _orig_getaddrinfo = socket.getaddrinfo
 _dns_cache = {}
 
@@ -95,7 +144,23 @@ def update_vercel_config(new_tunnel_url):
     except Exception as e:
         print("[!] Fel vid uppdatering av vercel.json:", e)
 
+def wait_for_internet(timeout=60):
+    start = time.time()
+    while time.time() - start < timeout:
+        try:
+            import urllib.request
+            req = urllib.request.Request("https://1.1.1.1", headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(req, timeout=3) as _:
+                return True
+        except Exception:
+            time.sleep(2)
+    return False
+
 def main():
+    if is_already_running(PORT):
+        print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] [*] Trendcarpet QA Hub kors redan pa port {PORT}. Avbryter start av dubblett.")
+        sys.exit(0)
+
     print("==================================================================")
     print(" QA FOTO- & RETUSCH-HUBB (PERMANENT VERCEL-LANK)")
     print("==================================================================")
@@ -120,6 +185,10 @@ def main():
         if not os.path.exists(CLOUDFLARED_EXE):
             print(f"[!] cloudflared.exe hittades inte pa: {CLOUDFLARED_EXE}")
             return
+
+        print("[*] Vantar pa aktiv internetanslutning...")
+        if not wait_for_internet(timeout=45):
+            print("[!] Ingen internetanslutning kunde verifieras, provar starta tunnel anda...")
 
         print("[*] Startar Cloudflare-tunnel (obegransad gratis bandbredd)...")
         proc = subprocess.Popen(
