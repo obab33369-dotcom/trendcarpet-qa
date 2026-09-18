@@ -4,7 +4,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "https://tons-movies-curious-library.trycloudflare.com/$1"
+      "destination": "https://chain-roles-holder-wealth.trycloudflare.com/$1"
     }
   ]
 }
