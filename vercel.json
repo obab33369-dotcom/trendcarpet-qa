@@ -4,7 +4,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "https://chain-roles-holder-wealth.trycloudflare.com/$1"
+      "destination": "https://edt-adjustable-tears-readily.trycloudflare.com/$1"
     }
   ]
 }
