@@ -4,7 +4,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "https://began-cube-characters-involve.trycloudflare.com/$1"
+      "destination": "https://statutory-booth-furnished-mainstream.trycloudflare.com/$1"
     }
   ]
 }
