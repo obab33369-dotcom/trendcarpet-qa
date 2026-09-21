@@ -4,7 +4,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "https://edt-adjustable-tears-readily.trycloudflare.com/$1"
+      "destination": "https://began-cube-characters-involve.trycloudflare.com/$1"
     }
   ]
 }
