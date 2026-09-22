@@ -4,7 +4,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "https://introduction-negotiations-bradford-affordable.trycloudflare.com/$1"
+      "destination": "https://asin-black-reflected-facilities.trycloudflare.com/$1"
     }
   ]
 }
