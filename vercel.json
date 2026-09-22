@@ -4,7 +4,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "https://preserve-survive-pts-interior.trycloudflare.com/$1"
+      "destination": "https://decide-tracy-hepatitis-scientists.trycloudflare.com/$1"
     }
   ]
 }
