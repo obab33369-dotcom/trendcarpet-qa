@@ -187,10 +187,6 @@ def main():
             print(f"[!] cloudflared.exe hittades inte pa: {CLOUDFLARED_EXE}")
             return
 
-        print("[*] Vantar pa aktiv internetanslutning...")
-        if not wait_for_internet(timeout=45):
-            print("[!] Ingen internetanslutning kunde verifieras, provar starta tunnel anda...")
-
         print("[*] Startar Cloudflare-tunnel (obegransad gratis bandbredd)...")
         proc = subprocess.Popen(
             [CLOUDFLARED_EXE, "tunnel", "--url", f"http://localhost:{PORT}"],
