@@ -4,7 +4,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "https://processors-texture-universal-families.trycloudflare.com/$1"
+      "destination": "https://bear-cedar-time-precision.trycloudflare.com/$1"
     }
   ]
 }
