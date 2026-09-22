@@ -4,7 +4,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "https://streams-memorabilia-webster-consists.trycloudflare.com/$1"
+      "destination": "https://spoken-overcome-divine-right.trycloudflare.com/$1"
     }
   ]
 }
