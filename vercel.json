@@ -4,7 +4,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "https://previous-authorization-promised-independently.trycloudflare.com/$1"
+      "destination": "https://compromise-automation-happen-xhtml.trycloudflare.com/$1"
     }
   ]
 }
