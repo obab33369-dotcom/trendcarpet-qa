@@ -4,7 +4,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "https://bear-cedar-time-precision.trycloudflare.com/$1"
+      "destination": "https://preserve-survive-pts-interior.trycloudflare.com/$1"
     }
   ]
 }
