@@ -4,7 +4,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "https://electric-watches-project-showed.trycloudflare.com/$1"
+      "destination": "https://introduction-negotiations-bradford-affordable.trycloudflare.com/$1"
     }
   ]
 }
