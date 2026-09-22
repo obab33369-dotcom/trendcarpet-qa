@@ -24,6 +24,17 @@ LOG_FILE = os.path.join(WORKSPACE_DIR, "hub_service.log")
 
 PERMANENT_VERCEL_URL = "https://trendcarpet-qa.vercel.app"
 
+def get_win32_subprocess_flags():
+    """Returns creationflags and startupinfo to ensure console executables are completely hidden on Windows."""
+    creationflags = 0
+    startupinfo = None
+    if sys.platform == "win32":
+        creationflags = subprocess.CREATE_NO_WINDOW
+        startupinfo = subprocess.STARTUPINFO()
+        startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+        startupinfo.wShowWindow = subprocess.SW_HIDE
+    return {"creationflags": creationflags, "startupinfo": startupinfo}
+
 # Dual logger to file and console
 class DualLogger:
     def __init__(self, filename, stream):
@@ -130,10 +141,11 @@ def update_vercel_config(new_tunnel_url):
 
         def push_git():
             try:
-                subprocess.run(["git", "add", "vercel.json"], cwd=WORKSPACE_DIR, capture_output=True)
-                subprocess.run(["git", "commit", "-m", f"Update tunnel destination: {new_tunnel_url}"], cwd=WORKSPACE_DIR, capture_output=True)
-                subprocess.run(["git", "pull", "--rebase", "origin", "main"], cwd=WORKSPACE_DIR, capture_output=True)
-                res = subprocess.run(["git", "push", "origin", "main"], cwd=WORKSPACE_DIR, capture_output=True, text=True)
+                flags = get_win32_subprocess_flags()
+                subprocess.run(["git", "add", "vercel.json"], cwd=WORKSPACE_DIR, capture_output=True, **flags)
+                subprocess.run(["git", "commit", "-m", f"Update tunnel destination: {new_tunnel_url}"], cwd=WORKSPACE_DIR, capture_output=True, **flags)
+                subprocess.run(["git", "pull", "--rebase", "origin", "main"], cwd=WORKSPACE_DIR, capture_output=True, **flags)
+                res = subprocess.run(["git", "push", "origin", "main"], cwd=WORKSPACE_DIR, capture_output=True, text=True, **flags)
                 if res.returncode == 0:
                     print("[✓] Vercel-bryggan synkad via GitHub (aktiv om ~10 sekunder).")
                 else:
@@ -187,7 +199,19 @@ def main():
             print(f"[!] cloudflared.exe hittades inte pa: {CLOUDFLARED_EXE}")
             return
 
+        old_proc = proc_container.get("proc")
+        if old_proc:
+            try:
+                old_proc.terminate()
+                old_proc.wait(timeout=2)
+            except Exception:
+                try:
+                    old_proc.kill()
+                except Exception:
+                    pass
+
         print("[*] Startar Cloudflare-tunnel (obegransad gratis bandbredd)...")
+        flags = get_win32_subprocess_flags()
         proc = subprocess.Popen(
             [CLOUDFLARED_EXE, "tunnel", "--url", f"http://localhost:{PORT}"],
             stdout=subprocess.PIPE,
@@ -195,14 +219,16 @@ def main():
             text=True,
             encoding="utf-8",
             errors="replace",
-            bufsize=1
+            bufsize=1,
+            **flags
         )
         proc_container["proc"] = proc
 
         def monitor_cloudflare(p):
             tunnel_found = False
             for line in p.stdout:
-                match = re.search(r"https://[a-zA-Z0-9-]+\.trycloudflare\.com", line)
+                line_str = line.strip()
+                match = re.search(r"https://[a-zA-Z0-9-]+\.trycloudflare\.com", line_str)
                 if match and not tunnel_found:
                     tunnel_url = match.group(0)
                     if "api.trycloudflare.com" in tunnel_url or "pkg.trycloudflare.com" in tunnel_url:
@@ -211,6 +237,8 @@ def main():
                     print(f"\n[✓] Cloudflare aktiv: {tunnel_url}")
                     update_vercel_config(tunnel_url)
                     print(f"[✓] Alla kollegor anvander alltid den fasta lanken: {PERMANENT_VERCEL_URL}\n", flush=True)
+                elif not tunnel_found and any(err in line_str.lower() for err in ["err", "fail", "fatal", "unable", "cannot"]):
+                    print(f"[cloudflared] {line_str}", flush=True)
 
         t = threading.Thread(target=monitor_cloudflare, args=(proc,), daemon=True)
         t.start()
@@ -240,13 +268,6 @@ def main():
 
             if failures >= 5:
                 print(f"[{time.strftime('%H:%M:%S')}] [⚠️] WATCHDOG: Sajten har inte svarat pa 5 forsok (~2.5 min). Startar om tunnel...", flush=True)
-                p = proc_container.get("proc")
-                if p:
-                    try:
-                        p.terminate()
-                        p.wait(timeout=3)
-                    except Exception:
-                        pass
                 start_tunnel()
                 failures = 0
                 time.sleep(40)
@@ -259,7 +280,8 @@ def main():
             time.sleep(3)
             p = proc_container.get("proc")
             if p and p.poll() is not None:
-                print("[!] Tunnel process avslutades, startar om automatiskt...", flush=True)
+                print(f"[!] Tunnel process avslutades (kod {p.returncode}), vantar 5s innan omstart...", flush=True)
+                time.sleep(5)
                 start_tunnel()
     except KeyboardInterrupt:
         p = proc_container.get("proc")
