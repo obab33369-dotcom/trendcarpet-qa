@@ -4,7 +4,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "https://compromise-automation-happen-xhtml.trycloudflare.com/$1"
+      "destination": "https://streams-memorabilia-webster-consists.trycloudflare.com/$1"
     }
   ]
 }
