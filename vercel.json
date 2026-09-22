@@ -4,7 +4,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "https://api.trycloudflare.com/$1"
+      "destination": "https://electric-watches-project-showed.trycloudflare.com/$1"
     }
   ]
 }
