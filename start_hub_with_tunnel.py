@@ -132,6 +132,7 @@ def update_vercel_config(new_tunnel_url):
             try:
                 subprocess.run(["git", "add", "vercel.json"], cwd=WORKSPACE_DIR, capture_output=True)
                 subprocess.run(["git", "commit", "-m", f"Update tunnel destination: {new_tunnel_url}"], cwd=WORKSPACE_DIR, capture_output=True)
+                subprocess.run(["git", "pull", "--rebase", "origin", "main"], cwd=WORKSPACE_DIR, capture_output=True)
                 res = subprocess.run(["git", "push", "origin", "main"], cwd=WORKSPACE_DIR, capture_output=True, text=True)
                 if res.returncode == 0:
                     print("[✓] Vercel-bryggan synkad via GitHub (aktiv om ~10 sekunder).")
@@ -208,6 +209,8 @@ def main():
                 match = re.search(r"https://[a-zA-Z0-9-]+\.trycloudflare\.com", line)
                 if match and not tunnel_found:
                     tunnel_url = match.group(0)
+                    if "api.trycloudflare.com" in tunnel_url or "pkg.trycloudflare.com" in tunnel_url:
+                        continue
                     tunnel_found = True
                     print(f"\n[✓] Cloudflare aktiv: {tunnel_url}")
                     update_vercel_config(tunnel_url)
