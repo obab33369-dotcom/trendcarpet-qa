@@ -4,7 +4,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "https://adjusted-midlands-implemented-dried.trycloudflare.com/$1"
+      "destination": "https://previous-authorization-promised-independently.trycloudflare.com/$1"
     }
   ]
 }
