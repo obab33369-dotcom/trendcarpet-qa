@@ -195,7 +195,7 @@ def main():
         proc = subprocess.Popen(
             [CLOUDFLARED_EXE, "tunnel", "--url", f"http://localhost:{PORT}"],
             stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
             text=True,
             encoding="utf-8",
             errors="replace",
@@ -205,7 +205,7 @@ def main():
 
         def monitor_cloudflare(p):
             tunnel_found = False
-            for line in p.stderr:
+            for line in p.stdout:
                 match = re.search(r"https://[a-zA-Z0-9-]+\.trycloudflare\.com", line)
                 if match and not tunnel_found:
                     tunnel_url = match.group(0)
