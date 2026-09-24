@@ -4,7 +4,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "https://president-cooling-psychiatry-random.trycloudflare.com/$1"
+      "destination": "https://prophet-representatives-competing-emma.trycloudflare.com/$1"
     }
   ]
 }
