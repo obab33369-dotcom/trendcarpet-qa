@@ -4,7 +4,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "https://prophet-representatives-competing-emma.trycloudflare.com/$1"
+      "destination": "https://asset-receptor-advantage-attending.trycloudflare.com/$1"
     }
   ]
 }
